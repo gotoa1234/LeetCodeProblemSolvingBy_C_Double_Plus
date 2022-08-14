@@ -30,5 +30,8 @@
     <ClCompile Include="0004_Median_of_Two_Sorted_Arrays.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="0005_Longest_Palindromic_Substring.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
