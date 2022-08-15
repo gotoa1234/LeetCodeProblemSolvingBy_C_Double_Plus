@@ -146,6 +146,9 @@
     <ClCompile Include="0005_Longest_Palindromic_Substring.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="0006.Zigzag_Conversion.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

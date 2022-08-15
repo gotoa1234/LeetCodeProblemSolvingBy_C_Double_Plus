@@ -1,28 +1,19 @@
 ﻿#include <vector>
 #include "0005_Longest_Palindromic_Substring.cpp"
+#include "0006.Zigzag_Conversion.cpp"
 using namespace Solution5;
+using namespace Solution6;
 using namespace std;
 
 int main()
 {
-    for (int i = 0; i < 10; i++)
-    {
-        if (i)
-        {
-            cout << "沒有" << endl;
-        }
-        else
-        {
-            cout << "有" << endl;
-        }
-        
-    }
+    //Solution5::Longest_Palindromic_Substring useClass;
+    //Solution5::Longest_Palindromic_Substring::Longest_Palindromic_Substring_Model getTestModel = useClass.GetTestData001();
+    //string result = useClass.longestPalindrome(getTestModel.s);
 
-    Solution5::Longest_Palindromic_Substring useClass;
-    Solution5::Longest_Palindromic_Substring::Longest_Palindromic_Substring_Model getTestModel = useClass.GetTestData001();
-    string result = useClass.longestPalindrome(getTestModel.s);
-
-    string result2 = useClass.longestPalindrome_Solution2(getTestModel.s);
+    Solution6::Zigzag_Conversion useClass2;
+    Solution6::Zigzag_Conversion::Zigzag_Conversion_Model getTestModel2 = useClass2.GetTestData001();
+    string result = useClass2.convert(getTestModel2.s, getTestModel2.numRows);
     return 0;
 }
 
