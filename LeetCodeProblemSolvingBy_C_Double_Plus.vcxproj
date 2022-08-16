@@ -144,6 +144,7 @@
     <ClCompile Include="0003.Longest_Substring_Without_Repeating_Characters.cpp" />
     <ClCompile Include="0004_Median_of_Two_Sorted_Arrays.cpp" />
     <ClCompile Include="0005_Longest_Palindromic_Substring.cpp" />
+    <ClCompile Include="0007.Reverse_Integer.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
   </ItemGroup>
   <ItemGroup>
