@@ -1,22 +1,15 @@
 ﻿#include <vector>
-#include "0005_Longest_Palindromic_Substring.cpp"
-#include "0006.Zigzag_Conversion.cpp"
-#include "0007.Reverse_Integer.cpp"
-using namespace Solution7;
-using namespace Solution5;
-using namespace Solution6;
+#include "0008.String_To_Integer_Atoi.cpp"
+using namespace Solution8;
 using namespace std;
 
 int main()
 {
-    //Solution5::Longest_Palindromic_Substring useClass;
-    //Solution5::Longest_Palindromic_Substring::Longest_Palindromic_Substring_Model getTestModel = useClass.GetTestData001();
-    //string result = useClass.longestPalindrome(getTestModel.s);
 
 
-    Solution7::Reverse_Integer useClass;
-    Solution7::Reverse_Integer::Reverse_Integer_Model getTestModel = useClass.GetTestData001();
-    int result = useClass.reverse(getTestModel.x);
+    Solution8::String_To_Integer_Atoi useClass;
+    Solution8::String_To_Integer_Atoi::String_To_Integer_Atoi_Model getTestModel = useClass.GetTestData001();
+    int result = useClass.myAtoi(getTestModel.s);
     return 0;
 }
 
