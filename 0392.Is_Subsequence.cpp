@@ -10,8 +10,8 @@ namespace Solution392
 	using namespace Solution392;
 	using namespace std;
 
-	Solution392::.Is_Subsequence useClass;
-	Solution392::.Is_Subsequence::.Is_Subsequence_Model getTestModel = useClass.GetTestData001();
+	Solution392::Is_Subsequence useClass;
+	Solution392::Is_Subsequence::Is_Subsequence_Model getTestModel = useClass.GetTestData001();
 	bool result = useClass.runningSum(getTestModel.nums);
 	*/
 #pragma endregion Paste to execute
@@ -39,7 +39,16 @@ namespace Solution392
 		/// Memory Usage : 
 		/// </summary>
 		bool isSubsequence(string s, string t) {
-			return true;
+			for (int index = 0; index < t.size(); index++)
+			{
+				if (s[0] == t.at(index))
+				{
+					s.erase(s.begin());
+					if (s.empty())
+						break;
+				}
+			}
+			return s.empty() ? true : false;
 		}
 #pragma endregion Main
 
