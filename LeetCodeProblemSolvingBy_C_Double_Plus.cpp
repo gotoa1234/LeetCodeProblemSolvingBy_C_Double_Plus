@@ -1,11 +1,15 @@
-﻿#include "0009.Palindrome_Number.cpp"
-using namespace Solution9;
+﻿#include "0724.Find_Pivot_Index.cpp"
+using namespace Solution724;
 using namespace std;
 
 int main()
 {
-    Solution9::Palindrome_Number useClass;
-	Solution9::Palindrome_Number::Palindrome_Number_Model getTestModel = useClass.GetTestData001();
-	bool result = useClass.myAtoi(getTestModel.x);
+    Solution724::Find_Pivot_Index useClass;
+	Solution724::Find_Pivot_Index::Find_Pivot_Index_Model getTestModel = useClass.GetTestData001();
+	int result = useClass.pivotIndex(getTestModel.nums);
+	getTestModel = useClass.GetTestData002();
+	result = useClass.pivotIndex(getTestModel.nums);
+	getTestModel = useClass.GetTestData003();
+	result = useClass.pivotIndex(getTestModel.nums);
 	return 0;
 }

@@ -147,6 +147,10 @@
     <ClCompile Include="0007.Reverse_Integer.cpp" />
     <ClCompile Include="0008.String_To_Integer_Atoi.cpp" />
     <ClCompile Include="0009.Palindrome_Number.cpp" />
+    <ClCompile Include="0392.Is_Subsequence.cpp" />
+    <ClCompile Include="1480.Running_Sum_of_1d_Array.cpp" />
+    <ClCompile Include="0724.Find_Pivot_Index.cpp" />
+    <ClCompile Include="0205.Isomorphic_Strings.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
   </ItemGroup>
   <ItemGroup>
