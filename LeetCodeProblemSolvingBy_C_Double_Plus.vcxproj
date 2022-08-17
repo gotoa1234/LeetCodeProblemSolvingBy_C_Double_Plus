@@ -146,6 +146,7 @@
     <ClCompile Include="0005_Longest_Palindromic_Substring.cpp" />
     <ClCompile Include="0007.Reverse_Integer.cpp" />
     <ClCompile Include="0008.String_To_Integer_Atoi.cpp" />
+    <ClCompile Include="0009.Palindrome_Number.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
   </ItemGroup>
   <ItemGroup>
