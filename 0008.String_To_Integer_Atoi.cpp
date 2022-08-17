@@ -35,74 +35,38 @@ namespace Solution8
 #pragma region Main
     public:
         /// <summary>
-        /// 思路：
-        ///      Runtim e:   0 ms, faster than 100.00% of C++ online submissions for Reverse Integer.
-        /// Memory Usage : 5.9 MB,   less than 76.34 % of C++ online submissions for Reverse Integer.
-        /// </summary>
+        /// 思路：預處理空白 => 處理 +,- => 每個字元開始計算，若非數字則跳出，並且做 int 溢位處理(-2^32 ~ 2^32)
+        ///      Runtime : 3 ms, faster than 82.92% of C++ online submissions for String to Integer(atoi).
+        /// Memory Usage : 7 MB,   less than 89.40% of C++ online submissions for String to Integer(atoi).
+		/// </summary>
         int myAtoi(string s) {
             int result = 0;
-            int startIndex = 0;
+            
+            //清除空白
+            for (; s[0] == ' ';)
+                s.erase(s.begin());
             int sign = 1;
-            unordered_map<char, int> hashMap;
-            hashMap[' '] = 1;
-            hashMap['-'] = 1;
-            hashMap['+'] = 1;
-            hashMap['0'] = 1;
-            hashMap['1'] = 1;
-            hashMap['2'] = 1;
-            hashMap['3'] = 1;
-            hashMap['4'] = 1;
-            hashMap['5'] = 1;
-            hashMap['6'] = 1;
-            hashMap['7'] = 1;
-            hashMap['8'] = 1;
-            hashMap['9'] = 1;
-        
-            for (int Index = 0; Index < s.size(); Index++)
+            
+            //+ - 處理
+            if (s[0] == '+' || s[0] == '-')
             {
-                if (hashMap.find(s[Index]) == hashMap.end())
-                {
-                    return 0;
-                }
-                if (s[Index] == ' ')
-                {
-                    continue;
-                }
-                if (s[Index] == '-')
-                {
-                    sign = -1;
-                    startIndex = Index + 1;
-                }
-                else if (s[Index] == '+')
-                {
-                    startIndex = Index + 1;
-                }
-                else
-                {
-                    startIndex = Index;
-                }
-                break;
+                sign =s[0] == '-' ? -1 : 1;
+                s.erase(s.begin());
             }
 
-            hashMap.erase(' ');
-            hashMap.erase('-');
-            hashMap.erase('+');
-            for (int Index = startIndex; Index < s.size(); Index++)
+            //字元計算
+            for (int index = 0; index < s.size(); index++)
             {
-                if (hashMap.find(s[Index]) == hashMap.end())
-                {
+                if (!isdigit(s[index]))
                     break;
-                }
-                if (result * 10 + (s[Index] - 48) * sign > INT_MAX/10 || result * 10 + (s[Index] - 48) * sign < INT_MIN/10)
+                //C++溢位處理
+                if (result > (INT_MAX - s[index] + 48) / 10)
                 {
                     return sign == -1 ? INT_MIN : INT_MAX;
                 }
-                result = result * 10 + (s[Index] - 48);
+                result = result * 10 + (s[index] - 48);
             }
-
-            result = result * sign;
-
-            return result;
+            return sign * result;
         };
 #pragma endregion Main
 
@@ -114,9 +78,7 @@ namespace Solution8
         String_To_Integer_Atoi_Model GetTestData001(void)
         {
             String_To_Integer_Atoi_Model result;
-            //result.s = "2147483646";//exp :2147483646
-            //result.s = "-2147483647";//exp : -2147483647
-            result.s = "-91283472332";//
+            result.s = "42";
             return result;
         };
 

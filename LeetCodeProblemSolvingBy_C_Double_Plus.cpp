@@ -5,11 +5,20 @@ using namespace std;
 
 int main()
 {
-
-
     Solution8::String_To_Integer_Atoi useClass;
-    Solution8::String_To_Integer_Atoi::String_To_Integer_Atoi_Model getTestModel = useClass.GetTestData001();
+    Solution8::String_To_Integer_Atoi::String_To_Integer_Atoi_Model getTestModel = useClass.GetTestData003();
+    int temp = INT_MIN;
+    int temp2 = INT_MAX;
+    getTestModel.s = "21474836460";
     int result = useClass.myAtoi(getTestModel.s);
+    getTestModel.s = "2147483646";//exp :2147483646
+    result = useClass.myAtoi(getTestModel.s);
+    getTestModel.s = "-2147483647";//exp : -2147483647
+    result = useClass.myAtoi(getTestModel.s);
+    getTestModel.s = "-91283472332";//
+    result = useClass.myAtoi(getTestModel.s);
+    getTestModel.s = "42";//exp :2147483646
+    result = useClass.myAtoi(getTestModel.s);
     return 0;
 }
 
