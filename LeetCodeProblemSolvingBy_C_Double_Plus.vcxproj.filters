@@ -54,6 +54,9 @@
     <ClCompile Include="0392.Is_Subsequence.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="0206.Reverse_Linked_List.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="0006.Zigzag_Conversion.cpp" />
