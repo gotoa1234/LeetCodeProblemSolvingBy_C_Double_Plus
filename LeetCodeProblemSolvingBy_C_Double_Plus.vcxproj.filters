@@ -60,8 +60,12 @@
     <ClCompile Include="0021.Merge_Two_Sorted_Lists.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="0142.Linked_List_Cycle_II.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="0006.Zigzag_Conversion.cpp" />
+    <None Include="0876.Middle_of_the_Linked_List.cpp" />
   </ItemGroup>
 </Project>

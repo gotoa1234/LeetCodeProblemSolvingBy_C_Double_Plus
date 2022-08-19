@@ -148,6 +148,7 @@
     <ClCompile Include="0008.String_To_Integer_Atoi.cpp" />
     <ClCompile Include="0009.Palindrome_Number.cpp" />
     <ClCompile Include="0021.Merge_Two_Sorted_Lists.cpp" />
+    <ClCompile Include="0142.Linked_List_Cycle_II.cpp" />
     <ClCompile Include="0206.Reverse_Linked_List.cpp" />
     <ClCompile Include="0392.Is_Subsequence.cpp" />
     <ClCompile Include="1480.Running_Sum_of_1d_Array.cpp" />
@@ -157,6 +158,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="0006.Zigzag_Conversion.cpp" />
+    <None Include="0876.Middle_of_the_Linked_List.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
