@@ -1,19 +1,19 @@
-﻿#include "0206.Reverse_Linked_List.cpp"
-using namespace Solution206;
+﻿#include "0021.Merge_Two_Sorted_Lists.cpp"
+using namespace Solution21;
 using namespace std;
 
 
 int main()
 {
 
-	Solution206::Reverse_Linked_List useClass;
-	Solution206::Reverse_Linked_List::Reverse_Linked_List_Model getTestModel = useClass.GetTestData001();
-	Solution206::Reverse_Linked_List::ListNode* result = useClass.reverseList(getTestModel.head);
+	Solution21::Merge_Two_Sorted_Lists useClass;
+	Solution21::Merge_Two_Sorted_Lists::Merge_Two_Sorted_Lists_Model getTestModel = useClass.GetTestData001();
+	Solution21::Merge_Two_Sorted_Lists::ListNode* result = useClass.mergeTwoLists(getTestModel.list1, getTestModel.list2);
 
 	getTestModel = useClass.GetTestData002();
-	result = useClass.reverseList(getTestModel.head);
+	result = useClass.mergeTwoLists(getTestModel.list1, getTestModel.list2);
 
 	getTestModel = useClass.GetTestData003();
-	result = useClass.reverseList(getTestModel.head);
+	result = useClass.mergeTwoLists(getTestModel.list1, getTestModel.list2);
 	return 0;
 }
