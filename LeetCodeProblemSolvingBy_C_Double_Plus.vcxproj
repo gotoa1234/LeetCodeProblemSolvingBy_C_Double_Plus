@@ -148,6 +148,7 @@
     <ClCompile Include="0008.String_To_Integer_Atoi.cpp" />
     <ClCompile Include="0009.Palindrome_Number.cpp" />
     <ClCompile Include="0021.Merge_Two_Sorted_Lists.cpp" />
+    <ClCompile Include="0141.Linked_List_Cycle.cpp" />
     <ClCompile Include="0142.Linked_List_Cycle_II.cpp" />
     <ClCompile Include="0206.Reverse_Linked_List.cpp" />
     <ClCompile Include="0392.Is_Subsequence.cpp" />

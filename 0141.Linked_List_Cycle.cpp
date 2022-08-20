@@ -1,27 +1,26 @@
 #include <iostream>
 #include <vector>
-#include <unordered_map>
 using namespace std;
 
-namespace Solution142
+namespace Solution141
 {
 #pragma region Paste to execute 
     /*
-    #include "0142.Linked_List_Cycle_II.cpp"
-    using namespace Solution142;
+    #include "0141.Linked_List_Cycle.cpp"
+    using namespace Solution141;
     using namespace std;
 
-    Solution142::Linked_List_Cycle_II useClass;
-    Solution142::Linked_List_Cycle_II::Linked_List_Cycle_II_Model getTestModel = useClass.GetTestData001();
-    Solution142::Linked_List_Cycle_II::ListNode* result = useClass.detectCycle(getTestModel.head);
+    Solution141::Linked_List_Cycle useClass;
+    Solution141::Linked_List_Cycle::Linked_List_Cycle_Model getTestModel = useClass.GetTestData001();
+    bool result = useClass.hasCycle(getTestModel.head);
 
     */
 #pragma endregion Paste to execute
 
     /// <summary>
-    /// 循環節點，找出循環開始的節點
+    /// 鏈結串列中是否存在循環
     /// </summary>
-    class Linked_List_Cycle_II
+    class Linked_List_Cycle
     {
 #pragma region Model
     public:
@@ -34,7 +33,7 @@ namespace Solution142
             ListNode(int x, ListNode* next) : val(x), next(next) {}
         };
     public:
-        class Linked_List_Cycle_II_Model
+        class Linked_List_Cycle_Model
         {
         public:
             ListNode* head;
@@ -44,38 +43,29 @@ namespace Solution142
 #pragma region Main
     public:
         /// <summary>
-        ///         思路 ： 利用141. 題的方法找出是否回圈，然後利用走1步的節點 與 head 節點一起往前，彼此碰到的必定為起始點
-        ///      Runtime :   6 ms, faster than 94.92% of C++ online submissions for Linked List Cycle II.
-        /// Memory Usage : 7.4 MB,   less than 99.09% of C++ online submissions for Linked List Cycle II.
+        ///         思路 ：2個節點，一個走1步 ，另一個走2步，走2步的兩個節點若記憶體相等時必為循環，有遇到Null必為非循環
+        ///      Runtime : 8 ms, faster than 94.27% of C++ online submissions for Linked List Cycle.
+        /// Memory Usage : 8 MB,   less than 81.43% of C++ online submissions for Linked List Cycle.
 
-        ListNode* detectCycle(ListNode* head) {
+        bool hasCycle(ListNode* head) {
+            if (head == NULL)
+                return false;
             
             ListNode* oneStepNode = head;
             ListNode* twoStepNode = head;
-            ListNode* entry = head;
-            
-            while (twoStepNode != NULL && twoStepNode->next != NULL)
+
+			while (twoStepNode != NULL && twoStepNode->next != NULL)
             {
                 oneStepNode = oneStepNode->next;
-                if (twoStepNode->next == NULL)
-                    break;
-                else
+                if (twoStepNode->next)
                     twoStepNode = twoStepNode->next->next;
-
+                else 
+                    break;
                 if (oneStepNode == twoStepNode)
-                {
-                    //利用1步節點 + 頭節點 彼此往前直到交會，就是起點
-                    while (oneStepNode != entry) 
-                    {
-                        oneStepNode = oneStepNode->next; 
-                        entry = entry->next;
-                    }
-                    return entry;
-                }       
+                    return true;
             }
-            return NULL;
+            return false;
         }
-
 #pragma endregion Main
 
 #pragma region TestData
@@ -83,23 +73,22 @@ namespace Solution142
         /// <summary>
         /// 測試資料1
         /// </summary>        
-        Linked_List_Cycle_II_Model GetTestData001(void)
+        Linked_List_Cycle_Model GetTestData001(void)
         {
-            Linked_List_Cycle_II_Model result;
-            vector<int> l1Vectors = {3, 2, 0, -4};
+            Linked_List_Cycle_Model result;
+            vector<int> l1Vectors = { 3, 2, 0, -4 };
             result.head = ConstructNodes(l1Vectors);
             //題目第[3] -> [1] 個節點作為循環
             result.head->next->next->next->next = result.head->next;
-            return result;
             return result;
         };
 
         /// <summary>
         /// 測試資料2
         /// </summary>   
-        Linked_List_Cycle_II_Model GetTestData002(void)
+        Linked_List_Cycle_Model GetTestData002(void)
         {
-            Linked_List_Cycle_II_Model result;
+            Linked_List_Cycle_Model result;
             vector<int> l1Vectors = { 1, 2 };
             result.head = ConstructNodes(l1Vectors);
             //題目第[1] -> [0] 個節點作為循環
@@ -110,12 +99,11 @@ namespace Solution142
         /// <summary>
         /// 測試資料3
         /// </summary>   
-        Linked_List_Cycle_II_Model GetTestData003(void)
+        Linked_List_Cycle_Model GetTestData003(void)
         {
-            Linked_List_Cycle_II_Model result;
-            vector<int> l1Vectors{1};
+            Linked_List_Cycle_Model result;
+            vector<int> l1Vectors{ 1 };
             result.head = ConstructNodes(l1Vectors);
-
             return result;
         };
     private:
