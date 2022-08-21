@@ -43,8 +43,7 @@ namespace Solution121
 			for (int index = 0; index < prices.size(); index++)
 			{
 				minPrice = min(prices[index], minPrice);
-				maxCaculation = max(prices[index] - minPrice, 
-					                maxCaculation);
+				maxCaculation = max(prices[index] - minPrice, maxCaculation);
 			}
 			return maxCaculation;
 		}
