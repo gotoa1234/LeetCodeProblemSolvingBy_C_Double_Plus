@@ -1,19 +1,16 @@
-﻿#include "0142.Linked_List_Cycle_II.cpp"
-using namespace Solution142;
+﻿#include "0402.Longest_Palindrome.cpp"
+using namespace Solution402;
 using namespace std;
-
-
 int main()
 {
+	Solution402::Longest_Palindrome useClass;
+	Solution402::Longest_Palindrome::Longest_Palindrome_Model getTestModel = useClass.GetTestData001();
+	int result = useClass.longestPalindrome(getTestModel.s);
 
-
-    Solution142::Linked_List_Cycle_II useClass;
-    Solution142::Linked_List_Cycle_II::Linked_List_Cycle_II_Model getTestModel = useClass.GetTestData001();
-    Solution142::Linked_List_Cycle_II::ListNode* result = useClass.detectCycle(getTestModel.head);
 	getTestModel = useClass.GetTestData002();
-	result = useClass.detectCycle(getTestModel.head);
+	result = useClass.longestPalindrome(getTestModel.s);
 
-	getTestModel = useClass.GetTestData003();
-	result = useClass.detectCycle(getTestModel.head);
+	//getTestModel = useClass.GetTestData003();
+	//result = useClass.detectCycle(getTestModel.head);
 	return 0;
 }
