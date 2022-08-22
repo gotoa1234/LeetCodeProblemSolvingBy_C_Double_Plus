@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <queue>
 using namespace std;
 
 namespace Solution102
@@ -12,13 +13,13 @@ namespace Solution102
 
     Solution102::Binary_Tree_Level_Order_Traversal useClass;
     Solution102::Binary_Tree_Level_Order_Traversal::Binary_Tree_Level_Order_Traversal_Model getTestModel = useClass.GetTestData001();
-    bool result = useClass.hasCycle(getTestModel.head);
+    vector<vector<int>> result = useClass.levelOrder(getTestModel.root);
 
     */
 #pragma endregion Paste to execute
 
     /// <summary>
-    /// 二叉樹級順序遍歷
+    /// 二元樹級順序遍歷
     /// </summary>
     class Binary_Tree_Level_Order_Traversal
     {
@@ -44,11 +45,40 @@ namespace Solution102
 #pragma region Main
     public:
         /// <summary>
-        ///         思路 ：
-        ///      Runtime :
-        /// Memory Usage :
+        ///         思路  :廣度優先演算法(Breadth-First Search, BFS)
+        ///                利用Queue佇列的特性，先進入先出，將每層的資料遍歷，在往下層
+        ///      Runtime :    3 ms, faster than 88.72% of C++ online submissions for Binary Tree Level Order Traversal.
+        /// Memory Usage : 12.4 MB,   less than 85.31% of C++ online submissions for Binary Tree Level Order Traversal.
 
         vector<vector<int>> levelOrder(TreeNode* root) {
+            
+			vector<vector<int>> result;
+			if (root == nullptr)
+				return result;
+
+			queue<TreeNode*> queueContainer;
+			queueContainer.push(root);
+
+			while (!queueContainer.empty())
+			{
+                //當前容器長度(表示這一層)
+				int size = queueContainer.size();
+				vector<int> child;
+                //這一層逐步取出
+				while (size--)
+				{
+					TreeNode* t = queueContainer.front();
+					queueContainer.pop();
+					child.push_back(t->val);
+
+					if (t->left)
+						queueContainer.push(t->left);
+					if (t->right)
+						queueContainer.push(t->right);
+				}
+				result.push_back(child);
+			}
+			return result;
 
         }
 #pragma endregion Main
@@ -61,8 +91,14 @@ namespace Solution102
         Binary_Tree_Level_Order_Traversal_Model GetTestData001(void)
         {
             Binary_Tree_Level_Order_Traversal_Model result;
-			vector<int> l1Vectors = { 1,NULL,3,2,4,NULL,5,6 };
-            result.root = ConstructNodes(l1Vectors);
+			vector<int> l1Vectors = { 3,9,20,NULL,NULL,15,7 };
+            //result.root = ConstructNodes(l1Vectors);
+            result.root = new TreeNode(3);
+            result.root->left = new TreeNode(9);
+            result.root->right = new TreeNode(20);
+            result.root->right->left = new TreeNode(15);
+            result.root->right->right = new TreeNode(7);
+
             return result;
         };
 
@@ -88,6 +124,7 @@ namespace Solution102
             return result;
         };
     private:
+        //TODO: 未完成
         TreeNode* ConstructNodes(vector<int>& inputDatas)
         {
          /*   *int val;
