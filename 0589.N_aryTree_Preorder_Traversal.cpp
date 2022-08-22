@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <stack>
 using namespace std;
 
 namespace Solution589
@@ -18,7 +19,7 @@ namespace Solution589
 #pragma endregion Paste to execute
 
     /// <summary>
-    /// 
+    /// N元樹的前序遍歷
     /// </summary>
     class N_aryTree_Preorder_Traversal
     {
@@ -48,12 +49,32 @@ namespace Solution589
 #pragma region Main
     public:
         /// <summary>
-        ///         思路 ：
-        ///      Runtime :
-        /// Memory Usage :
+        ///         思路 ：利用堆疊的特性，將每個節點從進行遍歷並取出，直到所有的節點都訪問
+        ///      Runtime :   27 ms, faster than 77.50% of C++ online submissions for N-ary Tree Preorder Traversal.
+        /// Memory Usage : 11.5 MB,   less than 21.53% of C++ online submissions for N-ary Tree Preorder Traversal.
 
         vector<int> preorder(Node* root) {
+            vector<int> result;
+            if (root == nullptr)
+                return result;
 
+            stack<Node*> stack;
+            stack.push(root);
+            while (!stack.empty())
+            {
+                //每次取出最後一個塞入的節點
+                Node* currentNode = stack.top();
+                stack.pop();
+                result.push_back(currentNode->val);
+                vector<Node*> child = currentNode->children;
+                int length = child.size();
+                //由尾巴(最右側)先塞入，取出時必定由頭(最左邊)取出
+                while (length--)
+                {
+                    stack.push(child[length]);
+                }
+            }
+            return result;
         }
 #pragma endregion Main
 
@@ -66,7 +87,15 @@ namespace Solution589
         {
             N_aryTree_Preorder_Traversal_Model result;
             vector<int> l1Vectors = { 1,NULL,3,2,4,NULL,5,6 };
-            result.root = ConstructNodes(l1Vectors);
+            //result.root = ConstructNodes(l1Vectors);
+            result.root = new Node(1);
+
+            result.root->children.push_back(new Node(3));
+            result.root->children.push_back(new Node(2));
+            result.root->children.push_back(new Node(4));
+
+            result.root->children[0]->children.push_back(new Node(5));
+            result.root->children[0]->children.push_back(new Node(6));
             return result;
         };
 
@@ -83,10 +112,34 @@ namespace Solution589
                   NULL,11,NULL,  12,NULL,13, NULL,NULL,
                     14
             };
-            result.root = ConstructNodes(l1Vectors);
+            //result.root = ConstructNodes(l1Vectors);
+            result.root = new Node(1);
+            vector<Node*> temp1;
+            temp1.push_back(new Node(2));
+            temp1.push_back(new Node(3));
+            temp1.push_back(new Node(4));
+            temp1.push_back(new Node(5));
+			result.root->children = temp1;
+
+            result.root->children[1]->children.push_back(new Node(6));
+            result.root->children[1]->children.push_back(new Node(7));
+
+            result.root->children[2]->children.push_back(new Node(8));
+
+            result.root->children[3]->children.push_back(new Node(9));
+            result.root->children[3]->children.push_back(new Node(10));
+            
+            result.root->children[1]->children[1]->children.push_back(new Node(11));
+
+            result.root->children[2]->children[0]->children.push_back(new Node(12));
+
+            result.root->children[3]->children[0]->children.push_back(new Node(13));
+
+            result.root->children[1]->children[1]->children[0]->children.push_back(new Node(14));
             return result;
         };
     private:
+        //TODO : 未完成
         Node* ConstructNodes(vector<int>& inputDatas)
         {
             vector<vector<int>> inputTrans;
@@ -109,92 +162,52 @@ namespace Solution589
             for (int myLevel = 2; index < inputDatas.size();)
             {
                 //觀察上一層的有效數
-                int availCount = 0;
                 thisLevel = {};
-                for (int i=0, availCount = 0; i < inputTrans[myLevel - 1].size();i++)
-                {
-                    if (inputTrans[myLevel - 1][i] != NULL)
-                    {
-                        availCount++;
-                    }
-                }
-                
-                for (int ind = 0; ind < availCount;ind)
+                int availCount = 0;
+                vector<int> currentArray = inputTrans[myLevel - 1];
+				for (int innerIndex = 0; innerIndex < currentArray.size(); innerIndex++)
+				{
+					if (currentArray[innerIndex] != NULL)
+					{
+						availCount = availCount + 1;
+					}
+				}
+
+                for (int innerIndex = 0; 
+                    innerIndex < availCount && index < inputDatas.size();)
                 {
                     thisLevel.push_back(inputDatas[index]);
                     if (inputDatas[index] == NULL)
                     {
-                        ind++;                        
+                        innerIndex++;
                     }
                     index++;
                 }
+                inputTrans.push_back(thisLevel);
                 myLevel++;
             }
 
             Node* nodeHeads = NULL;
-         /*   Node* moveHeads = NULL;
-            bool headFlag = true;
-            bool secondLevel = false;
-            for (auto& myItem : inputDatas)
+            Node* topNode = NULL;
+            if (inputTrans.size() == 0)
             {
-                if (headFlag && myItem == NULL)
-                {
-                    headFlag = false;
-                    secondLevel = true;
-                    continue;
-                }
-
-                if (nodeHeads == NULL)
-                {
-                    nodeHeads = new Node(myItem);
-                    moveHeads = nodeHeads;
-                    continue;
-                }
-
-                if (secondLevel)
-                {
-
-                }
-             
-
-                if (nodeHeads == NULL)
-                {
-                    nodeHeads = new Node(myItem);
-                    treeLevelHeads = new Node(myItem);
-                    continue;
-                }
-
-                if (myItem == NULL)
-                {
-                    continue;
-                }
-                else
-                {
-                    Node* newItem = new Node(myItem);
-                }
+                return nodeHeads;
             }
-            
-            Node* nodeHeads = NULL;
-            Node* treeLevelHeads = NULL;
-            bool switchLevel = true;
-            for (auto& myItem : inputDatas)
-            {
-                if (nodeHeads == NULL)
-                {
-                    nodeHeads = new Node(myItem);
-                    treeLevelHeads = new Node(myItem);
-                    continue;
-                }
 
-                if (myItem == NULL)
-                {
-                    continue;
-                }
-                else
-                {
-                    Node* newItem = new Node(myItem);
-                }
-            }*/
+            //1 
+            vector<int> currentLevel = inputTrans[0];
+            nodeHeads = new Node(currentLevel[0]);
+            //2
+            if (inputTrans.size() == 1)
+                return nodeHeads;
+
+            currentLevel = inputTrans[1];
+            vector<Node*> _childrens;
+			for (int i = 0; i < currentLevel.size() - 1; i++)
+            {
+                _childrens.push_back(new Node(currentLevel[i]));
+            }
+            nodeHeads->children = _childrens;
             return nodeHeads;
         };
 #pragma endregion TestData

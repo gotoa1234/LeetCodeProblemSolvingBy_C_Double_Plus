@@ -5,7 +5,7 @@ int main()
 {
 	Solution589::N_aryTree_Preorder_Traversal useClass;
 	Solution589::N_aryTree_Preorder_Traversal::N_aryTree_Preorder_Traversal_Model getTestModel = useClass.GetTestData002();
-	/*int result = useClass.levelOrder(getTestModel.root);*/
+	vector<int> result = useClass.preorder(getTestModel.root);
 
 	/*getTestModel = useClass.GetTestData002();*/
 	/*result = useClass.levelOrder(getTestModel.s);*/
