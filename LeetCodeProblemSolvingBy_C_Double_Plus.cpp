@@ -1,14 +1,14 @@
-﻿#include "0402.Longest_Palindrome.cpp"
-using namespace Solution402;
+﻿#include "0589.N_aryTree_Preorder_Traversal.cpp"
+using namespace Solution589;
 using namespace std;
 int main()
 {
-	Solution402::Longest_Palindrome useClass;
-	Solution402::Longest_Palindrome::Longest_Palindrome_Model getTestModel = useClass.GetTestData001();
-	int result = useClass.longestPalindrome(getTestModel.s);
+	Solution589::N_aryTree_Preorder_Traversal useClass;
+	Solution589::N_aryTree_Preorder_Traversal::N_aryTree_Preorder_Traversal_Model getTestModel = useClass.GetTestData002();
+	/*int result = useClass.levelOrder(getTestModel.root);*/
 
-	getTestModel = useClass.GetTestData002();
-	result = useClass.longestPalindrome(getTestModel.s);
+	/*getTestModel = useClass.GetTestData002();*/
+	/*result = useClass.levelOrder(getTestModel.s);*/
 
 	//getTestModel = useClass.GetTestData003();
 	//result = useClass.detectCycle(getTestModel.head);

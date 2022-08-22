@@ -98,6 +98,7 @@ namespace Solution102
             *TreeNode(int x, TreeNode * left, TreeNode * right) : val(x), left(left), right(right) {}*/
             TreeNode* nodeHeads = NULL;
             TreeNode* treeLevelHeads = NULL;
+            bool switchLevel = true;
             for (auto& myItem : inputDatas)
             {
                 if (nodeHeads == NULL)
@@ -106,6 +107,12 @@ namespace Solution102
                     treeLevelHeads = new TreeNode(myItem);
                     continue;
                 }
+
+                if (myItem == NULL && switchLevel)
+                {
+                
+                }
+
 
                 if (myItem == NULL)
                 {
