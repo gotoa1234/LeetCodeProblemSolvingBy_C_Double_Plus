@@ -1,18 +1,16 @@
-﻿#include "0278.First_Bad_Version.cpp"
-using namespace Solution278;
+﻿#include "0235.Lowest_Common_Ancestor_of_a_Binary_Search_Tree.cpp"
+using namespace Solution235;
 using namespace std;
 
 
 int main()
 {
-	Solution278::First_Bad_Version useClass;
-	Solution278::First_Bad_Version::First_Bad_Version_Model getTestModel = useClass.GetTestData001();
-	useClass._badVersion = getTestModel.bad;
-	int result = useClass.firstBadVersion(getTestModel.n);
+	Solution235::Lowest_Common_Ancestor_of_a_Binary_Search_Tree useClass;
+	Solution235::Lowest_Common_Ancestor_of_a_Binary_Search_Tree::Lowest_Common_Ancestor_of_a_Binary_Search_Tree_Model getTestModel = useClass.GetTestData001();
+	Solution235::Lowest_Common_Ancestor_of_a_Binary_Search_Tree::TreeNode* result = useClass.lowestCommonAncestor(getTestModel.root, getTestModel.p, getTestModel.q);
 
-	getTestModel = useClass.GetTestData003();
-	useClass._badVersion = getTestModel.bad;
-	result = useClass.firstBadVersion(getTestModel.n);
+	getTestModel = useClass.GetTestData002();
+	result = useClass.lowestCommonAncestor(getTestModel.root, getTestModel.p, getTestModel.q);
 
 	return 0;
 }
