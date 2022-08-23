@@ -99,18 +99,18 @@ namespace Solution278
 		/// </summary>   
 		First_Bad_Version_Model GetTestData002(void)
 		{
-			First_Bad_Version_Model result;//exp 2
+			First_Bad_Version_Model result;
 			result.n = 2;
 			result.bad = 2;
 			return result;
 		};
 
 		/// <summary>
-		/// 測試資料2
+		/// 測試資料3
 		/// </summary>   
 		First_Bad_Version_Model GetTestData003(void)
 		{
-			First_Bad_Version_Model result;//exp 1
+			First_Bad_Version_Model result;
 			result.n = 2126753390;
 			result.bad = 1702766719;
 			return result;
