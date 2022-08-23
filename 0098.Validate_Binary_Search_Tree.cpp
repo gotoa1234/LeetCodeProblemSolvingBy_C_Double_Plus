@@ -12,13 +12,12 @@ namespace Solution98
 
 	Solution98::Validate_Binary_Search_Tree useClass;
 	Solution98::Validate_Binary_Search_Tree::Validate_Binary_Search_Tree_Model getTestModel = useClass.GetTestData001();
-	useClass._badVersion = getTestModel.bad;
 	bool result = useClass.isValidBST(getTestModel.root);
 	*/
 #pragma endregion Paste to execute
 
 	/// <summary>
-	/// 
+	/// 驗證二元搜索樹
 	/// </summary>
 	class Validate_Binary_Search_Tree
 	{
@@ -44,15 +43,24 @@ namespace Solution98
 #pragma region Main
 	public:
 		/// <summary>
-		///          思路： 
-		///       Runtime : 
-		///  Memory Usage : 
+		///          思路： 排查所有的節點 -> 利用當前的節點做遞迴，標記出上下限，逐一比對。
+		///       Runtime:    16 ms, faster than 70.17% of C++ online submissions for Validate Binary Search Tree.
+		///  Memory Usage : 21.6 MB,   less than 88.99% of C++ online submissions for Validate Binary Search Tree.
 		/// </summary>
 		bool isValidBST(TreeNode* root) {
-
+			return isValid(root, LONG_MIN, LONG_MAX);
 		}
-	public:
-		int _badVersion = 0;
+	private:
+		bool isValid(TreeNode* currentNode, long min, long max)
+		{
+			if (currentNode == nullptr)
+				return true;
+			if (currentNode->val <= min || currentNode->val >= max)
+				return false;
+
+			return isValid(currentNode->left, min, currentNode->val) &&
+				isValid(currentNode->right, currentNode->val, max);
+		}
 #pragma endregion Main
 
 #pragma region TestData

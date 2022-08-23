@@ -12,7 +12,6 @@ namespace Solution235
 
 	Solution235::Lowest_Common_Ancestor_of_a_Binary_Search_Tree useClass;
 	Solution235::Lowest_Common_Ancestor_of_a_Binary_Search_Tree::Lowest_Common_Ancestor_of_a_Binary_Search_Tree_Model getTestModel = useClass.GetTestData001();
-	useClass._badVersion = getTestModel.bad;
 	bool result = useClass.isValidBST(getTestModel.root);
 	*/
 #pragma endregion Paste to execute
@@ -65,8 +64,6 @@ namespace Solution235
 			}
 			return root;
 		}
-	public:
-		int _badVersion = 0;
 #pragma endregion Main
 
 #pragma region TestData
