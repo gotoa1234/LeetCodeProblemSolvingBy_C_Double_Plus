@@ -72,6 +72,18 @@
     <ClCompile Include="0402.Longest_Palindrome.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="0102.Binary_Tree_Level_Order_Traversal.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="0589.N_aryTree_Preorder_Traversal.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="0704.Binary_Search.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="0278.First_Bad_Version.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="0006.Zigzag_Conversion.cpp" />

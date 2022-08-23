@@ -1,16 +1,18 @@
-﻿#include "0102.Binary_Tree_Level_Order_Traversal.cpp"
-using namespace Solution102;
+﻿#include "0278.First_Bad_Version.cpp"
+using namespace Solution278;
 using namespace std;
+
+
 int main()
 {
-	Solution102::Binary_Tree_Level_Order_Traversal useClass;
-	Solution102::Binary_Tree_Level_Order_Traversal::Binary_Tree_Level_Order_Traversal_Model getTestModel = useClass.GetTestData001();
-	vector<vector<int>> result = useClass.levelOrder(getTestModel.root);
+	Solution278::First_Bad_Version useClass;
+	Solution278::First_Bad_Version::First_Bad_Version_Model getTestModel = useClass.GetTestData001();
+	useClass._badVersion = getTestModel.bad;
+	int result = useClass.firstBadVersion(getTestModel.n);
 
-	/*getTestModel = useClass.GetTestData002();*/
-	/*result = useClass.levelOrder(getTestModel.s);*/
+	getTestModel = useClass.GetTestData003();
+	useClass._badVersion = getTestModel.bad;
+	result = useClass.firstBadVersion(getTestModel.n);
 
-	//getTestModel = useClass.GetTestData003();
-	//result = useClass.detectCycle(getTestModel.head);
 	return 0;
 }
