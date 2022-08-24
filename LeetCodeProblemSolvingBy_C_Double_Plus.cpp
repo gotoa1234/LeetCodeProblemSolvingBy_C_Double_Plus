@@ -1,15 +1,14 @@
-﻿#include "0098.Validate_Binary_Search_Tree.cpp"
-using namespace Solution98;
-using namespace std;
+﻿#include <vector>
+#include "0733.Flood_Fill.cpp"
+using namespace Solution733;
 
 int main()
 {
-	Solution98::Validate_Binary_Search_Tree useClass;
-	Solution98::Validate_Binary_Search_Tree::Validate_Binary_Search_Tree_Model getTestModel = useClass.GetTestData001();
-	bool result = useClass.isValidBST(getTestModel.root);
+	Solution733::Flood_Fill useClass;
+	Solution733::Flood_Fill::Flood_Fill_Model getTestModel = useClass.GetTestData001();
+	vector<vector<int>> result = useClass.floodFill(getTestModel.image, getTestModel.sr, getTestModel.sc, getTestModel.color);
 
 	getTestModel = useClass.GetTestData002();
-	result = useClass.isValidBST(getTestModel.root);
-
+	result = useClass.floodFill(getTestModel.image, getTestModel.sr, getTestModel.sc, getTestModel.color);
 	return 0;
 }

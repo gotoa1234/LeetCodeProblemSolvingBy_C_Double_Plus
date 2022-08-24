@@ -90,6 +90,12 @@
     <ClCompile Include="0235.Lowest_Common_Ancestor_of_a_Binary_Search_Tree.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="0733.Flood_Fill.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="0200.Number_of_Islands.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="0006.Zigzag_Conversion.cpp" />
