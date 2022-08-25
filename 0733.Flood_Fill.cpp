@@ -43,13 +43,34 @@ namespace Solution733
 
 #pragma region Main
     public:
-        ///         思路 :
-        ///      Runtime : 
-        /// Memory Usage : 
+        ///         思路 :利用DFS (Depth-First Search，深度優先搜尋)加上遞迴找出上下左右可以填充的顏色值
+        ///      Runtime :    7 ms, faster than 95.33% of C++ online submissions for Flood Fill.
+        /// Memory Usage : 13.8 MB,   less than 98.78% of C++ online submissions for Flood Fill.
         vector<vector<int>> floodFill(vector<vector<int>>& image, int sr, int sc, int color) {
-            vector<vector<int>> result;
-            return result;
+			dfs(image, sr, sc, color, image[sr][sc]);
+            return image;
         }
+    private:
+        void dfs(vector<vector<int>>& image, int x, int y, int color, int currentColor) {
+            //不符合條件就結束
+            if (x < 0 || y < 0 ||
+                x == image.size() || y == image[0].size() ||
+                image[x][y] == color ||
+                image[x][y] != currentColor)
+            {
+                return;
+            }
+            //可以影響的點，變為指定顏色
+            image[x][y] = color;
+            //上下左右移動
+            dfs(image, x, y + 1, color, currentColor);
+            dfs(image, x, y - 1, color, currentColor);
+            dfs(image, x+1, y, color, currentColor);
+            dfs(image, x-1, y, color, currentColor);
+        }
+        
+    public:
+
 #pragma endregion Main
 
 #pragma region TestData
