@@ -159,6 +159,7 @@
     <ClCompile Include="0392.Is_Subsequence.cpp" />
     <ClCompile Include="0402.Longest_Palindrome.cpp" />
     <ClCompile Include="0121.Best_Time_to_Buy_and_Sell_Stock.cpp" />
+    <ClCompile Include="0509.Fibonacci_Number.cpp" />
     <ClCompile Include="0589.N_aryTree_Preorder_Traversal.cpp" />
     <ClCompile Include="0704.Binary_Search.cpp" />
     <ClCompile Include="0733.Flood_Fill.cpp" />
