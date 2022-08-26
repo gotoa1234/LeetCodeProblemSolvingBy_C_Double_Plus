@@ -148,6 +148,7 @@
     <ClCompile Include="0008.String_To_Integer_Atoi.cpp" />
     <ClCompile Include="0009.Palindrome_Number.cpp" />
     <ClCompile Include="0021.Merge_Two_Sorted_Lists.cpp" />
+    <ClCompile Include="0070.Climbing_Stairs.cpp" />
     <ClCompile Include="0098.Validate_Binary_Search_Tree.cpp" />
     <ClCompile Include="0102.Binary_Tree_Level_Order_Traversal.cpp" />
     <ClCompile Include="0141.Linked_List_Cycle.cpp" />
