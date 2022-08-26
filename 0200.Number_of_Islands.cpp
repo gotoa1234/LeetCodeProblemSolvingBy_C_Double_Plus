@@ -44,32 +44,38 @@ namespace Solution200
         ///      Runtime:    42 ms, faster than 81.30% of C++ online submissions for Number of Islands.
         /// Memory Usage : 12.2 MB,   less than 97.02% of C++ online submissions for Number of Islands.
         int numIslands(vector<vector<char>>& grid) {
-            int count = 0;
-            int x = grid.size();
-            int y = grid[0].size();
-            for (int xIndex = 0; xIndex < x; xIndex++)
+            int result = 0;
+            int xMax = grid.size();
+            int yMax = grid[0].size();
+            for (int xIndex = 0; xIndex < xMax; xIndex++)
             {
-                for (int yIndex = 0; yIndex < y; yIndex++)
+                for (int yIndex = 0; yIndex < yMax; yIndex++)
                 {
                     if (grid[xIndex][yIndex] == '1')
                     {
-                        island(grid, xIndex, yIndex, x, y);
-                        count += 1;
+                        island(grid, xIndex, yIndex, xMax, yMax);
+                        result += 1;
                     }
                 }
             }
-            return count;
+            return result;
         }
     private:
-        void island(vector<vector<char>>& grid, int i, int j, int r, int c) {
-            if (i >= r || i < 0 || j >= c || j < 0 || grid[i][j] != '1')
+        void island(vector<vector<char>>& grid, int x, int y, int xMax, int yMax) {
+            if (x >= xMax || 
+                y >= yMax ||
+                x < 0 || 
+                y < 0 || 
+                grid[x][y] != '1'
+                )
                 return;
+
             //標記走過
-            grid[i][j] = 'x';
-            island(grid, i + 1, j, r, c);
-            island(grid, i - 1, j, r, c);
-            island(grid, i, j + 1, r, c);
-            island(grid, i, j - 1, r, c);
+            grid[x][y] = 'x';
+            island(grid, x + 1, y, xMax, yMax);
+            island(grid, x - 1, y, xMax, yMax);
+            island(grid, x, y + 1, xMax, yMax);
+            island(grid, x, y - 1, xMax, yMax);
         };
 #pragma endregion Main
 
