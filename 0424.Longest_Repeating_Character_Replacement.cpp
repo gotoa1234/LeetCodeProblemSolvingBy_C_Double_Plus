@@ -45,8 +45,8 @@ namespace Solution424
         ///            思路：此題目只有大寫英文字母，因此可以建立一個字母表紀錄數量
         ///                 我們知道可替換數量k，可建立移動索引，若範圍之間出現
         ///                 重複的字母+數量k 即可知道最長長度。
-        ///         Runtime:
-        //    Memory Usage :
+        ///        Runtime : 12 ms, faster than 72.63% of C++ online submissions for Longest Repeating Character Replacement.
+        ///   Memory Usage :  7 MB,   less than 85.10% of C++ online submissions for Longest Repeating Character Replacement.
         ///Time complexity :
         /// <returns></returns>
         int characterReplacement(string s, int k) {
