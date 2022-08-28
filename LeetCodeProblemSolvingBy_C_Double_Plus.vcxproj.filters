@@ -18,94 +18,13 @@
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="0001_two_sum.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0002_Add_Two_Numbers.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0003.Longest_Substring_Without_Repeating_Characters.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0004_Median_of_Two_Sorted_Arrays.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0005_Longest_Palindromic_Substring.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0007.Reverse_Integer.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0008.String_To_Integer_Atoi.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0009.Palindrome_Number.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="1480.Running_Sum_of_1d_Array.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0724.Find_Pivot_Index.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0205.Isomorphic_Strings.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0392.Is_Subsequence.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0206.Reverse_Linked_List.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0021.Merge_Two_Sorted_Lists.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0142.Linked_List_Cycle_II.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0141.Linked_List_Cycle.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0121.Best_Time_to_Buy_and_Sell_Stock.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0402.Longest_Palindrome.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0102.Binary_Tree_Level_Order_Traversal.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0589.N_aryTree_Preorder_Traversal.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0704.Binary_Search.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0278.First_Bad_Version.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0098.Validate_Binary_Search_Tree.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0235.Lowest_Common_Ancestor_of_a_Binary_Search_Tree.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0733.Flood_Fill.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0200.Number_of_Islands.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0509.Fibonacci_Number.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0070.Climbing_Stairs.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
     <ClCompile Include="0746.Min_Cost_Climbing_Stairs.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
     <ClCompile Include="0062.Unique_Paths.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="0438.Find_All_Anagrams_in_a_String.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
   </ItemGroup>
