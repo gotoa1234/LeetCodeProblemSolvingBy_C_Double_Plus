@@ -1,16 +1,14 @@
 ﻿#include <vector>
-#include "0438.Find_All_Anagrams_in_a_String.cpp"
-using namespace Solution438;
+#include "0424.Longest_Repeating_Character_Replacement.cpp"
+using namespace Solution424;
 
 int main()
 {
-	Solution438::Find_All_Anagrams_in_a_String useClass;
-	Solution438::Find_All_Anagrams_in_a_String::Find_All_Anagrams_in_a_String_Model getTestModel = useClass.GetTestData002();
-	vector<int> result = useClass.findAnagrams(getTestModel.s, getTestModel.p);
+    Solution424::Longest_Repeating_Character_Replacement useClass;
+    Solution424::Longest_Repeating_Character_Replacement::Longest_Repeating_Character_Replacement_Model getTestModel = useClass.GetTestData001();
+    int result = useClass.characterReplacement(getTestModel.s, getTestModel.k);
 
-	getTestModel = useClass.GetTestData001();
-	result = useClass.findAnagrams(getTestModel.s, getTestModel.p);
-
-	result = useClass.findAnagrams("baa", "aa");
-	return 0;
+    getTestModel = useClass.GetTestData002();
+    result = useClass.characterReplacement(getTestModel.s, getTestModel.k);
+    return 0;
 }

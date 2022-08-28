@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="0062.Unique_Paths.cpp" />
+    <ClCompile Include="0424.Longest_Repeating_Character_Replacement.cpp" />
     <ClCompile Include="0438.Find_All_Anagrams_in_a_String.cpp" />
     <ClCompile Include="0746.Min_Cost_Climbing_Stairs.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />

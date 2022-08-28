@@ -27,6 +27,9 @@
     <ClCompile Include="0438.Find_All_Anagrams_in_a_String.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="0424.Longest_Repeating_Character_Replacement.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="0006.Zigzag_Conversion.cpp" />
