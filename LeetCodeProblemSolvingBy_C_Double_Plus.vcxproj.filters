@@ -30,6 +30,9 @@
     <ClCompile Include="0424.Longest_Repeating_Character_Replacement.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="299.Bulls_and_Cows.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="0006.Zigzag_Conversion.cpp" />
