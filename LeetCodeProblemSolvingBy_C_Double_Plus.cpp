@@ -1,40 +1,16 @@
 ﻿#include <vector>
-#include <unordered_map>
-#include "299.Bulls_and_Cows.cpp"
 #include <string>
-using namespace Solution299;
-//string getHint(string secret, string guess) {
-//
-//	vector<int> secretArray(10, 0), guessArray(10, 0);
-//	int aCount = 0, bCount = 0;
-//
-//	for (int index = 0; index < secret.size(); ++index) 
-//	{
-//		if (secret[index] == guess[index]) {
-//			aCount++;
-//		}
-//		else {
-//			secretArray[secret[index] - '0']++;
-//			guessArray[guess[index] - '0']++;
-//	    }
-//    }
-//
-//	for (int index = 0; index < 10; ++index) {
-//		bCount += min(secretArray[index], guessArray[index]);
-//	}
-//
-//	return to_string(aCount) + "A" + to_string(bCount) + "B";
-//}
+#include "0394.Decode_String.cpp"
+using namespace Solution394;
 
 int main()
 {
-	//string secret = "112344", guess = "011146";
-	//string result = getHint(secret, guess);
-	Solution299::Bulls_and_Cows useClass;
-	Solution299::Bulls_and_Cows::Bulls_and_Cows_Model getTestModel = useClass.GetTestData001();
-	string result = useClass.getHint(getTestModel.secret, getTestModel.guess);
+    Solution394::Decode_String useClass;
+    Solution394::Decode_String::Decode_String_Model getTestModel = useClass.GetTestData001();
+    string result = useClass.decodeString("3[ad4[cs]]");
 
-	getTestModel = useClass.GetTestData002();
-	result = useClass.getHint(getTestModel.secret, getTestModel.guess);
-	return 0;
+
+    getTestModel = useClass.GetTestData002();
+    result = useClass.decodeString(getTestModel.s);
+    return 0;
 }
