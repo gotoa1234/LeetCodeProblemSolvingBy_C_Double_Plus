@@ -36,6 +36,12 @@
     <ClCompile Include="0394.Decode_String.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="1046.Last_Stone_Weight.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="0692.Top_K_Frequent_Words.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="0006.Zigzag_Conversion.cpp" />
