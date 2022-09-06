@@ -42,35 +42,24 @@ namespace Solution14
 #pragma region Main
 	public:
 		/// <summary>
-		///          思路：
-		///      Runtime :
-		/// Memory Usage :
+		///          思路：排序，第一個必定是最小長度，然後對每個項目比對，若都相同則記錄，當不相同時跳出
+		///      Runtime :   3 ms, faster than 92.55% of C++ online submissions for Longest Common Prefix.
+		/// Memory Usage : 9.2 MB,   less than 83.20% of C++ online submissions for Longest Common Prefix.
 		/// </summary>
 		string longestCommonPrefix(vector<string>& strs) {
 			string result = "";
-			int currentCaculation = 0;
-			int tempCaculation = 0;
-			int moveIndex = 0;
-			int minLength = 201;
-			int currentLength = 0;
+			char currentChar = 0;
+			short moveIndex = 0;			
+			short index = 0;
+			sort(strs.begin(), strs.end());
+			short minLength = strs[0].size();
 			while (moveIndex < minLength)
 			{
-				currentCaculation = strs[0][moveIndex];
-				tempCaculation = currentCaculation;
-				for (int index = 0; index < strs.size(); index++)
-				{
-					if (moveIndex == 0)
-					{
-						currentLength = strs[index].size();
-						minLength = min(minLength, currentLength);
-						if (minLength == 0)
-							return result;
-					}
-					tempCaculation = tempCaculation & strs[index][moveIndex];
-				}
-				if (tempCaculation != currentCaculation)
+				currentChar = strs[0][moveIndex];
+				for (index = 0; index < strs.size() && currentChar == strs[index][moveIndex]; index++) {}
+				if (index != strs.size())
 					break;
-				result.push_back(strs[0][moveIndex]);
+				result.push_back(currentChar);
 				moveIndex++;
 			}
 			return result;
