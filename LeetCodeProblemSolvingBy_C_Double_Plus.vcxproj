@@ -139,19 +139,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="0062.Unique_Paths.cpp" />
-    <ClCompile Include="0394.Decode_String.cpp" />
-    <ClCompile Include="0424.Longest_Repeating_Character_Replacement.cpp" />
-    <ClCompile Include="0438.Find_All_Anagrams_in_a_String.cpp" />
-    <ClCompile Include="0746.Min_Cost_Climbing_Stairs.cpp" />
-    <ClCompile Include="0844.Backspace_String_Compare.cpp" />
     <ClCompile Include="1046.Last_Stone_Weight.cpp" />
     <ClCompile Include="0692.Top_K_Frequent_Words.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="0006.Zigzag_Conversion.cpp" />
-    <None Include="0876.Middle_of_the_Linked_List.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

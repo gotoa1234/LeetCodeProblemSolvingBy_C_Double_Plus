@@ -18,33 +18,11 @@
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="0746.Min_Cost_Climbing_Stairs.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0062.Unique_Paths.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0438.Find_All_Anagrams_in_a_String.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0424.Longest_Repeating_Character_Replacement.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0844.Backspace_String_Compare.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0394.Decode_String.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
     <ClCompile Include="1046.Last_Stone_Weight.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
     <ClCompile Include="0692.Top_K_Frequent_Words.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="0006.Zigzag_Conversion.cpp" />
-    <None Include="0876.Middle_of_the_Linked_List.cpp" />
   </ItemGroup>
 </Project>

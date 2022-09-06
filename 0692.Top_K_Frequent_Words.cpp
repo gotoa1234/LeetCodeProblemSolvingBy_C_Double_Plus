@@ -62,13 +62,18 @@ namespace Solution692
 
             auto compare = [](const pair<string, int>& lhs, const pair<string, int>& rhs) 
             {
-                return lhs.second > rhs.second || (lhs.second == rhs.second && lhs.first < rhs.first);
+                return lhs.second > rhs.second || 
+                       (lhs.second == rhs.second && lhs.first < rhs.first);
             };
 
+            //3. 前面k個資料排序
             nth_element(priority.begin(), priority.begin() + k, priority.end(), compare);
+
+            //4. 排序指定k個資料
             sort(priority.begin(), priority.begin() + k, compare);
 
             vector<string> result(k);
+            //5. 印出前面k個資料
             for (int i = 0; i < k; ++i) 
             {
                 result[i] = move(priority[i].first);
@@ -118,7 +123,7 @@ namespace Solution692
         Top_K_Frequent_Words_Model GetTestData001(void)
         {
             Top_K_Frequent_Words_Model result;
-            vector<string> input = { "i","love","leetcode","i","love","coding" };
+            vector<string> input = { "leetcode", "i","love","love","i","coding" };
             result.words = input;
             result.k = 2;
             return result;//expect "i","love"
