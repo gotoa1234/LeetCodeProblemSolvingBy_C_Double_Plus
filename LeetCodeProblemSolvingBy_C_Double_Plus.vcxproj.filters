@@ -24,5 +24,8 @@
     <ClCompile Include="0692.Top_K_Frequent_Words.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="0014.Longest_Common_Prefix.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
