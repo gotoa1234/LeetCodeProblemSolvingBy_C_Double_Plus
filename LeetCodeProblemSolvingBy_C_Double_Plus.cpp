@@ -1,16 +1,17 @@
-﻿#include "0014.Longest_Common_Prefix.cpp"
-using namespace Solution14;
+﻿#include "0015.3Sum.cpp"
+using namespace Solution15;
 using namespace std;
 
 int main()
 {
-	Solution14::Longest_Common_Prefix useClass;
-	Solution14::Longest_Common_Prefix::Longest_Common_Prefix_Model getTestModel = useClass.GetTestData001();
-	string result = useClass.longestCommonPrefix(getTestModel.strs);
+	Solution15::Three_Sum useClass;
+	Solution15::Three_Sum::Three_Sum_Model getTestModel = useClass.GetTestData001();
+	vector<vector<int>> result = useClass.ThreeSum(getTestModel.nums);
 
 	getTestModel = useClass.GetTestData002();
-	result = useClass.longestCommonPrefix(getTestModel.strs);
-	vector<string> input = { "ab", "ac"};
-	result = useClass.longestCommonPrefix(input);
+	result = useClass.ThreeSum(getTestModel.nums);
+
+	getTestModel = useClass.GetTestData003();
+	result = useClass.ThreeSum(getTestModel.nums);
 	return 0;
 }

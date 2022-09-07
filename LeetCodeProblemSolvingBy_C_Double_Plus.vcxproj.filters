@@ -27,5 +27,8 @@
     <ClCompile Include="0014.Longest_Common_Prefix.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="0015.3Sum.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
