@@ -1,17 +1,20 @@
-﻿#include "0015.3Sum.cpp"
-using namespace Solution15;
+﻿#include "0019.Remove_Nth_Node_From_End_of_List.cpp"
+using namespace Solution19;
 using namespace std;
 
 int main()
 {
-	Solution15::Three_Sum useClass;
-	Solution15::Three_Sum::Three_Sum_Model getTestModel = useClass.GetTestData001();
-	vector<vector<int>> result = useClass.ThreeSum(getTestModel.nums);
+	Solution19::Remove_Nth_Node_From_End_of_List useClass;
+	Solution19::Remove_Nth_Node_From_End_of_List::Remove_Nth_Node_From_End_of_List_Model getTestModel = useClass.GetTestData001();
+	Remove_Nth_Node_From_End_of_List::ListNode* result = useClass.removeNthFromEnd(getTestModel.head, getTestModel.n);
 
 	getTestModel = useClass.GetTestData002();
-	result = useClass.ThreeSum(getTestModel.nums);
+	result = useClass.removeNthFromEnd(getTestModel.head, getTestModel.n);
 
 	getTestModel = useClass.GetTestData003();
-	result = useClass.ThreeSum(getTestModel.nums);
+	result = useClass.removeNthFromEnd(getTestModel.head, getTestModel.n);
+
+	getTestModel = useClass.GetTestData004();
+	result = useClass.removeNthFromEnd(getTestModel.head, getTestModel.n);
 	return 0;
 }
