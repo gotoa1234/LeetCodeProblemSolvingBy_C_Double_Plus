@@ -26,7 +26,7 @@ namespace Solution19
 #pragma endregion Paste to execute
 
 	/// <summary>
-	/// 最長共用前綴
+	/// 從列表末尾刪除第 N 個節點
 	/// </summary>
 	class Remove_Nth_Node_From_End_of_List
 	{
@@ -52,9 +52,9 @@ namespace Solution19
 #pragma region Main
 	public:
 		/// <summary>
-		///          思路：
-		///      Runtime : 
-		/// Memory Usage : 
+		///          思路：利用雙指標，第一個跑n後，另一個在開始跑，兩個一起往前走，當第一個遇到終點(Null)時，此時另一個指標就是第n個刪除的項目
+		///      Runtime :    0 ms, faster than 100.00% of C++ online submissions for Remove Nth Node From End of List.
+		/// Memory Usage : 10.6 MB,   less than  96.38% of C++ online submissions for Remove Nth Node From End of List.
 		/// </summary>
 		ListNode* removeNthFromEnd(ListNode* head, int n) {
 			
@@ -68,13 +68,15 @@ namespace Solution19
 					firstPtr = firstPtr->next;
 					if (firstPtr == nullptr)
 					{
+						//情況1：指定的n同陣列長度
 						if (counter == 0)
 							head = NULL;
 						else
 						{
+							//情況2：指定的n剛好是第一個節點
 							if (counter == n - 1)
 								head = head->next;
-							else
+							else//情況3：通常n就是刪除的節點
 							    secondPtr->next = secondPtr->next->next;
 						}
 						break;
@@ -86,7 +88,6 @@ namespace Solution19
 					counter++;
 				}
 			}
-			
 			return head;
 		}
 #pragma endregion Main
