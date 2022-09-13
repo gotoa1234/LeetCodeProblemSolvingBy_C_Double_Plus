@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="0014.Longest_Common_Prefix.cpp" />
     <ClCompile Include="0015.3Sum.cpp" />
+    <ClCompile Include="0016.3Sum_Closet.cpp" />
     <ClCompile Include="0019.Remove_Nth_Node_From_End_of_List.cpp" />
     <ClCompile Include="1046.Last_Stone_Weight.cpp" />
     <ClCompile Include="0692.Top_K_Frequent_Words.cpp" />

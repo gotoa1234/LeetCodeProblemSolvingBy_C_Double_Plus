@@ -1,20 +1,18 @@
-﻿#include "0019.Remove_Nth_Node_From_End_of_List.cpp"
-using namespace Solution19;
+﻿#include "0016.3Sum_Closet.cpp"
+using namespace Solution16;
 using namespace std;
 
 int main()
 {
-	Solution19::Remove_Nth_Node_From_End_of_List useClass;
-	Solution19::Remove_Nth_Node_From_End_of_List::Remove_Nth_Node_From_End_of_List_Model getTestModel = useClass.GetTestData001();
-	Remove_Nth_Node_From_End_of_List::ListNode* result = useClass.removeNthFromEnd(getTestModel.head, getTestModel.n);
+	Solution16::Three_Sum_Closet useClass;
+	Solution16::Three_Sum_Closet::Three_Sum_Closet_Model getTestModel = useClass.GetTestData001();
+	int result = useClass.threeSumClosest(getTestModel.nums, getTestModel.target);
 
 	getTestModel = useClass.GetTestData002();
-	result = useClass.removeNthFromEnd(getTestModel.head, getTestModel.n);
+	result = useClass.threeSumClosest(getTestModel.nums, getTestModel.target);
 
 	getTestModel = useClass.GetTestData003();
-	result = useClass.removeNthFromEnd(getTestModel.head, getTestModel.n);
+	result = useClass.threeSumClosest(getTestModel.nums, getTestModel.target);
 
-	getTestModel = useClass.GetTestData004();
-	result = useClass.removeNthFromEnd(getTestModel.head, getTestModel.n);
 	return 0;
 }
