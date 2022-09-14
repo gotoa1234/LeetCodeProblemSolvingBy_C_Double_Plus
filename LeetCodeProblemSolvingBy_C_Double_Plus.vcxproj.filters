@@ -36,5 +36,8 @@
     <ClCompile Include="0016.3Sum_Closet.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="0017.Letter_Combinations_of_a_Phone_Number.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
