@@ -33,5 +33,20 @@
     <ClCompile Include="0016.3Sum_Closet.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="0022.Generate_Parentheses.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="0023.Merge_k_Sorted_Lists.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="0024.Swap_Nodes_in_Pairs.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="0025.Reverse_Nodes_in_k_Group.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="0026.Remove_Duplicates_from_Sorted_Array.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
