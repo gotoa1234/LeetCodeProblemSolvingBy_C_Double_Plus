@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="0016.3Sum_Closet.cpp" />
     <ClCompile Include="0017.Letter_Combinations_of_a_Phone_Number.cpp" />
     <ClCompile Include="0019.Remove_Nth_Node_From_End_of_List.cpp" />
     <ClCompile Include="0020.Valid_Parentheses.cpp" />

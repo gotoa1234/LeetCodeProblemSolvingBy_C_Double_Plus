@@ -1,18 +1,20 @@
-﻿#include "0017.Letter_Combinations_of_a_Phone_Number.cpp"
-using namespace Solution17;
+﻿#include "0018.4Sum.cpp"
+using namespace Solution18;
 using namespace std;
 
 int main()
 {
-	Solution17::Three_Sum_Closet useClass;
-	Solution17::Three_Sum_Closet::Letter_Combinations_of_a_Phone_Number_Model getTestModel = useClass.GetTestData001();
-	vector<string> result = useClass.letterCombinations(getTestModel.digits);
+	Solution18::Four_Sum useClass;
+	Solution18::Four_Sum::Four_Sum_Model getTestModel = useClass.GetTestData001();
+	vector<vector<int>> result = useClass.fourSum(getTestModel.nums, getTestModel.target);
 
 	getTestModel = useClass.GetTestData002();
-	result = useClass.letterCombinations(getTestModel.digits);
+	result = useClass.fourSum(getTestModel.nums, getTestModel.target);
 
 	getTestModel = useClass.GetTestData003();
-	result = useClass.letterCombinations(getTestModel.digits);
+	result = useClass.fourSum(getTestModel.nums, getTestModel.target);
 
+	getTestModel = useClass.GetTestData004();
+	result = useClass.fourSum(getTestModel.nums, getTestModel.target);
 	return 0;
 }
