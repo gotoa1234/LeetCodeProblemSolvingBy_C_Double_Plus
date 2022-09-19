@@ -1,21 +1,15 @@
-﻿#include "0020.Valid_Parentheses.cpp"
-using namespace Solution20;
+﻿#include "0022.Generate_Parentheses.cpp"
+using namespace Solution22;
 using namespace std;
 
 int main()
 {
-	Solution20::Valid_Parentheses useClass;
-	Solution20::Valid_Parentheses::Valid_Parentheses_Model getTestModel = useClass.GetTestData001();
-	bool result = useClass.isValid(getTestModel.s);
+	Solution22::Generate_Parentheses useClass;
+	Solution22::Generate_Parentheses::Generate_Parentheses_Model getTestModel = useClass.GetTestData001();
+	vector<string> result = useClass.generateParenthesis(getTestModel.n);
 
 	getTestModel = useClass.GetTestData002();
-	result = useClass.isValid(getTestModel.s);
-
-	getTestModel = useClass.GetTestData003();
-	result = useClass.isValid(getTestModel.s);
-
-	getTestModel = useClass.GetTestData004();
-	result = useClass.isValid(getTestModel.s);
+	result = useClass.generateParenthesis(getTestModel.n);
 
 	return 0;
 }

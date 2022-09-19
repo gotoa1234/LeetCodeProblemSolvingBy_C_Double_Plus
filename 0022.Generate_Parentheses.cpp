@@ -3,63 +3,76 @@
 #include <algorithm>
 using namespace std;
 
-namespace Solution23
+namespace Solution22
 {
 #pragma region Paste to execute 
 	/*
-	#include "0023.Merge_k_Sorted_Lists"
-	using namespace Solution23;
+	#include "0022.Generate_Parentheses.cpp"
+	using namespace Solution22;
 	using namespace std;
 
 	int main()
 	{
-		Solution23::Merge_k_Sorted_Lists useClass;
-		Solution23::Merge_k_Sorted_Lists::Merge_k_Sorted_Lists_Model getTestModel = useClass.GetTestData001();
-		Solution23::Merge_k_Sorted_Lists::ListNode* result = useClass.swapPairs(getTestModel.head);
+		Solution22::Generate_Parentheses useClass;
+		Solution22::Generate_Parentheses::Generate_Parentheses_Model getTestModel = useClass.GetTestData001();
+		vector<string> result = useClass.generateParenthesis(getTestModel.n);
 
 		getTestModel = useClass.GetTestData002();
-		result = useClass.swapPairs(getTestModel.head);
+		result = useClass.generateParenthesis(getTestModel.n);
 
-		getTestModel = useClass.GetTestData003();
-		result = useClass.swapPairs(getTestModel.head);
 		return 0;
 	}
 	*/
 #pragma endregion Paste to execute
 
 	/// <summary>
-	/// 成對交換節點
+	/// 產生合理的括號陣列 
+	/// ※合理是指有對應起訖括號 : () 
 	/// </summary>
-	class Swap_Nodes_in_Pairs
+	class Generate_Parentheses
 	{
 #pragma region Model
 	public:
-		//Definition for singly-linked list.
-		struct ListNode {
-			int val;
-			ListNode* next;
-			ListNode() : val(0), next(nullptr) {}
-			ListNode(int x) : val(x), next(nullptr) {}
-			ListNode(int x, ListNode* next) : val(x), next(next) {}
-		};
-	public:
-		class Swap_Nodes_in_Pairs_Model
+		class Generate_Parentheses_Model
 		{
 		public:
-			ListNode* head;
+			int n;
 		};
 #pragma endregion Model
 
 #pragma region Main
 	public:
 		/// <summary>
-		///         思路：
-		///      Runtime:  
-		/// Memory Usage : 
+		///         思路：考慮以下2個特性，利用遞迴找出所有組成的可能
+		///         1. '(' 與 ')' 必須相對應
+		///         2. 最左邊必定 '(' 最右邊必定 ')' 
+		///     Runtime :    3 ms, faster than 87.69% of C++ online submissions for Generate Parentheses.
+		///Memory Usage : 13.6 MB,   less than 59.89% of C++ online submissions for Generate Parentheses.
 		/// </summary>
-		ListNode* swapPairs(ListNode* head) {
-			return nullptr;
+		vector<string> generateParenthesis(int n)
+		{
+			vector<string> result;
+			string combinateStr;
+			Recursive(n, n, combinateStr, result);
+			return result;
 		}
+
+		void Recursive(int left, int right, string joinStr, vector<string>& result)
+		{
+			//特性1 左( 與 右) 相對應，並且用盡，表示可以記錄
+			if (left == 0 && right == 0)
+			{
+				result.push_back(joinStr);
+				return;
+			}
+
+			//特性2 左( 永遠會有一筆在左; 右) 永遠一筆在)
+			if (left > 0)
+				Recursive(left - 1, right, joinStr + '(', result);
+			if( right > left)
+				Recursive(left , right - 1, joinStr + ')', result);
+		}
+		
 #pragma endregion Main
 
 #pragma region TestData
@@ -67,54 +80,23 @@ namespace Solution23
 		/// <summary>
 		/// 測試資料1
 		/// </summary>        
-		Swap_Nodes_in_Pairs_Model GetTestData001(void)
+		Generate_Parentheses_Model GetTestData001(void)
 		{
-			Swap_Nodes_in_Pairs_Model result;
-			vector<int> input = { 1,2,3,4 };
-			result.head = ConstructNodes(input);
-			return result;//except: [2,1,4,3]
+			Generate_Parentheses_Model result;
+			result.n = 3;
+			return result;//except:["((()))","(()())","(())()","()(())","()()()"]
 		};
 
 		/// <summary>
 		/// 測試資料2
 		/// </summary>   
-		Swap_Nodes_in_Pairs_Model GetTestData002(void)
+		Generate_Parentheses_Model GetTestData002(void)
 		{
-			Swap_Nodes_in_Pairs_Model result;
-			vector<int> input = {};
-			result.head = nullptr;
-			return result;//expect:[]
-		};
-
-		/// <summary>
-		/// 測試資料3
-		/// </summary>   
-		Swap_Nodes_in_Pairs_Model GetTestData003(void)
-		{
-			Swap_Nodes_in_Pairs_Model result;
-			vector<int> input = { 1 };
-			result.head = ConstructNodes(input);
-			return result;//[1]
+			Generate_Parentheses_Model result;
+			result.n = 1;
+			return result;//expect:["()"]
 		};
 #pragma endregion TestData
-	private:
-		ListNode* ConstructNodes(vector<int>& inputDatas)
-		{
-			ListNode* nodeHeads = NULL;
-			ListNode* moveNode = NULL;
-			for (auto& myItem : inputDatas)
-			{
-				ListNode* newItem = new ListNode(myItem);
-				if (nodeHeads == NULL)
-				{
-					nodeHeads = newItem;
-					moveNode = nodeHeads;
-					continue;
-				}
-				moveNode->next = newItem;
-				moveNode = newItem;
-			}
-			return nodeHeads;
-		};
+
 	};
 }
