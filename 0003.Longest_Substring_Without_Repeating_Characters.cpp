@@ -10,10 +10,15 @@ namespace Solution3
     #include "0003.Longest_Substring_Without_Repeating_Characters.cpp"
     using namespace Solution3;
     using namespace std;
-
-    Solution3::Longest_Substring_Without_Repeating_Characters useClass;
-    Solution3::Longest_Substring_Without_Repeating_Characters::Longest_Substring_Without_Repeating_Characters_Model getTestModel = useClass.GetTestData001();
-    int result = useClass.lengthOfLongestSubstring(getTestModel.s);
+    
+    int main()
+    {
+    
+        Solution3::Longest_Substring_Without_Repeating_Characters useClass;
+        Solution3::Longest_Substring_Without_Repeating_Characters::Longest_Substring_Without_Repeating_Characters_Model getTestModel = useClass.GetTestData001();
+        int result = useClass.lengthOfLongestSubstring(getTestModel.s);
+        return 0;
+    }
     */
 #pragma endregion Paste to execute
 
@@ -76,7 +81,7 @@ namespace Solution3
         {
             Longest_Substring_Without_Repeating_Characters_Model result;
             result.s = "abcabcbb";
-            return result;
+            return result;//expcet: 3
         };
 
         /// <summary>
@@ -86,7 +91,7 @@ namespace Solution3
         {
             Longest_Substring_Without_Repeating_Characters_Model result;
             result.s = "bbbbb";
-            return result;
+            return result;//expect: 1
         };
 
         /// <summary>
@@ -96,7 +101,7 @@ namespace Solution3
         {
             Longest_Substring_Without_Repeating_Characters_Model result;
             result.s = "pwwkew";
-            return result;
+            return result;//except: 3
         };
 
         /// <summary>
