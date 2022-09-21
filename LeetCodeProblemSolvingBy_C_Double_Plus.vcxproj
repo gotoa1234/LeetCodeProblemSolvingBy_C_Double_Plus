@@ -139,12 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="0016.3Sum_Closet.cpp" />
-    <ClCompile Include="0017.Letter_Combinations_of_a_Phone_Number.cpp" />
-    <ClCompile Include="0019.Remove_Nth_Node_From_End_of_List.cpp" />
-    <ClCompile Include="0020.Valid_Parentheses.cpp" />
-    <ClCompile Include="0018.4Sum.cpp" />
-    <ClCompile Include="0022.Generate_Parentheses.cpp" />
+    <ClCompile Include="0002_Add_Two_Numbers.cpp" />
     <ClCompile Include="0023.Merge_k_Sorted_Lists.cpp" />
     <ClCompile Include="0024.Swap_Nodes_in_Pairs.cpp" />
     <ClCompile Include="0025.Reverse_Nodes_in_k_Group.cpp" />

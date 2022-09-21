@@ -9,11 +9,15 @@ namespace Solution2
     #include "0002_Add_Two_Numbers.cpp"
     using namespace Solution2;
     using namespace std;
-
-    Solution2::Add_Two_Numbers useClass;
-    Solution2::Add_Two_Numbers::Add_Two_Numbers_Model getTestModel = useClass.GetTestData001();
-    Solution2::Add_Two_Numbers::ListNode* result = useClass.addTwoNumbers(getTestModel.l1, getTestModel.l2);
-
+    
+    int main()
+    {
+    
+        Solution2::Add_Two_Numbers useClass;
+        Solution2::Add_Two_Numbers::Add_Two_Numbers_Model getTestModel = useClass.GetTestData001();
+        Solution2::Add_Two_Numbers::ListNode* result = useClass.addTwoNumbers(getTestModel.l1, getTestModel.l2);
+        return 0;
+    }
     */
 #pragma endregion Paste to execute
 
@@ -45,54 +49,25 @@ namespace Solution2
 #pragma region Main
     public:
         ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
-
-            ListNode* resultHead = new ListNode(0);
-            ListNode* moveNode = resultHead;
-            int summary = 0;
-            int digits = 0;
-            int carry = 0;
-            while (l1 && l2)
+            ListNode* head = new ListNode(0);
+            ListNode* moveNode = head;
+            int summary = 0, carry = 0, digit = 0, l1Val = 0, l2Val = 0;
+            while (l1 != nullptr ||
+                   l2 != nullptr ||
+                          carry > 0)
             {
-                summary = (l1->val + l2->val + carry);
-                digits = summary % 10;
+                l1Val = l1 == nullptr ? 0 : l1->val;
+                l2Val = l2 == nullptr ? 0 : l2->val;
+                summary = l1Val + l2Val + carry;
+                digit = summary % 10;
                 carry = summary / 10;
-                ListNode* newItem = new ListNode(digits);
-                l1 = l1->next;
-                l2 = l2->next;
-                moveNode->next = newItem;
-                moveNode = moveNode->next;
-            }
-
-            while (l1)
-            {
-                summary = (l1->val + carry);
-                digits = summary % 10;
-                carry = summary / 10;
-                ListNode* newItem = new ListNode(digits);
-                l1 = l1->next;
-                moveNode->next = newItem;
-                moveNode = moveNode->next;
-            }
-
-            while (l2)
-            {
-                summary = (l2->val + carry);
-                digits = summary % 10;
-                carry = summary / 10;
-                ListNode* newItem = new ListNode(digits);
-                l2 = l2->next;
-                moveNode->next = newItem;
-                moveNode = moveNode->next;
-            }
-
-            if (carry > 0)
-            {
-                ListNode* newItem = new ListNode(carry);
-                moveNode->next = newItem;
+                moveNode->next = new ListNode(digit);
                 moveNode = moveNode->next;
 
+                l1 = l1 == nullptr ? NULL : l1->next;
+                l2 = l2 == nullptr ? NULL : l2->next;
             }
-            return resultHead->next;
+            return head->next;
         }
 #pragma endregion Main
 
@@ -108,7 +83,7 @@ namespace Solution2
             vector<int> l2Vectors = { 5, 6, 4 };
             result.l1 = ConstructNodes(l1Vectors);
             result.l2 = ConstructNodes(l2Vectors);
-            return result;
+            return result;//expect:[7,0,8]
         };
 
         /// <summary>
@@ -119,7 +94,7 @@ namespace Solution2
             Add_Two_Numbers_Model result;
             result.l1 = new ListNode(0);
             result.l2 = new ListNode(0);
-            return result;
+            return result;//expect:[0]
         };
 
         /// <summary>
@@ -132,7 +107,7 @@ namespace Solution2
             vector<int> l2Vectors = { 9,9,9,9 };
             result.l1 = ConstructNodes(l1Vectors);
             result.l2 = ConstructNodes(l2Vectors);
-            return result;
+            return result;//expect :[8,9,9,9,0,0,0,1]
         };
     private:
         ListNode* ConstructNodes(vector<int>& inputDatas)

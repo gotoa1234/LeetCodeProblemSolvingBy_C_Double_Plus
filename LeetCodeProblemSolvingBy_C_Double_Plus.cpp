@@ -1,17 +1,16 @@
-﻿#include "0023.Merge_k_Sorted_Lists.cpp"
-using namespace Solution23;
+﻿#include "0002_Add_Two_Numbers.cpp"
+using namespace Solution2;
 using namespace std;
+
+
 
 int main()
 {
-	Solution23::Merge_k_Sorted_Lists useClass;
-	Solution23::Merge_k_Sorted_Lists::Merge_k_Sorted_Lists_Model getTestModel = useClass.GetTestData001();
-	Solution23::Merge_k_Sorted_Lists::ListNode* result = useClass.mergeKLists(getTestModel.head);
 
-	getTestModel = useClass.GetTestData002();
-	result = useClass.mergeKLists(getTestModel.head);
+	Solution2::Add_Two_Numbers useClass;
+	Solution2::Add_Two_Numbers::Add_Two_Numbers_Model getTestModel = useClass.GetTestData001();
+	Solution2::Add_Two_Numbers::ListNode* result = useClass.addTwoNumbers(getTestModel.l1, getTestModel.l2);
 
-	getTestModel = useClass.GetTestData003();
-	result = useClass.mergeKLists(getTestModel.head);
+
 	return 0;
 }

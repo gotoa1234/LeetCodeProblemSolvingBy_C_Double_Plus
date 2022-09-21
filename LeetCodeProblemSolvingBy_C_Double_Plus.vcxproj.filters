@@ -18,24 +18,6 @@
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="0019.Remove_Nth_Node_From_End_of_List.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0017.Letter_Combinations_of_a_Phone_Number.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0018.4Sum.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0020.Valid_Parentheses.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0016.3Sum_Closet.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0022.Generate_Parentheses.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
     <ClCompile Include="0023.Merge_k_Sorted_Lists.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
@@ -46,6 +28,9 @@
       <Filter>來源檔案</Filter>
     </ClCompile>
     <ClCompile Include="0026.Remove_Duplicates_from_Sorted_Array.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="0002_Add_Two_Numbers.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
   </ItemGroup>
