@@ -54,7 +54,7 @@ namespace Solution23
 #pragma region Main
 	public:
 		/// <summary>
-		///         思路：利用heap-min 最小堆積的 priority_queue 排序所有項目的鍊 -> 接著遍歷priority_queue 每次取出最小的鍊的節點 ->
+		///         思路：最好效能，利用heap-min 最小堆積的 priority_queue 排序所有項目的鍊 -> 接著遍歷priority_queue 每次取出最小的鍊的節點 ->
 		///               然後再依序取出組成一維節點  -> 輸出
 		///      Runtime :   24 ms, faster than 92.87% of C++ online submissions for Merge k Sorted Lists.
 		/// Memory Usage : 13.2 MB,   less than 83.50% of C++ online submissions for Merge k Sorted Lists.
@@ -98,6 +98,39 @@ namespace Solution23
 			return headNode->next;
 		}
 
+
+		/// <summary>
+		/// 解法2 : 最好理解，所有鏈結串鍊先合成，排序一維陣列，然後輸出
+		///  缺點 : 浪費一些記憶體
+		///       Runtime :   24 ms, faster than 92.87% of C++ online submissions for Merge k Sorted Lists.
+		///  Memory Usage : 14.1 MB,   less than 15.69% of C++ online submissions for Merge k Sorted Lists.
+		/// </summary>
+		ListNode* mergeKListsSolve2(vector<ListNode*> lists)
+		{
+			//1. 合併所有串鍊中的元素
+			vector<int> mergeVector;
+			for (int index = 0; index < lists.size(); index++)
+			{
+				ListNode* head = lists[index];
+				while (head)
+				{
+					mergeVector.push_back(head->val);
+					head = head->next;
+				}
+			}
+			//2. 排序該陣列
+			sort(mergeVector.begin(), mergeVector.end());
+
+			ListNode* headNode = new ListNode(0);
+			ListNode* moveNode = headNode;
+			//3. 因為已經由小到大排序故逐一取出成為新的結果
+			for (auto item : mergeVector)
+			{
+				moveNode->next = new ListNode(item);
+				moveNode = moveNode->next;
+			}
+			return headNode->next;
+		};
 #pragma endregion Main
 
 #pragma region TestData
