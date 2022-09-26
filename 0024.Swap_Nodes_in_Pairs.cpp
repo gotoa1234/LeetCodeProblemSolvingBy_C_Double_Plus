@@ -53,9 +53,9 @@ namespace Solution24
 #pragma region Main
 	public:
 		/// <summary>
-		///         思路：
-		///      Runtime:  
-		/// Memory Usage : 
+		///         思路：依照規律，兩兩一對，可以利用遞迴/迴圈的方式，將本次配對的指向節點決定是下一對的哪一個
+		///      Runtime:   3 ms, faster than 75.62% of C++ online submissions for Swap Nodes in Pairs.
+		///Memory Usage : 7.4 MB,   less than 99.68% of C++ online submissions for Swap Nodes in Pairs.
 		/// </summary>
 		/*
 		input: 1 -> 2 -> 3 -> 4 
@@ -63,39 +63,37 @@ namespace Solution24
 		*/
 		ListNode* swapPairs(ListNode* head) {
 
+			//1. 排除沒有元素、1個元素的狀況
 			if (head == nullptr || head->next == nullptr)
 			{
 				return head;
 			}
 			ListNode* result = new ListNode(-1);
-			ListNode* currentHead = head;
-			result->next = swapPairsSubMethod(currentHead);
+			//2. 進入遞迴取結果
+			result->next = swapPairsSubMethod(head);
 			return result->next;
 		}
 		
-		ListNode* swapPairsSubMethod(ListNode* currentHeadNode)//1
+		ListNode* swapPairsSubMethod(ListNode* currentHeadNode)
 		{
+			//3. 如果當前的頭節點為null，可直接回傳
+			if (currentHeadNode == nullptr)
+				return nullptr;
+
+			//4. 紀錄本次配對的節點 A、B
 			ListNode* tmpNextHead = nullptr;
 			ListNode* nodeA = currentHeadNode;
 			ListNode* nodeB = currentHeadNode->next;
-			if (nodeA == nullptr || nodeB == nullptr)
-			{
-				return nodeA;
-			}
-			else
-			{
-				tmpNextHead = nodeB->next;
-				currentHeadNode->next->next = currentHeadNode; //2
-				currentHeadNode->next = currentHeadNode;
-			}
+			//5. B節點為null 必定回傳A節點(前節點)
+			if (nodeB == nullptr)
+				return nodeA;	
+
+			//6. 替換
+		    tmpNextHead = nodeB->next;
 			nodeB->next = nodeA;
 			nodeA->next = swapPairsSubMethod(tmpNextHead);
-
-			if (nodeB != nullptr)
-			{
-
-			}
-			return currentHeadNode->next;
+			//7. 如果配對完整必定是回傳B節點(後節點)
+			return nodeB;
 		}
 
 #pragma endregion Main
