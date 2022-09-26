@@ -96,6 +96,21 @@ namespace Solution24
 			return nodeB;
 		}
 
+
+		/// <summary>
+		/// 最佳解-精簡的遞迴
+		/// </summary>
+		ListNode* swapPairs(ListNode* head)
+		{
+			if (head == NULL || head->next == NULL) {
+				return head;
+			}
+			ListNode* moveNode = head->next;
+			head->next = swapPairs(head->next->next);
+			moveNode->next = head;
+			return moveNode;
+		}
+
 #pragma endregion Main
 
 #pragma region TestData
