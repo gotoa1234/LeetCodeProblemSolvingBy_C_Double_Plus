@@ -57,9 +57,47 @@ namespace Solution24
 		///      Runtime:  
 		/// Memory Usage : 
 		/// </summary>
+		/*
+		input: 1 -> 2 -> 3 -> 4 
+		  out: 2 -> 1 -> 4 -> 3
+		*/
 		ListNode* swapPairs(ListNode* head) {
-			return nullptr;
+
+			if (head == nullptr || head->next == nullptr)
+			{
+				return head;
+			}
+			ListNode* result = new ListNode(-1);
+			ListNode* currentHead = head;
+			result->next = swapPairsSubMethod(currentHead);
+			return result->next;
 		}
+		
+		ListNode* swapPairsSubMethod(ListNode* currentHeadNode)//1
+		{
+			ListNode* tmpNextHead = nullptr;
+			ListNode* nodeA = currentHeadNode;
+			ListNode* nodeB = currentHeadNode->next;
+			if (nodeA == nullptr || nodeB == nullptr)
+			{
+				return nodeA;
+			}
+			else
+			{
+				tmpNextHead = nodeB->next;
+				currentHeadNode->next->next = currentHeadNode; //2
+				currentHeadNode->next = currentHeadNode;
+			}
+			nodeB->next = nodeA;
+			nodeA->next = swapPairsSubMethod(tmpNextHead);
+
+			if (nodeB != nullptr)
+			{
+
+			}
+			return currentHeadNode->next;
+		}
+
 #pragma endregion Main
 
 #pragma region TestData

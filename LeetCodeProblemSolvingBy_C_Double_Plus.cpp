@@ -1,12 +1,17 @@
-﻿#include "0003.Longest_Substring_Without_Repeating_Characters.cpp"
-using namespace Solution3;
+﻿#include "0024.Swap_Nodes_in_Pairs.cpp"
+using namespace Solution24;
 using namespace std;
 
 int main()
 {
+	Solution24::Swap_Nodes_in_Pairs useClass;
+	Solution24::Swap_Nodes_in_Pairs::Swap_Nodes_in_Pairs_Model getTestModel = useClass.GetTestData001();
+	Solution24::Swap_Nodes_in_Pairs::ListNode* result = useClass.swapPairs(getTestModel.head);
 
-	Solution3::Longest_Substring_Without_Repeating_Characters useClass;
-	Solution3::Longest_Substring_Without_Repeating_Characters::Longest_Substring_Without_Repeating_Characters_Model getTestModel = useClass.GetTestData001();
-	int result = useClass.lengthOfLongestSubstring(getTestModel.s);
+	getTestModel = useClass.GetTestData002();
+	result = useClass.swapPairs(getTestModel.head);
+
+	getTestModel = useClass.GetTestData003();
+	result = useClass.swapPairs(getTestModel.head);
 	return 0;
 }
