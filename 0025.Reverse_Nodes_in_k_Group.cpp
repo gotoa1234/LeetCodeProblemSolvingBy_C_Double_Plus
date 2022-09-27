@@ -52,13 +52,39 @@ namespace Solution25
 #pragma region Main
 	public:
 		/// <summary>
-		///         思路：
-		///      Runtime:  
-		/// Memory Usage : 
+		///         思路：利用遞迴，每次判斷是否可取出K個，若是則進行該串列逆向排列，否則就不排序。
+		///      Runtime:     4 ms, faster than 99.96% of C++ online submissions for Reverse Nodes in k-Group.
+		/// Memory Usage : 11.4 MB,   less than 71.97% of C++ online submissions for Reverse Nodes in k - Group.
 		/// </summary>
 	public:
 		ListNode* reverseKGroup(ListNode* head, int k) {
-			return nullptr;
+
+			//1. 如果到終點
+			if (head == nullptr)
+				return head;
+
+			//2. 每次檢核是否足夠組成k個串列，如果不夠則視為到終點
+			ListNode* check = head;
+			for (int index = 0; index < k; index++)
+			{
+				if (check == NULL)
+					return head;
+				check = check->next;
+			}
+
+			//3. 遞迴處理，將該組(k個)節點做倒序，並且記錄該串列的 Head的next 設為下個組的返還結果
+			ListNode* combindNodes = NULL;//組成的結果
+			ListNode* nextHeadNode = NULL;//下一個預期的Head
+			ListNode* moveNode = head;//位移用
+			for (int index = 0; index < k && moveNode; index++)
+			{
+				nextHeadNode = moveNode->next;
+				moveNode->next = combindNodes;
+				combindNodes = moveNode;
+				moveNode = nextHeadNode;
+			}
+			head->next = reverseKGroup(nextHeadNode, k);
+			return combindNodes;
 		}
 #pragma endregion Main
 
@@ -70,9 +96,9 @@ namespace Solution25
 		Reverse_Nodes_in_k_Group_Model GetTestData001(void)
 		{
 			Reverse_Nodes_in_k_Group_Model result;
-			vector<int> input = { 1,1,2 };
+			vector<int> input = { 1,2,3,4,5,6,7 };
 			result.head = ConstructNodes(input);
-			result.k = 2;
+			result.k = 3;
 			return result;//except: [2, 1, 4, 3, 5]
 		};
 

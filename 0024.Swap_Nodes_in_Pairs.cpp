@@ -100,7 +100,7 @@ namespace Solution24
 		/// <summary>
 		/// 最佳解-精簡的遞迴
 		/// </summary>
-		ListNode* swapPairs(ListNode* head)
+		ListNode* swapPairsBestSolution(ListNode* head)
 		{
 			if (head == NULL || head->next == NULL) {
 				return head;
