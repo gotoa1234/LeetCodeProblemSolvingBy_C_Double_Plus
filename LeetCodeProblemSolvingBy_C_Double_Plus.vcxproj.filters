@@ -18,19 +18,16 @@
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="0023.Merge_k_Sorted_Lists.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0024.Swap_Nodes_in_Pairs.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0025.Reverse_Nodes_in_k_Group.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
     <ClCompile Include="0026.Remove_Duplicates_from_Sorted_Array.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="0002_Add_Two_Numbers.cpp">
+    <ClCompile Include="0027.Remove_Element.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="0028.Find_the_Index_of_the_First_Occurrence_in_a_String.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="0029.Divide_Two_Integers.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
   </ItemGroup>

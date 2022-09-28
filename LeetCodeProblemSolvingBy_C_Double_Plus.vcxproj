@@ -139,11 +139,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="0003.Longest_Substring_Without_Repeating_Characters.cpp" />
-    <ClCompile Include="0023.Merge_k_Sorted_Lists.cpp" />
-    <ClCompile Include="0024.Swap_Nodes_in_Pairs.cpp" />
-    <ClCompile Include="0025.Reverse_Nodes_in_k_Group.cpp" />
     <ClCompile Include="0026.Remove_Duplicates_from_Sorted_Array.cpp" />
+    <ClCompile Include="0027.Remove_Element.cpp" />
+    <ClCompile Include="0028.Find_the_Index_of_the_First_Occurrence_in_a_String.cpp" />
+    <ClCompile Include="0029.Divide_Two_Integers.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
