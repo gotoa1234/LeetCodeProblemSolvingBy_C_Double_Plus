@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
 using namespace std;
 
 namespace Solution26
@@ -44,12 +43,22 @@ namespace Solution26
 #pragma region Main
 	public:
 		/// <summary>
-		///         思路：
-		///      Runtime:  
-		/// Memory Usage : 
+		///         思路：難在理解題目，意思是輸入的陣列要將不同的數值由小到大放回輸入的陣列中
+		///               並且回傳一共有幾個不同的數值
+		///      Runtime:   26 ms, faster than 74.46% of C++ online submissions for Remove Duplicates from Sorted Array.
+		///Memory Usage : 18.3 MB,   less than 92.92% of C++ online submissions for Remove Duplicates from Sorted Array.
 		/// </summary>
 		int removeDuplicates(vector<int>& nums) {
-			return {};
+			int recordIndex = 1;
+			for (int index = 1; index < nums.size(); index++)
+			{
+				if (nums[index] != nums[index - 1])
+				{
+					nums[recordIndex] = nums[index];
+					recordIndex++;
+				}
+			}
+			return recordIndex;
 		}
 #pragma endregion Main
 

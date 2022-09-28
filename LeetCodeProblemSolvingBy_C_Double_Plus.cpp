@@ -1,15 +1,14 @@
-﻿#include "0025.Reverse_Nodes_in_k_Group.cpp"
-using namespace Solution25;
+﻿#include "0026.Remove_Duplicates_from_Sorted_Array.cpp"
+using namespace Solution26;
 using namespace std;
 
 int main()
 {
-	Solution25::Reverse_Nodes_in_k_Group useClass;
-	Solution25::Reverse_Nodes_in_k_Group::Reverse_Nodes_in_k_Group_Model getTestModel = useClass.GetTestData001();
-	Solution25::Reverse_Nodes_in_k_Group::ListNode* result = useClass.reverseKGroup(getTestModel.head, getTestModel.k);
+	Solution26::Remove_Duplicates_from_Sorted_Array useClass;
+	Solution26::Remove_Duplicates_from_Sorted_Array::Remove_Duplicates_from_Sorted_Array_Model getTestModel = useClass.GetTestData001();
+	int result = useClass.removeDuplicates(getTestModel.nums);
 
 	getTestModel = useClass.GetTestData002();
-	result = useClass.reverseKGroup(getTestModel.head, getTestModel.k);
-
+	result = useClass.removeDuplicates(getTestModel.nums);
 	return 0;
 }
