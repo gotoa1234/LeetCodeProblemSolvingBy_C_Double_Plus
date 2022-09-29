@@ -1,14 +1,15 @@
-﻿#include "0026.Remove_Duplicates_from_Sorted_Array.cpp"
-using namespace Solution26;
+﻿#include "0027.Remove_Element.cpp"
+using namespace Solution27;
 using namespace std;
 
 int main()
 {
-	Solution26::Remove_Duplicates_from_Sorted_Array useClass;
-	Solution26::Remove_Duplicates_from_Sorted_Array::Remove_Duplicates_from_Sorted_Array_Model getTestModel = useClass.GetTestData001();
-	int result = useClass.removeDuplicates(getTestModel.nums);
+	Solution27::Remove_Element useClass;
+	Solution27::Remove_Element::Remove_Element_Model getTestModel = useClass.GetTestData001();
+	int result = useClass.removeElement(getTestModel.nums, getTestModel.val);
 
 	getTestModel = useClass.GetTestData002();
-	result = useClass.removeDuplicates(getTestModel.nums);
+	result = useClass.removeElement(getTestModel.nums, getTestModel.val);
+
 	return 0;
 }
