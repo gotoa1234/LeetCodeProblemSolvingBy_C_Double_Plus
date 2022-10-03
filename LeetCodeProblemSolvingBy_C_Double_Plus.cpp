@@ -1,15 +1,15 @@
-﻿#include "0027.Remove_Element.cpp"
-using namespace Solution27;
+﻿#include "0011.Container_With_Most_Water.cpp"
+using namespace Solution11;
 using namespace std;
 
 int main()
 {
-	Solution27::Remove_Element useClass;
-	Solution27::Remove_Element::Remove_Element_Model getTestModel = useClass.GetTestData001();
-	int result = useClass.removeElement(getTestModel.nums, getTestModel.val);
+	Solution11::Container_With_Most_Water useClass;
+	Solution11::Container_With_Most_Water::Container_With_Most_Water_Model getTestModel = useClass.GetTestData001();
+	int result = useClass.maxArea(getTestModel.height);
 
 	getTestModel = useClass.GetTestData002();
-	result = useClass.removeElement(getTestModel.nums, getTestModel.val);
+	result = useClass.maxArea(getTestModel.height);
 
 	return 0;
 }

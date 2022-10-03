@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="0011.Container_With_Most_Water.cpp" />
     <ClCompile Include="0026.Remove_Duplicates_from_Sorted_Array.cpp" />
     <ClCompile Include="0027.Remove_Element.cpp" />
     <ClCompile Include="0028.Find_the_Index_of_the_First_Occurrence_in_a_String.cpp" />
