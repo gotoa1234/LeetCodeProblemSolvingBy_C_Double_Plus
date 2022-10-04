@@ -1,15 +1,56 @@
-﻿#include "0011.Container_With_Most_Water.cpp"
-using namespace Solution11;
+﻿#include "0031.Next_Permutation.cpp"
+#include <string> 
+using namespace Solution31;
 using namespace std;
 
 int main()
 {
-	Solution11::Container_With_Most_Water useClass;
-	Solution11::Container_With_Most_Water::Container_With_Most_Water_Model getTestModel = useClass.GetTestData001();
-	int result = useClass.maxArea(getTestModel.height);
+	Solution31::Next_Permutation useClass;
+	Solution31::Next_Permutation::Next_Permutation_Model getTestModel = useClass.GetTestData001();
+	useClass.nextPermutation(getTestModel.nums);
 
 	getTestModel = useClass.GetTestData002();
-	result = useClass.maxArea(getTestModel.height);
+	useClass.nextPermutation(getTestModel.nums);
+
+	getTestModel = useClass.GetTestData003();
+	useClass.nextPermutation(getTestModel.nums);
+
+
+	vector<int> origin = { 1,2,3,4 };
+	vector<int> nums = origin;
+	string record = "";
+	string current = "";
+	do {
+		next_permutation(nums.begin(), nums.end());
+		current = to_string(nums[0]) + " , " + to_string(nums[1]) + " , " + to_string(nums[2]) + " , " + to_string(nums[3]) + "\n";
+		record.append(current);
+	} while (nums != origin);
 
 	return 0;
 }
+/*
+1 , 2 , 3 , 4
+1 , 2 , 4 , 3
+1 , 3 , 2 , 4
+1 , 3 , 4 , 2
+1 , 4 , 2 , 3
+1 , 4 , 3 , 2
+2 , 1 , 3 , 4
+2 , 1 , 4 , 3
+2 , 3 , 1 , 4
+2 , 3 , 4 , 1
+2 , 4 , 1 , 3
+2 , 4 , 3 , 1
+3 , 1 , 2 , 4
+3 , 1 , 4 , 2
+3 , 2 , 1 , 4
+3 , 2 , 4 , 1
+3 , 4 , 1 , 2
+3 , 4 , 2 , 1
+4 , 1 , 2 , 3
+4 , 1 , 3 , 2
+4 , 2 , 1 , 3
+4 , 2 , 3 , 1
+4 , 3 , 1 , 2
+4 , 3 , 2 , 1
+*/

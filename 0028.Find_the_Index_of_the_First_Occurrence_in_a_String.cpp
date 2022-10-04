@@ -17,7 +17,7 @@ namespace Solution28
 		int result = useClass.removeDuplicates(getTestModel.haystack, getTestModel.needle);
 
 		getTestModel = useClass.GetTestData002();
-		result = useClass.removeDuplicates(getTestModel.haystack, getTestModel.needle);
+		result = useClass.strStr(getTestModel.haystack, getTestModel.needle);
 		return 0;
 	}
 	*/
@@ -47,6 +47,7 @@ namespace Solution28
 		///Memory Usage : 
 		/// </summary>
 		int strStr(string haystack, string needle) {
+			
 			return 0;
 		}
 #pragma endregion Main

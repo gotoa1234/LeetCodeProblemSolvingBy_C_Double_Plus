@@ -144,6 +144,7 @@
     <ClCompile Include="0027.Remove_Element.cpp" />
     <ClCompile Include="0028.Find_the_Index_of_the_First_Occurrence_in_a_String.cpp" />
     <ClCompile Include="0029.Divide_Two_Integers.cpp" />
+    <ClCompile Include="0031.Next_Permutation.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
