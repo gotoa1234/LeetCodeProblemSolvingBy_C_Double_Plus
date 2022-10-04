@@ -43,37 +43,72 @@ namespace Solution31
 
 #pragma region Main
 	public:
+
+
+		/* 可利用for迴圈 + next_permutation(nums.begin(), nums.end()); 找出以下順序的排列組合
+            1 , 2 , 3 , 4
+            1 , 2 , 4 , 3
+            1 , 3 , 2 , 4
+            1 , 3 , 4 , 2
+            1 , 4 , 2 , 3
+            1 , 4 , 3 , 2
+            2 , 1 , 3 , 4
+            2 , 1 , 4 , 3
+            2 , 3 , 1 , 4
+            2 , 3 , 4 , 1
+            2 , 4 , 1 , 3
+            2 , 4 , 3 , 1
+            3 , 1 , 2 , 4
+            3 , 1 , 4 , 2
+            3 , 2 , 1 , 4
+            3 , 2 , 4 , 1
+            3 , 4 , 1 , 2
+            3 , 4 , 2 , 1
+            4 , 1 , 2 , 3
+            4 , 1 , 3 , 2
+            4 , 2 , 1 , 3
+            4 , 2 , 3 , 1
+            4 , 3 , 1 , 2
+            4 , 3 , 2 , 1
+        */
 		/// <summary>
-		///          思路：
-		///                
-		///      Runtime : 
-		/// Memory Usage : 
+		///          思路：題意為排列組合，找出下一個組合的項目，以上面的1,2,3,4 為輸入，輸出就要1,2,4,3
+		///                可以利用該排列的邏輯
+		///                Condition 1： 5, 4, 3, 2, 1 必定 1, 2, 3, 4, 5
+		///                              從後往前推 - 找出小於後一個數值的索引
+		///                              從後往前推 - 找出大於nums[anchorIndex] 數值的索引
+		///                Condition 2： 永遠將 anchorIndex 與 replaceIndex 的數值對換
+		///                Condition 3： 永遠將 anchorIndex 之後的數值做倒序排序
+		///      Runtime :    0 ms Beats   100 %
+		/// Memory Usage :   12 MB Beats 74.75 % 
 		/// </summary>
 		void nextPermutation(vector<int>& nums) {
-			int numsCount = nums.size(), k, l;
+			int numsCount = nums.size();
+			int anchorIndex;//從後往前推 - 找出小於後一個數值的索引
+			int replaceIndex;//從後往前推 - 找出大於nums[anchorIndex] 數值的索引
 			//找出是否遞增 or 遞減
-			for (k = numsCount - 2; k >= 0; k--) 
+			for (anchorIndex = numsCount - 2; anchorIndex >= 0; anchorIndex--)
 			{
-				if (nums[k] < nums[k + 1]) {
+				if (nums[anchorIndex] < nums[anchorIndex + 1]) {
 					break;
 				}
 			}
 
-			//
-			if (k < 0) 
-			{
+			//1. 特殊條件 EX: 5, 4, 3, 2, 1 必定 1, 2, 3, 4, 5
+			if (anchorIndex < 0)
 				reverse(nums.begin(), nums.end());
-			}
-			else 
+			else
 			{
-				for (l = numsCount - 1; l > k; l--) 
+				//2-1 找出大於nums[anchorIndex] 數值的索引
+				for (replaceIndex = numsCount - 1; replaceIndex > anchorIndex; replaceIndex--)
 				{
-					if (nums[l] > nums[k]) {
+					if (nums[replaceIndex] > nums[anchorIndex])
 						break;
-					}
 				}
-				swap(nums[k], nums[l]);
-				reverse(nums.begin() + k + 1, nums.end());
+				//2-2 永遠將 anchorIndex 與 replaceIndex 的數值對換
+				swap(nums[anchorIndex], nums[replaceIndex]);
+				//2-3 永遠將 anchorIndex 之後的數值做倒序排序
+				reverse(nums.begin() + anchorIndex + 1, nums.end());
 			}
 		}
 
@@ -94,8 +129,8 @@ namespace Solution31
 		Next_Permutation_Model GetTestData001(void)
 		{
 			Next_Permutation_Model result;
-			result.nums = { 1,2,3 };
-			return result;//except: {1,3,2}
+			result.nums = { 3 , 4 , 1 , 2 };
+			return result;//except: {3 , 4 , 2 , 1}
 		};
 
 		/// <summary>
@@ -104,8 +139,8 @@ namespace Solution31
 		Next_Permutation_Model GetTestData002(void)
 		{
 			Next_Permutation_Model result;
-			result.nums = { 3,2,1 };
-			return result;//except: {1,2,3}
+			result.nums = { 3 , 4 , 2 , 1 };
+			return result;//except: {4 , 1 , 2 , 3}
 		};
 
 		/// <summary>
@@ -114,8 +149,8 @@ namespace Solution31
 		Next_Permutation_Model GetTestData003(void)
 		{
 			Next_Permutation_Model result;
-			result.nums = { 1,1,5 };
-			return result;//except: {1,5,1}
+			result.nums = { 4 , 3 , 2 , 1 };
+			return result;//except: {1 , 2 , 3 , 4}
 		};
 #pragma endregion TestData
 	};
