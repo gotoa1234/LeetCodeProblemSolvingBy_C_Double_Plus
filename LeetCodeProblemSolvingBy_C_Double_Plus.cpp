@@ -1,30 +1,18 @@
-﻿#include "0031.Next_Permutation.cpp"
-#include <string> 
-using namespace Solution31;
+﻿#include "0030.Substring_with_Concatenation_of_All_Words.cpp"
+using namespace Solution30;
 using namespace std;
 
 int main()
 {
-	Solution31::Next_Permutation useClass;
-	Solution31::Next_Permutation::Next_Permutation_Model getTestModel = useClass.GetTestData001();
-	useClass.nextPermutation(getTestModel.nums);
+	Solution30::Substring_with_Concatenation_of_All_Words useClass;
+	Solution30::Substring_with_Concatenation_of_All_Words::Substring_with_Concatenation_of_All_Words_Model getTestModel = useClass.GetTestData001();
+	vector<int> result = useClass.findSubstring(getTestModel.s, getTestModel.words);
 
 	getTestModel = useClass.GetTestData002();
-	useClass.nextPermutation(getTestModel.nums);
+	result = useClass.findSubstring(getTestModel.s, getTestModel.words);
 
 	getTestModel = useClass.GetTestData003();
-	useClass.nextPermutation(getTestModel.nums);
-
-
-	vector<int> origin = { 1,2,3,4 };
-	vector<int> nums = origin;
-	string record = "";
-	string current = "";
-	do {
-		next_permutation(nums.begin(), nums.end());
-		current = to_string(nums[0]) + " , " + to_string(nums[1]) + " , " + to_string(nums[2]) + " , " + to_string(nums[3]) + "\n";
-		record.append(current);
-	} while (nums != origin);
+	result = useClass.findSubstring(getTestModel.s, getTestModel.words);
 
 	return 0;
 }

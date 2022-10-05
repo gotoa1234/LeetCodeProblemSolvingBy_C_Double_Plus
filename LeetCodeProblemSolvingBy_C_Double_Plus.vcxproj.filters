@@ -36,5 +36,8 @@
     <ClCompile Include="0031.Next_Permutation.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="0030.Substring_with_Concatenation_of_All_Words.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
