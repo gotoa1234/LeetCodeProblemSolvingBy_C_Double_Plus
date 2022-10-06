@@ -18,26 +18,17 @@
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="0026.Remove_Duplicates_from_Sorted_Array.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0027.Remove_Element.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0028.Find_the_Index_of_the_First_Occurrence_in_a_String.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0029.Divide_Two_Integers.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0011.Container_With_Most_Water.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
     <ClCompile Include="0031.Next_Permutation.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
     <ClCompile Include="0030.Substring_with_Concatenation_of_All_Words.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Mysql\0175.Combine_Two_Tables.sql" />
+    <None Include="Mysql\0176.Second_Highest_Salary.sql" />
+    <None Include="Mysql\0181.Employees_Earning_More_Than_Their_Managers.sql" />
+    <None Include="Mysql\0178.Rank_Scores.sql" />
   </ItemGroup>
 </Project>
