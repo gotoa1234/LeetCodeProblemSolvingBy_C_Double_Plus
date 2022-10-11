@@ -24,6 +24,9 @@
     <ClCompile Include="0030.Substring_with_Concatenation_of_All_Words.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="0033.Search_in_Rotated_Sorted_Array.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Mysql\0175.Combine_Two_Tables.sql" />
