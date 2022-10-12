@@ -12,16 +12,13 @@ namespace Solution36
 
 	int main()
 	{
+	    bool result;
 		Solution36::Find_First_and_Last_Position_of_Element_in_Sorted_Array useClass;
 		Solution36::Find_First_and_Last_Position_of_Element_in_Sorted_Array::Find_First_and_Last_Position_of_Element_in_Sorted_Array_Model getTestModel = useClass.GetTestData001();
-		bool result = useClass.isValidSudoku(getTestModel.board);
+		result = useClass.isValidSudoku(getTestModel.board);
 
 		getTestModel = useClass.GetTestData002();
 		result = useClass.isValidSudoku(getTestModel.board);
-
-		getTestModel = useClass.GetTestData003();
-		result = useClass.isValidSudoku(getTestModel.board);
-
 		return 0;
 	}
 	*/
@@ -49,10 +46,29 @@ namespace Solution36
 		///Memory Usage ： 
 		/// </summary>
 		bool isValidSudoku(vector<vector<char>>& board) {
+			int used1[9][9] = { 0 }; //檢查每一行
+			int used2[9][9] = { 0 };//檢查每一列
+			int used3[9][9] = { 0 };//勾選每個子框
 
-
-
-			return false;
+			for (int xAxis = 0; xAxis < board.size(); ++xAxis)
+			{
+				for (int yAxis = 0; yAxis < board[xAxis].size(); ++yAxis)
+				{
+					if (board[xAxis][yAxis] != '.')
+					{
+						int num = board[xAxis][yAxis] - '0' - 1;
+						int xSubBoxAxis = xAxis / 3 * 3 + yAxis / 3;
+						if (used1[xAxis][num] ||
+							used2[yAxis][num] ||
+							used3[xSubBoxAxis][num])
+						{
+							return false;
+						}
+						used1[xAxis][num] = used2[yAxis][num] = used3[xSubBoxAxis][num] = 1;
+					}
+				}
+			}
+			return true;
 		}
 #pragma endregion Main
 

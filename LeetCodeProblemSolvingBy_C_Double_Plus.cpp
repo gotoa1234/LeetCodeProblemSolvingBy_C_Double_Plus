@@ -1,21 +1,15 @@
-﻿#include "0035.Search_Insert_Position.cpp"
-using namespace Solution35;
+﻿#include "0036.Valid_Sudoku.cpp"
+using namespace Solution36;
 using namespace std;
 
 int main()
 {
-	int result = 0;
-	Solution35::Search_Insert_Position useClass;
-	Solution35::Search_Insert_Position::Search_Insert_Position_Model getTestModel = useClass.GetTestData001();
-	result = useClass.searchInsert(getTestModel.nums, getTestModel.target);
+	bool result;
+	Solution36::Find_First_and_Last_Position_of_Element_in_Sorted_Array useClass;
+	Solution36::Find_First_and_Last_Position_of_Element_in_Sorted_Array::Find_First_and_Last_Position_of_Element_in_Sorted_Array_Model getTestModel = useClass.GetTestData001();
+	result = useClass.isValidSudoku(getTestModel.board);
 
 	getTestModel = useClass.GetTestData002();
-	result = useClass.searchInsert(getTestModel.nums, getTestModel.target);
-
-	getTestModel = useClass.GetTestData003();
-	result = useClass.searchInsert(getTestModel.nums, getTestModel.target);
-
-	getTestModel = useClass.GetTestData004();
-	result = useClass.searchInsert(getTestModel.nums, getTestModel.target);
+	result = useClass.isValidSudoku(getTestModel.board);
 	return 0;
 }
