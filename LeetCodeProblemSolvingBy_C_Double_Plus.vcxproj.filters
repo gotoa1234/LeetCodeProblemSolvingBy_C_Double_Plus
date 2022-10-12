@@ -30,6 +30,12 @@
     <ClCompile Include="0034.Find_First_and_Last_Position_of_Element_in_Sorted_Array.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="0036.Valid_Sudoku.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="0035.Search_Insert_Position.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Mysql\0175.Combine_Two_Tables.sql" />

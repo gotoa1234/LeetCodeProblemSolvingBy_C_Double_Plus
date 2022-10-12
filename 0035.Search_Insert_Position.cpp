@@ -14,13 +14,13 @@ namespace Solution35
 	{
 		Solution35::Search_Insert_Position useClass;
 		Solution35::Search_Insert_Position::Search_Insert_Position_Model getTestModel = useClass.GetTestData001();
-		vector<int> result = useClass.searchRange(getTestModel.nums, getTestModel.target);
+		int result = useClass.searchInsert(getTestModel.nums, getTestModel.target);
 
 		getTestModel = useClass.GetTestData002();
-		result = useClass.searchRange(getTestModel.nums, getTestModel.target);
+		result = useClass.searchInsert(getTestModel.nums, getTestModel.target);
 
 		getTestModel = useClass.GetTestData003();
-		result = useClass.searchRange(getTestModel.nums, getTestModel.target);
+		result = useClass.searchInsert(getTestModel.nums, getTestModel.target);
 
 		return 0;
 	}
@@ -28,7 +28,7 @@ namespace Solution35
 #pragma endregion Paste to execute
 
 	/// <summary>
-	/// 在旋轉排序數組中搜索
+	/// 查詢適合插入位置的索引
 	/// </summary>
 	class Search_Insert_Position
 	{
@@ -45,12 +45,27 @@ namespace Solution35
 #pragma region Main
 	public:
 		/// <summary>
-		///     thinking： 
-		///      Runtime： 
-		///Memory Usage ： 
+		///      thinking： 二分搜尋法查出索引位置，因為題目的Array已經排序
+		///       Runtime：   3 ms Beats 95.55 %
+		/// Memory Usage ： 9.7 MB Beats 71.67 %
 		/// </summary>
 		int searchInsert(vector<int>& nums, int target) {
-			return 0;
+			int leftIndex = 0;
+			int rightIndex = nums.size() - 1;
+			int middleIndex = 0;
+			while (leftIndex <= rightIndex)
+			{
+				middleIndex = (rightIndex + leftIndex) / 2;
+				if (nums[middleIndex] == target)
+					return middleIndex;
+
+				if (target < nums[middleIndex])
+					rightIndex = middleIndex - 1;
+				else
+					leftIndex = middleIndex + 1;
+			}
+			return leftIndex;
+			
 		}
 #pragma endregion Main
 
@@ -87,6 +102,17 @@ namespace Solution35
 			result.nums = { 1,3,5,6 };
 			result.target = 7;
 			return result;//except: 4
+		};
+
+		/// <summary>
+		/// test data 4
+		/// </summary>   
+		Search_Insert_Position_Model GetTestData004(void)
+		{
+			Search_Insert_Position_Model result;
+			result.nums = { 1};
+			result.target = 1;
+			return result;//except: 0
 		};
 #pragma endregion TestData
 
