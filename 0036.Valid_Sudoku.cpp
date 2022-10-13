@@ -13,8 +13,8 @@ namespace Solution36
 	int main()
 	{
 	    bool result;
-		Solution36::Find_First_and_Last_Position_of_Element_in_Sorted_Array useClass;
-		Solution36::Find_First_and_Last_Position_of_Element_in_Sorted_Array::Find_First_and_Last_Position_of_Element_in_Sorted_Array_Model getTestModel = useClass.GetTestData001();
+		Solution36::Valid_Sudoku useClass;
+		Solution36::Valid_Sudoku::Valid_Sudoku_Model getTestModel = useClass.GetTestData001();
 		result = useClass.isValidSudoku(getTestModel.board);
 
 		getTestModel = useClass.GetTestData002();
@@ -27,11 +27,11 @@ namespace Solution36
 	/// <summary>
 	/// §PÂ_¬O§_¬°¼Æ¿Wª©
 	/// </summary>
-	class Find_First_and_Last_Position_of_Element_in_Sorted_Array
+	class Valid_Sudoku
 	{
 #pragma region Model
 	public:
-		class Find_First_and_Last_Position_of_Element_in_Sorted_Array_Model
+		class Valid_Sudoku_Model
 		{
 		public:
 			vector<vector<char>> board;
@@ -81,9 +81,9 @@ namespace Solution36
 		/// <summary>
 		/// test data 1
 		/// </summary>        
-		Find_First_and_Last_Position_of_Element_in_Sorted_Array_Model GetTestData001(void)
+		Valid_Sudoku_Model GetTestData001(void)
 		{
-			Find_First_and_Last_Position_of_Element_in_Sorted_Array_Model result;
+			Valid_Sudoku_Model result;
 			result.board = {
 				  {'5', '3', '.', '.', '7', '.', '.', '.', '.'}
 				, {'6', '.', '.', '1', '9', '5', '.', '.', '.'}
@@ -101,9 +101,9 @@ namespace Solution36
 		/// <summary>
 		/// test data 2
 		/// </summary>   
-		Find_First_and_Last_Position_of_Element_in_Sorted_Array_Model GetTestData002(void)
+		Valid_Sudoku_Model GetTestData002(void)
 		{
-			Find_First_and_Last_Position_of_Element_in_Sorted_Array_Model result;
+			Valid_Sudoku_Model result;
 			result.board = {
 				  {'8', '3', '.', '.', '7', '.', '.', '.', '.'}
 				, {'6', '.', '.', '1', '9', '5', '.', '.', '.'}

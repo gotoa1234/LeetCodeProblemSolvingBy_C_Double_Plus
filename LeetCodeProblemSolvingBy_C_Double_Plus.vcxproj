@@ -141,6 +141,21 @@
   <ItemGroup>
     <ClCompile Include="0036.Valid_Sudoku.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
+    <ClCompile Include="0037.Sudoku_Solver.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Mysql\0177.Nth_Highest_Salary.sql" />
+    <None Include="Mysql\0184.Department_Highest_Salary.sql" />
+    <None Include="Mysql\0185.Department_Top_Three_Salaries.sql" />
+    <None Include="Mysql\0262.Trips_and_Users.sql" />
+    <None Include="Mysql\0596.Classes_More_Than_5_Students.sql" />
+    <None Include="Mysql\0601.Human_Traffic_of_Stadium.sql" />
+    <None Include="Mysql\0607.Sales_Person.sql" />
+    <None Include="Mysql\0608.Tree_Node.sql" />
+    <None Include="Mysql\0620.Not_Boring_Movies.sql" />
+    <None Include="Mysql\0626.Exchange_Seats.sql" />
+    <None Include="Mysql\0627.Swap_Salary.sql" />
+    <None Include="Mysql\1050.Actors_and_Directors_Who_Cooperated_At_Least_Three_Times.sql" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
