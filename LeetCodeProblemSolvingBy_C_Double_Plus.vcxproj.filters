@@ -18,29 +18,8 @@
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="0031.Next_Permutation.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0030.Substring_with_Concatenation_of_All_Words.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0033.Search_in_Rotated_Sorted_Array.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0034.Find_First_and_Last_Position_of_Element_in_Sorted_Array.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
     <ClCompile Include="0036.Valid_Sudoku.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="0035.Search_Insert_Position.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Mysql\0175.Combine_Two_Tables.sql" />
-    <None Include="Mysql\0176.Second_Highest_Salary.sql" />
-    <None Include="Mysql\0181.Employees_Earning_More_Than_Their_Managers.sql" />
-    <None Include="Mysql\0178.Rank_Scores.sql" />
   </ItemGroup>
 </Project>
