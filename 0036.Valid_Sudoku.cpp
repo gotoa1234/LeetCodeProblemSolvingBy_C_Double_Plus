@@ -41,31 +41,35 @@ namespace Solution36
 #pragma region Main
 	public:
 		/// <summary>
-		///     thinking： 
-		///      Runtime： 
-		///Memory Usage ： 
+		///     thinking： 時間複雜度 O(n^2) 核心為檢核3種狀況, 
+		///                1. 檢查數字是否在9宮格中已出現 
+		///                2. 檢查數字是否在row中已出現 
+		///                3. 檢查數字是否在column中已出現
+		///                利用3個陣列，每次抓到[x][y] 上的數字放進上面的3個檢核的陣列中標記，每次跑下一個[x][y] 時若有數字就檢查是否已存在
+		///                已存在標記表示重複; 若全部跑完都沒重複表示合法
+		///       Runtime：   21 ms Beats 93.66 %
+		/// Memory Usage ： 18.1 MB Beats 71.22 %
 		/// </summary>
 		bool isValidSudoku(vector<vector<char>>& board) {
-			int used1[9][9] = { 0 }; //檢查每一行
-			int used2[9][9] = { 0 };//檢查每一列
-			int used3[9][9] = { 0 };//勾選每個子框
-
-			for (int xAxis = 0; xAxis < board.size(); ++xAxis)
+			int rowCheck[9][9] = { 0 };//檢查每一行(橫)
+			int columnCheck[9][9] = { 0 };//檢查每一列(直)
+			int subBoxCheck[9][9] = { 0 };//勾選每個子框(9宮格框)
+			int numberAxis = 0, ySubboxAxis = 0;
+			for (int yAxis = 0; yAxis < board.size(); yAxis++)
 			{
-				for (int yAxis = 0; yAxis < board[xAxis].size(); ++yAxis)
+				for (int xAxis = 0; xAxis < board[yAxis].size(); xAxis++)
 				{
-					if (board[xAxis][yAxis] != '.')
+					if (board[yAxis][xAxis] == '.')
+						continue;
+					numberAxis = board[yAxis][xAxis] - '0' - 1;//數字轉索引
+					ySubboxAxis = yAxis / 3 * 3 + xAxis / 3;
+					if (subBoxCheck[ySubboxAxis][numberAxis] ||
+						rowCheck[xAxis][numberAxis] ||
+						columnCheck[yAxis][numberAxis])
 					{
-						int num = board[xAxis][yAxis] - '0' - 1;
-						int xSubBoxAxis = xAxis / 3 * 3 + yAxis / 3;
-						if (used1[xAxis][num] ||
-							used2[yAxis][num] ||
-							used3[xSubBoxAxis][num])
-						{
-							return false;
-						}
-						used1[xAxis][num] = used2[yAxis][num] = used3[xSubBoxAxis][num] = 1;
+						return false;
 					}
+					subBoxCheck[ySubboxAxis][numberAxis] = rowCheck[xAxis][numberAxis] = columnCheck[yAxis][numberAxis] = 1;
 				}
 			}
 			return true;

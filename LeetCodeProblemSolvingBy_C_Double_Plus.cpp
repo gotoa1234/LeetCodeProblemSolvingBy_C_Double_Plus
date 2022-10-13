@@ -1,4 +1,5 @@
 ﻿#include "0036.Valid_Sudoku.cpp"
+#include <string> 
 using namespace Solution36;
 using namespace std;
 
