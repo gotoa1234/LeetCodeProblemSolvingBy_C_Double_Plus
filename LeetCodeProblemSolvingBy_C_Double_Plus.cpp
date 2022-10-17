@@ -1,16 +1,15 @@
-﻿#include "0036.Valid_Sudoku.cpp"
-#include <string> 
-using namespace Solution36;
+﻿
+#include "0037.Sudoku_Solver.cpp"
+using namespace Solution37;
 using namespace std;
 
 int main()
 {
-	bool result;
-	Solution36::Find_First_and_Last_Position_of_Element_in_Sorted_Array useClass;
-	Solution36::Find_First_and_Last_Position_of_Element_in_Sorted_Array::Find_First_and_Last_Position_of_Element_in_Sorted_Array_Model getTestModel = useClass.GetTestData001();
-	result = useClass.isValidSudoku(getTestModel.board);
+	Solution37::Sudoku_Solver useClass;
+	Solution37::Sudoku_Solver::Sudoku_Solver_Model getTestModel = useClass.GetTestData001();
+	useClass.solveSudoku(getTestModel.board);
 
 	getTestModel = useClass.GetTestData002();
-	result = useClass.isValidSudoku(getTestModel.board);
+	useClass.solveSudoku(getTestModel.board);
 	return 0;
 }
