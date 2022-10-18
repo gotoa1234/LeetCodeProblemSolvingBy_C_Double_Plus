@@ -41,22 +41,17 @@ namespace Solution37
 #pragma region Main
 	public:
 		/// <summary>
-		///     thinking： 
-		///                
-		///                
-		///                
-		///                
-		///                
-		///       Runtime：
-		/// Memory Usage ：
+		///     thinking： 先將題目的所有數字標記 行、列、子9宮格 對應的位置為1
+		///                接著從 0,0 (x,y) 開始遍歷，直到跑到 8,8 (x,y) 
+		///                每走一步時，判斷是否為 '.' 是的話進入遞迴傳一個可以塞的數字 (檢核行、列、子9)
+		///                每當錯誤時回滾塞入的數值，並且x,y的值+1 嘗試下個值是否可以填寫 
+		///       Runtime：  3 ms Beats 99.35 %
+		/// Memory Usage ：6.4 MB Beats	52.00 %
 		/// </summary>
 		int _rowCheck[9][9] = { 0 };//檢查每一行(橫)
 		int _columnCheck[9][9] = { 0 };//檢查每一列(直)
 		int _subBoxCheck[9][9] = { 0 };//勾選每個子框(9宮格框)
 		void solveSudoku(vector<vector<char>>& board) {
-			//_rowCheck = vector<vector<int>>(9, vector<int>(10));
-			//_columnCheck = vector<vector<int>>(9, vector<int>(10));
-			//_subBoxCheck = vector<vector<int>>(9, vector<int>(10));
 			int numberAxis = 0;
 			int ySubboxAxis = 0;
 			char number = ' ';
@@ -73,41 +68,43 @@ namespace Solution37
 					}
 				}
 			//2. 由座標 x,y (0,0)開始
-			fill(board, 0, 0);
+			FillNumber(board, 0, 0);
 		}
 
 	private:
-
-		//vector<vector<int>> _rowCheck, _columnCheck, _subBoxCheck;
-
-		bool fill(vector<vector<char>>& board, int x, int y) {
-			if (y == 9)
+		bool FillNumber(vector<vector<char>>& board, int xAxis, int yAxis) {
+			//走到底跳出
+			if (yAxis == 9)
 				return true;
 
-			int nx = (x + 1) % 9;
-			int ny = (nx == 0) ? y + 1 : y;
+			//先決定下個步數是多少
+			int netxXAxis = (xAxis + 1) % 9;
+			int nextYAxis = (netxXAxis == 0) ? yAxis + 1 : yAxis;
 
-			if (board[y][x] != '.') 
-				return fill(board, nx, ny);
+			//如果本次步數是空白，先規劃出下一個步數
+			if (board[yAxis][xAxis] != '.') 
+				return FillNumber(board, netxXAxis, nextYAxis);
 
-			for (int i = 0; i < 9; i++) {
-				int bx = x / 3;
-				int by = y / 3;
-				int box_key = by * 3 + bx;
-				if (!_rowCheck[y][i] && !_columnCheck[x][i] && !_subBoxCheck[box_key][i]) 
+			//檢查3個表格的 0~8的位置 (也就是1~9號)
+			for (int index = 0; index < 9; index++) 
+			{
+				int ySubboxAxis = yAxis / 3 * 3 + xAxis / 3;
+				if (!_rowCheck[yAxis][index] && !_columnCheck[xAxis][index] && !_subBoxCheck[ySubboxAxis][index])
 				{
-					_rowCheck[y][i] = 1;
-					_columnCheck[x][i] = 1;
-					_subBoxCheck[box_key][i] = 1;
-					board[y][x] = i + '0';
-					if (fill(board, nx, ny)) 
+					//嘗試寫一個數值在Board[y軸][x軸]上
+					_rowCheck[yAxis][index] = _columnCheck[xAxis][index] = _subBoxCheck[ySubboxAxis][index] = 1;
+					board[yAxis][xAxis] = index + '0' + 1;//索引轉數字
+					if (FillNumber(board, netxXAxis, nextYAxis))
+					{
+						//合法可以填的數值
 						return true;
-					board[y][x] = '.';
-					_subBoxCheck[box_key][i] = 0;
-					_columnCheck[x][i] = 0;
-					_rowCheck[y][i] = 0;
+					}
+					//重置吧，此路不通全都Revrt
+					board[yAxis][xAxis] = '.';
+					_subBoxCheck[ySubboxAxis][index] = _columnCheck[xAxis][index] = _rowCheck[yAxis][index] = 0;
 				}
 			}
+			//上面3個表格都走過，表示已無欄位可塞入，可以結束
 			return false;
 		}
 #pragma endregion Main
