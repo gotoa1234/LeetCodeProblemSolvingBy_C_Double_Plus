@@ -67,25 +67,25 @@ namespace Solution37
 						_rowCheck[yAxis][numberAxis] = _columnCheck[xAxis][numberAxis] = _subBoxCheck[ySubboxAxis][numberAxis] = 1;
 					}
 				}
-			//2. 由座標 x,y (0,0)開始
+			//2. 由座標 x,y (0,0)開始 => 由左至右(x軸)，由上至下(y軸)
 			FillNumber(board, 0, 0);
 		}
 
 	private:
-		bool FillNumber(vector<vector<char>>& board, int xAxis, int yAxis) {
-			//走到底跳出
+		bool FillNumber(vector<vector<char>>& board, int yAxis, int xAxis) {
+			//y軸為9表示走到底跳出
 			if (yAxis == 9)
 				return true;
 
-			//先決定下個步數是多少
-			int netxXAxis = (xAxis + 1) % 9;
-			int nextYAxis = (netxXAxis == 0) ? yAxis + 1 : yAxis;
-
+			//先計算下一步的x,y ※逐步由左至右(x軸)，然後由上至下(y軸)
+			int nextXAxis = xAxis + 1 == 9 ? 0 : xAxis + 1;
+			int nextYAxis = (nextXAxis == 0) ? yAxis + 1 : yAxis;
+			
 			//如果本次步數是空白，先規劃出下一個步數
-			if (board[yAxis][xAxis] != '.') 
-				return FillNumber(board, netxXAxis, nextYAxis);
+			if (board[yAxis][xAxis] != '.')
+				return FillNumber(board, nextYAxis, nextXAxis);
 
-			//檢查3個表格的 0~8的位置 (也就是1~9號)
+			//檢查3個表格的 0~8的位置 (也就是1~9的數字)
 			for (int index = 0; index < 9; index++) 
 			{
 				int ySubboxAxis = yAxis / 3 * 3 + xAxis / 3;
@@ -94,14 +94,13 @@ namespace Solution37
 					//嘗試寫一個數值在Board[y軸][x軸]上
 					_rowCheck[yAxis][index] = _columnCheck[xAxis][index] = _subBoxCheck[ySubboxAxis][index] = 1;
 					board[yAxis][xAxis] = index + '0' + 1;//索引轉數字
-					if (FillNumber(board, netxXAxis, nextYAxis))
+					if (FillNumber(board, nextYAxis, nextXAxis))
 					{
-						//合法可以填的數值
 						return true;
 					}
-					//重置吧，此路不通全都Revrt
+					//此路不通退回上一步
 					board[yAxis][xAxis] = '.';
-					_subBoxCheck[ySubboxAxis][index] = _columnCheck[xAxis][index] = _rowCheck[yAxis][index] = 0;
+					_rowCheck[yAxis][index] = _columnCheck[xAxis][index] = _subBoxCheck[ySubboxAxis][index] = 0;
 				}
 			}
 			//上面3個表格都走過，表示已無欄位可塞入，可以結束
