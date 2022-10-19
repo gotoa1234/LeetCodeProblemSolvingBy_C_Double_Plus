@@ -24,6 +24,9 @@
     <ClCompile Include="0037.Sudoku_Solver.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="0038.Count_and_Say.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Mysql\0177.Nth_Highest_Salary.sql" />
