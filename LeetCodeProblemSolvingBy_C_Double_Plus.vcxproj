@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="0036.Valid_Sudoku.cpp" />
     <ClCompile Include="0038.Count_and_Say.cpp" />
+    <ClCompile Include="0039.Combination_Sum.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
     <ClCompile Include="0037.Sudoku_Solver.cpp" />
   </ItemGroup>
