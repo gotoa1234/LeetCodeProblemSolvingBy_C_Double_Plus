@@ -1,15 +1,18 @@
-﻿#include "0038.Count_and_Say.cpp"
-using namespace Solution38;
+﻿#include "0039.Combination_Sum.cpp"
+using namespace Solution39;
 using namespace std;
 
 int main()
 {
-	string result = "";
-	Solution38::Count_and_Say useClass;
-	Solution38::Count_and_Say::Count_and_Say_Model getTestModel = useClass.GetTestData001();
-	result = useClass.countAndSay(getTestModel.n);
+	vector<vector<int>> result = {};
+	Solution39::Combination_Sum useClass;
+	Solution39::Combination_Sum::Combination_Sum_Model getTestModel = useClass.GetTestData001();
+	result = useClass.combinationSum(getTestModel.candidates, getTestModel.target);
 
 	getTestModel = useClass.GetTestData002();
-	result = useClass.countAndSay(getTestModel.n);
+	result = useClass.combinationSum(getTestModel.candidates, getTestModel.target);
+
+	getTestModel = useClass.GetTestData003();
+	result = useClass.combinationSum(getTestModel.candidates, getTestModel.target);
 	return 0;
 }
