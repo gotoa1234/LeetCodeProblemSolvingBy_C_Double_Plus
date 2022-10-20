@@ -48,8 +48,8 @@ namespace Solution39
 	public:
 		/// <summary>
 		///     thinking： 利用遞迴DFS，先排序由小到大，然後由第Vector<int>第0個開始窮舉法到最後，組成所有解
-		///       Runtime：
-		/// Memory Usage ：
+		///       Runtime：  3 ms Beats 97.85 %
+		/// Memory Usage ： 11 MB Beats 66.92 %
 		/// </summary>
 		vector<vector<int>> _result = {};
 		vector<int> _combinations = {};
@@ -58,12 +58,12 @@ namespace Solution39
 			//1. 排序資料由小到大
 			sort(candidates.begin(), candidates.end());
 			//2. 進行遞迴
-			Sum(candidates, target, 0);
+			FindCombination(candidates, target, 0);
 
 			return _result;
 		}
 
-		void Sum(vector<int>& candidates, int target, int moveIndex)
+		void FindCombination(vector<int>& candidates, int target, int moveIndex)
 		{
 			//3. 每次遞迴 target 都會被減去一個值，當target為0時，表示組成的 _combinations就是答案
 			if (target == 0)
@@ -73,23 +73,19 @@ namespace Solution39
 			}
 
 			//4. index 由0到最後，每次減少當前值，若為負數表示當前值不合適需要
-			while (moveIndex < candidates.size() && 
-				   target - candidates[moveIndex] >= 0
+			while (moveIndex < candidates.size() &&
+				target - candidates[moveIndex] >= 0
 				)
 			{
 				//5. 每次將一個值放入
 				_combinations.push_back(candidates[moveIndex]);
-				Sum(candidates, target - candidates[moveIndex], moveIndex);
+				FindCombination(candidates, target - candidates[moveIndex], moveIndex);
 				//6. 當找到或者沒找到時都會往下個值前進(準備當下個遞迴的當前值)
 				moveIndex++;
 				_combinations.pop_back();
 			}
 			return;
 		}
-
-
-	
-
 #pragma endregion Main
 
 #pragma region TestData
