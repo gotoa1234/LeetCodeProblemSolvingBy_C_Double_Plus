@@ -1,18 +1,14 @@
-﻿#include "0039.Combination_Sum.cpp"
-using namespace Solution39;
+﻿#include "0037.Sudoku_Solver.cpp"
+using namespace Solution37;
 using namespace std;
 
 int main()
 {
-	vector<vector<int>> result = {};
-	Solution39::Combination_Sum useClass;
-	Solution39::Combination_Sum::Combination_Sum_Model getTestModel = useClass.GetTestData001();
-	result = useClass.combinationSum(getTestModel.candidates, getTestModel.target);
+    Solution37::Sudoku_Solver useClass;
+    Solution37::Sudoku_Solver::Sudoku_Solver_Model getTestModel = useClass.GetTestData001();
+    useClass.solveSudoku(getTestModel.board);
 
-	getTestModel = useClass.GetTestData002();
-	result = useClass.combinationSum(getTestModel.candidates, getTestModel.target);
-
-	getTestModel = useClass.GetTestData003();
-	result = useClass.combinationSum(getTestModel.candidates, getTestModel.target);
-	return 0;
+    getTestModel = useClass.GetTestData002();
+    useClass.solveSudoku(getTestModel.board);
+    return 0;
 }

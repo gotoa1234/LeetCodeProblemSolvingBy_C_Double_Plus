@@ -146,6 +146,7 @@
     <ClCompile Include="0037.Sudoku_Solver.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="0032.Longest_Valid_Parentheses.cpp" />
     <None Include="Mysql\0177.Nth_Highest_Salary.sql" />
     <None Include="Mysql\0184.Department_Highest_Salary.sql" />
     <None Include="Mysql\0185.Department_Top_Three_Salaries.sql" />
