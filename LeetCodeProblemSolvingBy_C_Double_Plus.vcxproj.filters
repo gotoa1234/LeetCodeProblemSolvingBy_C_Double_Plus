@@ -18,16 +18,10 @@
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="0036.Valid_Sudoku.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0037.Sudoku_Solver.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0038.Count_and_Say.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
     <ClCompile Include="0039.Combination_Sum.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="0040.Combination_Sum_II.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
   </ItemGroup>
@@ -44,6 +38,5 @@
     <None Include="Mysql\0626.Exchange_Seats.sql" />
     <None Include="Mysql\0627.Swap_Salary.sql" />
     <None Include="Mysql\1050.Actors_and_Directors_Who_Cooperated_At_Least_Three_Times.sql" />
-    <None Include="0032.Longest_Valid_Parentheses.cpp" />
   </ItemGroup>
 </Project>
