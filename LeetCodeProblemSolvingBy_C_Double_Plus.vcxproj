@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="0039.Combination_Sum.cpp" />
     <ClCompile Include="0040.Combination_Sum_II.cpp" />
+    <ClCompile Include="0041.First_Missing_Positive.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
   </ItemGroup>
   <ItemGroup>
