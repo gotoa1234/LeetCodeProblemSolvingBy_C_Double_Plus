@@ -12,7 +12,11 @@ int main()
 	getTestModel = useClass.GetTestData002();
 	result = useClass.firstMissingPositive(getTestModel.nums);
 	int result2 = useClass.firstMissingPositive_in_place_hashing(getTestModel.nums);
+	int result3 = useClass.firstMissingPositive_in_place_hashing_AND_Partition(getTestModel.nums);
+
 	getTestModel = useClass.GetTestData003();
 	result = useClass.firstMissingPositive(getTestModel.nums);
+	result3 = useClass.firstMissingPositive_in_place_hashing_AND_Partition(getTestModel.nums);
+
 	return 0;
 }

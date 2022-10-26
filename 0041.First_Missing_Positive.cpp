@@ -85,7 +85,7 @@ namespace Solution41
 
 		/// <summary>
 		///      thinking：散列(不使用HashTable)
-	    ///       Runtime：   78 ms Beats 74.39 %
+	    ///       Runtime：   56 ms Beats 87.62 %
 		/// Memory Usage ： 31.2 MB Beats 98.80 %
 		/// </summary>
 		/// <returns></returns>
@@ -131,7 +131,15 @@ namespace Solution41
 		}
 
 		/// <summary>
-		///      thinking：  散列 + 切割區分 (速度通常比純散列更快)
+		///      thinking：  散列 + 切割區分 (時間複雜度略多O(n)，所以通常比純散列慢)
+		///                 拆成3步驟
+		///                1. 前置處理: 將所有 小於等於0 的元素 設為陣列大小 +1 的值  Time: O(n)
+		///                2. 交換位置: 每個元素中 大於等於1 且 小於等於陣列大小 的值，交換到原本陣列中，並且設為負數 Time: O(n)
+		///                        EX: Step 1: 3, 4, 1, 5  最大為4個元素，從3 -> 4 -> 1 -> 5 遍歷，只會處理 3 與 1 這兩個元素
+		///                            Step 2: 當Index = 0 時 將 nums[nums[0]] 設為負數 (-3 值多少隨意，意思是我捨棄這個位置)
+		///                            Step 3: 當Index = 2 時 將 nums[nums[2]] 設為負數 (-1 值多少隨意，意思是我捨棄這個位置)
+		///                3. 找出正數: 遍歷原本陣列，遇到的第一個非負數就是正數 (Index 由0開始，輸出記得+1)  Time: O(n)
+		///                   時間耗費: O(n) + O(n) + O(n) ~= O(n)
 		///       Runtime：  62 ms Beats 82.1 %
 		/// Memory Usage ：31.2 MB Beats 94.92 %
 		/// </summary>
@@ -145,6 +153,10 @@ namespace Solution41
 			}
 			for (int index = 0; index < maxLength; index++) {
 				if (abs(nums[index]) <= maxLength) {
+					int a = nums[index];
+					int b = abs(nums[index]);
+					int c = abs(nums[index]) - 1;
+					int d = -abs(nums[abs(nums[index]) - 1]);					
 					nums[abs(nums[index]) - 1] = -abs(nums[abs(nums[index]) - 1]);
 				}
 			}
@@ -190,7 +202,7 @@ namespace Solution41
 		First_Missing_Positive_Model GetTestData003(void)
 		{
 			First_Missing_Positive_Model result;
-			result.nums = { 7,8,9,11,12 };
+			result.nums = { 7,8,9,11,12, 1,-6};
 			return result;//except: 1
 		};
 #pragma endregion TestData
