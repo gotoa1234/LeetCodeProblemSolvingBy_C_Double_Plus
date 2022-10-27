@@ -143,6 +143,7 @@
     <ClCompile Include="0040.Combination_Sum_II.cpp" />
     <ClCompile Include="0041.First_Missing_Positive.cpp" />
     <ClCompile Include="0042.Trapping_Rain_Water.cpp" />
+    <ClCompile Include="0043.Multiply_Strings.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
   </ItemGroup>
   <ItemGroup>
