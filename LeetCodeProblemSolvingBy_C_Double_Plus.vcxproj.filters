@@ -27,6 +27,9 @@
     <ClCompile Include="0041.First_Missing_Positive.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="0042.Trapping_Rain_Water.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Mysql\0177.Nth_Highest_Salary.sql" />
