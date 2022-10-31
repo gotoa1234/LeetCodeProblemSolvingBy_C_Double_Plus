@@ -1,18 +1,18 @@
-﻿#include "0043.Multiply_Strings.cpp"
-using namespace Solution43;
+﻿#include "0045.Jump_Game_II.cpp"
+using namespace Solution45;
 using namespace std;
 
 int main()
 {
-	string result = "";
-	Solution43::Multiply_Strings useClass;
-	Solution43::Multiply_Strings::Multiply_Strings_Model getTestModel = useClass.GetTestData001();
-	result = useClass.multiply(getTestModel.num1, getTestModel.num2);
+	int result = 0;
+	Solution45::Jump_Game_II useClass;
+	Solution45::Jump_Game_II::Jump_Game_II_Model getTestModel = useClass.GetTestData001();
+	result = useClass.jump(getTestModel.nums);
 
 	getTestModel = useClass.GetTestData002();
-	result = useClass.multiply(getTestModel.num1, getTestModel.num2);
+	result = useClass.jump(getTestModel.nums);
 
 	getTestModel = useClass.GetTestData003();
-	result = useClass.multiply(getTestModel.num1, getTestModel.num2);
+	result = useClass.jump(getTestModel.nums);
 	return 0;
 }
