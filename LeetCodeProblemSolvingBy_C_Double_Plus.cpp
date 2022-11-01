@@ -1,18 +1,18 @@
-﻿#include "0045.Jump_Game_II.cpp"
-using namespace Solution45;
+﻿#include "0046.Permutations.cpp"
+using namespace Solution46;
 using namespace std;
 
 int main()
 {
-	int result = 0;
-	Solution45::Jump_Game_II useClass;
-	Solution45::Jump_Game_II::Jump_Game_II_Model getTestModel = useClass.GetTestData001();
-	result = useClass.jump(getTestModel.nums);
+
+	Solution46::Permutations useClass;
+	Solution46::Permutations::Permutations_Model getTestModel = useClass.GetTestData001();
+	auto result1 = useClass.permute(getTestModel.nums);
 
 	getTestModel = useClass.GetTestData002();
-	result = useClass.jump(getTestModel.nums);
+	auto result2 = useClass.permute(getTestModel.nums);
 
 	getTestModel = useClass.GetTestData003();
-	result = useClass.jump(getTestModel.nums);
+	auto result3 = useClass.permute(getTestModel.nums);
 	return 0;
 }
