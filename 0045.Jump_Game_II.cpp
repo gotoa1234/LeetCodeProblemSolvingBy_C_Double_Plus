@@ -26,7 +26,7 @@ namespace Solution45
 #pragma endregion Paste to execute
 
 	/// <summary>
-	/// ﹃
+	/// 铬臘笴栏-2
 	/// </summary>
 	class Jump_Game_II
 	{
@@ -42,23 +42,24 @@ namespace Solution45
 #pragma region Main
 	public:
 		/// <summary>
-		///     thinking 
-		///       Runtime
-		/// Memory Usage 
+		///     thinking 砱褒簍衡猭–˙计常ǐ筂т程环禯瞒
+		///                Time O(n)
+		///       Runtime  12 ms Beats 97.89 %
+		/// Memory Usage 16.5 MB Beats 96.53 %
 		/// </summary>	
 		int jump(vector<int>& nums) {
-			int resultStep = 0;
-			int targetLength = nums.size();
-			int lastIndex = 0; 
-			int currentIndex = 0;
-			for (int index = 0; index < targetLength - 1; ++index) 
+			int resultStep = 0;//魁羆˙计
+			int last = 0;//˙计程竚
+			int current = 0;//讽玡竚
+			for (int index = 0; index < nums.size() - 1; index++)
 			{
-				currentIndex = max(currentIndex, index + nums[index]);
-				if (index == lastIndex) 
+				//–Ωт程
+				current = max(current, nums[index] + index);
+				if (last == index)//狦笿Ω程ボ惠˙计┕钡玡秈
 				{
-					lastIndex = currentIndex;
 					resultStep++;
-					if (currentIndex >= targetLength - 1) 
+					last = current;
+					if (current >= nums.size() - 1)
 						break;
 				}
 			}
@@ -85,7 +86,7 @@ namespace Solution45
 		Jump_Game_II_Model GetTestData002(void)
 		{
 			Jump_Game_II_Model result;
-			result.nums = { 2,3,3,3,0,0,0,1 };
+			result.nums = { 2,3,0,1,4 };
 			return result;//except: 2
 		};
 
