@@ -55,7 +55,7 @@ namespace Solution1480
 		{
 			Running_Sum_of_1d_Array_Model result;
 			result.nums = { 1, 2, 3, 4 };
-			return result;
+			return result;//expect : [1,3,6,10]
 		};
 
 		/// <summary>
@@ -65,7 +65,7 @@ namespace Solution1480
 		{
 			Running_Sum_of_1d_Array_Model result;
 			result.nums = { 1, 1, 1, 1, 1 };
-			return result;
+			return result;//expect : [1,2,3,4,5]
 		};
 
 		/// <summary>
@@ -75,7 +75,7 @@ namespace Solution1480
 		{
 			Running_Sum_of_1d_Array_Model result;
 			result.nums = { 3,1,2,10,1 };
-			return result;
+			return result;//expect : [3, 4, 6, 16, 17]
 		};
 #pragma endregion TestData
 	};
