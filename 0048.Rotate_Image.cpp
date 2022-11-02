@@ -15,13 +15,12 @@ namespace Solution48
 
 		Solution48::Rotate_Image useClass;
 		Solution48::Rotate_Image::Rotate_Image_Model getTestModel = useClass.GetTestData001();
-		auto result1 = useClass.rotate(getTestModel.matrix);
+		useClass.rotate(getTestModel.matrix);
 
 		getTestModel = useClass.GetTestData002();
-		auto result2 = useClass.rotate(getTestModel.matrix);
+		useClass.rotate(getTestModel.matrix);
 		return 0;
 	}
-
 	*/
 #pragma endregion Paste to execute
 
@@ -42,13 +41,26 @@ namespace Solution48
 #pragma region Main
 	public:
 		/// <summary>
-		///     thinking： 
-		///                
-		///       Runtime：
-		/// Memory Usage ：
+		///     thinking： 條件限制 空間使用:O(1)，只允許改原本的矩陣，所以這題考驗觀察力
+		///                1, 2, 3       7, 4 ,1                                            1, 4, 7
+		///                4, 5, 6   =>  8, 5, 2   => 可利用[x][y] 對角對換方式再Revese =>  2, 5, 8
+		///                7, 8, 9       9, 6, 3                                            3, 6, 9
+		///                原始資料     目標結果                                           預處理
+		///       Runtime：3ms Beats 70.96%
+		/// Memory Usage ：7MB Beats 92.85%
 		/// </summary>	
 		void rotate(vector<vector<int>>& matrix) {
-
+			int tempValue = 0;
+			for (int yAxis = 0; yAxis < matrix.size(); yAxis++)
+			{
+				for (int xAxis = yAxis + 1; xAxis < matrix.size(); xAxis++)
+				{
+					tempValue = matrix[yAxis][xAxis];
+					matrix[yAxis][xAxis] = matrix[xAxis][yAxis];
+					matrix[xAxis][yAxis] = tempValue;
+				}
+				reverse(matrix[yAxis].begin(), matrix[yAxis].end());
+			}
 		}
 
 #pragma endregion Main
