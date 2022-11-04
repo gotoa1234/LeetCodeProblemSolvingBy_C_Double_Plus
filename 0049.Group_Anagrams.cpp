@@ -16,13 +16,13 @@ namespace Solution49
 
 		Solution49::Group_Anagrams useClass;
 		Solution49::Group_Anagrams::Group_Anagrams_Model getTestModel = useClass.GetTestData001();
-		auto result1 = useClass.groupAnagrams(getTestModel.matrix);
+		auto result1 = useClass.groupAnagrams(getTestModel.strs);
 
 		getTestModel = useClass.GetTestData002();
-		auto result2 = useClass.groupAnagrams(getTestModel.matrix);
+		auto result2 = useClass.groupAnagrams(getTestModel.strs);
 
 		getTestModel = useClass.GetTestData002();
-		auto result3 = useClass.groupAnagrams(getTestModel.matrix);
+		auto result3 = useClass.groupAnagrams(getTestModel.strs);
 		return 0;
 	}
 
