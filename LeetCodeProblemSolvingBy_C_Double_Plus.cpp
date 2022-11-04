@@ -1,24 +1,18 @@
-﻿#include "0044.Wildcard_Matching.cpp"
-using namespace Solution44;
+﻿#include "0049.Group_Anagrams.cpp"
+using namespace Solution49;
 using namespace std;
 
 int main()
 {
-	bool result = false;
-	Solution44::Wildcard_Matching useClass;
-	Solution44::Wildcard_Matching::Wildcard_Matching_Model getTestModel = useClass.GetTestData001();
-	result = useClass.isMatch(getTestModel.s, getTestModel.p);
+
+	Solution49::Group_Anagrams useClass;
+	Solution49::Group_Anagrams::Group_Anagrams_Model getTestModel = useClass.GetTestData001();
+	auto result1 = useClass.groupAnagrams(getTestModel.strs);
 
 	getTestModel = useClass.GetTestData002();
-	result = useClass.isMatch(getTestModel.s, getTestModel.p);
+	auto result2 = useClass.groupAnagrams(getTestModel.strs);
 
 	getTestModel = useClass.GetTestData003();
-	result = useClass.isMatch(getTestModel.s, getTestModel.p);
-
-	getTestModel = useClass.GetTestData004();
-	result = useClass.isMatch(getTestModel.s, getTestModel.p);
-
-	getTestModel = useClass.GetTestData005();
-	result = useClass.isMatch(getTestModel.s, getTestModel.p);
+	auto result3 = useClass.groupAnagrams(getTestModel.strs);
 	return 0;
 }
