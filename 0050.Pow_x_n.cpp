@@ -54,8 +54,8 @@ namespace Solution50
 		///                 可將所有的n 拆成2的次方 乘上非2次方的乘數，即可求值
 		///                 time : O(nlogn) 
 		///                ※本題用 O(n) 會炸掉
-		///       Runtime：
-		/// Memory Usage ：
+		///       Runtime：  0 ms Beats  100 %
+		/// Memory Usage ：5.9 MB Beats	81.8 %
 		/// </summary>	
 		double myPow(double x, int n) {
 			double result = 1.0;
