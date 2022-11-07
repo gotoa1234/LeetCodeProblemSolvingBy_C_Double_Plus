@@ -39,7 +39,7 @@
     <ClCompile Include="0050.Pow_x_n.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="1480.Running_Sum_of_1d_Array.cpp">
+    <ClCompile Include="0051.N_Queens.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
   </ItemGroup>
