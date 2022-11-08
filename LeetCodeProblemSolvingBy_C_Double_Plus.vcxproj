@@ -147,6 +147,7 @@
     <ClCompile Include="0049.Group_Anagrams.cpp" />
     <ClCompile Include="0050.Pow_x_n.cpp" />
     <ClCompile Include="0051.N_Queens.cpp" />
+    <ClCompile Include="0052.N_Queens_II.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
   </ItemGroup>
   <ItemGroup>

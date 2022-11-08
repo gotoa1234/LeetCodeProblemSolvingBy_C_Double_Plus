@@ -1,15 +1,15 @@
-﻿#include "0051.N_Queens.cpp"
-using namespace Solution51;
+﻿#include "0052.N_Queens_II.cpp"
+using namespace Solution52;
 using namespace std;
 
 int main()
 {
 
-	Solution51::N_Queens useClass;
-	Solution51::N_Queens::N_Queens_Model getTestModel = useClass.GetTestData001();
-	auto result1 = useClass.solveNQueens(getTestModel.n);
+	Solution52::N_Queens_II useClass;
+	Solution52::N_Queens_II::N_Queens_II_Model getTestModel = useClass.GetTestData001();
+	auto result1 = useClass.totalNQueens(getTestModel.n);
 
 	getTestModel = useClass.GetTestData002();
-	auto result2 = useClass.solveNQueens(getTestModel.n);
+	auto result2 = useClass.totalNQueens(getTestModel.n);
 	return 0;
 }
