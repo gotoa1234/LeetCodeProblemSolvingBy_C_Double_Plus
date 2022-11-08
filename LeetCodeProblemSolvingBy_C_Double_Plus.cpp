@@ -6,7 +6,7 @@ int main()
 {
 
 	Solution51::N_Queens useClass;
-	Solution51::N_Queens::N_Queens_Model getTestModel = useClass.GetTestData002();
+	Solution51::N_Queens::N_Queens_Model getTestModel = useClass.GetTestData001();
 	auto result1 = useClass.solveNQueens(getTestModel.n);
 
 	getTestModel = useClass.GetTestData002();
