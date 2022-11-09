@@ -33,6 +33,9 @@
     <ClCompile Include="0054.Spiral_Matrix.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="0055.Jump_Game.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Mysql\0177.Nth_Highest_Salary.sql" />

@@ -1,15 +1,20 @@
-﻿#include "0054.Spiral_Matrix.cpp"
-using namespace Solution54;
+﻿#include "0055.Jump_Game.cpp"
+using namespace Solution55;
 using namespace std;
 
 int main()
 {
-
-	Solution54::Spiral_Matrix useClass;
-	Solution54::Spiral_Matrix::Spiral_Matrix_Model getTestModel = useClass.GetTestData001();
-	auto result1 = useClass.spiralOrder(getTestModel.matrix);
+	Solution55::Jump_Game useClass;
+	Solution55::Jump_Game::Jump_Game_Model getTestModel = useClass.GetTestData001();
+	auto result1 = useClass.canJump(getTestModel.nums);
 
 	getTestModel = useClass.GetTestData002();
-	auto result2 = useClass.spiralOrder(getTestModel.matrix);
+	auto result2 = useClass.canJump(getTestModel.nums);
+
+	getTestModel = useClass.GetTestData003();
+	auto result3 = useClass.canJump(getTestModel.nums);
+
+	getTestModel = useClass.GetTestData004();
+	auto result4 = useClass.canJump(getTestModel.nums);
 	return 0;
 }
