@@ -45,6 +45,9 @@
     <ClCompile Include="0052.N_Queens_II.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="0053.Maximum_Subarray.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Mysql\0177.Nth_Highest_Salary.sql" />
