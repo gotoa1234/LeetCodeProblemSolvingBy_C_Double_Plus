@@ -139,16 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="0043.Multiply_Strings.cpp" />
-    <ClCompile Include="0045.Jump_Game_II.cpp" />
-    <ClCompile Include="0046.Permutations.cpp" />
-    <ClCompile Include="0047.Permutations_II.cpp" />
-    <ClCompile Include="0048.Rotate_Image.cpp" />
-    <ClCompile Include="0049.Group_Anagrams.cpp" />
     <ClCompile Include="0050.Pow_x_n.cpp" />
     <ClCompile Include="0051.N_Queens.cpp" />
     <ClCompile Include="0052.N_Queens_II.cpp" />
     <ClCompile Include="0053.Maximum_Subarray.cpp" />
+    <ClCompile Include="0054.Spiral_Matrix.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
   </ItemGroup>
   <ItemGroup>

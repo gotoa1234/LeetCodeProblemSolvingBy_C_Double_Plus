@@ -1,15 +1,15 @@
-﻿#include "0053.Maximum_Subarray.cpp"
-using namespace Solution53;
+﻿#include "0054.Spiral_Matrix.cpp"
+using namespace Solution54;
 using namespace std;
 
 int main()
 {
 
-	Solution53::Maximum_Subarray useClass;
-	Solution53::Maximum_Subarray::Maximum_Subarray_Model getTestModel = useClass.GetTestData001();
-	auto result1 = useClass.maxSubArray(getTestModel.nums);
+	Solution54::Spiral_Matrix useClass;
+	Solution54::Spiral_Matrix::Spiral_Matrix_Model getTestModel = useClass.GetTestData001();
+	auto result1 = useClass.spiralOrder(getTestModel.matrix);
 
 	getTestModel = useClass.GetTestData002();
-	auto result2 = useClass.maxSubArray(getTestModel.nums);
+	auto result2 = useClass.spiralOrder(getTestModel.matrix);
 	return 0;
 }
