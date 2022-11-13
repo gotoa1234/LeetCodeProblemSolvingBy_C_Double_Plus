@@ -145,6 +145,7 @@
     <ClCompile Include="0053.Maximum_Subarray.cpp" />
     <ClCompile Include="0054.Spiral_Matrix.cpp" />
     <ClCompile Include="0055.Jump_Game.cpp" />
+    <ClCompile Include="0056.Merge_Intervals.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
   </ItemGroup>
   <ItemGroup>

@@ -36,6 +36,9 @@
     <ClCompile Include="0055.Jump_Game.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="0056.Merge_Intervals.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Mysql\0177.Nth_Highest_Salary.sql" />
