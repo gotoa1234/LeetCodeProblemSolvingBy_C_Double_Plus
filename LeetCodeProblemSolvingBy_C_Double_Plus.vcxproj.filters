@@ -27,22 +27,10 @@
     <ClCompile Include="0052.N_Queens_II.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="0053.Maximum_Subarray.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0054.Spiral_Matrix.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0055.Jump_Game.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0056.Merge_Intervals.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0057.Insert_Interval.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
     <ClCompile Include="0058.Length_of_Last_Word.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="0059.Spiral_Matrix_II.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
   </ItemGroup>
