@@ -52,8 +52,9 @@ namespace Solution57
 		///                1. 排序，然後找出合適的插入位置
 		///                2. 將插入值不斷更新，最小-最大 找出區間插入
 		///                3. 將剩下的數組填入結果 (此時與Merge無關)
-		///       Runtime：
-		/// Memory Usage ：
+		///                Time:O(n)  Space:O(1)
+		///       Runtime：   7 ms Beats 99.81 %
+		/// Memory Usage ：17.1 MB Beats 74.71 %
 		/// </summary>	
 		vector<vector<int>> insert(vector<vector<int>>& intervals, vector<int>& newInterval) {
 			vector<vector<int>> result{};
