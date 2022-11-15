@@ -147,6 +147,7 @@
     <ClCompile Include="0055.Jump_Game.cpp" />
     <ClCompile Include="0056.Merge_Intervals.cpp" />
     <ClCompile Include="0057.Insert_Interval.cpp" />
+    <ClCompile Include="0058.Length_of_Last_Word.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
   </ItemGroup>
   <ItemGroup>
