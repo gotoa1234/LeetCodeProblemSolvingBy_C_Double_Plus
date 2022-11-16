@@ -18,15 +18,6 @@
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="0050.Pow_x_n.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0051.N_Queens.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0052.N_Queens_II.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
     <ClCompile Include="0058.Length_of_Last_Word.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
@@ -34,6 +25,9 @@
       <Filter>來源檔案</Filter>
     </ClCompile>
     <ClCompile Include="0060.Permutation_Sequence.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="0061.Rotate_List.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
   </ItemGroup>
