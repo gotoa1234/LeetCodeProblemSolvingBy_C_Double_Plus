@@ -144,6 +144,7 @@
     <ClCompile Include="0052.N_Queens_II.cpp" />
     <ClCompile Include="0058.Length_of_Last_Word.cpp" />
     <ClCompile Include="0059.Spiral_Matrix_II.cpp" />
+    <ClCompile Include="0060.Permutation_Sequence.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
   </ItemGroup>
   <ItemGroup>
