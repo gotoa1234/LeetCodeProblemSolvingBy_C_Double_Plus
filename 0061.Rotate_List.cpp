@@ -64,7 +64,7 @@ namespace Solution61
 		///               1. 遍歷找出串鍊總長度X ，可以得之 k % X 會是真實位置，並記錄尾巴節點
 		///               2. 再利用總長度 X - (k % X) 就會是起點Node
 		///               3. 將尾巴節點 指向到 頭節點，並且再走到 X - (k % X) 當起點 (此為答案)
-		///               Time : O(nlog n)
+		///               Time : O(n)
 		///      Runtime:    3 ms Beats 99.48 %
 		/// Memory Usage :11.7 MB Beats 55.34 %
 		/// </summary>
