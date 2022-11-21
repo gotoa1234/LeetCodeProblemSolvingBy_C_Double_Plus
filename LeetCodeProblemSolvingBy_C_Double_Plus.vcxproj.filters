@@ -30,6 +30,12 @@
     <ClCompile Include="0061.Rotate_List.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="0062.Unique_Paths.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="0063.Unique_Paths_II.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Mysql\0177.Nth_Highest_Salary.sql" />

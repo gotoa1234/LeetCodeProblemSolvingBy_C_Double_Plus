@@ -1,23 +1,17 @@
-﻿#include "0061.Rotate_List.cpp"
-using namespace Solution61;
-using namespace std;
+﻿#include <unordered_map>
+#include "0063.Unique_Paths_II.cpp"
+using namespace Solution63;
 
 int main()
 {
-	Solution61::Rotate_List useClass;
-	Solution61::Rotate_List::Rotate_List_Model getTestModel = useClass.GetTestData001();
-	auto result1 = useClass.rotateRight(getTestModel.head, getTestModel.k);
+    Solution63::Unique_Paths_II useClass;
+    Solution63::Unique_Paths_II::Unique_Paths_II_Model getTestModel = useClass.GetTestData001();
+    int result = useClass.uniquePathsWithObstacles(getTestModel.obstacleGrid);
 
-	getTestModel = useClass.GetTestData002();
-	auto result2 = useClass.rotateRight(getTestModel.head, getTestModel.k);
-	
-	getTestModel = useClass.GetTestData003();
-	auto result3 = useClass.rotateRight(getTestModel.head, getTestModel.k);
+    getTestModel = useClass.GetTestData002();
+    result = useClass.uniquePathsWithObstacles(getTestModel.obstacleGrid);
 
-	getTestModel = useClass.GetTestData004();
-	auto result4 = useClass.rotateRight(getTestModel.head, getTestModel.k);
-
-	getTestModel = useClass.GetTestData005();
-	auto result5 = useClass.rotateRight(getTestModel.head, getTestModel.k);
-	return 0;
+    getTestModel = useClass.GetTestData003();
+    result = useClass.uniquePathsWithObstacles(getTestModel.obstacleGrid);
+    return 0;
 }
