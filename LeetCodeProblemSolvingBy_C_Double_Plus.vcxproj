@@ -145,6 +145,7 @@
     <ClCompile Include="0061.Rotate_List.cpp" />
     <ClCompile Include="0062.Unique_Paths.cpp" />
     <ClCompile Include="0063.Unique_Paths_II.cpp" />
+    <ClCompile Include="0064.Minimum_Path_Sum.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
   </ItemGroup>
   <ItemGroup>
