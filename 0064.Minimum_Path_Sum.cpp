@@ -41,27 +41,33 @@ namespace Solution64
 #pragma region Main
     public:
         /// <summary>
-        ///         思路 ：
-        ///      Runtime : 
-        /// Memory Usage : 
+        ///         思路 ：必須用DP的方式，逐步將之前求出的最小值取出，直到最後一個座標為最小累計路徑值
+        ///      Runtime :   7 ms Beats 97.41 %
+        /// Memory Usage : 9.6 MB Beats 98.80 %
         /// <returns></returns>
         int minPathSum(vector<vector<int>>& grid) {
-            if (grid.empty() || grid[0].empty())
-                return 0;
 
-            for (int yAxis = 0; yAxis < grid.size(); yAxis++)
-            {
-                for (int xAxis = 0; xAxis < grid[0].size(); xAxis++)
-                {
-                    if (yAxis == 0 && xAxis == 0)
-                        continue;
-                    
-                    int upValue = yAxis == 0 ? INT_MAX : grid[yAxis - 1][xAxis];
-                    int leftValue = xAxis == 0 ? INT_MAX : grid[yAxis][xAxis - 1];
-					grid[yAxis][xAxis] += min(upValue, leftValue);
-                }
-            }
-            return grid[grid.size() - 1][grid[0].size() - 1];
+            //1. 排除為0的狀況
+			if (grid[0].empty() || grid.empty())
+				return 0;
+
+            //2. 由座標0,0 開始，將上下值加入到當前的座標中
+			for (int yAxis = 0; yAxis < grid.size(); yAxis++)
+			{
+				for (int xAxis = 0; xAxis < grid[0].size(); xAxis++)
+				{
+                    //2-1. 起點不用算
+					if (yAxis == 0 && xAxis == 0)
+						continue;
+
+                    //2-2. 上下值求出，取小的(題目是最小路徑)
+					int upValue = yAxis == 0 ? INT_MAX : grid[yAxis - 1][xAxis];
+					int downValue = xAxis == 0 ? INT_MAX : grid[yAxis][xAxis - 1];
+					grid[yAxis][xAxis] += min(upValue, downValue);
+				}
+			}
+            //3. 最後一個座標點就是目前為止累計最小的路徑值
+			return grid[grid.size() - 1][grid[0].size() - 1];
         }
     public:
 #pragma endregion Main
