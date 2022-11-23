@@ -143,6 +143,9 @@
     <ClCompile Include="0064.Minimum_Path_Sum.cpp" />
     <ClCompile Include="0065.Valid_Number.cpp" />
     <ClCompile Include="0066.Plus_One.cpp" />
+    <ClCompile Include="0067.Add_Binary.cpp" />
+    <ClCompile Include="0068.Text_Justification.cpp" />
+    <ClCompile Include="0069.Sqrt_x.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
   </ItemGroup>
   <ItemGroup>

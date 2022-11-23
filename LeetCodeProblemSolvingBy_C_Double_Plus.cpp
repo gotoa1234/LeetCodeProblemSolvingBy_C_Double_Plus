@@ -1,18 +1,15 @@
 ﻿#include <unordered_map>
-#include "0066.Plus_One.cpp"
-using namespace Solution66;
+#include "0067.Add_Binary.cpp"
+using namespace Solution67;
 
 int main()
 {
-    Solution66::Plus_One useClass;
-    Solution66::Plus_One::Plus_One_Model getTestModel = useClass.GetTestData001();
-    auto result = useClass.plusOne(getTestModel.digits);
+    Solution67::Add_Binary useClass;
+    Solution67::Add_Binary::Add_Binary_Model getTestModel = useClass.GetTestData001();
+    auto result1 = useClass.addBinary(getTestModel.a, getTestModel.b);
 
     getTestModel = useClass.GetTestData002();
-    auto result2 = useClass.plusOne(getTestModel.digits);
-
-    getTestModel = useClass.GetTestData003();
-    auto result3 = useClass.plusOne(getTestModel.digits);
+    auto result2 = useClass.addBinary(getTestModel.a, getTestModel.b);
 
     return 0;
 }

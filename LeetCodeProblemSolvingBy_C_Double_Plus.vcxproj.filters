@@ -30,6 +30,15 @@
     <ClCompile Include="0066.Plus_One.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="0067.Add_Binary.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="0068.Text_Justification.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="0069.Sqrt_x.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Mysql\0177.Nth_Highest_Salary.sql" />

@@ -46,12 +46,33 @@ namespace Solution67
 #pragma region Main
     public:
         /// <summary>
-        ///         思路 ：
-        ///      Runtime : 
-        /// Memory Usage : 
+        ///         思路 ：兩個字串從尾部相加，每次加總的結果 %2 為當前值 /2 為進位值
+        ///      Runtime :   0 ms Beats   100 %
+        /// Memory Usage : 6.4 MB Beats 56.41 %
         /// <returns></returns>
         string addBinary(string a, string b) {
-            return {};
+            //1. 將長的字串放前面
+            if (b.size() > a.size())
+                return addBinary(b, a);
+
+            int aMoveIndex = a.size() - 1;
+            int bMoveIndex = b.size() - 1;            
+            int carry = 0;
+            string result = {};
+            //2. aMoveIndex 永遠最長，直到該值為負跳出
+            while (aMoveIndex >= 0)
+            {
+                auto aChar = aMoveIndex >= 0 ? a[aMoveIndex] - '0' : 0;
+                auto bChar = bMoveIndex >= 0 ? b[bMoveIndex] - '0' : 0;
+                result.insert(result.begin(), ((aChar + bChar + carry) % 2) + '0');
+                carry = (aChar + bChar + carry) / 2;
+                aMoveIndex--;
+                bMoveIndex--;
+            }
+            //3. 最後若有進位則將該值插入
+            if (carry == 1)
+                result.insert(result.begin(), '1');
+            return result;
         }
     public:
 #pragma endregion Main
