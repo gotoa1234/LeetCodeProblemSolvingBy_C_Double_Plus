@@ -45,12 +45,17 @@ namespace Solution69
 #pragma region Main
     public:
         /// <summary>
-        ///         思路 ：
-        ///      Runtime : 
-        /// Memory Usage : 
+        ///         思路 ：利用牛根法求值，可參考維基百科 https://zh.wikipedia.org/zh-tw/%E7%89%9B%E9%A1%BF%E6%B3%95
+        ///      Runtime : 3 ms Beats 77.26 %
+        /// Memory Usage : 6 MB Beats 27.94 %
         /// <returns></returns>
         int mySqrt(int x) {
-            return {};
+            long ApproximateValue = x;
+            while (ApproximateValue * ApproximateValue > x)
+            {
+                ApproximateValue = (ApproximateValue + x / ApproximateValue) / 2;
+            }
+            return ApproximateValue;
         }
     public:
 #pragma endregion Main
