@@ -39,6 +39,9 @@
     <ClCompile Include="0069.Sqrt_x.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="0073.Set_Matrix_Zeroes.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Mysql\0177.Nth_Highest_Salary.sql" />
