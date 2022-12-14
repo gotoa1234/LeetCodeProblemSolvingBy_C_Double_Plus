@@ -86,14 +86,17 @@ namespace Solution73
         }
 
         /// <summary>
-        /// 解法為Space: O(1) 的方式 - 但效能很差，因為迴圈利用率太低
+        /// 解法為Space: O(1) 的方式 - 思路同上，但多個loop情況下，yAxis, xAxis變數可以先定義避免重新renew
+        ///      Runtime :   15 ms Beats 91.95 %
+        /// Memory Usage : 13.1 MB Beats 96.15 %
         /// </summary>
         void setZeroes_solve2(vector<vector<int>>& matrix) {
             bool yAxisContainsZero = false;
             bool xAxisContainsZero = false;
-
+            int yAxis = 0;
+            int xAxis = 0;
             //1. 找出第一行是否有0
-            for (int yAxis = 0; yAxis < matrix.size(); yAxis++)
+            for (yAxis = 0; yAxis < matrix.size(); yAxis++)
             {
                 if (matrix[yAxis][0] == 0)
                 {
@@ -103,7 +106,7 @@ namespace Solution73
             }
 
             //2. 找出第一列是否有0
-            for (int xAxis = 0; xAxis < matrix[0].size(); xAxis++)
+            for (xAxis = 0; xAxis < matrix[0].size(); xAxis++)
             {
                 if (matrix[0][xAxis] == 0)
                 {
@@ -113,9 +116,9 @@ namespace Solution73
             }
 
             //3. 找出內部元素標記出是否為0 (利用第一列、第一行)
-            for(int yAxis = 0; yAxis < matrix.size(); yAxis++)
+            for(yAxis = 0; yAxis < matrix.size(); yAxis++)
             {
-                for (int xAxis = 0; xAxis < matrix[0].size(); xAxis++)
+                for (xAxis = 0; xAxis < matrix[0].size(); xAxis++)
                 {
                     if (matrix[yAxis][xAxis] == 0)
                     {
@@ -126,7 +129,7 @@ namespace Solution73
             }
 
             //4. 處理標記的第一行、列若有0則整行、整列設為0
-            for (int yAxis = 1; yAxis < matrix.size(); yAxis++)
+            for (yAxis = 1; yAxis < matrix.size(); yAxis++)
             {
                 if (matrix[yAxis][0] == 0)
                 {
@@ -136,7 +139,7 @@ namespace Solution73
                    }
                 }
             }
-            for (int xAxis = 1; xAxis < matrix[0].size(); xAxis++)
+            for (xAxis = 1; xAxis < matrix[0].size(); xAxis++)
             {
                 if (matrix[0][xAxis] == 0)
                 {
@@ -150,14 +153,14 @@ namespace Solution73
             //5. 第一行、列有0則整行、列設0
             if (yAxisContainsZero)
             {
-                for (int yAxis = 0; yAxis < matrix.size(); yAxis++)
+                for (yAxis = 0; yAxis < matrix.size(); yAxis++)
                 {
                     matrix[yAxis][0] = 0;
                 }
             }
             if (xAxisContainsZero)
             {
-                for (int xAxis = 0; xAxis < matrix[0].size(); xAxis++)
+                for (xAxis = 0; xAxis < matrix[0].size(); xAxis++)
                 {
                     matrix[0][xAxis] = 0;
                 }
