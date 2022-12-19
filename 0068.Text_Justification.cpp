@@ -51,6 +51,25 @@ namespace Solution68
         /// Memory Usage : 
         /// <returns></returns>
         vector<string> fullJustify(vector<string>& words, int maxWidth) {
+            
+            vector<string> result{};
+            vector<string> temp{};
+            int currentSpace = 0;
+            int peddingLength = 0;
+            while (words.size() > 0)
+            {
+                currentSpace = maxWidth;
+                vector<string> temp{};
+                peddingLength = 0;
+                while (currentSpace - (words[0].size() + peddingLength) >= 0)
+                {
+                    temp.push_back(words[0]);
+                    currentSpace= - words[0].size();
+                    words.erase(words.begin());
+                    peddingLength = 1;
+                }
+
+            }
             return {};
         }
     public:
@@ -83,7 +102,33 @@ namespace Solution68
             Text_Justification_Model result;
             result.words = { "What","must","be","acknowledgment","shall","be" };
             result.maxWidth = 16;
-            return result;//expected = "10101"
+            return result;/*expected =
+            [
+               "What   must   be",
+               "acknowledgment  ",
+               "shall be        "
+            ]       
+            */
+        };
+
+        /// <summary>
+        /// test 2
+        /// </summary>   
+        Text_Justification_Model GetTestData003(void)
+        {
+            Text_Justification_Model result;
+            result.words = { "Science","is","what","we","understand","well","enough","to","explain","to","a","computer.","Art","is","everything","else","we","do" };
+            result.maxWidth = 20;
+            return result;/*expected =
+            [
+                "Science  is  what we",
+                "understand      well",
+                "enough to explain to",
+                "a  computer.  Art is",
+                "everything  else  we",
+                "do                  "
+            ]
+            */
         };
 #pragma endregion TestData
     };
