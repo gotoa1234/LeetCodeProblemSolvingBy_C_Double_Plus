@@ -6,7 +6,7 @@ int main()
 {
     Solution68::Text_Justification useClass;
     Solution68::Text_Justification::Text_Justification_Model getTestModel = useClass.GetTestData001();
-    auto result1 = useClass.fullJustify(getTestModel.words, getTestModel.maxWidth);
+    //auto result1 = useClass.fullJustify(getTestModel.words, getTestModel.maxWidth);
 
     getTestModel = useClass.GetTestData002();
     auto result2 = useClass.fullJustify(getTestModel.words, getTestModel.maxWidth);

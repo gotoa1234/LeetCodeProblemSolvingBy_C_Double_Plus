@@ -47,37 +47,38 @@ namespace Solution68
     public:
         /// <summary>
         ///         «ä¸ô ¡G
-        ///      Runtime : 
-        /// Memory Usage : 
+        ///      Runtime :   0 ms Beats   100 %
+        /// Memory Usage : 7.4 MB Beats 55.26 %
         /// <returns></returns>
         vector<string> fullJustify(vector<string>& words, int maxWidth) {
             
             vector<string> result{};
-            vector<string> temp{};
             int currentSpaceLength = 0;
             int peddingLength = 0;
+            string lineMsg = "";
+            int calculator = 0;
             while (words.size() > 0)
             {
                 currentSpaceLength = maxWidth;
                 vector<string> temp{};
                 peddingLength = 0;
-                string lineMsg = "";
-                int caculator = words[0].size();
+                lineMsg = "";
+                calculator = words[0].size();
                 while (!words.empty() &&
-                    (currentSpaceLength - (caculator + peddingLength)) >= 0)
+                    (currentSpaceLength - (calculator + peddingLength)) >= 0)
                 {
                     temp.push_back(words[0]);
-                    currentSpaceLength -= (caculator + peddingLength);
+                    currentSpaceLength -= (calculator + peddingLength);
                     words.erase(words.begin());
                     peddingLength = 1;
-                    caculator = words.empty() ? 0 : words[0].size();
+                    calculator = words.empty() ? 0 : words[0].size();
                 }
                 
                 int redermine = currentSpaceLength;
                 int everyExtraSpace = 0;
                 if (temp.size() == 1 || words.empty())
                 {
-                    redermine = currentSpaceLength;
+                    redermine = currentSpaceLength + (temp.size() - 1);
                 }
                 else
                 {
@@ -137,7 +138,8 @@ namespace Solution68
                "What   must   be",
                "acknowledgment  ",
                "shall be        "
-            ]       
+            ]         
+            
             */
         };
 
