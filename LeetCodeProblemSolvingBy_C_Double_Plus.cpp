@@ -1,15 +1,18 @@
 ﻿#include <unordered_map>
-#include "0073.Set_Matrix_Zeroes.cpp"
-using namespace Solution73;
+#include "0068.Text_Justification.cpp"
+using namespace Solution68;
 
 int main()
 {
-    Solution73::Set_Matrix_Zeroes useClass;
-    Solution73::Set_Matrix_Zeroes::Set_Matrix_Zeroes_Model getTestModel = useClass.GetTestData001();
-    useClass.setZeroes(getTestModel.matrix);
+    Solution68::Text_Justification useClass;
+    Solution68::Text_Justification::Text_Justification_Model getTestModel = useClass.GetTestData001();
+    auto result1 = useClass.fullJustify(getTestModel.words, getTestModel.maxWidth);
 
     getTestModel = useClass.GetTestData002();
-    useClass.setZeroes(getTestModel.matrix);
+    auto result2 = useClass.fullJustify(getTestModel.words, getTestModel.maxWidth);
+
+    getTestModel = useClass.GetTestData003();
+    auto result3 = useClass.fullJustify(getTestModel.words, getTestModel.maxWidth);
 
     return 0;
 }

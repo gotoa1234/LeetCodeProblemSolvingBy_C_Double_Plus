@@ -54,23 +54,53 @@ namespace Solution68
             
             vector<string> result{};
             vector<string> temp{};
-            int currentSpace = 0;
+            int currentSpaceLength = 0;
             int peddingLength = 0;
             while (words.size() > 0)
             {
-                currentSpace = maxWidth;
+                currentSpaceLength = maxWidth;
                 vector<string> temp{};
                 peddingLength = 0;
-                while (currentSpace - (words[0].size() + peddingLength) >= 0)
+                string lineMsg = "";
+                int caculator = words[0].size();
+                while (!words.empty() &&
+                    (currentSpaceLength - (caculator + peddingLength)) >= 0)
                 {
                     temp.push_back(words[0]);
-                    currentSpace= - words[0].size();
+                    currentSpaceLength -= (caculator + peddingLength);
                     words.erase(words.begin());
                     peddingLength = 1;
+                    caculator = words.empty() ? 0 : words[0].size();
+                }
+                
+                int redermine = currentSpaceLength;
+                int everyExtraSpace = 0;
+                if (temp.size() == 1 || words.empty())
+                {
+                    redermine = currentSpaceLength;
+                }
+                else
+                {
+                    everyExtraSpace = redermine / (temp.size() - 1);
+                    everyExtraSpace += 1;
+                    redermine = redermine % (temp.size() - 1);
                 }
 
+                auto useSpace = 0;
+                for (int index = 0; index < temp.size() - 1; index++)
+                {
+                    useSpace = everyExtraSpace;
+                    if (redermine > 0)
+                    {
+                        useSpace++;
+                        redermine--;
+                    }                    
+                    lineMsg += temp[index] + string(useSpace, ' ');
+                }
+                lineMsg += temp[temp.size() - 1] + string(redermine, ' ');
+                result.push_back(lineMsg);
             }
-            return {};
+            return result;
         }
     public:
 #pragma endregion Main
