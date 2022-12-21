@@ -43,29 +43,35 @@ namespace Solution71
 
 #pragma region Main
     public:
-        ///         思路 :
-        ///      Runtime :
-        /// Memory Usage :
+        ///         思路 :利用Stack依照條件不斷將字串放入，最後組成所需的結果
+        ///      Runtime :   0 ms Beats   100 %
+        /// Memory Usage : 9.6 MB Beats 59.14 %
         string simplifyPath(string path) {
-            string result;
-            istringstream iss(path);
+            string result{};
             vector<string> stack;
+            istringstream strStream(path);
 
-            for (string dir; getline(iss, dir, '/');) {
-                if (dir.empty() || dir == ".")
+            //1. 以'/'為切割，一個個字串取出
+            for (string item; getline(strStream, item, '/');)
+            {
+                //2-1. 跳過的條件
+                if (item.empty() || item == ".")
                     continue;
-                if (dir == "..") {
+                
+                //2-2. 若為.. 表示捨棄剛剛的push
+                if (item == "..")
+                {
                     if (!stack.empty())
                         stack.pop_back();
                 }
-                else {
-                    stack.push_back(dir);
-                }
+                else//2-3. 否則都是將該字串放入
+                    stack.push_back(item);
             }
 
-            for (const string& s : stack)
-                result += "/" + s;
-
+            //3.組成存在Stack的字串，組成結果
+            for (const string& item : stack)
+				result += "/" + item;
+            //4. 若為空再依照題意，放個'/'處理
             return result.empty() ? "/" : result;
         }
 #pragma endregion Main
