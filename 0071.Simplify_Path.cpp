@@ -1,5 +1,6 @@
-#include <iostream>
 #include <vector>
+#include <string>
+#include <sstream> 
 using namespace std;
 
 namespace Solution71
@@ -43,12 +44,29 @@ namespace Solution71
 #pragma region Main
     public:
         ///         思路 :
-        ///               
-        ///                
         ///      Runtime :
         /// Memory Usage :
         string simplifyPath(string path) {
-            return {};
+            string result;
+            istringstream iss(path);
+            vector<string> stack;
+
+            for (string dir; getline(iss, dir, '/');) {
+                if (dir.empty() || dir == ".")
+                    continue;
+                if (dir == "..") {
+                    if (!stack.empty())
+                        stack.pop_back();
+                }
+                else {
+                    stack.push_back(dir);
+                }
+            }
+
+            for (const string& s : stack)
+                result += "/" + s;
+
+            return result.empty() ? "/" : result;
         }
 #pragma endregion Main
 
@@ -84,6 +102,61 @@ namespace Solution71
             result.path = "/home//foo/";
             return result;
             //Expect:"/home/foo"
+        };
+
+        /// <summary>
+        /// 測試資料4
+        /// </summary>   
+        Simplify_Path_Model GetTestData004(void)
+        {
+            Simplify_Path_Model result;
+            result.path = "/a/../../b/../c//.//";
+            return result;
+            //Expect:"/c"
+        };
+
+        /// <summary>
+        /// 測試資料5
+        /// </summary>   
+        Simplify_Path_Model GetTestData005(void)
+        {
+            Simplify_Path_Model result;
+            result.path = "/a//b////c/d//././/..";
+            return result;
+            //Expect:"/a/b/c"
+        };
+
+        /// <summary>
+        /// 測試資料6
+        /// </summary>   
+        Simplify_Path_Model GetTestData006(void)
+        {
+            Simplify_Path_Model result;
+            result.path = "/home////abc";
+            return result;
+            //Expect:"/home/abc"
+        };
+
+        /// <summary>
+        /// 測試資料7
+        /// </summary>   
+        Simplify_Path_Model GetTestData007(void)
+        {
+            Simplify_Path_Model result;
+            result.path = "/home//abc///aaa/..";
+            return result;
+            //Expect:"/home/abc"
+        };
+
+        /// <summary>
+        /// 測試資料8
+        /// </summary>   
+        Simplify_Path_Model GetTestData008(void)
+        {
+            Simplify_Path_Model result;
+            result.path = "/home//abc////aaa/../../..";
+            return result;
+            //Expect:"/home/abc/aaa"
         };
 #pragma endregion TestData
     };
