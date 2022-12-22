@@ -1,15 +1,15 @@
 ﻿#include <unordered_map>
-#include "0074.Search_a_2D_Matrix.cpp"
-using namespace Solution74;
+#include "0075.Sort_Colors.cpp"
+using namespace Solution75;
 
 int main()
 {
-    Solution74::Search_a_2D_Matrix useClass;
-    Solution74::Search_a_2D_Matrix::Search_a_2D_Matrix_Model getTestModel = useClass.GetTestData001();
-    auto result1 = useClass.searchMatrix(getTestModel.matrix, getTestModel.target);
+    Solution75::Sort_Colors useClass;
+    Solution75::Sort_Colors::Sort_Colors_Model getTestModel = useClass.GetTestData001();
+    useClass.sortColors(getTestModel.nums);
 
     getTestModel = useClass.GetTestData002();
-    auto result2 = useClass.searchMatrix(getTestModel.matrix, getTestModel.target);
+    useClass.sortColors(getTestModel.nums);
 
     return 0;
 }
