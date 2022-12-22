@@ -49,7 +49,51 @@ namespace Solution74
         /// </summary>
         /// <returns></returns>
         bool searchMatrix(vector<vector<int>>& matrix, int target) {
-            return {};
+            
+            int xAxisCount = matrix[0].size();
+            int left = 0;
+            int right = (matrix.size() * xAxisCount - 1);
+            int middle = 0;
+            //預處理排除不可能的目標
+            if (matrix[left / xAxisCount][left % xAxisCount] > target ||
+                matrix[right / xAxisCount][right % xAxisCount] < target)
+            {
+                return false;
+            }
+
+            while (left < right)
+            {
+                middle = (right + left) / 2;
+                
+                if (middle == right || middle == left)
+                {
+                    break;
+                }
+
+                if (matrix[middle / xAxisCount][middle % xAxisCount] == target)
+                    return true;
+                
+                if (matrix[middle / xAxisCount][middle % xAxisCount] >= target &&
+                    matrix[left / xAxisCount][left % xAxisCount] < target)
+                {
+                    right = middle;
+                }
+                else if (matrix[middle / xAxisCount][middle % xAxisCount] < target &&
+                    matrix[right / xAxisCount][right % xAxisCount] > target)
+                {
+                    left = middle;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            
+            if (matrix[left / xAxisCount][left % xAxisCount] == target ||
+                matrix[right / xAxisCount][right % xAxisCount] == target)
+                return true;
+
+            return false;
         }
     public:
 #pragma endregion Main

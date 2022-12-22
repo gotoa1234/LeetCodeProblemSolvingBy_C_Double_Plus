@@ -33,6 +33,27 @@
     <ClCompile Include="0072.Edit_Distance.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="0074.Search_a_2D_Matrix.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="0075.Sort_Colors.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="0076.Minimum_Window_Substring.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="0077.Combinations.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="0078.Subsets.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="0079.Word_Search.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="0080.Remove_Duplicates_from_Sorted_Array_II.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Mysql\0177.Nth_Highest_Salary.sql" />

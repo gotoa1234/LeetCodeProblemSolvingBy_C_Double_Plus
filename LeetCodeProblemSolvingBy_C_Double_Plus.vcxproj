@@ -144,6 +144,13 @@
     <ClCompile Include="0071.Simplify_Path.cpp" />
     <ClCompile Include="0072.Edit_Distance.cpp" />
     <ClCompile Include="0073.Set_Matrix_Zeroes.cpp" />
+    <ClCompile Include="0074.Search_a_2D_Matrix.cpp" />
+    <ClCompile Include="0075.Sort_Colors.cpp" />
+    <ClCompile Include="0076.Minimum_Window_Substring.cpp" />
+    <ClCompile Include="0077.Combinations.cpp" />
+    <ClCompile Include="0078.Subsets.cpp" />
+    <ClCompile Include="0079.Word_Search.cpp" />
+    <ClCompile Include="0080.Remove_Duplicates_from_Sorted_Array_II.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
   </ItemGroup>
   <ItemGroup>
