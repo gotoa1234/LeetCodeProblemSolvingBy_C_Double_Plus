@@ -43,56 +43,27 @@ namespace Solution74
 #pragma region Main
     public:
         /// <summary>
-        ///         思路 ：
-        ///      Runtime : 
-        /// Memory Usage : 
+        ///         思路 ：利用二分搜尋法，x軸 * y軸 = 最大值，再利用乘除找出當前值的位置
+        ///      Runtime :   0 ms Beats   100 %
+        /// Memory Usage : 9.6 MB Beats 52.88 %
         /// </summary>
         /// <returns></returns>
         bool searchMatrix(vector<vector<int>>& matrix, int target) {
             
             int xAxisCount = matrix[0].size();
             int left = 0;
-            int right = (matrix.size() * xAxisCount - 1);
+            int right = (matrix.size() * xAxisCount);
             int middle = 0;
-            //預處理排除不可能的目標
-            if (matrix[left / xAxisCount][left % xAxisCount] > target ||
-                matrix[right / xAxisCount][right % xAxisCount] < target)
-            {
-                return false;
-            }
-
             while (left < right)
             {
                 middle = (right + left) / 2;
-                
-                if (middle == right || middle == left)
-                {
-                    break;
-                }
-
                 if (matrix[middle / xAxisCount][middle % xAxisCount] == target)
                     return true;
-                
-                if (matrix[middle / xAxisCount][middle % xAxisCount] >= target &&
-                    matrix[left / xAxisCount][left % xAxisCount] < target)
-                {
-                    right = middle;
-                }
-                else if (matrix[middle / xAxisCount][middle % xAxisCount] < target &&
-                    matrix[right / xAxisCount][right % xAxisCount] > target)
-                {
-                    left = middle;
-                }
+                else if (matrix[middle / xAxisCount][middle % xAxisCount] < target)
+                    left = middle + 1;
                 else
-                {
-                    return false;
-                }
+                    right = middle;
             }
-            
-            if (matrix[left / xAxisCount][left % xAxisCount] == target ||
-                matrix[right / xAxisCount][right % xAxisCount] == target)
-                return true;
-
             return false;
         }
     public:
@@ -107,7 +78,7 @@ namespace Solution74
         {
             Search_a_2D_Matrix_Model result;
             result.matrix = {{1, 3, 5, 7}, {10, 11, 16, 20}, {23, 30, 34, 60}};
-            result.target = 3;
+            result.target = 60;
             return result;//expect: true
         };
 
