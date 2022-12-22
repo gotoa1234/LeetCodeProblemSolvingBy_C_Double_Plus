@@ -142,6 +142,7 @@
     <ClCompile Include="0068.Text_Justification.cpp" />
     <ClCompile Include="0069.Sqrt_x.cpp" />
     <ClCompile Include="0071.Simplify_Path.cpp" />
+    <ClCompile Include="0072.Edit_Distance.cpp" />
     <ClCompile Include="0073.Set_Matrix_Zeroes.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
   </ItemGroup>
