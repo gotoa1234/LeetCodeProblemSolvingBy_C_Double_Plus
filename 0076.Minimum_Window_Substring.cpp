@@ -80,7 +80,7 @@ namespace Solution76
 					if (targetEbdIndex > rightIndex - leftIndex + 1)
 					{
                         //3. 當有更小的範圍字串，則更新結果值
-						targetEbdIndex = min(targetEbdIndex, rightIndex - leftIndex + 1);
+						targetEbdIndex = rightIndex - leftIndex + 1;
 						targetStartIndex = leftIndex;
 					}
 					asciiRecordTable[s[leftIndex] - 65]++;
