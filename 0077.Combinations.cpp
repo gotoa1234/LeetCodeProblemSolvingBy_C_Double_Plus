@@ -43,12 +43,35 @@ namespace Solution77
     public:
         /// <summary>
         ///         思路 ：
-        ///      Runtime : 
-        /// Memory Usage : 
+        ///      Runtime :   3 ms Beats 100 %
+        /// Memory Usage : 9.9 MB Beats 54.70 %
         /// </summary>
-        /// <returns></returns>
+        /// <returns></returns>  
+        vector<vector<int>> _result;
         vector<vector<int>> combine(int n, int k) {
-            return {};
+			//1. 建立一個組成結果的容器
+			vector<int> combination;
+            //2. 遞迴
+			solve(combination, 1, n, k, 0);
+			return _result;
+        }
+
+        void solve(vector<int>& combination, int currentValue, const int& n, const int& k, int count) {
+            
+            //3-1. 每次進入都判斷是否累計的組成為k 表示達到項目數
+            if (count == k) 
+            {
+                //4. 加入到結果中 
+                _result.push_back(combination);
+                return;
+            }
+            //3-2. 否則每次都進行遞迴
+            for (int index = currentValue; index <= n - k + count + 1; index++) 
+            {
+                combination.push_back(index);
+                solve(combination, index + 1, n, k, count + 1);
+                combination.pop_back();
+            }
         }
     public:
 #pragma endregion Main
