@@ -50,8 +50,45 @@ namespace Solution76
         /// Memory Usage : 
         /// </summary>
         /// <returns></returns>
-        string minWindow(string s, string t) {
-            return {};
+        string minWindow(string s, string t) 
+        {
+            int asciiRecordTable[128] = { 0 };
+            int start = 0;
+
+            //1. Ascii ¬ö¿ý
+            int useCount = 0;
+            for (int index = 0; index < t.size(); index++) 
+            {
+                if (asciiRecordTable[t[index]] == 0) 
+                    useCount++;
+                asciiRecordTable[t[index]]++;
+            }
+            int finalIndex = INT_MAX;
+            for(int startIndex = 0, endIndex = 0; endIndex < s.size(); endIndex++)
+            {
+                asciiRecordTable[s[endIndex]]--;
+                if (asciiRecordTable[s[endIndex]] == 0) {
+                    useCount--;
+                }
+                if (useCount == 0) 
+                {
+                    while (useCount == 0) 
+                    {
+                        if (finalIndex > endIndex - startIndex + 1) 
+                        {
+                            finalIndex = min(finalIndex, endIndex - startIndex + 1);
+                            start = startIndex;
+                        }
+                        asciiRecordTable[s[startIndex]]++;
+                        if (asciiRecordTable[s[startIndex]] > 0)
+                            useCount++;
+                        
+                        startIndex++;
+                    }
+                }
+            }
+
+            return finalIndex == INT_MAX ? "" : s.substr(start, finalIndex);
         }
     public:
 #pragma endregion Main

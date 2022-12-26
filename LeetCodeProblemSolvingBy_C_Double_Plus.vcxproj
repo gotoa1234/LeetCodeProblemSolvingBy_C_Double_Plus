@@ -139,11 +139,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="0068.Text_Justification.cpp" />
-    <ClCompile Include="0069.Sqrt_x.cpp" />
-    <ClCompile Include="0071.Simplify_Path.cpp" />
-    <ClCompile Include="0072.Edit_Distance.cpp" />
-    <ClCompile Include="0073.Set_Matrix_Zeroes.cpp" />
     <ClCompile Include="0074.Search_a_2D_Matrix.cpp" />
     <ClCompile Include="0075.Sort_Colors.cpp" />
     <ClCompile Include="0076.Minimum_Window_Substring.cpp" />
