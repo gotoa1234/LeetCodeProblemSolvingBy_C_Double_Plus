@@ -41,13 +41,33 @@ namespace Solution78
 #pragma region Main
     public:
         /// <summary>
-        ///         思路 ：
-        ///      Runtime : 
-        /// Memory Usage : 
+        ///         思路 ：利用規則產出子集演算法，以[1,2,3]為例
+        /// step 1: {1}               => 放入元素1 ，此時比較已產生的元素(但沒有因此跳過)
+        /// step 2: {1},{2}           => 放入元素2 ，此時比較已產生的元素(有{1} 所以組成 {1,2})
+        /// step 3: {1},{2},{1,2}    
+        /// step 4: {1},{2},{1,2},{3} => 放入元素3 ，此時比較已產生的元素(有 {1},{2},{1,2} 所以組成 {1,3}, {2,3}, {1,2,3})
+        /// ......最終 : {1},{2},{1,2},{3}, {1,3}, {2,3}, {1,2,3}
+        ///      Runtime :    0 ms Beats 100 %
+        /// Memory Usage :  7.2 MB Beats 70.72 %
         /// </summary>
         /// <returns></returns>
         vector<vector<int>> subsets(vector<int>& nums) {
-            return {};
+            vector<vector<int>> result{};
+            int currentLength = 0;
+            int index = 0;
+            for (auto& item : nums)
+            {
+                currentLength = result.size();
+                result.push_back({ item });
+                for (index = 0; index < currentLength; index++)
+                {
+                    vector<int> temp = result[index];
+                    temp.push_back(item);
+                    result.push_back(temp);
+                }
+            }            
+            result.insert(result.begin(), vector<int>());
+            return result;
         }
     public:
 #pragma endregion Main
