@@ -42,7 +42,9 @@ namespace Solution77
 #pragma region Main
     public:
         /// <summary>
-        ///         思路 ：
+        ///         思路 ：遞迴版本，先找出規則 n = 數值範圍, k = 組合數量
+        ///               1. 每次將一個值放入遞迴函數，並建立下一個遞迴函數
+        ///               2. 放入前將當前值放入當前組合結果，若組合結果達到 k 則放入最終的結果，並移除最後一個值
         ///      Runtime :   3 ms Beats 100 %
         /// Memory Usage : 9.9 MB Beats 54.70 %
         /// </summary>
@@ -65,7 +67,8 @@ namespace Solution77
                 _result.push_back(combination);
                 return;
             }
-            //3-2. 否則每次都進行遞迴
+            //3-2. 否則每次都進行遞迴 
+            //※ n - k + count + 1 可以避免無效的遞迴， EX: n=4 k=2 索引[0]的位置決不會出現4
             for (int index = currentValue; index <= n - k + count + 1; index++) 
             {
                 combination.push_back(index);
