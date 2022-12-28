@@ -50,7 +50,31 @@ namespace Solution80
         /// </summary>
         /// <returns></returns>
         int removeDuplicates(vector<int>& nums) {
-            return {};
+            
+            int accumulator = 0;
+            int currentValue = 0;
+            int finalIndex = 0;
+            int index = 0;
+			for (int index = 0; index < nums.size(); accumulator = 0)
+            {
+                currentValue = nums[index];
+                while (index < nums.size() &&
+                    nums[index] == currentValue)
+                {
+                    nums[finalIndex] = nums[index];
+                    finalIndex++;
+                    accumulator++;
+                    index++;
+                    if (accumulator >= 2)
+                    {
+                        while (index < nums.size() && nums[index] == currentValue)
+                        {
+                            index++;
+                        }
+                    }
+                }
+            }
+            return finalIndex;
         }
 
     public:
