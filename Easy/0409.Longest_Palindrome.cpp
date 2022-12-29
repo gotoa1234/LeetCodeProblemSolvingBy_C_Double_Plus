@@ -2,16 +2,16 @@
 #include <unordered_map>
 using namespace std;
 
-namespace Solution402
+namespace Solution409
 {
 #pragma region Paste to execute 
 	/*
-	#include "0402.Longest_Palindrome.cpp"
-	using namespace Solution402;
+	#include "0409.Longest_Palindrome.cpp"
+	using namespace Solution409;
 	using namespace std;
 
-	Solution402::Longest_Palindrome useClass;
-	Solution402::Longest_Palindrome::Longest_Palindrome_Model getTestModel = useClass.GetTestData001();
+	Solution409::Longest_Palindrome useClass;
+	Solution409::Longest_Palindrome::Longest_Palindrome_Model getTestModel = useClass.GetTestData001();
 	int result = useClass.longestPalindrome(getTestModel.s);
 	*/
 #pragma endregion Paste to execute

@@ -139,19 +139,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="0079.Word_Search.cpp" />
-    <ClCompile Include="0080.Remove_Duplicates_from_Sorted_Array_II.cpp" />
-    <ClCompile Include="0081.Search_in_Rotated_Sorted_Array_II.cpp" />
-    <ClCompile Include="0082.Remove_Duplicates_from_Sorted_List_II.cpp" />
-    <ClCompile Include="0083.Remove_Duplicates_from_Sorted_List.cpp" />
-    <ClCompile Include="0084.Largest_Rectangle_in_Histogram.cpp" />
-    <ClCompile Include="0085.Maximal_Rectangle.cpp" />
-    <ClCompile Include="0086.Partition_List.cpp" />
-    <ClCompile Include="0087.Scramble_String.cpp" />
-    <ClCompile Include="0088.Merge_Sorted_Array.cpp" />
-    <ClCompile Include="0089.Gray_Code.cpp" />
-    <ClCompile Include="0090.Subsets_II.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
+    <ClCompile Include="Medium\0081.Search_in_Rotated_Sorted_Array_II.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Mysql\0177.Nth_Highest_Salary.sql" />
@@ -170,4 +159,24 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
+  <Target Name="CopyReferenceDll" AfterTargets="Build">
+    <ItemGroup>
+      <ReferenceEasy Include="Easy\*.cpp">
+      </ReferenceEasy>
+    </ItemGroup>
+    <ItemGroup>
+      <ReferenceMedium Include="Medium\*.cpp">
+      </ReferenceMedium>
+    </ItemGroup>
+    <ItemGroup>
+      <ReferenceHard Include="Hard\*.cpp">
+      </ReferenceHard>
+    </ItemGroup>
+    <Copy SourceFiles="@(ReferenceEasy)" DestinationFolder="AllProblems\" SkipUnchangedFiles="True">
+    </Copy>
+    <Copy SourceFiles="@(ReferenceMedium)" DestinationFolder="AllProblems\" SkipUnchangedFiles="True">
+    </Copy>
+    <Copy SourceFiles="@(ReferenceHard)" DestinationFolder="AllProblems\" SkipUnchangedFiles="True">
+    </Copy>
+  </Target>
 </Project>

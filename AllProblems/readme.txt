@@ -1,0 +1,1 @@
+The MSBuild After will copy folder all s.cpp file in here.

@@ -18,40 +18,7 @@
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="0079.Word_Search.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0080.Remove_Duplicates_from_Sorted_Array_II.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0081.Search_in_Rotated_Sorted_Array_II.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0082.Remove_Duplicates_from_Sorted_List_II.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0083.Remove_Duplicates_from_Sorted_List.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0084.Largest_Rectangle_in_Histogram.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0085.Maximal_Rectangle.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0086.Partition_List.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0087.Scramble_String.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0088.Merge_Sorted_Array.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0089.Gray_Code.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="0090.Subsets_II.cpp">
+    <ClCompile Include="Medium\0081.Search_in_Rotated_Sorted_Array_II.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
   </ItemGroup>
