@@ -6,7 +6,7 @@ namespace Solution6
 {
 #pragma region Paste to execute 
     /*
-    #include "0006.Zigzag_Conversion.cpp"
+    #include "Medium/0006.Zigzag_Conversion.cpp"
     #include <vector>
     using namespace Solution6;
     using namespace std;

@@ -8,18 +8,18 @@ namespace Solution81
 #pragma region Paste to execute 
     /*
     #include <unordered_map>
-    #include "0081.Search_in_Rotated_Sorted_Array_II.cpp"
+    #include "Medium/0081.Search_in_Rotated_Sorted_Array_II.cpp"
     using namespace Solution81;
-
+    
     int main()
     {
         Solution81::Search_in_Rotated_Sorted_Array_II useClass;
         Solution81::Search_in_Rotated_Sorted_Array_II::Search_in_Rotated_Sorted_Array_II_Model getTestModel = useClass.GetTestData001();
-        auto result1 = useClass.removeDuplicates(getTestModel.nums, getTestModel.target);
-
+        auto result1 = useClass.search(getTestModel.nums, getTestModel.target);
+    
         getTestModel = useClass.GetTestData002();
-        auto result2 = useClass.removeDuplicates(getTestModel.nums, getTestModel.target);
-
+        auto result2 = useClass.search(getTestModel.nums, getTestModel.target);
+    
         return 0;
     }
     */
@@ -75,6 +75,7 @@ namespace Solution81
         {
             Search_in_Rotated_Sorted_Array_II_Model result;
             result.nums = { 2,5,6,0,0,1,2 };
+            result.target = 3;
             return result;//expect:false
         };
 #pragma endregion TestData

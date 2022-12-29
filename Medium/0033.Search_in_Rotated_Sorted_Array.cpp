@@ -115,7 +115,7 @@ namespace Solution33
 		{
 			Search_in_Rotated_Sorted_Array_Model result;
 			result.nums = { 4,5,6,7,0,1,2 };
-			result.target = 1;
+			result.target = 0;
 			return result;//except: 4
 		};
 

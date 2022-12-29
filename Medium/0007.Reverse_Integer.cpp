@@ -6,7 +6,7 @@ namespace Solution7
 {
 #pragma region Paste to execute 
     /*
-    #include "0007.Reverse_Integer.cpp"
+    #include "Medium/0007.Reverse_Integer.cpp"
     using namespace Solution7;
     using namespace std;
 
