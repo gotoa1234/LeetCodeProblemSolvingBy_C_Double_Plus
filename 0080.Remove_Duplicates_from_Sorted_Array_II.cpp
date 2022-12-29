@@ -44,37 +44,29 @@ namespace Solution80
 #pragma region Main
     public:
         /// <summary>
-        ///         思路 ：
-        ///      Runtime : 
-        /// Memory Usage : 
+        ///         思路 ：進行nums遍歷，並且利用一個變數紀錄目前的長度
+        ///                遍歷的當前值的大於前兩個位置的值，表示可以將當前的值放入
+        ///                (若已放了兩個就不會是大於)
+        ///      Runtime :  0 ms Beats   100 %
+        /// Memory Usage : 11 MB Beats 43.15 %
         /// </summary>
         /// <returns></returns>
         int removeDuplicates(vector<int>& nums) {
-            
-            int accumulator = 0;
-            int currentValue = 0;
-            int finalIndex = 0;
-            int index = 0;
-			for (int index = 0; index < nums.size(); accumulator = 0)
+            int findIndex = 0;
+            //1. 遍歷
+            for (int index = 0; index < nums.size(); index++)
             {
-                currentValue = nums[index];
-                while (index < nums.size() &&
-                    nums[index] == currentValue)
+                //2. 每次[0],[1] 都可以放原陣列的 [0],[1]
+                //   接著就照規則-> 當前值的大於前兩個位置的值，表示可以將當前的值放入
+                if (findIndex < 2 || 
+                    nums[index] > nums[findIndex - 2]
+                    )
                 {
-                    nums[finalIndex] = nums[index];
-                    finalIndex++;
-                    accumulator++;
-                    index++;
-                    if (accumulator >= 2)
-                    {
-                        while (index < nums.size() && nums[index] == currentValue)
-                        {
-                            index++;
-                        }
-                    }
+                    nums[findIndex] = nums[index];
+                    findIndex++;
                 }
             }
-            return finalIndex;
+            return findIndex;
         }
 
     public:
