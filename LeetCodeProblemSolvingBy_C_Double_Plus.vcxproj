@@ -142,6 +142,7 @@
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
     <ClCompile Include="Medium\0033.Search_in_Rotated_Sorted_Array.cpp" />
     <ClCompile Include="Medium\0081.Search_in_Rotated_Sorted_Array_II.cpp" />
+    <ClCompile Include="Medium\0082.Remove_Duplicates_from_Sorted_List_II.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Mysql\0177.Nth_Highest_Salary.sql" />

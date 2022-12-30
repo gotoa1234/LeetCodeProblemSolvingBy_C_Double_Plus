@@ -8,17 +8,17 @@ namespace Solution82
 #pragma region Paste to execute 
     /*
     #include <unordered_map>
-    #include "0082.Remove_Duplicates_from_Sorted_List_II.cpp"
+    #include "medium/0082.Remove_Duplicates_from_Sorted_List_II.cpp"
     using namespace Solution82;
 
     int main()
     {
         Solution82::Remove_Duplicates_from_Sorted_List_II useClass;
         Solution82::Remove_Duplicates_from_Sorted_List_II::Remove_Duplicates_from_Sorted_List_II_Model getTestModel = useClass.GetTestData001();
-        auto result1 = useClass.deleteDuplicates(getTestModel.head, getTestModel.target);
+        auto result1 = useClass.deleteDuplicates(getTestModel.head);
 
         getTestModel = useClass.GetTestData002();
-        auto result2 = useClass.deleteDuplicates(getTestModel.head, getTestModel.target);
+        auto result2 = useClass.deleteDuplicates(getTestModel.head);
 
         return 0;
     }
@@ -51,14 +51,47 @@ namespace Solution82
 #pragma region Main
     public:
         /// <summary>
-        ///         思路 ：
-        ///      Runtime : 
-        /// Memory Usage : 
+        ///         思路 ：利用4個節點進行，1個節點紀錄起始，1個節點紀錄上個位置，2個節點為圈出刪除範圍用        
+        ///      Runtime :    7 ms Beats 92.22 %
+        /// Memory Usage : 11.2 MB Beats 61.54 %
         /// </summary>
         /// <returns></returns>
     public:
         ListNode* deleteDuplicates(ListNode* head) {
-            return {};
+            //1. 準備初始資料
+            ListNode* resultNode = new ListNode(0);
+            resultNode->next = head;   
+            ListNode* preNode = resultNode;
+			ListNode* currentNode = resultNode -> next;
+            //2. 準備資料中，若節點有Null的情況可以提前結束
+            if(currentNode == nullptr || currentNode ->next == nullptr)
+                return resultNode->next;
+            ListNode* nextNode = resultNode->next->next;
+
+            //3. 遍歷每個節點
+			while (currentNode != nullptr && nextNode != nullptr)
+            {
+                //4-1. 當前節點與下一節點值不相同表示不用刪除，往前移動
+				if (currentNode->val != nextNode->val)
+                {
+                    preNode = currentNode;
+                    currentNode = currentNode->next;
+                    nextNode = currentNode->next;
+                }
+                else//4-2. 若當前節點與下一節點有重複則進行刪除
+                {
+                    while (nextNode != nullptr &&
+                        currentNode->val == nextNode->val)
+                    {
+                        nextNode = nextNode->next;
+                    }
+                    preNode->next = nextNode == nullptr ? nullptr : nextNode;
+                    currentNode = nextNode == nullptr ? nullptr : nextNode;
+                    nextNode = nextNode == nullptr ? nullptr : 
+                       nextNode -> next == nullptr ? nullptr : nextNode->next;
+                }
+            }
+            return resultNode->next;
         }
 
     public:
@@ -88,6 +121,18 @@ namespace Solution82
             l1Vectors = { 1,1,1,2,3 };
             result.head = ConstructNodes(l1Vectors);
             return result;//expect:[2,3]
+        };
+
+        /// <summary>
+        /// test 3
+        /// </summary>   
+        Remove_Duplicates_from_Sorted_List_II_Model GetTestData003(void)
+        {
+            Remove_Duplicates_from_Sorted_List_II_Model result;
+            vector<int> l1Vectors{};
+            l1Vectors = { 1,1};
+            result.head = ConstructNodes(l1Vectors);
+            return result;//expect:[]
         };
     private:
         ListNode* ConstructNodes(vector<int>& inputDatas)
