@@ -43,13 +43,42 @@ namespace Solution81
 #pragma region Main
     public:
         /// <summary>
-        ///         思路 ：
-        ///      Runtime : 
-        /// Memory Usage : 
+        ///         思路 ：參考第33題相同的做法，但是本題有重複的數值在 nums 中，所以需要判斷 == 的狀況
+        ///      Runtime :    7 ms Beats 85.24 %
+        /// Memory Usage : 14.1 MB Beats 47.52 %
         /// </summary>
         /// <returns></returns>
         bool search(vector<int>& nums, int target) {
-            return {};
+            int leftIndex = 0;
+            int rightIndex = nums.size() - 1;
+            int mid = 0;
+            while (leftIndex <= rightIndex) 
+            {
+                int mid = (leftIndex + rightIndex) / 2;
+                if (nums[mid] == target) 
+                    return true;
+                if (nums[leftIndex] < nums[mid])//1. 不可用 <= 判斷
+                {
+                    if (nums[leftIndex] <= target && 
+                        target < nums[mid]
+                        )
+                        rightIndex = mid - 1;
+                    else 
+                        leftIndex = mid + 1;
+                }
+                else if (nums[mid] < nums[leftIndex])//使用else if判斷另一側
+                {
+                    if (nums[mid] < target &&
+                        target <= nums[rightIndex]
+                        )
+                        leftIndex = mid + 1; 
+                    else
+                        rightIndex = mid - 1;
+                }
+                else //如果上面都不符合表示重複的值，用索引往右的方式繼續判斷
+                    leftIndex++;
+            }
+            return false;
         }
 
     public:
@@ -63,8 +92,8 @@ namespace Solution81
         Search_in_Rotated_Sorted_Array_II_Model GetTestData001(void)
         {
             Search_in_Rotated_Sorted_Array_II_Model result;
-			result.nums = { 2,5,6,0,0,1,2 };
-            result.target = 0;
+			result.nums = { 5, 1, 3 };
+            result.target = 3;
             return result;//expect: true
         };
 
@@ -78,6 +107,19 @@ namespace Solution81
             result.target = 3;
             return result;//expect:false
         };
+
+        /// <summary>
+        /// test 3
+        /// </summary>   
+        Search_in_Rotated_Sorted_Array_II_Model GetTestData003(void)
+        {
+            Search_in_Rotated_Sorted_Array_II_Model result;
+            result.nums = { 1, 0, 1, 1, 1};
+            result.target = 0;
+            return result;//expect:false
+        };
+
+        
 #pragma endregion TestData
     };
 }

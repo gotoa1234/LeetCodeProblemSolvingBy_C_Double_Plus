@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
+    <ClCompile Include="Medium\0033.Search_in_Rotated_Sorted_Array.cpp" />
     <ClCompile Include="Medium\0081.Search_in_Rotated_Sorted_Array_II.cpp" />
   </ItemGroup>
   <ItemGroup>
