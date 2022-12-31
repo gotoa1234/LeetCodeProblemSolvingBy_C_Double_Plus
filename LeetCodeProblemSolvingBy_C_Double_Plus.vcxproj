@@ -139,9 +139,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Easy\0083.Remove_Duplicates_from_Sorted_List.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
-    <ClCompile Include="Medium\0033.Search_in_Rotated_Sorted_Array.cpp" />
-    <ClCompile Include="Medium\0081.Search_in_Rotated_Sorted_Array_II.cpp" />
     <ClCompile Include="Medium\0082.Remove_Duplicates_from_Sorted_List_II.cpp" />
   </ItemGroup>
   <ItemGroup>

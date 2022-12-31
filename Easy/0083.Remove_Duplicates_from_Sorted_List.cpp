@@ -8,7 +8,7 @@ namespace Solution83
 #pragma region Paste to execute 
     /*
     #include <unordered_map>
-    #include "0083.Remove_Duplicates_from_Sorted_List.cpp"
+    #include "Easy\0083.Remove_Duplicates_from_Sorted_List.cpp"
     using namespace Solution83;
 
     int main()
@@ -51,14 +51,36 @@ namespace Solution83
 #pragma region Main
     public:
         /// <summary>
-        ///         思路 ：
-        ///      Runtime : 
-        /// Memory Usage : 
+        ///         思路 ：利用2個節點，若節點值相同時只保留一個節點，繼續往下遍歷
+        ///      Runtime :   10 ms Beats 88.29 %
+        /// Memory Usage : 11.5 MB Beats 97.84 %
         /// </summary>
         /// <returns></returns>
     public:
         ListNode* deleteDuplicates(ListNode* head) {
-            return {};
+            
+            if (head == nullptr || head->next == nullptr)
+                return head;
+            ListNode* resultNode = new ListNode(0);
+            resultNode->next = head;
+            ListNode* preNode = head;
+            head = head->next;
+            while (head != nullptr)
+            {
+                if (head->val == preNode->val)
+                {
+                    while (head != nullptr &&
+                        head->val == preNode->val
+                        )
+                    {
+                        head = head->next;
+                    }
+                    preNode->next = head;
+                }
+                preNode = head;
+                head = head == nullptr ? nullptr : head->next;
+            }
+            return resultNode->next;
         }
 
     public:

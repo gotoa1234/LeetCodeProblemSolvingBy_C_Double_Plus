@@ -18,13 +18,10 @@
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="Medium\0081.Search_in_Rotated_Sorted_Array_II.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="Medium\0033.Search_in_Rotated_Sorted_Array.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
     <ClCompile Include="Medium\0082.Remove_Duplicates_from_Sorted_List_II.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Easy\0083.Remove_Duplicates_from_Sorted_List.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
   </ItemGroup>
