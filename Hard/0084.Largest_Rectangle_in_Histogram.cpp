@@ -1,6 +1,7 @@
 #include <iostream>
 #include <unordered_map>
 #include <string>
+#include <stack>
 using namespace std;
 
 namespace Solution84
@@ -42,13 +43,35 @@ namespace Solution84
 #pragma region Main
     public:
         /// <summary>
-        ///         思路 ：
-        ///      Runtime : 
-        /// Memory Usage : 
+        ///         思路 ：找出峰值(當前的高度低於前一個高度時，上一個高度為峰值)
+        ///                並且再出現峰值前建立一個Stack將每次的非峰值的數值放入
+        ///                當觸發峰值時進行以下流程:
+        ///                1. 從堆疊依序取出值，若比當前值高則跳出
+        ///                2. 取出的堆疊值 * 距離 => 記錄下最大值，若比前一次大表示出現最大的矩形       
+        ///      Runtime :  233 ms Beats 68.19 %
+        /// Memory Usage : 75.3 MB Beats 91.84 %
         /// </summary>
         /// <returns></returns>
         int largestRectangleArea(vector<int>& heights) {
-            return{};
+            int result = 0;
+            int useDistance = 0;
+            int current = 0;
+            stack<int> stackContainer{};
+            heights.push_back(0);
+            for (int index = 0; index < heights.size(); index++)
+            {
+                while (!stackContainer.empty() &&
+                    heights[stackContainer.top()] >= heights[index])
+                {
+                    current = stackContainer.top();
+                    stackContainer.pop();
+                    useDistance = stackContainer.empty() ? index 
+                                                         : index - stackContainer.top() - 1;
+                    result = max(result, heights[current] * useDistance);
+                }
+                stackContainer.push(index);
+            }
+            return result;
         }
 
     public:
