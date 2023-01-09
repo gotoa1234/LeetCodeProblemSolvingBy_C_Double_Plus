@@ -50,42 +50,39 @@ namespace Solution85
         /// </summary>
         /// <returns></returns>
         int maximalRectangle(vector<vector<char>>& matrix) {
-            
-            if (matrix.empty() || matrix[0].empty()) 
+            if (matrix[0].empty() || matrix.empty())
                 return 0;
-            int result = 0;
             int yAxisMax = matrix.size();
             int xAxisMax = matrix[0].size();
-            int useDistance = 0;
-            vector<int> height(xAxisMax + 1);
-            //1. 每層計算
-            for (int yAxis = 0; yAxis < yAxisMax; yAxis++) 
+            int currentIndex = 0;
+            int distance = 0;
+            int result = 0;
+            vector<int> volumn(xAxisMax + 1);
+            for (int yAxis = 0; yAxis < yAxisMax; yAxis++)
             {
-                stack<int> stackContainer;
+                stack<int> container{};
                 for (int xAxis = 0; xAxis < xAxisMax + 1; xAxis++)
                 {
-                    //2. 跳過最後一個元素，最後一個元素是添加的
                     if (xAxis < xAxisMax)
                     {
-                        height[xAxis] = matrix[yAxis][xAxis] == '1' 
-                                       ? height[xAxis] + 1 
-                                       : 0;
+                        if (matrix[yAxis][xAxis] == '1')
+                            volumn[xAxis]++;
+                        else
+                            volumn[xAxis] = 0;
                     }
-                    //3. 同0084的計算方式
-                    while (!stackContainer.empty() && 
-                           height[stackContainer.top()] >= height[xAxis]
-                        ) 
+                    while (!container.empty() &&
+                        volumn[container.top()] >= volumn[xAxis])
                     {
-                        int cur = stackContainer.top(); 
-                        stackContainer.pop();
-                        int useDistance = stackContainer.empty() ? xAxis 
-                                                    : (xAxis - stackContainer.top() - 1);
-                        result = max(result, height[cur] * useDistance );
+                        currentIndex = container.top();
+                        container.pop();
+                        distance = volumn.empty() ? xAxis
+                            : xAxis - container.top() - 1;
+                        result = max(result, distance * volumn[xAxis]);
                     }
-                    stackContainer.push(xAxis);
                 }
             }
             return result;
+           
         }
 
     public:

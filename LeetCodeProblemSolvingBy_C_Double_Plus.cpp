@@ -1,15 +1,17 @@
 ﻿#include <unordered_map>
-#include "Hard/0085.Maximal_Rectangle.cpp"
-using namespace Solution85;
+#include "Easy\0088.Merge_Sorted_Array.cpp"
+using namespace Solution88;
 
 int main()
 {
-    Solution85::Maximal_Rectangle useClass;
-    Solution85::Maximal_Rectangle::Maximal_Rectangle_Model getTestModel = useClass.GetTestData001();
-    auto result1 = useClass.maximalRectangle(getTestModel.matrix);
+    Solution88::Merge_Sorted_Array useClass;
+    Solution88::Merge_Sorted_Array::Merge_Sorted_Array_Model getTestModel = useClass.GetTestData001();
+    useClass.merge(getTestModel.nums1, getTestModel.m, getTestModel.nums2, getTestModel.n);
 
     getTestModel = useClass.GetTestData002();
-    auto result2 = useClass.maximalRectangle(getTestModel.matrix);
+    useClass.merge(getTestModel.nums1, getTestModel.m, getTestModel.nums2, getTestModel.n);
 
+    getTestModel = useClass.GetTestData003();
+    useClass.merge(getTestModel.nums1, getTestModel.m, getTestModel.nums2, getTestModel.n);
     return 0;
 }

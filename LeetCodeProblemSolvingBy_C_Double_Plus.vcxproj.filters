@@ -30,6 +30,9 @@
     <ClCompile Include="Hard\0085.Maximal_Rectangle.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="Easy\0088.Merge_Sorted_Array.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Mysql\0177.Nth_Highest_Salary.sql" />
