@@ -1,17 +1,17 @@
 ﻿#include <unordered_map>
-#include "Easy\0088.Merge_Sorted_Array.cpp"
-using namespace Solution88;
+#include "Medium/0089.Gray_Code.cpp"
+using namespace Solution89;
 
 int main()
 {
-    Solution88::Merge_Sorted_Array useClass;
-    Solution88::Merge_Sorted_Array::Merge_Sorted_Array_Model getTestModel = useClass.GetTestData001();
-    useClass.merge(getTestModel.nums1, getTestModel.m, getTestModel.nums2, getTestModel.n);
+    Solution89::Gray_Code useClass;
+    Solution89::Gray_Code::Gray_Code_Model getTestModel = useClass.GetTestData001();
+    auto result1 = useClass.grayCode(getTestModel.n);
 
     getTestModel = useClass.GetTestData002();
-    useClass.merge(getTestModel.nums1, getTestModel.m, getTestModel.nums2, getTestModel.n);
+    auto result2 = useClass.grayCode(getTestModel.n);
 
     getTestModel = useClass.GetTestData003();
-    useClass.merge(getTestModel.nums1, getTestModel.m, getTestModel.nums2, getTestModel.n);
+    auto result3 = useClass.grayCode(getTestModel.n);
     return 0;
 }

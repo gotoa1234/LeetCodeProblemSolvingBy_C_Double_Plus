@@ -144,7 +144,7 @@
     <ClCompile Include="Hard\0084.Largest_Rectangle_in_Histogram.cpp" />
     <ClCompile Include="Hard\0085.Maximal_Rectangle.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
-    <ClCompile Include="Medium\0082.Remove_Duplicates_from_Sorted_List_II.cpp" />
+    <ClCompile Include="Medium\0089.Gray_Code.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Mysql\0177.Nth_Highest_Salary.sql" />
