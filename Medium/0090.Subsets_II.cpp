@@ -42,57 +42,34 @@ namespace Solution90
 #pragma region Main
     public:
         /// <summary>
-        ///         思路 ：
-        ///      Runtime : 
-        /// Memory Usage : 
+        ///         思路 ：參考0078的子集產出，不同的是需先排序(便於判斷重複)若當前元素與上一元素相同時跳過不進行添加
+        ///      Runtime :   0 ms Beats   100 %
+        /// Memory Usage : 7.7 MB Beats 49.94 %
         /// </summary>
         /// <returns></returns>
-        vector<vector<int>> Subsets_IIWithDup(vector<int>& nums) {
-            vector<vector<int>> result{};
+        vector<vector<int>> _result;
+        vector<vector<int>> subsetsWithDup(vector<int>& nums) {
             vector<int> compose{};
-            int currentLength = 0;
             sort(nums.begin(), nums.end());
-            for (int index = 0; index < nums.size(); index++)
+            findSubsetII(0, compose, nums);
+            return _result;
+        }
+        
+        void findSubsetII(int currentIndex, vector<int>& compose, vector<int>& nums)
+        {
+            _result.push_back(compose);
+            for (int index = currentIndex; index < nums.size(); index++)
             {
-                if (!compose.empty() && compose[0] == nums[index])
-                {
-                    compose.push_back(nums[index]);
-                }
-                else
-                {
-                    compose.clear();
-                    compose.push_back(nums[index]);
-                }
-                currentLength = result.size();
-                result.push_back(compose);
-
-                for (int innerIndex = 0; innerIndex < currentLength; innerIndex++)
-                {
-                    vector<int> container = result[innerIndex];
-                    container.push_back(nums[index]);
-                    result.push_back(container);
-                }
+                if (currentIndex != index &&
+                    nums[index] == nums[index - 1])
+                    continue;
+                compose.push_back(nums[index]);
+                findSubsetII(index + 1, compose, nums);
+                compose.pop_back();
             }
-            result.insert(result.begin(), vector<int>());
-            return result;
         }
 
-        //void findSubsets(int ind, vector < int >& nums, vector < int >& ds, vector < vector < int >>& ans) {
-        //    ans.push_back(ds);
-        //    for (int i = ind; i < nums.size(); i++) {
-        //        if (i != ind && nums[i] == nums[i - 1]) continue;
-        //        ds.push_back(nums[i]);
-        //        findSubsets(i + 1, nums, ds, ans);
-        //        ds.pop_back();
-        //    }
-        //}
-        //vector < vector < int >> subsetsWithDup(vector < int >& nums) {
-        //    vector < vector < int >> ans;
-        //    vector < int > ds;
-        //    sort(nums.begin(), nums.end());
-        //    findSubsets(0, nums, ds, ans);
-        //    return ans;
-        //}
+
     public:
 #pragma endregion Main
 
@@ -116,6 +93,16 @@ namespace Solution90
             Subsets_II_Model result;
             result.nums = { 0 };
             return result;//expect:[[], [0]]
+        };
+
+        /// <summary>
+        /// test 3
+        /// </summary>   
+        Subsets_II_Model GetTestData003(void)
+        {
+            Subsets_II_Model result;
+            result.nums = { 1,4,4,4,4 };
+            return result;//expect:[[],[1],[1,4],[1,4,4],[1,4,4,4],[1,4,4,4,4],[4],[4,4],[4,4,4],[4,4,4,4]]
         };
 
 #pragma endregion TestData

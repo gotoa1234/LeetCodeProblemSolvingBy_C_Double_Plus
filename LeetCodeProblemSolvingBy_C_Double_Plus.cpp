@@ -10,5 +10,8 @@ int main()
 
     getTestModel = useClass.GetTestData002();
     auto result2 = useClass.Subsets_IIWithDup(getTestModel.nums);
+
+    getTestModel = useClass.GetTestData003();
+    auto result3 = useClass.Subsets_IIWithDup(getTestModel.nums);
     return 0;
 }
