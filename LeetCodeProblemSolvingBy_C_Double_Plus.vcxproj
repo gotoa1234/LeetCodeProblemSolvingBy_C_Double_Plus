@@ -148,8 +148,17 @@
     <ClCompile Include="Medium\0078.Subsets.cpp" />
     <ClCompile Include="Medium\0089.Gray_Code.cpp" />
     <ClCompile Include="Medium\0090.Subsets_II.cpp" />
+    <ClCompile Include="Medium\0091.Decode_Ways.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Easy\0094.Binary_Tree_Inorder_Traversal.cpp" />
+    <None Include="Easy\0100.Same_Tree.cpp" />
+    <None Include="Medium\0092.Reverse_Linked_List_II.cpp" />
+    <None Include="Medium\0093.Restore_IP_Addresses.cpp" />
+    <None Include="Medium\0095.Unique_Binary_Search_Trees_II.cpp" />
+    <None Include="Medium\0096.Unique_Binary_Search_Trees.cpp" />
+    <None Include="Medium\0097.Interleaving_String.cpp" />
+    <None Include="Medium\0099.Recover_Binary_Search_Tree.cpp" />
     <None Include="Mysql\0177.Nth_Highest_Salary.sql" />
     <None Include="Mysql\0184.Department_Highest_Salary.sql" />
     <None Include="Mysql\0185.Department_Top_Three_Salaries.sql" />
