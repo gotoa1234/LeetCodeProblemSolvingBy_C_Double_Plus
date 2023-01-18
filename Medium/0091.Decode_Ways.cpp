@@ -46,9 +46,10 @@ namespace Solution91
 #pragma region Main
     public:
         /// <summary>
-        ///         思路 ：
-        ///      Runtime :
-        /// Memory Usage :
+        ///         思路 ：為1x ~ 26之間都要累計2次，若非這範圍的數值則次數恆為1 EX: 4567這種情況必為1
+        ///                ，利用累計的方式，使用2個變數，分別為當前累計與前次累計
+        ///      Runtime :  0 ms Beats  100 %
+        /// Memory Usage :  6 MB Beats 94.8 %
         /// </summary>
         /// <returns></returns>
         int numDecodings(string s) {
@@ -60,7 +61,7 @@ namespace Solution91
             for (int index = 1; index < s.size(); ++index)
             {
                 //2-1. 為0時視為不可能組成
-                if (s[index] == '0') 
+                if (s[index] == '0') //相當於跳過本次，但是還要判斷 '10' 這種狀況，所以不可Continue
                     totalCount = 0;
 
                 //3-1. 1X ~ 26 之間(A~Z) 視為可組成
@@ -73,7 +74,7 @@ namespace Solution91
                 }
                 else //3-2. 最後一種可能是獨立數值
                 {
-                    lastCount = totalCount;
+                    lastCount = totalCount;//值保持不變
                 }
             }
             return totalCount;
