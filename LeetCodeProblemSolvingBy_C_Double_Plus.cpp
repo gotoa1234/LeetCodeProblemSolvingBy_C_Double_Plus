@@ -1,15 +1,18 @@
 ﻿#include <unordered_map>
-#include "Medium/0092.Reverse_Linked_List_II.cpp"
-using namespace Solution92;
+#include "Medium/0093.Restore_IP_Addresses.cpp"
+using namespace Solution93;
 
 int main()
 {
-    Solution92::Reverse_Linked_List_II useClass;
-    Solution92::Reverse_Linked_List_II::Reverse_Linked_List_II_Model getTestModel = useClass.GetTestData001();
-    auto result1 = useClass.reverseBetween(getTestModel.head, getTestModel.left, getTestModel.right);
+    Solution93::Restore_IP_Addresses useClass;
+    Solution93::Restore_IP_Addresses::Restore_IP_Addresses_Model getTestModel = useClass.GetTestData001();
+    auto result1 = useClass.restoreIpAddresses(getTestModel.s);
 
     getTestModel = useClass.GetTestData002();
-    auto result2 = useClass.reverseBetween(getTestModel.head, getTestModel.left, getTestModel.right);
+    auto result2 = useClass.restoreIpAddresses(getTestModel.s);
+
+    getTestModel = useClass.GetTestData003();
+    auto result3 = useClass.restoreIpAddresses(getTestModel.s);
 
     return 0;
 }
