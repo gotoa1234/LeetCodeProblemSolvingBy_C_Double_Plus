@@ -13,14 +13,14 @@ namespace Solution92
 
     int main()
     {
-        Solution92::Reverse_Linked_List_II useClass;
-        Solution92::Reverse_Linked_List_II::Reverse_Linked_List_II_Model getTestModel = useClass.GetTestData001();
-        auto result1 = useClass.partition(getTestModel.head, getTestModel.left, getTestModel.right);
-
-        getTestModel = useClass.GetTestData002();
-        auto result2 = useClass.partition(getTestModel.head, getTestModel.left, getTestModel.right);
-
-        return 0;
+         Solution92::Reverse_Linked_List_II useClass;
+         Solution92::Reverse_Linked_List_II::Reverse_Linked_List_II_Model getTestModel = useClass.GetTestData001();
+         auto result1 = useClass.reverseBetween(getTestModel.head, getTestModel.left, getTestModel.right);
+         
+         getTestModel = useClass.GetTestData002();
+         auto result2 = useClass.reverseBetween(getTestModel.head, getTestModel.left, getTestModel.right);
+         
+         return 0;
     }
     */
 #pragma endregion Paste to executes
@@ -53,14 +53,31 @@ namespace Solution92
 #pragma region Main
     public:
         /// <summary>
-        ///         思路 ：
-        ///      Runtime :
-        /// Memory Usage :
+        ///         思路 ：先跑到left的位置，然後再進行(right -left)次數的節點反轉
+        ///      Runtime :  0 ms Beats   100 %
+        /// Memory Usage :7.5 MB Beats 20.33 %
         /// </summary>
         /// <returns></returns>
     public:
         ListNode* reverseBetween(ListNode* head, int left, int right) {
-            return {};
+            ListNode* dummy = new ListNode(-1);
+            dummy->next = head;
+            ListNode* leftLastNode = dummy;
+
+            for (int index = 0; index < left - 1; index++)
+            {
+                leftLastNode = leftLastNode->next;
+            }
+            ListNode* moveNode = leftLastNode->next;
+            ListNode* nextNode = new ListNode(-1);
+            for (int index = 0; index < right - left; index++)
+            {
+				nextNode = moveNode->next;
+				moveNode->next = nextNode->next;
+                nextNode->next = leftLastNode->next;
+                leftLastNode->next = nextNode;
+            }
+            return dummy->next;
         }
 
     public:

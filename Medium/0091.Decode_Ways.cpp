@@ -118,7 +118,7 @@ namespace Solution91
         /// <summary>
        /// test 4
        /// </summary>   
-        Decode_Ways_Model GetTestData003(void)
+        Decode_Ways_Model GetTestData004(void)
         {
             Decode_Ways_Model result;
             result.s = "2222";
