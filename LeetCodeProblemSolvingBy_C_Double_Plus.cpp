@@ -1,18 +1,15 @@
 ﻿#include <unordered_map>
-#include "Medium/0093.Restore_IP_Addresses.cpp"
-using namespace Solution93;
+#include "Medium/0095.Unique_Binary_Search_Trees_II.cpp"
+using namespace Solution95;
 
 int main()
 {
-    Solution93::Restore_IP_Addresses useClass;
-    Solution93::Restore_IP_Addresses::Restore_IP_Addresses_Model getTestModel = useClass.GetTestData001();
-    auto result1 = useClass.restoreIpAddresses(getTestModel.s);
+    Solution95::Unique_Binary_Search_Trees_II useClass;
+    Solution95::Unique_Binary_Search_Trees_II::Unique_Binary_Search_Trees_II_Model getTestModel = useClass.GetTestData001();
+    auto result1 = useClass.generateTrees(getTestModel.n);
 
     getTestModel = useClass.GetTestData002();
-    auto result2 = useClass.restoreIpAddresses(getTestModel.s);
-
-    getTestModel = useClass.GetTestData003();
-    auto result3 = useClass.restoreIpAddresses(getTestModel.s);
+    auto result2 = useClass.generateTrees(getTestModel.n);
 
     return 0;
 }
