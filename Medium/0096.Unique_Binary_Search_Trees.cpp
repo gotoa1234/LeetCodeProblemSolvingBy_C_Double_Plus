@@ -51,15 +51,55 @@ namespace Solution96
 #pragma region Main
     public:
         /// <summary>
-        ///         思路 ：
-        ///      Runtime :
-        /// Memory Usage :
+        ///         思路 ：這題最佳效能是用數學的公式解
+        ///               先從n 的規律看，當n=1時為1，表示n 進行某個計算可以得到1，這邊暫定n=0 也為1
+        ///              n    |  結果       n    |  結果
+        ///              ------------       ------------
+        ///              1        1         0        1    
+        ///              2        2         1        1     
+        ///              3        5     =>  2        2    
+        ///              4        14        3        5
+        ///              5        42        4        14
+        ///              6        132       5        42
+        ///                                 6        132
+        /// 
+        ///              事實上公式如下：
+        ///              n = 2 時，加總以下
+        ///              n  | 將以下計算相加，可以得到2 (1+1)
+        ///              ---------
+        ///              0  | n=0的結果 * n=1的結果 => 1 * 1 = 1
+        ///              1  | n=1的結果 * n=0的結果 => 1 * 1 = 1
+        /// 
+        ///              n = 5 時，加總以下
+        ///              n  | 將以下計算相加，可以得到42 (14 + 5 + 4 + 5 + 14)
+        ///              ---------
+        ///              0  | n=0的結果 * n=4的結果 =>  1 * 14= 14
+        ///              1  | n=1的結果 * n=3的結果 =>  1 * 5 = 5
+        ///              2  | n=2的結果 * n=2的結果 =>  2 * 2 = 4
+        ///              3  | n=3的結果 * n=1的結果 =>  5 * 1 = 5
+        ///              4  | n=4的結果 * n=0的結果 => 14 * 1 = 14
+        ///
+        ///      Runtime :  0 ms Beats 100 %
+        /// Memory Usage :5.9 MB Beats 77.88 %
         /// </summary>
         /// <returns></returns>
     public:
-        int numTrees(int n) {
-            return {};
+        int numTrees(int n) 
+        {
+            //利用公式規律解 + 動態規劃利用前次求出的結果
+            vector<int> dp(n + 1);
+            dp[0] = 1;
+            for (int index = 1; index <= n; index++)
+            {
+                for (int innerIndex = 0; innerIndex < index; ++innerIndex) 
+                {
+                    dp[index] += dp[innerIndex] * dp[index - innerIndex - 1];
+                }
+            }
+            return dp[n];
         }
+
+
     public:
 #pragma endregion Main
 
