@@ -1,18 +1,15 @@
-﻿#include <unordered_map>
-#include "Medium/0097.Interleaving_String.cpp"
-using namespace Solution97;
+﻿#include "Medium\0099.Recover_Binary_Search_Tree.cpp"
+using namespace Solution99;
+using namespace std;
 
 int main()
 {
-    Solution97::Interleaving_String useClass;
-    Solution97::Interleaving_String::Interleaving_String_Model getTestModel = useClass.GetTestData001();
-    auto result1 = useClass.isInterleave(getTestModel.s1, getTestModel.s2, getTestModel.s3);
 
-    getTestModel = useClass.GetTestData002();
-    auto result2 = useClass.isInterleave(getTestModel.s1, getTestModel.s2, getTestModel.s3);
+	Solution99::Recover_Binary_Search_Tree useClass;
+	Solution99::Recover_Binary_Search_Tree::Recover_Binary_Search_Tree_Model getTestModel = useClass.GetTestData001();
+	useClass.recoverTree(getTestModel.root);
 
-    getTestModel = useClass.GetTestData003();
-    auto result3 = useClass.isInterleave(getTestModel.s1, getTestModel.s2, getTestModel.s3);
+	getTestModel = useClass.GetTestData002();
+	useClass.recoverTree(getTestModel.root);
 
-    return 0;
 }
