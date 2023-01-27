@@ -66,16 +66,14 @@ namespace Solution100
 				return true;
 			//2. 節點結構不相同返回false
 			if ((p != NULL && q == NULL) ||
-				p == NULL && q != NULL
+				(p == NULL && q != NULL)
 				)
 				return false;
-
 			//3. 檢查下一節點結構/值是否相同
-			bool leftNode = isSameTree(p->left, q->left);
-			bool right = isSameTree(p->right, q->right);
-			bool check = p->val == q->val;
+			bool isLeftNodeSame = isSameTree(p->left, q->left);
+			bool isRightNodeSame = isSameTree(p->right, q->right);
 			//4. 相同返回true
-			if (leftNode && right && check)
+			if (isLeftNodeSame && isRightNodeSame && p->val == q->val)
 				return true;
 			//5. 不相同返回false
 			return false;
