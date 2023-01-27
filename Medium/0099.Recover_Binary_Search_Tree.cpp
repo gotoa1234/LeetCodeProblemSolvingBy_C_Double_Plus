@@ -50,15 +50,16 @@ namespace Solution99
 	public:
 		/// <summary>
 		///          思路： 依照二分搜尋樹特性 - 節結點的左節點都比根節點小 / 根節點的右節點都比根節點大
-		///                 提姆給
-		///       Runtime: 
-		///  Memory Usage :
+		///                 提目只會有一個節點錯誤導致不平衡，所以要先找出不平衡的節點
+		///       Runtime :   43 ms Beats 54.31 %
+		///  Memory Usage : 57.6 MB Beats 99.17 %
 		/// </summary>
 		void recoverTree(TreeNode* root) {
 			TreeNode* FindNeedReplaceNode = nullptr; 
 			TreeNode* replaceNode = nullptr; 
-			for(TreeNode* currentNode = root, *lastNode = nullptr, *moveNode = nullptr;
-				currentNode!=nullptr;	
+			//1. 跳出條件是當找到不平衡的節點時替換
+			for (TreeNode* currentNode = root, *lastNode = nullptr, *moveNode = nullptr;
+				currentNode != nullptr;
 			    )
 			{
 				//2-1. 檢查左節點若有節點時
@@ -80,6 +81,7 @@ namespace Solution99
 						moveNode->right = NULL;
 				}
 
+				//3. 找到錯誤的節點進入
 				if (lastNode && currentNode->val < lastNode->val) 
 				{
 					//3-1. 找到錯誤的節點值，要進行紀錄
