@@ -50,12 +50,12 @@ namespace Solution101
 #pragma region Main
 	public:
 		/// <summary>
-		///          思路：
-		///       Runtime : 
-		///  Memory Usage :
+		///          思路：利用遞迴與對稱的特性，將左節點+右節點 與 右節點+左節點 交替遞迴重複驗證是否相同
+		///               皆相同的情況下到最後(nullptr)
+		///       Runtime :   3 ms Beats 90.51 %
+		///  Memory Usage :16.5 MB Beats 56.6 %
 		/// </summary>
 		bool isSymmetric(TreeNode* root) {
-			
 			return CheckSymmetric(root->left, root->right);
 		}
 
@@ -81,6 +81,15 @@ namespace Solution101
 		Symmetric_Tree_Model GetTestData001(void)
 		{
 			Symmetric_Tree_Model result;
+			TreeNode* root = new TreeNode(1);
+			root->left = new TreeNode(2);
+			root->right = new TreeNode(2);
+
+			root->left->left = new TreeNode(3);
+			root->left->right = new TreeNode(4);
+
+			root->right->left = new TreeNode(4);
+			root->right->right = new TreeNode(4);
 			return result;//expect: true
 		};
 
@@ -90,6 +99,13 @@ namespace Solution101
 		Symmetric_Tree_Model GetTestData002(void)
 		{
 			Symmetric_Tree_Model result;
+			TreeNode* root = new TreeNode(1);
+			root->left = new TreeNode(2);
+			root->right = new TreeNode(2);
+
+			root->left->right = new TreeNode(3);
+
+			root->right->right = new TreeNode(3);
 			return result;//expect: false
 		};
 	private:
