@@ -142,6 +142,7 @@
     <ClCompile Include="Easy\0001_two_sum.cpp" />
     <ClCompile Include="Easy\0083.Remove_Duplicates_from_Sorted_List.cpp" />
     <ClCompile Include="Easy\0088.Merge_Sorted_Array.cpp" />
+    <ClCompile Include="Easy\0101.Symmetric_Tree.cpp" />
     <ClCompile Include="Hard\0084.Largest_Rectangle_in_Histogram.cpp" />
     <ClCompile Include="Hard\0085.Maximal_Rectangle.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
