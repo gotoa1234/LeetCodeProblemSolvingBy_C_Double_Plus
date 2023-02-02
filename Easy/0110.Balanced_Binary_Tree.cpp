@@ -96,9 +96,9 @@ namespace Solution110
 		};
 
 		/// <summary>
-	/// 測試資料2
-	/// </summary>   
-		Balanced_Binary_Tree_Model GetTestData002(void)
+	    /// 測試資料2
+	    /// </summary>   
+		Balanced_Binary_Tree_Model GetTestData003(void)
 		{
 			Balanced_Binary_Tree_Model result;
 			return result;//expect: true
