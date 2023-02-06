@@ -50,12 +50,17 @@ namespace Solution104
 #pragma region Main
 	public:
 		/// <summary>
-		///          思路：
-		///       Runtime :
-		///  Memory Usage :
+		///          思路：利用遞迴將左節點與右節點深度取回，最大的那個為最長深度
+		///       Runtime :   8 ms Beats 78.51 %
+		///  Memory Usage :18.8 MB Beats 92.42 %
 		/// </summary>
 		int maxDepth(TreeNode* root) {
-			return {};
+			if (root == nullptr)
+				return 0;
+			int leftNodeDepth = maxDepth(root->left);
+			int rightNodeDepth = maxDepth(root->right);
+			//必須+1 因為根節點算第1層
+			return max(leftNodeDepth, rightNodeDepth) + 1;
 		}
 
 #pragma endregion Main
