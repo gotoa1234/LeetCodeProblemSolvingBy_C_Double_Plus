@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <unordered_map>
 using namespace std;
 
 namespace Solution105
@@ -51,13 +52,35 @@ namespace Solution105
 	public:
 		/// <summary>
 		///          思路：
-		///       Runtime :
-		///  Memory Usage :
+		///       Runtime :  16 ms Beats 86.57 %
+		///  Memory Usage :26.3 MB Beats 50.14 %
 		/// </summary>
+		unordered_map<int, int> _hashTable;
 		TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
-			return {};
+			
+			//1. 初始化資料
+			for (int index = 0; index < inorder.size(); index++)
+				_hashTable[inorder[index]] = index;
+			
+			return buildTreeHelper(preorder, 0, preorder.size(), inorder, 0, inorder.size());
 		}
 
+		TreeNode* buildTreeHelper(
+			vector<int>& preorder, int preorderStartIndex, int preorderEndIndex, 
+			vector<int>& inorder, int inorderStartIndex, int inorderEndIndex)
+		{
+			if (preorderStartIndex == preorderEndIndex)
+				return NULL;
+			int root_val = preorder[preorderStartIndex];
+			TreeNode* root = new TreeNode(root_val);
+			int i_root_index = _hashTable[root_val];
+			int leftNum = i_root_index - inorderStartIndex;
+			root->left = buildTreeHelper(preorder, preorderStartIndex + 1, preorderStartIndex + leftNum + 1, 
+				                          inorder,      inorderStartIndex,                     i_root_index);
+			root->right = buildTreeHelper(preorder, preorderStartIndex + leftNum + 1, preorderEndIndex, 
+				                           inorder,                 i_root_index + 1,  inorderEndIndex);
+			return root;
+		}
 
 #pragma endregion Main
 
