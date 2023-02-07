@@ -1,18 +1,20 @@
-﻿#include "Easy\0100.Same_Tree.cpp"
-using namespace Solution100;
+﻿#include "Medium\0103.Binary_Tree_Zigzag_Level_Order_Traversal.cpp"
+#include <iostream>
+#include <unordered_map>
+#include <string>
+using namespace Solution103;
 using namespace std;
 
 
 int main()
 {
-	Solution100::Recover_Binary_Search_Tree useClass;
-	Solution100::Recover_Binary_Search_Tree::Recover_Binary_Search_Tree_Model getTestModel = useClass.GetTestData001();
-	auto result1 = useClass.isSameTree(getTestModel.p, getTestModel.q);
+	Solution103::Binary_Tree_Level_Order_Traversal useClass;
+	Solution103::Binary_Tree_Level_Order_Traversal::Binary_Tree_Level_Order_Traversal_Model getTestModel = useClass.GetTestData001();
+	auto result1 = useClass.zigzagLevelOrder(getTestModel.root);
 
 	getTestModel = useClass.GetTestData002();
-	auto result2 = useClass.isSameTree(getTestModel.p, getTestModel.q);
+	auto result2 = useClass.zigzagLevelOrder(getTestModel.root);
 
 	getTestModel = useClass.GetTestData003();
-	auto result3 = useClass.isSameTree(getTestModel.p, getTestModel.q);
-
+	auto result3 = useClass.zigzagLevelOrder(getTestModel.root);
 }

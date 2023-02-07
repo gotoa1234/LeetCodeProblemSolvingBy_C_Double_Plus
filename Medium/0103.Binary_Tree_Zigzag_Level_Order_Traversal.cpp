@@ -6,11 +6,9 @@ namespace Solution103
 {
 #pragma region Paste to execute 
 	/*
-	#include "Medium\0103.Binary_Tree_Level_Order_Traversal.cpp"
+	#include "Medium\0103.Binary_Tree_Zigzag_Level_Order_Traversal.cpp"
 	using namespace Solution103;
 	using namespace std;
-
-
 	int main()
 	{
 		Solution103::Binary_Tree_Level_Order_Traversal useClass;
@@ -53,12 +51,33 @@ namespace Solution103
 #pragma region Main
 	public:
 		/// <summary>
-		///          思路：
-		///       Runtime :
-		///  Memory Usage :
+		///          思路：利用遞迴 + 層級，逐層添加陣列元素
+		///       Runtime : 0 ms Beats  100 %
+		///  Memory Usage :13 MB Beats 5.37 %
 		/// </summary>
+		vector<vector<int>> _reulst;
 		vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
-			return {};
+			//1. 從根結點開始
+			ComposeLevelNode(root, 0);
+			return _reulst;
+		}
+
+		void ComposeLevelNode(TreeNode* node, int level) 
+		{
+			//2. 若傳遞來節點為Null表示不用往下-可中止
+			if (node == nullptr) 
+				return;
+			//3. 若該階層尚未有資料，則建立
+			if (_reulst.size() == level) 
+				_reulst.push_back({});
+			//4-1. 奇數塞入方式:左->右
+			if (level % 2 == 0) 
+				_reulst[level].push_back(node->val);
+			else//4-2. 偶數塞入方式:右->左
+				_reulst[level].insert(_reulst[level].begin(), node->val);
+			//5. 重複將當前節點的下兩個節點遞迴處理，且深度+1
+			ComposeLevelNode(node->left, level + 1);
+			ComposeLevelNode(node->right, level + 1);
 		}
 
 
@@ -102,6 +121,7 @@ namespace Solution103
 		Binary_Tree_Level_Order_Traversal_Model GetTestData003(void)
 		{
 			Binary_Tree_Level_Order_Traversal_Model result;
+			result.root = nullptr;
 			return result;//expect: [[]]
 		};
 #pragma endregion TestData

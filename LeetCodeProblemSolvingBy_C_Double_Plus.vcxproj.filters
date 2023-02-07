@@ -30,19 +30,10 @@
     <ClCompile Include="Easy\0088.Merge_Sorted_Array.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="Medium\0089.Gray_Code.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
     <ClCompile Include="Medium\0078.Subsets.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="Medium\0090.Subsets_II.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
     <ClCompile Include="Easy\0001_two_sum.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="Medium\0091.Decode_Ways.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
     <ClCompile Include="Easy\0101.Symmetric_Tree.cpp">
@@ -86,12 +77,7 @@
     <None Include="Mysql\0626.Exchange_Seats.sql" />
     <None Include="Mysql\0627.Swap_Salary.sql" />
     <None Include="Mysql\1050.Actors_and_Directors_Who_Cooperated_At_Least_Three_Times.sql" />
-    <None Include="Medium\0092.Reverse_Linked_List_II.cpp" />
-    <None Include="Medium\0093.Restore_IP_Addresses.cpp" />
     <None Include="Easy\0094.Binary_Tree_Inorder_Traversal.cpp" />
-    <None Include="Medium\0095.Unique_Binary_Search_Trees_II.cpp" />
-    <None Include="Medium\0096.Unique_Binary_Search_Trees.cpp" />
-    <None Include="Medium\0097.Interleaving_String.cpp" />
     <None Include="Medium\0099.Recover_Binary_Search_Tree.cpp" />
     <None Include="Easy\0100.Same_Tree.cpp" />
   </ItemGroup>
