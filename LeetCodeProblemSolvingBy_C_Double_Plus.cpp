@@ -1,20 +1,13 @@
-﻿#include "Medium\0103.Binary_Tree_Zigzag_Level_Order_Traversal.cpp"
-#include <iostream>
-#include <unordered_map>
-#include <string>
-using namespace Solution103;
+﻿#include "Medium\0105.Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal.cpp"
+using namespace Solution105;
 using namespace std;
-
 
 int main()
 {
-	Solution103::Binary_Tree_Level_Order_Traversal useClass;
-	Solution103::Binary_Tree_Level_Order_Traversal::Binary_Tree_Level_Order_Traversal_Model getTestModel = useClass.GetTestData001();
-	auto result1 = useClass.zigzagLevelOrder(getTestModel.root);
+	Solution105::Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal useClass;
+	Solution105::Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal::Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal_Model getTestModel = useClass.GetTestData001();
+	auto result1 = useClass.buildTree(getTestModel.preorder, getTestModel.inorder);
 
 	getTestModel = useClass.GetTestData002();
-	auto result2 = useClass.zigzagLevelOrder(getTestModel.root);
-
-	getTestModel = useClass.GetTestData003();
-	auto result3 = useClass.zigzagLevelOrder(getTestModel.root);
+	auto result2 = useClass.buildTree(getTestModel.preorder, getTestModel.inorder);
 }

@@ -24,7 +24,7 @@ namespace Solution105
 #pragma endregion Paste to execute
 
 	/// <summary>
-	/// 從先序和中序遍歷構造二叉樹
+	/// 從前序和中序遍歷構造二叉樹
 	/// </summary>
 	class Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal
 	{
@@ -51,16 +51,21 @@ namespace Solution105
 #pragma region Main
 	public:
 		/// <summary>
-		///          思路：
+		///          思路：前序:由根節點開始，往左節點深入，經過的節點紀錄
+		///                中序:由根節點開始，往左節點深入，只有當左節點走過或者Null時，記錄此節點
+		///                題目給定兩棵樹(前序+中序) 組成原始的樹長什麼樣
+		///                利用HashTable紀錄前序對應到中序索引位置
+		///                每次以當前的節點往下切分兩顆樹，利用HashTable可得知前序節點對應中序節點的位置
+		/// 
 		///       Runtime :  16 ms Beats 86.57 %
 		///  Memory Usage :26.3 MB Beats 50.14 %
 		/// </summary>
-		unordered_map<int, int> _hashTable;
+		unordered_map<int, int> _inOrderValueToIndexHashTable;
 		TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
 			
-			//1. 初始化資料
+			//1. 建立前序值對應中序位置
 			for (int index = 0; index < inorder.size(); index++)
-				_hashTable[inorder[index]] = index;
+				_inOrderValueToIndexHashTable[inorder[index]] = index;
 			
 			return buildTreeHelper(preorder, 0, preorder.size(), inorder, 0, inorder.size());
 		}
@@ -69,17 +74,27 @@ namespace Solution105
 			vector<int>& preorder, int preorderStartIndex, int preorderEndIndex, 
 			vector<int>& inorder, int inorderStartIndex, int inorderEndIndex)
 		{
+			//2-1. 切割出的樹，前序索引到終點，可回傳nullptr
 			if (preorderStartIndex == preorderEndIndex)
-				return NULL;
-			int root_val = preorder[preorderStartIndex];
-			TreeNode* root = new TreeNode(root_val);
-			int i_root_index = _hashTable[root_val];
-			int leftNum = i_root_index - inorderStartIndex;
-			root->left = buildTreeHelper(preorder, preorderStartIndex + 1, preorderStartIndex + leftNum + 1, 
-				                          inorder,      inorderStartIndex,                     i_root_index);
-			root->right = buildTreeHelper(preorder, preorderStartIndex + leftNum + 1, preorderEndIndex, 
-				                           inorder,                 i_root_index + 1,  inorderEndIndex);
-			return root;
+				return nullptr;
+
+			//2-2. 建立此節點的結構
+			int selfPreOrderNodeValue = preorder[preorderStartIndex];
+			TreeNode* currentNode = new TreeNode(selfPreOrderNodeValue);
+
+			//3-1. 找出該"前序值"對應"中序索引"，切割出樹的起迄
+			int inOrderEndIndex = _inOrderValueToIndexHashTable[selfPreOrderNodeValue];
+			int leftNum = inOrderEndIndex - inorderStartIndex;//切割出的中序還有幾格可進行(由左至右)
+			//3-2. 左節點:           preorderStartIndex + 1 => 前序下一步的起點    preorderStartIndex + leftNum + 1 => 前序下一步的終點
+			//                            inorderStartIndex => 中序下一步的終點                     inOrderEndIndex => 中序下一步的終點
+			currentNode->left = buildTreeHelper(preorder, preorderStartIndex + 1, preorderStartIndex + leftNum + 1, 
+				                                 inorder,      inorderStartIndex,                  inOrderEndIndex);
+			//3-3. 右節點:preorderStartIndex + leftNum + 1 => 前序下一步的起點   preorderEndIndex => 前序下一步終點
+		    //                         inOrderEndIndex + 1 => 中序下一步的起點    inorderEndIndex => 中序下一步終點
+			currentNode->right = buildTreeHelper(preorder, preorderStartIndex + leftNum + 1, preorderEndIndex, 
+				                                  inorder,              inOrderEndIndex + 1, inorderEndIndex);
+			//4. 回傳自己的節點，且下面的節點皆已建構完成
+			return currentNode;
 		}
 
 #pragma endregion Main
