@@ -45,12 +45,41 @@ namespace Solution107
 #pragma region Main
     public:
         /// <summary>
-        ///         思路  :
-        ///      Runtime : 
-        /// Memory Usage : 
-
-        vector<vector<int>> levelOrderBottom(TreeNode* root) {
-            return {};
+        ///         思路  :參考102，利用queue 組成每層結果，然後反轉結果順序
+        ///      Runtime :    3 ms Beats 86.11 %
+        /// Memory Usage : 12.5 MB Beats 87.36 %
+        vector<vector<int>> levelOrderBottom(TreeNode* root) 
+        {
+            //1. 排除為空的可能
+            if (root == nullptr)
+                return {};
+            vector<vector<int>> result{};
+            queue<TreeNode*> queueTemp{};
+            //2. 將根結點開始遍歷
+            queueTemp.push(root);
+            //3. 直到所有的點都走完，必為空
+            while (!queueTemp.empty())
+            {
+                //4-1. 取出當前queue中所有值，若有值就是該層要組成
+                int size = queueTemp.size();
+                vector<int> child{};               
+                while (size--)
+                {
+                    //4-2. 將queue最前端的項目取出，為同一層的資料(用child紀錄群內數值)
+                    TreeNode* get = queueTemp.front();
+                    queueTemp.pop();
+                    child.push_back(get->val);
+                    //4-3. 每個節點走到，若有子節點則把值放進下個queue中，繼續重複3.的步驟
+                    if (get->left != nullptr)
+                        queueTemp.push(get->left);
+                    if (get->right != nullptr)
+                        queueTemp.push(get->right);
+                }
+                result.push_back(child);
+            }
+            //5. 與102.最大差異就是用Reverse反轉陣列內項目順序
+            reverse(result.begin(), result.end());
+            return result;
         }
 #pragma endregion Main
 
@@ -70,7 +99,7 @@ namespace Solution107
             result.root->right->left = new TreeNode(15);
             result.root->right->right = new TreeNode(7);
 
-            return result;
+            return result;//[[15,7],[9,20],[3]]
         };
 
         /// <summary>
@@ -79,9 +108,9 @@ namespace Solution107
         Binary_Tree_Level_Order_Traversal_II_Model GetTestData002(void)
         {
             Binary_Tree_Level_Order_Traversal_II_Model result;
-            vector<int> l1Vectors = { 1, 2 };
+            vector<int> l1Vectors = { 1};
             result.root = ConstructNodes(l1Vectors);
-            return result;
+            return result;// [[1]]
         };
 
         /// <summary>
@@ -90,9 +119,9 @@ namespace Solution107
         Binary_Tree_Level_Order_Traversal_II_Model GetTestData003(void)
         {
             Binary_Tree_Level_Order_Traversal_II_Model result;
-            vector<int> l1Vectors{ 1 };
+            vector<int> l1Vectors{ };
             result.root = ConstructNodes(l1Vectors);
-            return result;
+            return result;// []
         };
     private:
         TreeNode* ConstructNodes(vector<int>& inputDatas)
