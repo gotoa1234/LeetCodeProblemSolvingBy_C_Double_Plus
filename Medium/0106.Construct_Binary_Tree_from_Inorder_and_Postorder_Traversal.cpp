@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <unordered_map>
 using namespace std;
 
 namespace Solution106
@@ -50,15 +51,32 @@ namespace Solution106
 #pragma region Main
 	public:
 		/// <summary>
-		///          思路：
-		///       Runtime :
-		///  Memory Usage :
+		///          思路：同105題但問題該成 後序 + 中序 找出唯一二元樹
+		///                後序:由根節點開始，往左節點深入，只有當左節與右節點走過或者Null時，才記錄節點
+		///       Runtime :  16 ms Beats 85 %
+		///  Memory Usage :26.4 MB Beats 47.44 %
 		/// </summary>
+		unordered_map<int, int> _inOrderHashMap;
 		TreeNode* buildTree(vector<int>& inorder, vector<int>& postorder) {
-			return {};
+			for (int index = 0; index < inorder.size(); index++)
+				_inOrderHashMap[inorder[index]] = index;
+
+			return FindRightNode(postorder, 0, postorder.size(), inorder,0, inorder.size());
 		}
-
-
+		TreeNode* FindRightNode(vector<int>& postorder, int pS, int pE,vector<int>& inorder,int iS, int iE)
+		{
+			if (pS == pE)
+				return nullptr;
+			TreeNode* currentNode = new TreeNode(postorder[pE - 1]);
+			int findInorderEndIndex = _inOrderHashMap[currentNode->val];
+			int splitLeftNum = findInorderEndIndex - iS;
+			currentNode -> left = FindRightNode(postorder,                  pS, pS + splitLeftNum,
+				                                  inorder,                  iS, findInorderEndIndex);
+			currentNode ->right = FindRightNode(postorder,       pS + splitLeftNum , pE - 1,
+                                    			  inorder, findInorderEndIndex + 1 ,     iE);
+			return currentNode;
+		}
+		
 #pragma endregion Main
 
 #pragma region TestData
@@ -69,9 +87,9 @@ namespace Solution106
 		Construct_Binary_Tree_from_Inorder_and_Postorder_Traversal_Model GetTestData001(void)
 		{
 			Construct_Binary_Tree_from_Inorder_and_Postorder_Traversal_Model result;
-			result.inorder = { 3, 9, 20, 15, 7 };
-			result.postorder = { 9, 3, 15, 20, 7 };
-			return result;//expect: [3, 9, 20, null, null, 15, 7]
+			result.inorder = { 9,3,15,20,7 };
+			result.postorder = { 9,15,7,20,3 };
+			return result;//expect: [3,9,20,null,null,15,7]
 		};
 
 		/// <summary>
