@@ -72,7 +72,7 @@ namespace Solution105
 
 		TreeNode* buildTreeHelper(
 			vector<int>& preorder, int preorderStartIndex, int preorderEndIndex, 
-			vector<int>& inorder, int inorderStartIndex, int inorderEndIndex)
+		    vector<int>& inorder,  int inorderStartIndex,  int inorderEndIndex)
 		{
 			//2-1. 切割出的樹，前序索引到終點，可回傳nullptr
 			if (preorderStartIndex == preorderEndIndex)
@@ -83,16 +83,16 @@ namespace Solution105
 			TreeNode* currentNode = new TreeNode(selfPreOrderNodeValue);
 
 			//3-1. 找出該"前序值"對應"中序索引"，切割出樹的起迄
-			int inOrderEndIndex = _inOrderValueToIndexHashTable[selfPreOrderNodeValue];
-			int leftNum = inOrderEndIndex - inorderStartIndex;//切割出的中序還有幾格可進行(由左至右)
+			int splitInOrderEndIndex = _inOrderValueToIndexHashTable[selfPreOrderNodeValue];
+			int leftNum = splitInOrderEndIndex - inorderStartIndex;//切割出的中序還有幾格可進行(由左至右)
 			//3-2. 左節點:           preorderStartIndex + 1 => 前序下一步的起點    preorderStartIndex + leftNum + 1 => 前序下一步的終點
 			//                            inorderStartIndex => 中序下一步的終點                     inOrderEndIndex => 中序下一步的終點
 			currentNode->left = buildTreeHelper(preorder, preorderStartIndex + 1, preorderStartIndex + leftNum + 1, 
-				                                 inorder,      inorderStartIndex,                  inOrderEndIndex);
+				                                 inorder,      inorderStartIndex,             splitInOrderEndIndex);
 			//3-3. 右節點:preorderStartIndex + leftNum + 1 => 前序下一步的起點   preorderEndIndex => 前序下一步終點
 		    //                         inOrderEndIndex + 1 => 中序下一步的起點    inorderEndIndex => 中序下一步終點
 			currentNode->right = buildTreeHelper(preorder, preorderStartIndex + leftNum + 1, preorderEndIndex, 
-				                                  inorder,              inOrderEndIndex + 1, inorderEndIndex);
+				                                  inorder,         splitInOrderEndIndex + 1, inorderEndIndex);
 			//4. 回傳自己的節點，且下面的節點皆已建構完成
 			return currentNode;
 		}
