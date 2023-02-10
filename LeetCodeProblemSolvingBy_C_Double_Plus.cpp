@@ -1,13 +1,11 @@
-﻿#include "Easy\0108.Convert_Sorted_Array_to_Binary_Search_Tree.cpp"
-using namespace Solution108;
+﻿#include "Medium\0109.Convert_Sorted_List_to_Binary_Search_Tree.cpp"
+using namespace Solution109;
 using namespace std;
 
 int main()
 {
-	Solution108::Convert_Sorted_Array_to_Binary_Search_Tree useClass;
-	Solution108::Convert_Sorted_Array_to_Binary_Search_Tree::Convert_Sorted_Array_to_Binary_Search_Tree_Model getTestModel = useClass.GetTestData001();
-	auto result1 = useClass.sortedArrayToBST(getTestModel.nums);
+    Solution109::Convert_Sorted_List_to_Binary_Search_Tree useClass;
+    Solution109::Convert_Sorted_List_to_Binary_Search_Tree::Convert_Sorted_List_to_Binary_Search_Tree_Model getTestModel = useClass.GetTestData001();
+    Convert_Sorted_List_to_Binary_Search_Tree::TreeNode* result = useClass.sortedListToBST(getTestModel.head);
 
-	getTestModel = useClass.GetTestData002();
-	auto result2 = useClass.sortedArrayToBST(getTestModel.nums);
 }
