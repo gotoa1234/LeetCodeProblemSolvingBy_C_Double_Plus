@@ -23,7 +23,7 @@ namespace Solution110
 #pragma endregion Paste to execute
 
 	/// <summary>
-	/// 平衡二叉樹
+	/// 判斷平衡二叉樹
 	/// </summary>
 	class Balanced_Binary_Tree
 	{
@@ -49,12 +49,28 @@ namespace Solution110
 #pragma region Main
 	public:
 		/// <summary>
-		///          思路：
-		///       Runtime :
-		///  Memory Usage :
+		///          思路：平衡樹定義:一棵樹中任意節點與其他節點的高度差不超過1
+		///                利用遞迴，找出左、右節點的高度，然後高度差必須在2以內
+		///       Runtime : 4 ms Beats 98.40 %
+		///  Memory Usage :21 MB Beats 60.88 %
 		/// </summary>
 		bool isBalanced(TreeNode* root) {
-			return {};
+			if (root == nullptr)
+				return true;
+			int leftDepth = FindDepth(root->left) + 1;
+			int rightDepth = FindDepth(root->right) + 1;
+			if (abs(leftDepth - rightDepth) > 1)
+				return false;
+			return isBalanced(root->left) && isBalanced(root->right);
+		}
+
+		int FindDepth(TreeNode* root)
+		{
+			if (root == nullptr)
+				return true;
+			int leftDepth = FindDepth(root->left) + 1;
+			int rightDepth = FindDepth(root->right) + 1;
+			return max(leftDepth, rightDepth);
 		}
 
 #pragma endregion Main

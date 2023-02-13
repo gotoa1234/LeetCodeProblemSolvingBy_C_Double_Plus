@@ -140,14 +140,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Easy\0001_two_sum.cpp" />
-    <ClCompile Include="Easy\0083.Remove_Duplicates_from_Sorted_List.cpp" />
-    <ClCompile Include="Easy\0088.Merge_Sorted_Array.cpp" />
-    <ClCompile Include="Easy\0101.Symmetric_Tree.cpp" />
-    <ClCompile Include="Easy\0104.Maximum_Depth_of_Binary_Tree.cpp" />
     <ClCompile Include="Easy\0108.Convert_Sorted_Array_to_Binary_Search_Tree.cpp" />
     <ClCompile Include="Easy\0110.Balanced_Binary_Tree.cpp" />
-    <ClCompile Include="Hard\0084.Largest_Rectangle_in_Histogram.cpp" />
-    <ClCompile Include="Hard\0085.Maximal_Rectangle.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
     <ClCompile Include="Medium\0078.Subsets.cpp" />
     <ClCompile Include="Medium\0103.Binary_Tree_Zigzag_Level_Order_Traversal.cpp" />
@@ -157,8 +151,6 @@
     <ClCompile Include="Medium\0109.Convert_Sorted_List_to_Binary_Search_Tree.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Easy\0094.Binary_Tree_Inorder_Traversal.cpp" />
-    <None Include="Easy\0100.Same_Tree.cpp" />
     <None Include="Medium\0099.Recover_Binary_Search_Tree.cpp" />
     <None Include="Mysql\0177.Nth_Highest_Salary.sql" />
     <None Include="Mysql\0184.Department_Highest_Salary.sql" />
