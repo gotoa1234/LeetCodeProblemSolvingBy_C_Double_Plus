@@ -1,13 +1,10 @@
-﻿#include "Easy\0110.Balanced_Binary_Tree.cpp"
-using namespace Solution110;
-using namespace std;
-
+﻿#include <vector>
+#include "Easy\0001_two_sum.cpp"
+using namespace Solution1;
 int main()
 {
-	Solution110::Balanced_Binary_Tree useClass;
-	Solution110::Balanced_Binary_Tree::Balanced_Binary_Tree_Model getTestModel = useClass.GetTestData001();
-	auto result1 = useClass.isBalanced(getTestModel.root);
-
-	getTestModel = useClass.GetTestData002();
-	auto result2 = useClass.isBalanced(getTestModel.root);
+    Solution1::Two_Sum useClass;
+    Solution1::Two_Sum::Two_Sum_Model getTestModel = useClass.GetTestData001();
+    vector<int> result = useClass.twoSum(getTestModel.nums, getTestModel.target);
+    return 0;
 }
