@@ -1,13 +1,13 @@
-﻿#include "Easy\0119.Pascal_s_Triangle_II.cpp"
-using namespace Solution119;
+﻿#include "Medium\0120.Triangle.cpp"
+using namespace Solution120;
 using namespace std;
 
 int main()
 {
-	Solution119::Pascal_s_Triangle_II useClass;
-	Solution119::Pascal_s_Triangle_II::Pascal_s_Triangle_II_Model getTestModel = useClass.GetTestData001();
-	auto result1 = useClass.getRow(getTestModel.rowIndex);
+	Solution120::Triangle useClass;
+	Solution120::Triangle::Triangle_Model getTestModel = useClass.GetTestData001();
+	auto result1 = useClass.minimumTotal(getTestModel.triangle);
 
 	getTestModel = useClass.GetTestData002();
-	auto result2 = useClass.getRow(getTestModel.rowIndex);
+	auto result2 = useClass.minimumTotal(getTestModel.triangle);
 }
