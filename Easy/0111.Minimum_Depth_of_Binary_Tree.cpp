@@ -49,12 +49,22 @@ namespace Solution111
 #pragma region Main
 	public:
 		/// <summary>
-		///          思路：
-		///       Runtime :
-		///  Memory Usage :
+		///          思路：本題是找最小深度，所以為null的節點必須跳過。
+		///                利用遞迴，不斷往有Value 的節點DFS搜尋
+		///       Runtime :  267 ms Beats 88.84 %
+		///  Memory Usage :144.7 MB Beats 80.97 %
 		/// </summary>
 		int minDepth(TreeNode* root) {
-			return {};
+			if (root == nullptr) 
+				return 0;
+			//1. 左null 但 右存在，則右節點探索
+			if(root->left == nullptr && root->right)
+				return minDepth(root->right) + 1;
+			//2. 右null 但 左存在，則左節點探索
+			if (root->right == nullptr && root->left)
+				return minDepth(root->left) + 1;
+			//3. 上面1,2,不成立，則視為兩個節點都存在同時深入探索
+			return min(minDepth(root->left), minDepth(root->right)) + 1;
 		}
 
 #pragma endregion Main
@@ -62,7 +72,7 @@ namespace Solution111
 #pragma region TestData
 	public:
 		/// <summary>
-		/// 測試資料1
+		/// test 1
 		/// </summary>        
 		Minimum_Depth_of_Binary_Tree_Model GetTestData001(void)
 		{
@@ -77,23 +87,37 @@ namespace Solution111
 		};
 
 		/// <summary>
-		/// 測試資料2
+		/// test 2
 		/// </summary>   
 		Minimum_Depth_of_Binary_Tree_Model GetTestData002(void)
 		{
 			Minimum_Depth_of_Binary_Tree_Model result;
+			result.root = new TreeNode(2);
+			result.root->right = new TreeNode(3);
+
+			result.root->right->right = new TreeNode(4);
+
+			result.root->right->right->right = new TreeNode(5);
+
+			result.root->right->right->right->right = new TreeNode(6);
+			return result;//expect: 5
+	
+		};
+
+		/// <summary>
+        /// test 3
+        /// </summary>   
+		Minimum_Depth_of_Binary_Tree_Model GetTestData003(void)
+		{
+			Minimum_Depth_of_Binary_Tree_Model result;
 			result.root = new TreeNode(1);
 			result.root->left = new TreeNode(2);
+			result.root->right = new TreeNode(3);
 
-			result.root->left->left = new TreeNode(3);
+			result.root->left->left = new TreeNode(4);
+			result.root->left->right = new TreeNode(5);
+			return result;//expect: 2
 
-			result.root->left->left->left = new TreeNode(4);
-
-			result.root->left->left->left->left = new TreeNode(5);
-
-			result.root->left->left->left->left->left = new TreeNode(6);
-
-			return result;//expect: 5
 		};
 
 #pragma endregion TestData
