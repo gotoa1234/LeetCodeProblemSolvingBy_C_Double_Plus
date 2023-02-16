@@ -50,12 +50,40 @@ namespace Solution112
 #pragma region Main
 	public:
 		/// <summary>
-		///          思路：
-		///       Runtime :
-		///  Memory Usage :
+		///          思路：利用遞迴跑到Left與Right節點都為空時進行比較，若已經找到了，則可以強制中斷遞迴
+		///       Runtime :    3 ms Beats 99.24 %
+		///  Memory Usage : 21.3 MB Beats 45.26 %
 		/// </summary>
-		bool hasPathSum(TreeNode* root, int targetSum) {
-			return {};
+		bool _isHas = false;
+		bool hasPathSum(TreeNode* root, int targetSum) 
+		{
+			//1. 空必定為false
+			if (root == nullptr)
+				return false;
+			//2. 遞迴找出結果
+			return CaculateFind(root, targetSum, 0);
+		}
+
+		int CaculateFind(TreeNode* root, int& targetSum, int total)
+		{
+			//3-1. 已經找到就可以全部中斷，返回True
+			if (_isHas)
+				return _isHas;
+			//4. 只有當Left與Right 都為空時比較
+			if (root->left == nullptr && root->right == nullptr)
+			{
+				if (total + root->val == targetSum)
+					_isHas = true;				
+				return _isHas;
+			}
+			//3-2. 左節點可以往下繼續計算
+			if(root->left)
+				CaculateFind(root->left, targetSum, root->val + total);
+			//3-3. 右節點可以往下繼續計算
+			if(root->right)
+			    CaculateFind(root->right, targetSum, root->val + total);
+			//3-4. 上述都跑完直接返回當前計算結果即可
+			return _isHas;
 		}
 
 #pragma endregion Main

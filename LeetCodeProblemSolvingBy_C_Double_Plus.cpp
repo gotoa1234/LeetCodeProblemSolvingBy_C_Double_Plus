@@ -1,16 +1,13 @@
-﻿#include "Easy\0111.Minimum_Depth_of_Binary_Tree.cpp"
-using namespace Solution111;
+﻿#include "Easy\0112.Path_Sum.cpp"
+using namespace Solution112;
 using namespace std;
 
 int main()
 {
-	Solution111::Minimum_Depth_of_Binary_Tree useClass;
-	Solution111::Minimum_Depth_of_Binary_Tree::Minimum_Depth_of_Binary_Tree_Model getTestModel = useClass.GetTestData001();
-	auto result1 = useClass.minDepth(getTestModel.root);
+	Solution112::Path_Sum useClass;
+	Solution112::Path_Sum::Path_Sum_Model getTestModel = useClass.GetTestData001();
+	auto result1 = useClass.hasPathSum(getTestModel.root, getTestModel.targetSum);
 
 	getTestModel = useClass.GetTestData002();
-	auto result2 = useClass.minDepth(getTestModel.root);
-
-	getTestModel = useClass.GetTestData003();
-	auto result3 = useClass.minDepth(getTestModel.root);
+	auto result2 = useClass.hasPathSum(getTestModel.root, getTestModel.targetSum);
 }
