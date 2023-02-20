@@ -1,13 +1,19 @@
-﻿#include "Medium\0114.Flatten_Binary_Tree_to_Linked_List.cpp"
-using namespace Solution114;
+﻿#include "Hard/0115.Distinct_Subsequences.cpp"
+using namespace Solution115;
 using namespace std;
 
 int main()
 {
-	Solution114::Flatten_Binary_Tree_to_Linked_List useClass;
-	Solution114::Flatten_Binary_Tree_to_Linked_List::Flatten_Binary_Tree_to_Linked_List_Model getTestModel = useClass.GetTestData001();
-	useClass.flatten(getTestModel.root);
+	Solution115::Distinct_Subsequences useClass;
+	Solution115::Distinct_Subsequences::Distinct_Subsequences_Model getTestModel = useClass.GetTestData001();
+	auto result1 = useClass.numDistinct(getTestModel.s, getTestModel.t);
 
 	getTestModel = useClass.GetTestData002();
-	useClass.flatten(getTestModel.root);
+	auto result2 = useClass.numDistinct(getTestModel.s, getTestModel.t);
+
+	getTestModel = useClass.GetTestData003();
+	auto result3 = useClass.numDistinct(getTestModel.s, getTestModel.t);
+
+	getTestModel = useClass.GetTestData004();
+	auto result4 = useClass.numDistinct(getTestModel.s, getTestModel.t);
 }
