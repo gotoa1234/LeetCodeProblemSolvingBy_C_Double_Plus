@@ -51,7 +51,7 @@ namespace Solution114
 		/// <summary>
 		///          思路：題目要求用輸入的root 展開成一條右子樹鏈結串鍊
 		///       Runtime :   3 ms Beats 93.58 %
-		///  Memory Usage :12.8 MB Beats 19.69 %
+		///  Memory Usage :12.8 MB Beats 49.77 %
 		/// </summary>
 		void flatten(TreeNode* root) 
 		{
