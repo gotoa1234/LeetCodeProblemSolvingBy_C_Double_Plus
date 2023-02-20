@@ -1,13 +1,13 @@
-﻿#include "Medium\0113.Path_Sum_II.cpp"
-using namespace Solution113;
+﻿#include "Medium\0114.Flatten_Binary_Tree_to_Linked_List.cpp"
+using namespace Solution114;
 using namespace std;
 
 int main()
 {
-	Solution113::Path_Sum useClass;
-	Solution113::Path_Sum::Path_Sum_II_Model getTestModel = useClass.GetTestData001();
-	auto result1 = useClass.pathSum(getTestModel.root, getTestModel.targetSum);
+	Solution114::Flatten_Binary_Tree_to_Linked_List useClass;
+	Solution114::Flatten_Binary_Tree_to_Linked_List::Flatten_Binary_Tree_to_Linked_List_Model getTestModel = useClass.GetTestData001();
+	useClass.flatten(getTestModel.root);
 
 	getTestModel = useClass.GetTestData002();
-	auto result2 = useClass.pathSum(getTestModel.root, getTestModel.targetSum);
+	useClass.flatten(getTestModel.root);
 }

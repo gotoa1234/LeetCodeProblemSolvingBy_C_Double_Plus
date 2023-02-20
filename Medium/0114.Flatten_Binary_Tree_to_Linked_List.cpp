@@ -49,12 +49,30 @@ namespace Solution114
 #pragma region Main
 	public:
 		/// <summary>
-		///          思路：
-		///       Runtime :
-		///  Memory Usage :
+		///          思路：題目要求用輸入的root 展開成一條右子樹鏈結串鍊
+		///       Runtime :   3 ms Beats 93.58 %
+		///  Memory Usage :12.8 MB Beats 19.69 %
 		/// </summary>
-		void flatten(TreeNode* root) {
+		void flatten(TreeNode* root) 
+		{
+			//1. 若根結點為null的狀況下 - 直接中止
+			if (root == nullptr)
+				return;
+			
+			//2. 有存在子節點進行遞迴
+			if (root->left) 
+				flatten(root->left);
+			if (root->right) 
+				flatten(root->right);
 
+			//3-1. 將root->left 接到當前節點的 right 
+			TreeNode* newNode = root->right;
+			root->right = root->left;
+			root->left = nullptr;
+			//3-2. 然後將root->right(原本的root->left) 最後一個位置(nullptr)，將原本的root->right 接上去
+			while (root->right) 			
+				root = root->right;		
+			root->right = newNode;
 		}
 
 #pragma endregion Main
@@ -74,7 +92,7 @@ namespace Solution114
 			result.root->left->left = new TreeNode(3);
 			result.root->left->right = new TreeNode(4);
 			/*result.root->left->left->left = new TreeNode(7);*/
-			result.root->left->left->right = new TreeNode(6);
+			result.root->right->right = new TreeNode(6);
 
 			return result;//expect:[1, null, 2, null, 3, null, 4, null, 5, null, 6]
 		};
