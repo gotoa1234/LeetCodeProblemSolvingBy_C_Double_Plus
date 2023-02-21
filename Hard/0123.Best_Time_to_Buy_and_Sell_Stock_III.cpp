@@ -47,36 +47,34 @@ namespace Solution123
 		///            EX: 3,3,5,0,0,3,1,4   => 可以得出左往右遞增天數最大可獲利益為 [0,0,2,2,2,3,3,4]
 		///                3,3,5,0,0,3,1,4   => 可以得出右往左遞減天數最大可獲利益為 [4,4,4,4,4,3,3,0]
 		///                遍歷索引x 可以得到(left[x] + right[x]) 最大為6
-		///      Runtime : 
-		/// Memory Usage : 
+		///      Runtime :  150 ms Beats 90.42 %
+		/// Memory Usage : 78.4 MB Beats 71.59 %
 		/// </summary>
 		int maxProfit(vector<int>& prices) {
 			int days = prices.size();
 			vector<int> leftParts(days);
-			vector<int> rightParts(days);			
 
 			int minPrice = prices[0];
-			int maxProfit = 0;		
+			int leftProfit = 0;		
 			//1. 求出左遞增最大值
 			for (int index = 1; index < days; index++)
 			{
-				maxProfit = max(maxProfit, prices[index] - minPrice);
+				leftProfit = max(leftProfit, prices[index] - minPrice);
 				if (minPrice > prices[index])
 					minPrice = prices[index];
-				leftParts[index] = maxProfit;
+				leftParts[index] = leftProfit;
 			}
 			int maxPrice = prices[days - 1];
-			maxProfit = 0;
+			int rightProfit = 0;
 			int totalMAX = 0;
 			//2. 求出右遞增最大值
 			for (int index = days - 1; index >= 0; index--)
 			{
-				maxProfit = max(maxProfit, maxPrice - prices[index]);
+				rightProfit = max(rightProfit, maxPrice - prices[index]);
 				if (maxPrice < prices[index])
 					maxPrice = prices[index];
-				rightParts[index] = maxProfit;
-				//3. 再算的同時計算最大左+右的對應索引值 (拉出亦可，但會降低效能)
-				totalMAX = max(totalMAX, leftParts[index] + rightParts[index]);
+				//3. 再算的同時計算最大左+右的對應索引值，為了加快效能省去存在右邊的Vector<int>
+				totalMAX = max(totalMAX, leftParts[index] + rightProfit);
 			}
 			return totalMAX;
 		}
