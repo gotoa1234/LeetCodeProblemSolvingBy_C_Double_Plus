@@ -1,9 +1,10 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 #include <unordered_map>
 using namespace std;
 
-namespace Solution1
+namespace Solution125
 {
 #pragma region Paste to execute 
     /*
@@ -28,7 +29,9 @@ namespace Solution1
 #pragma endregion Paste to execute
 
     /// <summary>
-    /// 有效回文
+    /// 有效回文0 ms
+
+        
     /// </summary>
     class Valid_Palindrome
     {
@@ -43,9 +46,33 @@ namespace Solution1
 
 #pragma region Main
     public:
-        bool isPalindrome(string s)
-        {
-            return {};
+        /// <summary>
+        ///          思路： 檢查回文，排除非字母的資料然後判斷是否為回文
+        ///       Runtime :   0 ms Beats   100 %
+        ///  Memory Usage : 7.4 MB Beats 84.51 %
+        /// </summary>
+        bool isPalindrome(string s) {
+            int leftIndex = 0;
+            int rightIndex = s.size() - 1;
+            while (leftIndex < rightIndex) 
+            {
+                if (false == isalnum(s[leftIndex])) 
+                {
+                    leftIndex++;
+                    continue;
+                }
+                if (false == isalnum(s[rightIndex])) {
+                    rightIndex--;
+                    continue;
+                }
+                if (tolower(s[leftIndex]) != tolower(s[rightIndex])) 
+                {
+                    return false;
+                }
+                leftIndex++;
+                rightIndex--;
+            }
+            return true;
         }
 #pragma endregion Main
 
@@ -76,7 +103,17 @@ namespace Solution1
         Valid_Palindrome_Model GetTestData003(void)
         {
             Valid_Palindrome_Model result;
-            result.s = "";
+            result.s = ",.";
+            return result;//expect: true
+        };
+
+        /// <summary>
+        /// test 4
+        /// </summary> 
+        Valid_Palindrome_Model GetTestData003(void)
+        {
+            Valid_Palindrome_Model result;
+            result.s = "0P";
             return result;//expect: true
         };
 #pragma endregion TestData

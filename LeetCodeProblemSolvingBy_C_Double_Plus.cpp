@@ -1,17 +1,16 @@
-﻿#include "Hard\0123.Best_Time_to_Buy_and_Sell_Stock_III.cpp"
-using namespace Solution123;
+﻿#include "Easy\0125.Valid_Palindrome.cpp"
+using namespace Solution125;
 using namespace std;
-
 
 int main()
 {
-    Solution123::Best_Time_to_Buy_and_Sell_Stock_III useClass;
-    Solution123::Best_Time_to_Buy_and_Sell_Stock_III::Best_Time_to_Buy_and_Sell_Stock_III_Model getTestModel = useClass.GetTestData001();
-    auto result1 = useClass.maxProfit(getTestModel.prices);
+    Solution125::Valid_Palindrome useClass;
+    Solution125::Valid_Palindrome::Valid_Palindrome_Model getTestModel = useClass.GetTestData001();
+    auto result1 = useClass.isPalindrome(getTestModel.s);
 
     getTestModel = useClass.GetTestData002();
-    auto result2 = useClass.maxProfit(getTestModel.prices);
+    auto result2 = useClass.isPalindrome(getTestModel.s);
 
     getTestModel = useClass.GetTestData003();
-    auto result3 = useClass.maxProfit(getTestModel.prices);
+    auto result3 = useClass.isPalindrome(getTestModel.s);
 }
