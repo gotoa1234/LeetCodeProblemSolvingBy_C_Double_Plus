@@ -1,16 +1,16 @@
-﻿#include "Easy\0125.Valid_Palindrome.cpp"
-using namespace Solution125;
-using namespace std;
+﻿#include <unordered_map>
+#include "Medium/0128.Longest_Consecutive_Sequence.cpp"
+using namespace Solution128;
 
 int main()
 {
-    Solution125::Valid_Palindrome useClass;
-    Solution125::Valid_Palindrome::Valid_Palindrome_Model getTestModel = useClass.GetTestData001();
-    auto result1 = useClass.isPalindrome(getTestModel.s);
+    Solution128::Longest_Consecutive_Sequence useClass;
+    Solution128::Longest_Consecutive_Sequence::Longest_Consecutive_Sequence_Model getTestModel = useClass.GetTestData001();
+    auto result1 = useClass.longestConsecutive(getTestModel.nums);
 
     getTestModel = useClass.GetTestData002();
-    auto result2 = useClass.isPalindrome(getTestModel.s);
+    auto result2 = useClass.longestConsecutive(getTestModel.nums);
 
-    getTestModel = useClass.GetTestData003();
-    auto result3 = useClass.isPalindrome(getTestModel.s);
+
+    return 0;
 }

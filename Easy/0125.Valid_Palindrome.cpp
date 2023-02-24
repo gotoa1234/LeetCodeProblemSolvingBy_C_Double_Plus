@@ -110,7 +110,7 @@ namespace Solution125
         /// <summary>
         /// test 4
         /// </summary> 
-        Valid_Palindrome_Model GetTestData003(void)
+        Valid_Palindrome_Model GetTestData004(void)
         {
             Valid_Palindrome_Model result;
             result.s = "0P";
