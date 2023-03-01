@@ -43,24 +43,31 @@ namespace Solution134
 #pragma region Main
 	public:
 		/// <summary>
-		///          思路： 		
-		///       Runtime : 
-		///  Memory Usage : 
+		///          思路： 遍歷瓦斯站，找出
+		///                1. 判斷是否可建立迴圈
+		///                2. 判斷最後的瓦斯站索引位置
+		///       Runtime :   128 ms Beats 13.70 %
+		///  Memory Usage : 108.7 MB Beats  5.85 %
 		/// </summary>
 		int canCompleteCircuit(vector<int>& gas, vector<int>& cost) {
-			int totalGas = 0; 
-			int total_cost = 0;
-			int starting_station = 0; int curr_gas = 0;
-			for (int i = 0; i < gas.size(); i++) {
-				totalGas += gas[i];
-				total_cost += cost[i];
-				curr_gas += gas[i] - cost[i];
-				if (curr_gas < 0) {
-					starting_station = i + 1;
-					curr_gas = 0;
+			int summary = 0;
+			int station = 0; 
+			int currentGas = 0;
+			int temp = 0;
+			//1. 遍歷瓦斯站
+			for (int index = 0; index < gas.size(); index++) 
+			{
+				//2. summary計算，最後小於0表示不可能迴圈
+				temp = gas[index] - cost[index];
+				summary += temp;
+				//3. 當前瓦斯量，若小於0表示新的瓦斯站在下一個索引位置
+				currentGas += temp;
+				if (currentGas < 0) {
+					station = index + 1;
+					currentGas = 0;
 				}
 			}
-			return (totalGas < total_cost) ? -1 : starting_station;
+			return (summary < 0) ? -1 : station;
 		}
 
 #pragma endregion Main
