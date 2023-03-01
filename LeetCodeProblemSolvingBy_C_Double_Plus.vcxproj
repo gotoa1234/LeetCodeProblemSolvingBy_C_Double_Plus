@@ -161,6 +161,7 @@
     <ClCompile Include="Medium\0128.Longest_Consecutive_Sequence.cpp" />
     <ClCompile Include="Medium\0129.Sum_Root_to_Leaf_Numbers.cpp" />
     <ClCompile Include="Medium\0130.Surrounded_Regions.cpp" />
+    <ClCompile Include="Medium\0134.Gas_Station.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Mysql\0177.Nth_Highest_Salary.sql" />

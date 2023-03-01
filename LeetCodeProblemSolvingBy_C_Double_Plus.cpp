@@ -1,14 +1,16 @@
-﻿#include <unordered_map>
-#include "Medium/0129.Sum_Root_to_Leaf_Numbers.cpp"
-using namespace Solution129;
+﻿#include "Medium\0134.Gas_Station.cpp"
+using namespace Solution134;
+using namespace std;
 
 int main()
 {
-    Solution129::Sum_Root_to_Leaf_Numbers useClass;
-    Solution129::Sum_Root_to_Leaf_Numbers::Sum_Root_to_Leaf_Numbers_Model getTestModel = useClass.GetTestData001();
-    auto result1 = useClass.sumNumbers(getTestModel.root);
+	Solution134::Gas_Station useClass;
+	Solution134::Gas_Station::Gas_Station_Model getTestModel = useClass.GetTestData001();
+	auto result1 = useClass.canCompleteCircuit(getTestModel.gas, getTestModel.cost);
 
-    getTestModel = useClass.GetTestData002();
-    auto result2 = useClass.sumNumbers(getTestModel.root);
-    return 0;
+	getTestModel = useClass.GetTestData002();
+	auto result2 = useClass.canCompleteCircuit(getTestModel.gas, getTestModel.cost);
+
+	getTestModel = useClass.GetTestData003();
+	auto result3 = useClass.canCompleteCircuit(getTestModel.gas, getTestModel.cost);
 }
