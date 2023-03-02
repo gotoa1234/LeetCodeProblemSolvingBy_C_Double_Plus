@@ -53,12 +53,22 @@ namespace Solution116
 #pragma region Main
     public:
         /// <summary>
-        ///         思路 ：
-        ///      Runtime : 
-        /// Memory Usage : 
-
+        ///         思路 ：題目是一顆完美二元樹，所以一定會有先左節點，才會有對應的右節點
+        ///                因此可以判斷節點的左節點為空時，不用再往下進行了
+        ///                利用遞迴，將當前節點的左節點指向右節點，右節點再指向上級節點的Next下的左節點
+        ///      Runtime :  19 ms Beats 81.15 %
+        /// Memory Usage :16.9 MB Beats 74.66 %
         Node* connect(Node* root) {
-            return {};
+            //1. 跳出條件
+            if (root == nullptr || root->left == nullptr)
+                return root;
+            //2. 左接右，右接根節點的next的左節點
+            root->left->next = root->right;
+            root->right->next = root->next == nullptr ? nullptr : root->next->left;
+            //3. 左右節點繼續往下探索
+            connect(root->left);
+            connect(root->right);
+            return root;
         }
 #pragma endregion Main
 
@@ -70,7 +80,6 @@ namespace Solution116
         Populating_Next_Right_Pointers_in_Each_Node_Model GetTestData001(void)
         {
             Populating_Next_Right_Pointers_in_Each_Node_Model result;
-            vector<int> l1Vectors = { 1, 2, 4 };
             result.root = new Node(1);
             
             result.root->left = new Node(2);
