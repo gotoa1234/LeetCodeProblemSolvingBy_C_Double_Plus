@@ -54,8 +54,8 @@ namespace Solution124
 		///                2. 當走到底時，會返還自己值
 		///                3. 由底部往上返還時，返還自己+下面子節點路徑的值
 		///                再重複2,3 步驟的過程中，已確保每個節點都是只走一次，因此紀錄的最大值就是結果
-		///       Runtime :
-		///  Memory Usage :
+		///       Runtime :  21 ms Beats 90.58 %
+		///  Memory Usage :27.7 MB Beats 36.84 %
 		/// </summary>
 		int _result = INT_MIN;
 		int maxPathSum(TreeNode* root) 
