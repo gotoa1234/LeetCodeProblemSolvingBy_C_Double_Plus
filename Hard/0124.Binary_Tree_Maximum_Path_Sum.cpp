@@ -49,12 +49,32 @@ namespace Solution124
 #pragma region Main
 	public:
 		/// <summary>
-		///          思路：
+		///          思路：需要用一個變數紀錄當前走的節點的最大值，本題難點在於如何走節點
+		///                1. 以當前節點的左右子節點，都進行遞迴，每個節點重複進行1.
+		///                2. 當走到底時，會返還自己值
+		///                3. 由底部往上返還時，返還自己+下面子節點路徑的值
+		///                再重複2,3 步驟的過程中，已確保每個節點都是只走一次，因此紀錄的最大值就是結果
 		///       Runtime :
 		///  Memory Usage :
 		/// </summary>
-		int maxPathSum(TreeNode* root) {
-			return {};
+		int _result = INT_MIN;
+		int maxPathSum(TreeNode* root) 
+		{
+			FindMaxSum(root);
+			return _result;
+		}
+		int FindMaxSum(TreeNode* node) 
+		{
+			//1. 跳出條件
+			if (node == nullptr)
+				return 0;
+			//2. 深入左、右子節點
+			int left = max(FindMaxSum(node->left), 0);
+			int right = max(FindMaxSum(node->right), 0);
+			//3. 刷新最大值
+			_result = max(_result, left + right + node->val);
+			//4. 返還上
+			return max(left, right) + node->val;
 		}
 
 #pragma endregion Main

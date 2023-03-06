@@ -139,24 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Easy\0108.Convert_Sorted_Array_to_Binary_Search_Tree.cpp" />
-    <ClCompile Include="Easy\0110.Balanced_Binary_Tree.cpp" />
-    <ClCompile Include="Easy\0111.Minimum_Depth_of_Binary_Tree.cpp" />
-    <ClCompile Include="Easy\0112.Path_Sum.cpp" />
-    <ClCompile Include="Easy\0118.Pascal_s_Triangle.cpp" />
-    <ClCompile Include="Easy\0119.Pascal_s_Triangle_II.cpp" />
     <ClCompile Include="Easy\0125.Valid_Palindrome.cpp" />
-    <ClCompile Include="Hard\0115.Distinct_Subsequences.cpp" />
-    <ClCompile Include="Hard\0123.Best_Time_to_Buy_and_Sell_Stock_III.cpp" />
     <ClCompile Include="Hard\0124.Binary_Tree_Maximum_Path_Sum.cpp" />
     <ClCompile Include="Hard\0126.Word_Ladder_II.cpp" />
     <ClCompile Include="Hard\0127.Word_Ladder.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
-    <ClCompile Include="Medium\0113.Path_Sum_II.cpp" />
-    <ClCompile Include="Medium\0114.Flatten_Binary_Tree_to_Linked_List.cpp" />
-    <ClCompile Include="Medium\0116.Populating_Next_Right_Pointers_in_Each_Node.cpp" />
-    <ClCompile Include="Medium\0117.Populating_Next_Right_Pointers_in_Each_Node_II.cpp" />
-    <ClCompile Include="Medium\0120.Triangle.cpp" />
     <ClCompile Include="Medium\0122.Best_Time_to_Buy_and_Sell_Stock_II.cpp" />
     <ClCompile Include="Medium\0128.Longest_Consecutive_Sequence.cpp" />
     <ClCompile Include="Medium\0129.Sum_Root_to_Leaf_Numbers.cpp" />
