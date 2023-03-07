@@ -61,46 +61,38 @@ namespace Solution127
         /// <returns></returns>
         int ladderLength(string beginWord, string endWord, vector<string>& wordList) 
         {
-            //1. 判斷endWord是否存在
-            unordered_set<string> wordSet(wordList.begin(), wordList.end());
-            if (false == wordSet.count(endWord)) 
+            unordered_set<string> hashTable(wordList.begin(), wordList.end());
+            if (false == hashTable.count(endWord))
                 return 0;
-
-            //2. 建立一個queue
-            queue<string> queueTemp{ {beginWord} };
+            queue<string> queueTemp;
+            queueTemp.push(beginWord);
             int resultCount = 0;
-            while (false == queueTemp.empty()) 
+            while (queueTemp.empty() == false)
             {
-                //3-1. 每次都將queue內的單詞比較完畢
-                for (int index = queueTemp.size(); 0 < index ; index--) 
+                for (int queueCount = queueTemp.size(); queueCount > 0; queueCount--)
                 {
-                    //3-2. 取出queueTemp中潛在符合的單詞
-                    string word = queueTemp.front(); 
+                    string compareWord = queueTemp.front();
                     queueTemp.pop();
-                    //5. 此單詞出現表示走到盡頭可以跳出
-                    if (word == endWord) 
+                    if (compareWord == endWord)
                         return resultCount + 1;
-                    //4-1. 在wordSet中找出可以匹配的單詞
-                    for (int innerIndex = 0; innerIndex < word.size(); innerIndex++) 
+                    for (int index = 0; index < compareWord.size(); index++)
                     {
-                        //4-2. 嘗試找出淺在的替換項目，把一個字元換掉時存在於wordSet中
-                        string newWord = word;
-                        for (char charItem = 'a'; charItem <= 'z'; charItem++) 
+                        string newWord = compareWord;
+                        for (auto charItem = 'a'; charItem < 'z'; charItem++)
                         {
-                            newWord[innerIndex] = charItem;
-                            //4-3. 找到符合的項目
-                            if (wordSet.count(newWord) && newWord != word) 
+                            newWord[index] = charItem;
+                            if (hashTable.count(newWord))
                             {
-                                //4-4. 把wordSet HashTable內的詞移除，不可重複使用，但將該詞放進queueTemp中
                                 queueTemp.push(newWord);
-                                wordSet.erase(newWord);
+                                hashTable.erase(newWord);
                             }
-                        }
+                        }    
                     }
                 }
                 resultCount++;
             }
             return 0;
+           
         }
     public:
 #pragma endregion Main
