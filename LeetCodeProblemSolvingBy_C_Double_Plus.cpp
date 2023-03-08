@@ -1,17 +1,14 @@
 ﻿#include <unordered_map>
-#include "Hard/0126.Word_Ladder_II.cpp"
-using namespace Solution126;
+#include "Medium/0130.Surrounded_Regions.cpp"
+using namespace Solution130;
 
 int main()
 {
-    Solution126::Word_Ladder_II useClass;
-    Solution126::Word_Ladder_II::Word_Ladder_II_Model getTestModel = useClass.GetTestData001();
-    auto result1 = useClass.findLadders(getTestModel.beginWord, getTestModel.endWord, getTestModel.wordList);
+    Solution130::Surrounded_Regions useClass;
+    Solution130::Surrounded_Regions::Surrounded_Regions_Model getTestModel = useClass.GetTestData001();
+    useClass.solve(getTestModel.board);
 
     getTestModel = useClass.GetTestData002();
-    auto result2 = useClass.findLadders(getTestModel.beginWord, getTestModel.endWord, getTestModel.wordList);
-
-    /*getTestModel = useClass.GetTestData003();
-    auto result3 = useClass.findLadders(getTestModel.beginWord, getTestModel.endWord, getTestModel.wordList);*/
+    useClass.solve(getTestModel.board);
     return 0;
 }
