@@ -139,16 +139,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Easy\0125.Valid_Palindrome.cpp" />
-    <ClCompile Include="Hard\0124.Binary_Tree_Maximum_Path_Sum.cpp" />
-    <ClCompile Include="Hard\0126.Word_Ladder_II.cpp" />
-    <ClCompile Include="Hard\0127.Word_Ladder.cpp" />
+    <ClCompile Include="Easy\0136.Single_Number.cpp" />
+    <ClCompile Include="Hard\0132.Palindrome_Partitioning_II.cpp" />
+    <ClCompile Include="Hard\0135.Candy.cpp" />
+    <ClCompile Include="Hard\0140.Word_Break_II.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
-    <ClCompile Include="Medium\0122.Best_Time_to_Buy_and_Sell_Stock_II.cpp" />
-    <ClCompile Include="Medium\0128.Longest_Consecutive_Sequence.cpp" />
-    <ClCompile Include="Medium\0129.Sum_Root_to_Leaf_Numbers.cpp" />
     <ClCompile Include="Medium\0130.Surrounded_Regions.cpp" />
+    <ClCompile Include="Medium\0131.Palindrome_Partitioning.cpp" />
+    <ClCompile Include="Medium\0133.Clone_Graph.cpp" />
     <ClCompile Include="Medium\0134.Gas_Station.cpp" />
+    <ClCompile Include="Medium\0137.Single_Number_II.cpp" />
+    <ClCompile Include="Medium\0138.Copy_List_with_Random_Pointer.cpp" />
+    <ClCompile Include="Medium\0139.Word_Break.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Mysql\0177.Nth_Highest_Salary.sql" />
