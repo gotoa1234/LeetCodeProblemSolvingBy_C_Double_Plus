@@ -1,14 +1,17 @@
 ﻿#include <unordered_map>
-#include "Medium/0130.Surrounded_Regions.cpp"
-using namespace Solution130;
+#include "Easy/0136.Single_Number.cpp"
+using namespace Solution136;
 
 int main()
 {
-    Solution130::Surrounded_Regions useClass;
-    Solution130::Surrounded_Regions::Surrounded_Regions_Model getTestModel = useClass.GetTestData001();
-    useClass.solve(getTestModel.board);
+    Solution136::Single_Number useClass;
+    Solution136::Single_Number::Single_Number_Model getTestModel = useClass.GetTestData001();
+    auto result1 = useClass.singleNumber(getTestModel.nums);
 
     getTestModel = useClass.GetTestData002();
-    useClass.solve(getTestModel.board);
+    auto result2 = useClass.singleNumber(getTestModel.nums);
+
+    getTestModel = useClass.GetTestData003();
+    auto result3 = useClass.singleNumber(getTestModel.nums);
     return 0;
 }

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <unordered_map>
 #include <string>
+#include <algorithm>
 using namespace std;
 
 namespace Solution136
@@ -44,13 +45,17 @@ namespace Solution136
 #pragma region Main
     public:
         /// <summary>
-        ///         思路 ：
-        ///      Runtime : 
-        /// Memory Usage : 
+        ///         思路 ：利用互斥或邏輯閘的特性，兩個相同為0，最後剩下的結果就是唯一值
+        ///      Runtime :   15 ms Beats 91.55 %
+        /// Memory Usage : 16.9 MB Beats 88.33 %
         /// </summary>
         /// <returns></returns>        
-        int singleNumber(vector<int>& nums) {
-            return {};
+        int singleNumber(vector<int>& nums) 
+        {
+            int result = 0;
+            for (auto& value : nums)             
+                result = result ^ value;            
+            return result;
         }
     public:
 #pragma endregion Main
@@ -74,7 +79,7 @@ namespace Solution136
         {
             Single_Number_Model result;
             result.nums = { 4,1,2,1,2 };
-            return result;//expect:  4
+            return result;//expect:  4            
         };
 
         /// <summary>
