@@ -151,6 +151,7 @@
     <ClCompile Include="Medium\0137.Single_Number_II.cpp" />
     <ClCompile Include="Medium\0138.Copy_List_with_Random_Pointer.cpp" />
     <ClCompile Include="Medium\0139.Word_Break.cpp" />
+    <ClCompile Include="Medium\0143.Reorder_List.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Mysql\0177.Nth_Highest_Salary.sql" />

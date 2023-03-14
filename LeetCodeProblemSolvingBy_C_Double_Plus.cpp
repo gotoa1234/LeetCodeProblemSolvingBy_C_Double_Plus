@@ -1,17 +1,16 @@
 ﻿#include <unordered_map>
-#include "Easy/0136.Single_Number.cpp"
-using namespace Solution136;
+#include "Medium/0143.Reorder_List.cpp"
+using namespace Solution143;
+using namespace std;
 
 int main()
 {
-    Solution136::Single_Number useClass;
-    Solution136::Single_Number::Single_Number_Model getTestModel = useClass.GetTestData001();
-    auto result1 = useClass.singleNumber(getTestModel.nums);
+    Solution143::Reorder_List useClass;
+    Solution143::Reorder_List::Reorder_List_Model getTestModel = useClass.GetTestData001();
+    useClass.reorderList(getTestModel.head);
 
     getTestModel = useClass.GetTestData002();
-    auto result2 = useClass.singleNumber(getTestModel.nums);
+    useClass.reorderList(getTestModel.head);
 
-    getTestModel = useClass.GetTestData003();
-    auto result3 = useClass.singleNumber(getTestModel.nums);
     return 0;
 }
