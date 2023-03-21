@@ -73,14 +73,14 @@ namespace Solution132
             {
                 //4-2. 回文的奇字串處理 EX: "a" , "aba" , "abcde" 由中間開始往左右擴散
                 for (int innerIndex = 0;
-                    index - innerIndex >= 0 && index + innerIndex < stringLength && s[index - innerIndex] == s[index + innerIndex];
+                    index - innerIndex >= 0 && index + innerIndex < stringLength && s[index + innerIndex] == s[index - innerIndex];
                     innerIndex++)
                 {
                     dp[index + innerIndex + 1] = min(dp[index + innerIndex + 1], 1 + dp[index - innerIndex]);
                 }
                 //4-3. 回文的偶字串處理 EX: "aa" , "abab" , "abcdee" 左右擴散
                 for (int innerIndex = 0;
-                    index - innerIndex >= 0 && index + innerIndex + pair < stringLength && s[index - innerIndex] == s[index + innerIndex + pair];
+                    index - innerIndex >= 0 && index + innerIndex + pair < stringLength && s[index + innerIndex + pair] == s[index - innerIndex];
                     innerIndex++)
                 {
                     dp[index + innerIndex + 1 + pair] = min(dp[index + innerIndex + 1 + pair], 1 + dp[index - innerIndex]);
