@@ -144,11 +144,6 @@
     <ClCompile Include="Hard\0135.Candy.cpp" />
     <ClCompile Include="Hard\0140.Word_Break_II.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
-    <ClCompile Include="Medium\0130.Surrounded_Regions.cpp" />
-    <ClCompile Include="Medium\0131.Palindrome_Partitioning.cpp" />
-    <ClCompile Include="Medium\0133.Clone_Graph.cpp" />
-    <ClCompile Include="Medium\0134.Gas_Station.cpp" />
-    <ClCompile Include="Medium\0137.Single_Number_II.cpp" />
     <ClCompile Include="Medium\0138.Copy_List_with_Random_Pointer.cpp" />
     <ClCompile Include="Medium\0139.Word_Break.cpp" />
     <ClCompile Include="Medium\0143.Reorder_List.cpp" />

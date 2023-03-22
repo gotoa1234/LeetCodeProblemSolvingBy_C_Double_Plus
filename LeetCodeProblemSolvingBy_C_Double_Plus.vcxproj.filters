@@ -18,28 +18,13 @@
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="Medium\0130.Surrounded_Regions.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="Medium\0134.Gas_Station.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="Medium\0131.Palindrome_Partitioning.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
     <ClCompile Include="Hard\0132.Palindrome_Partitioning_II.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="Medium\0133.Clone_Graph.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
     <ClCompile Include="Hard\0135.Candy.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
     <ClCompile Include="Easy\0136.Single_Number.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="Medium\0137.Single_Number_II.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
     <ClCompile Include="Medium\0138.Copy_List_with_Random_Pointer.cpp">
