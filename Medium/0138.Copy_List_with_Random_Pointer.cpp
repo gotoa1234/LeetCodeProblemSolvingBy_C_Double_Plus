@@ -66,24 +66,20 @@ namespace Solution138
         /// <returns></returns>
         Node* copyRandomList(Node* head) 
         {            
-            //1. 建立hashTable 並且記錄所有 (原始Node , cloneNode)的關係
-            unordered_map<Node*, Node*> hashMap;
+            unordered_map<Node*, Node*> hashMap{};
             Node* moveNode = head;
-            while (moveNode != NULL) 
+            while (moveNode != nullptr)
             {
-                Node* clone = new Node(moveNode->val);
-                hashMap[moveNode] = clone;
+                hashMap[moveNode] = new Node(moveNode->val);
                 moveNode = moveNode->next;
             }
-            //2. 從頭再跑一次，把所有原始Node的關係綁到對應的clone Node上
             moveNode = head;
-            while (moveNode != NULL) 
+            while (moveNode != nullptr)
             {
                 hashMap[moveNode]->next = hashMap[moveNode->next];
                 hashMap[moveNode]->random = hashMap[moveNode->random];
                 moveNode = moveNode->next;
             }
-            //3. 將Clone的頭返回即完成深度複製 (deep clone)
             return hashMap[head];
         }
 

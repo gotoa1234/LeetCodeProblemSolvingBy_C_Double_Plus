@@ -140,13 +140,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Easy\0136.Single_Number.cpp" />
+    <ClCompile Include="Easy\0144.Binary_Tree_Preorder_Traversal.cpp" />
+    <ClCompile Include="Easy\0145.Binary_Tree_Postorder_Traversal.cpp" />
     <ClCompile Include="Hard\0132.Palindrome_Partitioning_II.cpp" />
     <ClCompile Include="Hard\0135.Candy.cpp" />
     <ClCompile Include="Hard\0140.Word_Break_II.cpp" />
+    <ClCompile Include="Hard\0149.Max_Points_on_a_Line.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
     <ClCompile Include="Medium\0138.Copy_List_with_Random_Pointer.cpp" />
     <ClCompile Include="Medium\0139.Word_Break.cpp" />
     <ClCompile Include="Medium\0143.Reorder_List.cpp" />
+    <ClCompile Include="Medium\0146.LRU_Cache.cpp" />
+    <ClCompile Include="Medium\0147.Insertion_Sort_List.cpp" />
+    <ClCompile Include="Medium\0148.Sort_List.cpp" />
+    <ClCompile Include="Medium\0150.Evaluate_Reverse_Polish_Notation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Mysql\0177.Nth_Highest_Salary.sql" />
