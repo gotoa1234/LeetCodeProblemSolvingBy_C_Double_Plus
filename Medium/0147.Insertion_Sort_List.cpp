@@ -1,6 +1,7 @@
 #include <iostream>
 #include <unordered_map>
 #include <string>
+#include <algorithm>
 using namespace std;
 
 namespace Solution147
@@ -51,14 +52,30 @@ namespace Solution147
 #pragma region Main
     public:
         /// <summary>        
-        ///         思路： 
-        ///      Runtime： 
-        /// Memory Usage： 
+        ///         思路： 空間換時間的做法，把所有東西取出用sort()函式 O(nlogn) ，然後一個個節點建立 
+        ///      Runtime：   12 ms Beats 93.47 %
+        /// Memory Usage： 10.3 MB Beats 9.40 %
         /// </summary>
         /// <returns></returns>
     public:
-        ListNode* insertionSortList(ListNode* head) {
-            return {};
+        ListNode* insertionSortList(ListNode* head) 
+        {   
+            vector<int> list{};
+            while (head != nullptr)
+            {
+                list.push_back(head->val);
+                head = head->next;
+            }
+            sort(list.begin(), list.end());
+            ListNode* dummy = new ListNode(0);
+            ListNode* moveNode = dummy;
+            for (auto value : list)
+            {
+                ListNode* newNode = new ListNode(value);
+                moveNode->next = newNode;
+                moveNode = moveNode->next;
+            }
+            return dummy->next;
         }
 
     public:
