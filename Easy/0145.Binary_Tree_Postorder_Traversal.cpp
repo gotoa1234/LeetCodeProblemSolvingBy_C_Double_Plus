@@ -27,7 +27,7 @@ namespace Solution145
 #pragma endregion Paste to execute
 
 	/// <summary>
-	/// 二叉樹前序遍歷
+	/// 二叉樹後序遍歷
 	/// </summary>
 	class Binary_Tree_Postorder_Traversal
 	{
@@ -53,12 +53,26 @@ namespace Solution145
 #pragma region Main
 	public:
 		/// <summary>
-		///          思路：
-		///       Runtime :
-		///  Memory Usage :
+		///          思路：後序排序的關鍵是，先往左節點，再往右節點，最後才為根節點
+		///       Runtime :  0 ms Beats   100 %
+		///  Memory Usage :8.6 MB Beats 46.21 %
 		/// </summary>
-		vector<int> preorderTraversal(TreeNode* root) {
-			return{};
+		vector<int> postorderTraversal(TreeNode* root) {
+			vector<int> result{};
+			VisitPost(root, result);
+			return result;
+		}
+
+		void VisitPost(TreeNode* currentNode, vector<int>& result)
+		{
+			if (currentNode == nullptr)
+				return;
+			if (currentNode->left)
+				VisitPost(currentNode->left, result);
+			if (currentNode->right)
+				VisitPost(currentNode->right, result);
+			result.push_back(currentNode->val);
+			return;
 		}
 
 #pragma endregion Main

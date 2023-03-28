@@ -53,13 +53,28 @@ namespace Solution144
 #pragma region Main
 	public:
 		/// <summary>
-		///          思路：
-		///       Runtime :
-		///  Memory Usage :
+		///          思路：前序的關鍵是先碰到的就紀錄，左節點優先，然後才是右節點
+		///       Runtime :  0 ms Beats   100 %
+		///  Memory Usage :8.3 MB Beats 95.96 %
 		/// </summary>
-		vector<int> preorderTraversal(TreeNode* root) {
-			return{};
+		vector<int> preorderTraversal(TreeNode* root) 
+		{
+			vector<int> result{};
+			PreVisit(root, result);
+			return result;
 		}
+		void PreVisit(TreeNode* currentNode, vector<int>& result)
+		{
+			if (currentNode == nullptr)
+				return;
+			result.push_back(currentNode->val);
+			if (currentNode->left)
+				PreVisit(currentNode->left, result);
+			if (currentNode->right)
+				PreVisit(currentNode->right, result);
+			return;
+		}
+
 
 #pragma endregion Main
 
