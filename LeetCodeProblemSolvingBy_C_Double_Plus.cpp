@@ -1,17 +1,17 @@
-﻿#include <unordered_map>
-#include "Medium/0148.Sort_List.cpp"
-using namespace Solution148;
+﻿#include "Easy\0145.Binary_Tree_Postorder_Traversal.cpp"
+using namespace Solution145;
+using namespace std;
+
 
 int main()
 {
-    Solution148::Sort_List useClass;
-    Solution148::Sort_List::Sort_List_Model getTestModel = useClass.GetTestData001();
-    auto result1 = useClass.sortList(getTestModel.head);
+	Solution145::Binary_Tree_Postorder_Traversal useClass;
+	Solution145::Binary_Tree_Postorder_Traversal::Binary_Tree_Postorder_Traversal_Model getTestModel = useClass.GetTestData001();
+	auto result1 = useClass.postorderTraversal(getTestModel.root);
 
-    getTestModel = useClass.GetTestData002();
-    auto result2 = useClass.sortList(getTestModel.head);
+	getTestModel = useClass.GetTestData002();
+	auto result2 = useClass.postorderTraversal(getTestModel.root);
 
-    getTestModel = useClass.GetTestData003();
-    auto result3 = useClass.sortList(getTestModel.head);
-    return 0;
+	getTestModel = useClass.GetTestData003();
+	auto result3 = useClass.postorderTraversal(getTestModel.root);
 }
