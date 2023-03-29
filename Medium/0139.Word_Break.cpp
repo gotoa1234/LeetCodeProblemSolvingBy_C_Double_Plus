@@ -1,6 +1,7 @@
 #include <iostream>
 #include <unordered_map>
 #include <string>
+#include <unordered_set>
 using namespace std;
 
 namespace Solution139
@@ -46,12 +47,43 @@ namespace Solution139
     public:
         /// <summary>
         ///         «ä¸ô ¡G
-        ///      Runtime : 
-        /// Memory Usage : 
+        ///      Runtime :   4 ms Beats 85.98 %
+        /// Memory Usage : 7.9 MB Beats 85.92 %
         /// </summary>
         /// <returns></returns>        
         bool wordBreak(string s, vector<string>& wordDict) {
-            return {};
+            unordered_map<int, unordered_map<char, unordered_set<string>>> hashTable;
+            vector<bool> dp(s.size() + 1, false);
+            int length;
+
+            for (auto str : wordDict) 
+            {
+                hashTable[str.size()][str[0]].insert(str);
+            }
+
+            dp[0] = true;
+            for (int index = 1; index <= s.size(); index++)
+            {
+                for (int innerIndex = 0; innerIndex < index; innerIndex++)
+                {
+                    if (dp[innerIndex]) 
+                    {
+                        length = index - innerIndex;
+                        if (        hashTable.count(length) && 
+                            hashTable[length].count(s[innerIndex])
+                            ) 
+                        {
+                            auto subWord = s.substr(innerIndex, length);
+                            if (hashTable[length][s[innerIndex]].count(subWord)) 
+                            {
+                                dp[index] = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            return dp[s.size()];
         }
     public:
 #pragma endregion Main
