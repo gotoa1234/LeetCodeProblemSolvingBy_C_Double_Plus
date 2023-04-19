@@ -147,7 +147,6 @@
     <ClCompile Include="Hard\0140.Word_Break_II.cpp" />
     <ClCompile Include="Hard\0149.Max_Points_on_a_Line.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
-    <ClCompile Include="Medium\0138.Copy_List_with_Random_Pointer.cpp" />
     <ClCompile Include="Medium\0139.Word_Break.cpp" />
     <ClCompile Include="Medium\0143.Reorder_List.cpp" />
     <ClCompile Include="Medium\0146.LRU_Cache.cpp" />
