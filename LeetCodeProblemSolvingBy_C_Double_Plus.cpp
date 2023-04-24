@@ -1,17 +1,10 @@
-﻿#include <unordered_map>
-#include "Medium/0139.Word_Break.cpp"
-using namespace Solution139;
+﻿#include "Easy\0242.Valid_Anagram.cpp"
+using namespace Solution242;
 
 int main()
 {
-    Solution139::Word_Break useClass;
-    Solution139::Word_Break::Word_Break_Model getTestModel = useClass.GetTestData001();
-    auto result1 = useClass.wordBreak(getTestModel.s, getTestModel.wordDict);
 
-    getTestModel = useClass.GetTestData002();
-    auto result2 = useClass.wordBreak(getTestModel.s, getTestModel.wordDict);
-
-    getTestModel = useClass.GetTestData003();
-    auto result3 = useClass.wordBreak(getTestModel.s, getTestModel.wordDict);
-    return 0;
+	Solution242::Valid_Anagram useClass;
+	Solution242::Valid_Anagram::Valid_Anagram_Model getTestModel = useClass.GetTestData001();
+	bool result = useClass.isAnagram(getTestModel.s, getTestModel.s);
 }
