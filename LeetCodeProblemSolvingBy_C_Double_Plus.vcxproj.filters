@@ -27,9 +27,6 @@
     <ClCompile Include="Easy\0136.Single_Number.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="Medium\0138.Copy_List_with_Random_Pointer.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
     <ClCompile Include="Medium\0139.Word_Break.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
@@ -58,6 +55,9 @@
       <Filter>來源檔案</Filter>
     </ClCompile>
     <ClCompile Include="Hard\0149.Max_Points_on_a_Line.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Easy\0412.Fizz_Buzz.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
   </ItemGroup>

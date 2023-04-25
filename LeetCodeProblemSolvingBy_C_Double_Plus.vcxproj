@@ -142,6 +142,7 @@
     <ClCompile Include="Easy\0136.Single_Number.cpp" />
     <ClCompile Include="Easy\0144.Binary_Tree_Preorder_Traversal.cpp" />
     <ClCompile Include="Easy\0145.Binary_Tree_Postorder_Traversal.cpp" />
+    <ClCompile Include="Easy\0412.Fizz_Buzz.cpp" />
     <ClCompile Include="Hard\0132.Palindrome_Partitioning_II.cpp" />
     <ClCompile Include="Hard\0135.Candy.cpp" />
     <ClCompile Include="Hard\0140.Word_Break_II.cpp" />
