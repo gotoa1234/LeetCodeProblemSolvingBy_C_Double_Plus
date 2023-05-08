@@ -60,6 +60,12 @@
     <ClCompile Include="Easy\0412.Fizz_Buzz.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="Easy\0231.Power_of_Two.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Medium\0227.Basic_Calculator_II.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Mysql\0177.Nth_Highest_Salary.sql" />
@@ -74,5 +80,9 @@
     <None Include="Mysql\0626.Exchange_Seats.sql" />
     <None Include="Mysql\0627.Swap_Salary.sql" />
     <None Include="Mysql\1050.Actors_and_Directors_Who_Cooperated_At_Least_Three_Times.sql" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Easy\0292.Nim_Game.xaml" />
   </ItemGroup>
 </Project>
