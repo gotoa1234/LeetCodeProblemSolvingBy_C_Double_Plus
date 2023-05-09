@@ -1,11 +1,16 @@
-﻿#include "Easy\0258.Add_Digits.cpp"
-using namespace Solution258;
-using namespace std;
+﻿#include "Easy\0263.Ugly_Number.cpp"
+using namespace Solution263;
+
 int main()
 {
-	Solution258::Add_Digits useClass;
-	Solution258::Add_Digits::Add_Digits_Model getTestModel = useClass.GetTestData001();
-	auto result = useClass.addDigits(getTestModel.num);
 
-	return 0;
+	Solution263::Ugly_Number useClass;
+	Solution263::Ugly_Number::Ugly_Number_Model getTestModel = useClass.GetTestData001();
+	bool result = useClass.isUgly(getTestModel.n);
+
+	getTestModel = useClass.GetTestData002();
+	bool result2 = useClass.isUgly(getTestModel.n);
+
+	getTestModel = useClass.GetTestData003();
+	bool result3 = useClass.isUgly(getTestModel.n);
 }
