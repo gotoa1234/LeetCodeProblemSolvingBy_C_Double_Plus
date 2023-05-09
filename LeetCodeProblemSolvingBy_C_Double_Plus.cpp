@@ -1,13 +1,11 @@
-﻿#include "Easy\0290.Word_Pattern.cpp"
-using namespace Solution290;
+﻿#include "Easy\0258.Add_Digits.cpp"
+using namespace Solution258;
 using namespace std;
-
-
 int main()
 {
-    Solution290::Word_Pattern useClass;
-    Solution290::Word_Pattern::Word_Pattern_Model getTestModel = useClass.GetTestData001();
-    auto result = useClass.wordPattern(getTestModel.pattern, getTestModel.s);
+	Solution258::Add_Digits useClass;
+	Solution258::Add_Digits::Add_Digits_Model getTestModel = useClass.GetTestData001();
+	auto result = useClass.addDigits(getTestModel.num);
 
-    return 0;
+	return 0;
 }

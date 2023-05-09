@@ -144,6 +144,7 @@
     <ClCompile Include="Easy\0144.Binary_Tree_Preorder_Traversal.cpp" />
     <ClCompile Include="Easy\0145.Binary_Tree_Postorder_Traversal.cpp" />
     <ClCompile Include="Easy\0231.Power_of_Two.cpp" />
+    <ClCompile Include="Easy\0258.Add_Digits.cpp" />
     <ClCompile Include="Easy\0290.Word_Pattern.cpp" />
     <ClCompile Include="Easy\0292.Nim_Game.cpp" />
     <ClCompile Include="Easy\0412.Fizz_Buzz.cpp" />
