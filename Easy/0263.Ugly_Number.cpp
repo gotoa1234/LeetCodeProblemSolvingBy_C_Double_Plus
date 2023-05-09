@@ -20,7 +20,7 @@ namespace Solution263
 #pragma endregion Paste to execute
 
 	/// <summary>
-	/// 
+	/// 醜數
 	/// </summary>
 	class Ugly_Number
 	{
@@ -36,7 +36,7 @@ namespace Solution263
 #pragma region Main
 	public:
 		/// <summary>
-		///          思路 : 
+		///          思路 : 醜數定義為可以給質因數2,3,5整除的數
 		///       Runtime :  0 ms Beats 100 %
 		///  Memory Usage :  6 MB Beats 5.6 %
 		/// </summary>
