@@ -1,16 +1,13 @@
-﻿#include "Easy\0263.Ugly_Number.cpp"
-using namespace Solution263;
+﻿#include "Easy\0268.Missing_Number.cpp"
+using namespace Solution268;
 
 int main()
 {
 
-	Solution263::Ugly_Number useClass;
-	Solution263::Ugly_Number::Ugly_Number_Model getTestModel = useClass.GetTestData001();
-	bool result = useClass.isUgly(getTestModel.n);
+	Solution268::Missing_Number useClass;
+	Solution268::Missing_Number::Missing_Number_Model getTestModel = useClass.GetTestData001();
+	auto result = useClass.missingNumber(getTestModel.nums);
 
 	getTestModel = useClass.GetTestData002();
-	bool result2 = useClass.isUgly(getTestModel.n);
-
-	getTestModel = useClass.GetTestData003();
-	bool result3 = useClass.isUgly(getTestModel.n);
+	auto result2 = useClass.missingNumber(getTestModel.nums);
 }
