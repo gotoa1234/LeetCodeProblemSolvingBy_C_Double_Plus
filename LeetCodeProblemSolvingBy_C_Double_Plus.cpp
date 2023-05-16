@@ -1,13 +1,12 @@
-﻿#include "Easy\0268.Missing_Number.cpp"
-using namespace Solution268;
+﻿#include "Easy\0283.Move_Zeroes.cpp"
+using namespace Solution283;
+using namespace std;
 
 int main()
 {
-
-	Solution268::Missing_Number useClass;
-	Solution268::Missing_Number::Missing_Number_Model getTestModel = useClass.GetTestData001();
-	auto result = useClass.missingNumber(getTestModel.nums);
-
+	Solution283::Move_Zeroes useClass;
+	Solution283::Move_Zeroes::Move_Zeroes_Model getTestModel = useClass.GetTestData001();
+	useClass.moveZeroes(getTestModel.nums);
 	getTestModel = useClass.GetTestData002();
-	auto result2 = useClass.missingNumber(getTestModel.nums);
+	useClass.moveZeroes(getTestModel.nums);
 }
