@@ -1,12 +1,14 @@
-﻿#include "Easy\0283.Move_Zeroes.cpp"
-using namespace Solution283;
+﻿#include "Easy/0190.Reverse_Bits.cpp"
+using namespace Solution190;
 using namespace std;
 
 int main()
 {
-	Solution283::Move_Zeroes useClass;
-	Solution283::Move_Zeroes::Move_Zeroes_Model getTestModel = useClass.GetTestData001();
-	useClass.moveZeroes(getTestModel.nums);
+	Solution190::Reverse_Bits useClass;
+	Solution190::Reverse_Bits::Reverse_Bits_Model getTestModel = useClass.GetTestData001();
+	auto result1 = useClass.reverseBits(getTestModel.n);
+
 	getTestModel = useClass.GetTestData002();
-	useClass.moveZeroes(getTestModel.nums);
+	auto result2 = useClass.reverseBits(getTestModel.n);
+	return 0;
 }
