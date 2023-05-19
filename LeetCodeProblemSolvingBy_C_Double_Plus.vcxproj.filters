@@ -21,6 +21,21 @@
     <ClCompile Include="Medium\0150.Evaluate_Reverse_Polish_Notation.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="Medium\0151.Reverse_Words_in_a_String.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Medium\0152.Maximum_Product_Subarray.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Medium\0153.Find_Minimum_in_Rotated_Sorted_Array.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Hard\0154.Find_Minimum_in_Rotated_Sorted_Array_II.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Medium\0155.Min_Stack.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Mysql\0177.Nth_Highest_Salary.sql" />
