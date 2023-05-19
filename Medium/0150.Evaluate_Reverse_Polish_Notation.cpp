@@ -1,6 +1,6 @@
 #include <iostream>
-#include <unordered_map>
 #include <string>
+#include <stack>
 using namespace std;
 
 namespace Solution150
@@ -15,13 +15,13 @@ namespace Solution150
     {
         Solution150::Evaluate_Reverse_Polish_Notation useClass;
         Solution150::Evaluate_Reverse_Polish_Notation::Evaluate_Reverse_Polish_Notation_Model getTestModel = useClass.GetTestData001();
-        auto result1 = useClass.evalRPN(getTestModel.head);
+        auto result1 = useClass.evalRPN(getTestModel.tokens);
 
         getTestModel = useClass.GetTestData002();
-        auto result2 = useClass.evalRPN(getTestModel.head);
+        auto result2 = useClass.evalRPN(getTestModel.tokens);
 
         getTestModel = useClass.GetTestData003();
-        auto result3 = useClass.evalRPN(getTestModel.head);
+        auto result3 = useClass.evalRPN(getTestModel.tokens);
         return 0;
     }
     */
@@ -44,14 +44,57 @@ namespace Solution150
 #pragma region Main
     public:
         /// <summary>
-        ///         思路： 
-        ///      Runtime： 
-        /// Memory Usage： 
+        ///         思路： 利用堆疊的特性，遇到運算符號時將當前最近的兩個數值取出來運算，然後再放回堆疊，直到所有的Vector<string> 走完內容
+        ///      Runtime：    4 ms Beats 96.21 %
+        /// Memory Usage： 11.9 MB Beats 63.66 %
         /// </summary>
         /// <returns></returns>
     public:
-        int evalRPN(vector<string>& tokens) {
-            return {};
+        int evalRPN(vector<string>& tokens) 
+        {
+            stack<int> stackContiner;
+            int tempValue = 0;
+            int caculationA = 0;
+            int caculationB = 0;
+            //1. 遍歷每個字串
+            for (const auto& token : tokens) 
+            {
+                //2-1. 該字串非運算子就放進堆疊(必定數值)
+                if (token == "+")
+                {
+                    caculationB = stackContiner.top(); stackContiner.pop();
+                    caculationA = stackContiner.top(); stackContiner.pop();
+                    tempValue = caculationA + caculationB;
+                }
+                else if (token == "-")
+                {
+                    caculationB = stackContiner.top(); stackContiner.pop();
+                    caculationA = stackContiner.top(); stackContiner.pop();
+                    tempValue = caculationA - caculationB;
+                }
+                else if (token == "*")
+                {
+                    caculationB = stackContiner.top(); stackContiner.pop();
+                    caculationA = stackContiner.top(); stackContiner.pop();
+                    tempValue = caculationA * caculationB;
+                }
+                else if (token == "/")
+                {
+                    caculationB = stackContiner.top(); stackContiner.pop();
+                    caculationA = stackContiner.top(); stackContiner.pop();
+                    tempValue = caculationA / caculationB;
+                }
+                else
+                {
+                    //2-2. 數值直接放入堆疊
+                    stackContiner.push(stoi(token));
+                    continue;
+                }
+
+                //3. 非數值，表示有做過運算，將計算結果放入堆疊
+                stackContiner.push(tempValue);
+            }
+            return stackContiner.top();            
         }
 
     public:
@@ -65,7 +108,7 @@ namespace Solution150
         Evaluate_Reverse_Polish_Notation_Model GetTestData001(void)
         {
             Evaluate_Reverse_Polish_Notation_Model result;
-            result.tokens = {"2", "1", "+", "3", "9"};
+            result.tokens = {"2", "1", "+", "3", "*"};
             return result;//expect:9
         };
 
