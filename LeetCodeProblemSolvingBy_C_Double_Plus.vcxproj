@@ -140,6 +140,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Easy\0171.Excel_Sheet_Column_Number.cpp" />
+    <ClCompile Include="Easy\0226.Invert_Binary_Tree.cpp" />
     <ClCompile Include="Hard\0154.Find_Minimum_in_Rotated_Sorted_Array_II.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
     <ClCompile Include="Medium\0150.Evaluate_Reverse_Polish_Notation.cpp" />

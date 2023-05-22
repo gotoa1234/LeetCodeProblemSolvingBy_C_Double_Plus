@@ -36,6 +36,12 @@
     <ClCompile Include="Medium\0155.Min_Stack.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="Easy\0171.Excel_Sheet_Column_Number.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Easy\0226.Invert_Binary_Tree.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Mysql\0177.Nth_Highest_Salary.sql" />

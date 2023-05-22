@@ -44,9 +44,9 @@ namespace Solution283
 		/// </summary>
 		void moveZeroes(vector<int>& nums) {
 			int zeroCount = 0;
-			for (int index = 0; index < nums.size(); index++) 
+			for (int index = 0; index < nums.size(); index++)
 			{
-				if (nums[index]) 
+				if (nums[index] != 0)
 				{
 					swap(nums[index], nums[zeroCount]);
 					zeroCount++;
