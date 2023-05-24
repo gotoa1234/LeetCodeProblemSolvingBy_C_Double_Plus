@@ -36,18 +36,11 @@
     <ClCompile Include="Medium\0155.Min_Stack.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="Easy\0171.Excel_Sheet_Column_Number.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="Easy\0226.Invert_Binary_Tree.cpp">
+    <ClCompile Include="Medium\0207.Course_Schedule.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Mysql\0177.Nth_Highest_Salary.sql" />
-    <None Include="Mysql\0184.Department_Highest_Salary.sql" />
-    <None Include="Mysql\0185.Department_Top_Three_Salaries.sql" />
-    <None Include="Mysql\0262.Trips_and_Users.sql" />
     <None Include="Mysql\0596.Classes_More_Than_5_Students.sql" />
     <None Include="Mysql\0601.Human_Traffic_of_Stadium.sql" />
     <None Include="Mysql\0607.Sales_Person.sql" />
@@ -57,5 +50,6 @@
     <None Include="Mysql\0627.Swap_Salary.sql" />
     <None Include="Mysql\1050.Actors_and_Directors_Who_Cooperated_At_Least_Three_Times.sql" />
     <None Include="packages.config" />
+    <None Include="Mysql\0262.Trips_and_Users.sql" />
   </ItemGroup>
 </Project>
