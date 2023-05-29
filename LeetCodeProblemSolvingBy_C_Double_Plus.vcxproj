@@ -140,8 +140,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Easy\0013.Roman_to_Integer.cpp" />
     <ClCompile Include="Hard\0154.Find_Minimum_in_Rotated_Sorted_Array_II.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
+    <ClCompile Include="Medium\0012.Integer_to_Roman.cpp" />
     <ClCompile Include="Medium\0150.Evaluate_Reverse_Polish_Notation.cpp" />
     <ClCompile Include="Medium\0151.Reverse_Words_in_a_String.cpp" />
     <ClCompile Include="Medium\0152.Maximum_Product_Subarray.cpp" />

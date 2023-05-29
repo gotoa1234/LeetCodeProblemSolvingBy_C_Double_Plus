@@ -39,6 +39,12 @@
     <ClCompile Include="Medium\0207.Course_Schedule.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="Medium\0012.Integer_to_Roman.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Easy\0013.Roman_to_Integer.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Mysql\0596.Classes_More_Than_5_Students.sql" />
