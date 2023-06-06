@@ -9,7 +9,7 @@ namespace Solution154
 #pragma region Paste to execute 
     /*
     #include <unordered_map>
-    #include "Medium/0154.Find_Minimum_in_Rotated_Sorted_Array_II.cpp"
+    #include "Hard/0154.Find_Minimum_in_Rotated_Sorted_Array_II.cpp"
     using namespace Solution154;
 
     int main()
@@ -45,14 +45,28 @@ namespace Solution154
 #pragma region Main
     public:
         /// <summary>
-        ///         思路： 
-        ///      Runtime： 
-        /// Memory Usage： 
+        ///         思路： 此題可參考153，變化在nums有重複的數字，只要增加跳脫即可
+        ///         要求： O(log N) 
+        ///      Runtime：    3 ms Beats 93.95 %
+        /// Memory Usage： 12.3 MB Beats 55.61 %
         /// </summary>
         /// <returns></returns>
     public:
         int findMin(vector<int>& nums) {
-            return {};
+            int left = 0;
+            int right = nums.size() - 1;
+            int mid = 0;
+            while (left < right)
+            {
+				mid = (left + right) / 2;
+                if (nums[mid] > nums[right])
+                    left = mid + 1;
+                else if (nums[left] < nums[mid])
+                    right = mid;
+                else//當等於時強制 rightIndex = rightIndex-1;
+                    right--;
+            }
+            return nums[left];
         }
 
     public:

@@ -1,14 +1,15 @@
 ﻿#include <unordered_map>
-#include "Medium/0152.Maximum_Product_Subarray.cpp"
-using namespace Solution152;
+#include "Hard/0154.Find_Minimum_in_Rotated_Sorted_Array_II.cpp"
+using namespace Solution154;
 
 int main()
 {
-    Solution152::Maximum_Product_Subarray useClass;
-    Solution152::Maximum_Product_Subarray::Maximum_Product_Subarray_Model getTestModel = useClass.GetTestData001();
-    auto result1 = useClass.maxProduct(getTestModel.nums);
+    Solution154::Find_Minimum_in_Rotated_Sorted_Array_II useClass;
+    Solution154::Find_Minimum_in_Rotated_Sorted_Array_II::Find_Minimum_in_Rotated_Sorted_Array_II_Model getTestModel = useClass.GetTestData001();
+    auto result1 = useClass.findMin(getTestModel.nums);
 
     getTestModel = useClass.GetTestData002();
-    auto result2 = useClass.maxProduct(getTestModel.nums);
+    auto result2 = useClass.findMin(getTestModel.nums);
+
     return 0;
 }
