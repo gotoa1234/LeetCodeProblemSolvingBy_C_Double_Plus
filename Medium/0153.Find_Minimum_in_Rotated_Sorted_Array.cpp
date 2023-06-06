@@ -45,14 +45,28 @@ namespace Solution153
 #pragma region Main
     public:
         /// <summary>
-        ///         思路： 
-        ///      Runtime： 
-        /// Memory Usage： 
+        ///         思路：利用二分搜尋法，每次切割一半
+        ///               如果中間值大於等於右邊值，表示答案在右半邊，反之在左半邊，不斷重複
+        ///         要求：O(log n) time.
+        ///      Runtime：    0 ms Beats   100 %
+        /// Memory Usage： 10.1 MB Beats 59.14 %
         /// </summary>
         /// <returns></returns>
     public:
         int findMin(vector<int>& nums) {
-            return {};
+            int left = 0;
+            int right = nums.size() - 1;
+            int mid = 0;
+            while (left < right)
+            {
+                mid = (left + right) / 2;
+                if (nums[mid] > nums[right])
+                    left = mid + 1;
+                else
+                    right = mid;
+
+            }
+            return nums[left];
         }
 
     public:
