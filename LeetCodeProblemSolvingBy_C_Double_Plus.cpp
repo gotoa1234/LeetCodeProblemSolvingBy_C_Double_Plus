@@ -1,15 +1,12 @@
 ﻿#include <unordered_map>
-#include "Hard/0154.Find_Minimum_in_Rotated_Sorted_Array_II.cpp"
-using namespace Solution154;
+#include "Easy/0160.Intersection_of_Two_Linked_Lists.cpp"
+using namespace Solution160;
 
 int main()
 {
-    Solution154::Find_Minimum_in_Rotated_Sorted_Array_II useClass;
-    Solution154::Find_Minimum_in_Rotated_Sorted_Array_II::Find_Minimum_in_Rotated_Sorted_Array_II_Model getTestModel = useClass.GetTestData001();
-    auto result1 = useClass.findMin(getTestModel.nums);
-
-    getTestModel = useClass.GetTestData002();
-    auto result2 = useClass.findMin(getTestModel.nums);
+    Solution160::Intersection_of_Two_Linked_Lists useClass;
+    Solution160::Intersection_of_Two_Linked_Lists::Intersection_of_Two_Linked_Lists_Model getTestModel = useClass.GetTestData001();
+    auto result = useClass.getIntersectionNode(getTestModel.headA, getTestModel.headB);
 
     return 0;
 }

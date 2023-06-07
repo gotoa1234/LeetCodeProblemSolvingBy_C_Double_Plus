@@ -18,18 +18,6 @@
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="Medium\0150.Evaluate_Reverse_Polish_Notation.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="Medium\0151.Reverse_Words_in_a_String.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="Medium\0152.Maximum_Product_Subarray.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="Medium\0153.Find_Minimum_in_Rotated_Sorted_Array.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
     <ClCompile Include="Hard\0154.Find_Minimum_in_Rotated_Sorted_Array_II.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
@@ -37,12 +25,6 @@
       <Filter>來源檔案</Filter>
     </ClCompile>
     <ClCompile Include="Medium\0207.Course_Schedule.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="Medium\0012.Integer_to_Roman.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="Easy\0013.Roman_to_Integer.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
   </ItemGroup>
@@ -56,6 +38,6 @@
     <None Include="Mysql\0627.Swap_Salary.sql" />
     <None Include="Mysql\1050.Actors_and_Directors_Who_Cooperated_At_Least_Three_Times.sql" />
     <None Include="packages.config" />
-    <None Include="Mysql\0262.Trips_and_Users.sql" />
+    <None Include="Easy\0160.Intersection_of_Two_Linked_Lists.cpp" />
   </ItemGroup>
 </Project>

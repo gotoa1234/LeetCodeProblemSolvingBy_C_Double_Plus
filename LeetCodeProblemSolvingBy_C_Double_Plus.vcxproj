@@ -140,19 +140,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Easy\0013.Roman_to_Integer.cpp" />
     <ClCompile Include="Hard\0154.Find_Minimum_in_Rotated_Sorted_Array_II.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
-    <ClCompile Include="Medium\0012.Integer_to_Roman.cpp" />
-    <ClCompile Include="Medium\0150.Evaluate_Reverse_Polish_Notation.cpp" />
-    <ClCompile Include="Medium\0151.Reverse_Words_in_a_String.cpp" />
-    <ClCompile Include="Medium\0152.Maximum_Product_Subarray.cpp" />
-    <ClCompile Include="Medium\0153.Find_Minimum_in_Rotated_Sorted_Array.cpp" />
     <ClCompile Include="Medium\0155.Min_Stack.cpp" />
     <ClCompile Include="Medium\0207.Course_Schedule.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Mysql\0262.Trips_and_Users.sql" />
+    <None Include="Easy\0160.Intersection_of_Two_Linked_Lists.cpp" />
     <None Include="Mysql\0596.Classes_More_Than_5_Students.sql" />
     <None Include="Mysql\0601.Human_Traffic_of_Stadium.sql" />
     <None Include="Mysql\0607.Sales_Person.sql" />
