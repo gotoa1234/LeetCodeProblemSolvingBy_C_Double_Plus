@@ -27,6 +27,24 @@
     <ClCompile Include="Medium\0207.Course_Schedule.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="Medium\0162.Find_Peak_Element.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Medium\0172.Factorial_Trailing_Zeroes.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Medium\0165.Compare_Version_Numbers.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Medium\0166.Fraction_to_Recurring_Decimal.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Medium\0167.Two_Sum_II_Input_Array_Is_Sorted.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Easy\0168.Excel_Sheet_Column_Title.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Mysql\0596.Classes_More_Than_5_Students.sql" />

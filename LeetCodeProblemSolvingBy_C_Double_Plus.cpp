@@ -1,12 +1,14 @@
 ﻿#include <unordered_map>
-#include "Easy/0160.Intersection_of_Two_Linked_Lists.cpp"
-using namespace Solution160;
+#include "Medium/0162.Find_Peak_Element.cpp"
+using namespace Solution162;
 
 int main()
 {
-    Solution160::Intersection_of_Two_Linked_Lists useClass;
-    Solution160::Intersection_of_Two_Linked_Lists::Intersection_of_Two_Linked_Lists_Model getTestModel = useClass.GetTestData001();
-    auto result = useClass.getIntersectionNode(getTestModel.headA, getTestModel.headB);
+    Solution162::Find_Peak_Element useClass;
+    Solution162::Find_Peak_Element::Find_Peak_Element_Model getTestModel = useClass.GetTestData001();
+    auto result1 = useClass.findMin(getTestModel.nums);
 
+    getTestModel = useClass.GetTestData002();
+    auto result2 = useClass.findMin(getTestModel.nums);
     return 0;
 }
