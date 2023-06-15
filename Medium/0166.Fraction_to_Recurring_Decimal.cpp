@@ -19,6 +19,9 @@ namespace Solution166
 
         getTestModel = useClass.GetTestData002();
         auto result2 = useClass.fractionToDecimal(getTestModel.numerator, getTestModel.denominator);
+
+        getTestModel = useClass.GetTestData003();
+        auto result3 = useClass.fractionToDecimal(getTestModel.numerator, getTestModel.denominator);
         return 0;
     }
     */
@@ -42,14 +45,61 @@ namespace Solution166
 #pragma region Main
     public:
         /// <summary>
-        ///         思路：         
-        ///      Runtime：
-        /// Memory Usage：
+        ///         思路：主要克服兩個問題 
+        ///               1. 用long取得整數Int的餘數結果。當Int爆了，表示進入"無理數"
+        ///               2. 需要使用HashTable紀錄餘數值，若有重複的餘數值表示進入迴圈
+        ///      Runtime：  0 ms Beats 100 %
+        /// Memory Usage：6.2 MB Beats 94.84 %
         /// </summary>
         /// <returns></returns>
     public:
         string fractionToDecimal(int numerator, int denominator) {
-            return {};
+            //防呆
+            if (numerator == 0) 
+                return "0";
+
+            //1. 處理結果正負號
+            string result;
+            int sign = 1;            
+            if ((numerator < 0 && denominator >0) ||
+                (numerator > 0 && denominator < 0))
+            {
+                sign *= -1;
+            }
+            if (sign == -1)
+                result.insert(result.begin(), '-');
+
+            //2-1. 處理小數點前的整數值
+            long numeratorPositive = abs(numerator);
+            long denominatorPositive = abs(denominator);
+            long remainder = numeratorPositive % denominatorPositive;
+            result.append(to_string(numeratorPositive / denominatorPositive));
+            
+            //2-2. 在處理數值後若無餘數，表示沒有小數點，直接跳出
+            if (remainder == 0)
+                return result;
+            result.append(".");
+
+            //3-1. 使用 hashTable 紀錄餘數是否開始重複(定義：下一位的餘數值 % 分數值，此時的餘數是否已在HashTable)
+            unordered_map<int, int> hashMap;
+            //3-2. 開始迴圈跑。有2個可能會為0 => 1. 整除為0   2.int爆了，所以為0
+            while (remainder != 0) 
+            {
+                //4-2. 找到重複
+                if (hashMap.find(remainder) != hashMap.end())
+                {
+                    //5. 給結果小數點後面的數值補上()
+                    result.insert(result.begin() + hashMap[remainder], '(');
+                    result.append(")");
+                    break;
+                }
+                //4-1. 逐步往下一位(乘以10)取餘數
+                hashMap[remainder] = result.size();
+                remainder *= 10;
+                result.append(to_string(remainder / denominatorPositive));
+                remainder = remainder % denominatorPositive;
+            }
+            return result;
         }
     public:
 #pragma endregion Main
@@ -85,7 +135,7 @@ namespace Solution166
         {
             Fraction_to_Recurring_Decimal_Model result;
             result.numerator = 4;
-            result.denominator = 333;
+            result.denominator = 334;
             return result;//expect: 0.(012)
         };
 

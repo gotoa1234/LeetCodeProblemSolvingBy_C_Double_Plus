@@ -1,14 +1,17 @@
 ﻿#include <unordered_map>
-#include "Medium/0162.Find_Peak_Element.cpp"
-using namespace Solution162;
+#include "Medium/0166.Fraction_to_Recurring_Decimal.cpp"
+using namespace Solution166;
 
 int main()
 {
-    Solution162::Find_Peak_Element useClass;
-    Solution162::Find_Peak_Element::Find_Peak_Element_Model getTestModel = useClass.GetTestData001();
-    auto result1 = useClass.findMin(getTestModel.nums);
+    Solution166::Fraction_to_Recurring_Decimal useClass;
+    Solution166::Fraction_to_Recurring_Decimal::Fraction_to_Recurring_Decimal_Model getTestModel = useClass.GetTestData001();
+    auto result1 = useClass.fractionToDecimal(getTestModel.numerator, getTestModel.denominator);
 
     getTestModel = useClass.GetTestData002();
-    auto result2 = useClass.findMin(getTestModel.nums);
+    auto result2 = useClass.fractionToDecimal(getTestModel.numerator, getTestModel.denominator);
+
+    getTestModel = useClass.GetTestData003();
+    auto result3 = useClass.fractionToDecimal(getTestModel.numerator, getTestModel.denominator);
     return 0;
 }
