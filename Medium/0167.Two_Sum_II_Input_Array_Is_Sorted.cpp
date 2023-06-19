@@ -19,6 +19,9 @@ namespace Solution167
 
         getTestModel = useClass.GetTestData002();
         auto result2 = useClass.twoSum(getTestModel.numbers, getTestModel.target);
+
+        getTestModel = useClass.GetTestData003();
+        auto result3 = useClass.twoSum(getTestModel.numbers, getTestModel.target);
         return 0;
     }
     */
@@ -42,13 +45,28 @@ namespace Solution167
 #pragma region Main
     public:
         /// <summary>
-        ///         思路：         
-        ///      Runtime：
-        /// Memory Usage：
+        ///         思路：題目有特別要求空間複雜度，因此不能用HashTable，簡單的TimeSpace(N) 就是從最左索引加上最右索引，
+        ///               加起來小於target 左索引往右，反之則右索引往左        
+        ///         要求： Space(1) 
+        ///      Runtime：  15 ms Beats 62.32 %
+        /// Memory Usage：15.5 MB Beats 74.35 %
         /// </summary>
         /// <returns></returns>
     public:
         vector<int> twoSum(vector<int>& numbers, int target) {
+            int leftIndex = 0;
+            int rightIndex = numbers.size() - 1;
+            int caculation = 0;
+            while (leftIndex < rightIndex)
+            {
+                caculation = numbers[leftIndex] + numbers[rightIndex];
+                if (caculation == target)
+                    return { leftIndex + 1, rightIndex + 1 };
+                else if (caculation < target)
+                    leftIndex++;
+                else
+                    rightIndex--;
+            }
             return {};
         }
     public:
@@ -93,6 +111,7 @@ namespace Solution167
             Two_Sum_II_Input_Array_Is_Sorted_Model result;
             result.numbers.push_back(-1);
             result.numbers.push_back(0);
+            result.target = -1;
             return result;//expect: 1, 2
         };
 
