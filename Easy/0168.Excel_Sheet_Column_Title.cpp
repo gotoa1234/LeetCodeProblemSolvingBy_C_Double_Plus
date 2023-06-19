@@ -16,13 +16,13 @@ namespace Solution168
     {
         Solution168::Excel_Sheet_Column_Title useClass;
         Solution168::Excel_Sheet_Column_Title::Excel_Sheet_Column_Title_Model getTestModel = useClass.GetTestData001();
-        auto result1 = useClass.singleNumber(getTestModel.nums);
+        auto result1 = useClass.convertToTitle(getTestModel.columnNumber);
 
         getTestModel = useClass.GetTestData002();
-        auto result2 = useClass.singleNumber(getTestModel.nums);
+        auto result2 = useClass.convertToTitle(getTestModel.columnNumber);
 
         getTestModel = useClass.GetTestData003();
-        auto result3 = useClass.singleNumber(getTestModel.nums);
+        auto result3 = useClass.convertToTitle(getTestModel.columnNumber);
         return 0;
     }
     */
@@ -45,13 +45,29 @@ namespace Solution168
 #pragma region Main
     public:
         /// <summary>
-        ///         思路 ：
-        ///      Runtime : 
-        /// Memory Usage : 
+        ///         思路 ：要把這題轉為26進位思維
+        ///      Runtime :   0 ms Beats   100 %
+        /// Memory Usage : 5.9 MB Beats 79.23 %
         /// </summary>
         /// <returns></returns>        
         string convertToTitle(int columnNumber) {
-            return {};
+            string result;
+            while (columnNumber != 0)
+            {
+                if (columnNumber % 26 == 0)
+                {
+                    result.push_back('Z');
+                    columnNumber -= 26;
+                }
+                else
+                {
+					result.push_back((columnNumber % 26) + 64);
+					columnNumber -= columnNumber % 26;
+                }
+                columnNumber /= 26;
+            }
+            reverse(result.begin(), result.end());
+            return result;
         }
     public:
 #pragma endregion Main
@@ -74,7 +90,7 @@ namespace Solution168
         Excel_Sheet_Column_Title_Model GetTestData002(void)
         {
             Excel_Sheet_Column_Title_Model result;
-            result.columnNumber = 28;
+            result.columnNumber = 702;
             return result;//expect:  AB
         };
 

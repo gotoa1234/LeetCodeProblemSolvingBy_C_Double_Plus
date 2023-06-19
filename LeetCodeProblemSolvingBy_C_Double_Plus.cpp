@@ -1,17 +1,17 @@
 ﻿#include <unordered_map>
-#include "Medium/0166.Fraction_to_Recurring_Decimal.cpp"
-using namespace Solution166;
+#include "Easy/0168.Excel_Sheet_Column_Title.cpp"
+using namespace Solution168;
 
 int main()
 {
-    Solution166::Fraction_to_Recurring_Decimal useClass;
-    Solution166::Fraction_to_Recurring_Decimal::Fraction_to_Recurring_Decimal_Model getTestModel = useClass.GetTestData001();
-    auto result1 = useClass.fractionToDecimal(getTestModel.numerator, getTestModel.denominator);
+    Solution168::Excel_Sheet_Column_Title useClass;
+    Solution168::Excel_Sheet_Column_Title::Excel_Sheet_Column_Title_Model getTestModel = useClass.GetTestData001();
+    auto result1 = useClass.convertToTitle(getTestModel.columnNumber);
 
     getTestModel = useClass.GetTestData002();
-    auto result2 = useClass.fractionToDecimal(getTestModel.numerator, getTestModel.denominator);
+    auto result2 = useClass.convertToTitle(getTestModel.columnNumber);
 
     getTestModel = useClass.GetTestData003();
-    auto result3 = useClass.fractionToDecimal(getTestModel.numerator, getTestModel.denominator);
+    auto result3 = useClass.convertToTitle(getTestModel.columnNumber);
     return 0;
 }
