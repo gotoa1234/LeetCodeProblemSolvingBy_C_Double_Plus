@@ -140,19 +140,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Easy\0168.Excel_Sheet_Column_Title.cpp" />
-    <ClCompile Include="Hard\0154.Find_Minimum_in_Rotated_Sorted_Array_II.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
-    <ClCompile Include="Medium\0155.Min_Stack.cpp" />
-    <ClCompile Include="Medium\0162.Find_Peak_Element.cpp" />
-    <ClCompile Include="Medium\0165.Compare_Version_Numbers.cpp" />
-    <ClCompile Include="Medium\0166.Fraction_to_Recurring_Decimal.cpp" />
-    <ClCompile Include="Medium\0167.Two_Sum_II_Input_Array_Is_Sorted.cpp" />
-    <ClCompile Include="Medium\0172.Factorial_Trailing_Zeroes.cpp" />
-    <ClCompile Include="Medium\0207.Course_Schedule.cpp" />
+    <ClCompile Include="Medium\0179.Largest_Number.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Easy\0160.Intersection_of_Two_Linked_Lists.cpp" />
     <None Include="Mysql\0596.Classes_More_Than_5_Students.sql" />
     <None Include="Mysql\0601.Human_Traffic_of_Stadium.sql" />
     <None Include="Mysql\0607.Sales_Person.sql" />

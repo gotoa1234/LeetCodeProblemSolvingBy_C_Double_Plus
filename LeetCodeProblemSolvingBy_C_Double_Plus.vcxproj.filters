@@ -18,31 +18,7 @@
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="Hard\0154.Find_Minimum_in_Rotated_Sorted_Array_II.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="Medium\0155.Min_Stack.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="Medium\0207.Course_Schedule.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="Medium\0162.Find_Peak_Element.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="Medium\0172.Factorial_Trailing_Zeroes.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="Medium\0165.Compare_Version_Numbers.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="Medium\0166.Fraction_to_Recurring_Decimal.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="Medium\0167.Two_Sum_II_Input_Array_Is_Sorted.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="Easy\0168.Excel_Sheet_Column_Title.cpp">
+    <ClCompile Include="Medium\0179.Largest_Number.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
   </ItemGroup>
@@ -56,6 +32,5 @@
     <None Include="Mysql\0627.Swap_Salary.sql" />
     <None Include="Mysql\1050.Actors_and_Directors_Who_Cooperated_At_Least_Three_Times.sql" />
     <None Include="packages.config" />
-    <None Include="Easy\0160.Intersection_of_Two_Linked_Lists.cpp" />
   </ItemGroup>
 </Project>

@@ -1,17 +1,14 @@
 ﻿#include <unordered_map>
-#include "Easy/0168.Excel_Sheet_Column_Title.cpp"
-using namespace Solution168;
+#include "Medium/0179.Largest_Number.cpp"
+using namespace Solution179;
 
 int main()
 {
-    Solution168::Excel_Sheet_Column_Title useClass;
-    Solution168::Excel_Sheet_Column_Title::Excel_Sheet_Column_Title_Model getTestModel = useClass.GetTestData001();
-    auto result1 = useClass.convertToTitle(getTestModel.columnNumber);
+    Solution179::Largest_Number useClass;
+    Solution179::Largest_Number::Largest_Number_Model getTestModel = useClass.GetTestData001();
+    auto result1 = useClass.largestNumber(getTestModel.nums);
 
     getTestModel = useClass.GetTestData002();
-    auto result2 = useClass.convertToTitle(getTestModel.columnNumber);
-
-    getTestModel = useClass.GetTestData003();
-    auto result3 = useClass.convertToTitle(getTestModel.columnNumber);
+    auto result2 = useClass.largestNumber(getTestModel.nums);
     return 0;
 }
