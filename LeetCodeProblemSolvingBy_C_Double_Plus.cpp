@@ -1,14 +1,16 @@
 ﻿#include <unordered_map>
-#include "Medium/0179.Largest_Number.cpp"
-using namespace Solution179;
+#include "Easy/0338.Counting_Bits.cpp"
+using namespace Solution338;
 
 int main()
 {
-    Solution179::Largest_Number useClass;
-    Solution179::Largest_Number::Largest_Number_Model getTestModel = useClass.GetTestData001();
-    auto result1 = useClass.largestNumber(getTestModel.nums);
 
-    getTestModel = useClass.GetTestData002();
-    auto result2 = useClass.largestNumber(getTestModel.nums);
-    return 0;
+	using namespace std;
+
+	Solution338::Counting_Bits useClass;
+	Solution338::Counting_Bits::Counting_Bits_Model getTestModel = useClass.GetTestData001();
+	auto result1 = useClass.countBits(getTestModel.n);
+
+	getTestModel = useClass.GetTestData002();
+	auto result2 = useClass.countBits(getTestModel.n);
 }

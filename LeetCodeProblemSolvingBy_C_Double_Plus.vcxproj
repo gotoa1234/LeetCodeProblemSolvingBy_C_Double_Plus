@@ -142,8 +142,10 @@
   <ItemGroup>
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
     <ClCompile Include="Medium\0179.Largest_Number.cpp" />
+    <ClCompile Include="Medium\0187.Repeated_DNA_Sequences.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Easy\0338.Counting_Bits.cpp" />
     <None Include="Mysql\0596.Classes_More_Than_5_Students.sql" />
     <None Include="Mysql\0601.Human_Traffic_of_Stadium.sql" />
     <None Include="Mysql\0607.Sales_Person.sql" />
