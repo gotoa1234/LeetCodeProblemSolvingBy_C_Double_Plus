@@ -1,16 +1,14 @@
 ﻿#include <unordered_map>
-#include "Easy/0338.Counting_Bits.cpp"
-using namespace Solution338;
+#include "Medium/0189.Rotate_Array.cpp"
+using namespace Solution189;
 
 int main()
 {
-
-	using namespace std;
-
-	Solution338::Counting_Bits useClass;
-	Solution338::Counting_Bits::Counting_Bits_Model getTestModel = useClass.GetTestData001();
-	auto result1 = useClass.countBits(getTestModel.n);
+	Solution189::Rotate_Array useClass;
+	Solution189::Rotate_Array::Rotate_Array_Model getTestModel = useClass.GetTestData001();
+	useClass.rotate(getTestModel.nums, getTestModel.k);
 
 	getTestModel = useClass.GetTestData002();
-	auto result2 = useClass.countBits(getTestModel.n);
+	useClass.rotate(getTestModel.nums, getTestModel.k);
+	return 0;
 }

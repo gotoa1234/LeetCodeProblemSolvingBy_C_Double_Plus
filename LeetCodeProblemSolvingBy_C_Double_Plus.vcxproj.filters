@@ -18,9 +18,6 @@
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="Medium\0187.Repeated_DNA_Sequences.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
     <ClCompile Include="Medium\0189.Rotate_Array.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>

@@ -54,50 +54,38 @@ namespace Solution166
         /// <returns></returns>
     public:
         string fractionToDecimal(int numerator, int denominator) {
-            //ň
-            if (numerator == 0) 
+            if (numerator == 0)
                 return "0";
-
-            //1. 矪瞶挡狦タ璽腹
             string result;
-            int sign = 1;            
-            if ((numerator < 0 && denominator >0) ||
-                (numerator > 0 && denominator < 0))
-            {
-                sign *= -1;
-            }
-            if (sign == -1)
-                result.insert(result.begin(), '-');
+            int sign = 1;
+            if ((numerator > 0 && denominator < 0) ||
+                (numerator < 0 && denominator > 0))
+            sign = -1;
+            if(sign == -1)
+                result.push_back('-');
 
-            //2-1. 矪瞶计翴玡俱计
             long numeratorPositive = abs(numerator);
             long denominatorPositive = abs(denominator);
             long remainder = numeratorPositive % denominatorPositive;
-            result.append(to_string(numeratorPositive / denominatorPositive));
-            
-            //2-2. 矪瞶计璝礚緇计ボ⊿Τ计翴钡铬
+            long frontNum = numeratorPositive / denominatorPositive;
+            result.append(to_string(frontNum));
             if (remainder == 0)
                 return result;
             result.append(".");
-
-            //3-1. ㄏノ hashTable 魁緇计琌秨﹍狡(﹚竡緇计 % だ计緇计琌HashTable)
-            unordered_map<int, int> hashMap;
-            //3-2. 秨﹍癹伴禲Τ2穦0 => 1. 俱埃0   2.int脄┮0
-            while (remainder != 0) 
+            
+            unordered_map<int, int> hashTable;
+            while (remainder != 0)
             {
-                //4-2. т狡
-                if (hashMap.find(remainder) != hashMap.end())
+                if (hashTable.find(remainder) != hashTable.end())
                 {
-                    //5. 倒挡狦计翴计干()
-                    result.insert(result.begin() + hashMap[remainder], '(');
+                    result.insert(result.begin() + hashTable[remainder] , '(');
                     result.append(")");
-                    break;
+                    return result;
                 }
-                //4-1. 硋˙┕(10)緇计
-                hashMap[remainder] = result.size();
+                hashTable[remainder] = result.size();
                 remainder *= 10;
                 result.append(to_string(remainder / denominatorPositive));
-                remainder = remainder % denominatorPositive;
+                remainder %= denominatorPositive;
             }
             return result;
         }

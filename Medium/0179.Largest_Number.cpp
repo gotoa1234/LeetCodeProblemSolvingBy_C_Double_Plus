@@ -49,23 +49,16 @@ namespace Solution179
         /// <returns></returns>
     public:
         string largestNumber(vector<int>& nums) {
-            vector<string> tempStr;
-            string result = "";
-            //1. 將所有數值放入字串陣列中
-            for (auto number : nums)            
-                tempStr.push_back(to_string(number));
-            
-            //2. 自定義排序，將每個字串拼接比較
-            sort(tempStr.begin(), tempStr.end(), [](string& s1, string& s2) {
-                //2. 字串拼接，決定前後順序後大的放前
-                //EX: {30, 34}  => 3034 > 3430 實際上3430比較大-所以回傳34, 30
-                return s1 + s2 > s2 + s1; 
-            });
-
-            //3. 將結果全部組成輸出
-            for (auto item : tempStr)
-                result += item;            
-            return result[0] == '0' ? "0" : result;
+            vector<string> temp;
+            for (auto item : nums)
+                temp.push_back(to_string(item));
+            sort(temp.begin(), temp.end(), [](string& a, string& b) {
+                return a + b > b + a;
+                });
+            string result="";
+            for (string str : temp)
+                result += str;
+			return result[0] == '0' ? 0 : result;
         }
 
     public:

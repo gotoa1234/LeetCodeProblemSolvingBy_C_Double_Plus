@@ -34,7 +34,7 @@ namespace Solution172
         class Factorial_Trailing_Zeroes_Model
         {
         public:
-            int n;
+            int columnNumber;
         };
 #pragma endregion Model
 
@@ -74,7 +74,7 @@ namespace Solution172
         Factorial_Trailing_Zeroes_Model GetTestData001(void)
         {
             Factorial_Trailing_Zeroes_Model result;
-            result.n = 3;
+            result.columnNumber = 3;
             return result;//expect: 0
         };
 
@@ -84,7 +84,7 @@ namespace Solution172
         Factorial_Trailing_Zeroes_Model GetTestData002(void)
         {
             Factorial_Trailing_Zeroes_Model result;
-            result.n = 5;
+            result.columnNumber = 5;
             return result;//expect: 1
         };
 
@@ -94,7 +94,7 @@ namespace Solution172
         Factorial_Trailing_Zeroes_Model GetTestData003(void)
         {
             Factorial_Trailing_Zeroes_Model result;
-            result.n = 0;
+            result.columnNumber = 0;
             return result;//expect: 0
         };
 
