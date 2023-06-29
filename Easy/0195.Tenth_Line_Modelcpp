@@ -1,0 +1,78 @@
+#include <iostream>
+
+using namespace std;
+
+namespace Solution195
+{
+#pragma region Paste to execute 
+	/*
+	#include <unordered_map>
+	#include "Easy/0195.Tenth_Line.cpp"
+	using namespace Solution195;
+
+	int main()
+	{
+		Solution195::Tenth_Line useClass;		
+		return 0;
+	}
+	*/
+#pragma endregion Paste to executes
+
+	/// <summary>
+	/// 第十行
+	/// </summary>
+	class Tenth_Line
+	{
+#pragma region Model
+	public:
+		class Tenth_Line_Model
+		{
+		public:
+
+		};
+#pragma endregion Model
+
+#pragma region Main
+	public:
+		/// <summary>
+		///         思路：第十行，需要使用seq (讀第十行結束) 而不可以用 awk (先讀全部在第十行)
+		///      Runtime： 25 ms Beats 97.97 %
+		/// Memory Usage：3.4 MB Beats 99.17 %
+		/// </summary>
+		/// <returns></returns>
+	public:
+		void file()
+		{
+			//# Read from the file words.txtand output the word frequency list to stdout.
+			//sed -n '10p' file.txt
+		}
+	public:
+#pragma endregion Main
+
+#pragma region TestData
+	public:
+		/// <summary>
+		/// test 1
+		/// </summary>        
+		Tenth_Line_Model GetTestData001(void)
+		{
+			Tenth_Line_Model result;
+			/*
+            Line 1
+            Line 2
+            Line 3
+            Line 4
+            Line 5
+            Line 6
+            Line 7
+            Line 8
+            Line 9
+            Line 10
+
+			*/
+			return result;//expect:
+		};
+
+#pragma endregion TestData
+	};
+}
