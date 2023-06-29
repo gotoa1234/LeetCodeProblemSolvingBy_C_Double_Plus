@@ -141,8 +141,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
-    <ClCompile Include="Medium\0189.Rotate_Array.cpp" />
-    <ClCompile Include="Medium\0192.Word_Frequency.cpp" />
+    <ClCompile Include="Medium\0194.Transpose_File.cpp" />
+    <ClCompile Include="Medium\0198.House_Robber.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Easy\0338.Counting_Bits.cpp" />
