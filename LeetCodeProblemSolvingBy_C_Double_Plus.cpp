@@ -1,11 +1,13 @@
 ﻿#include <unordered_map>
-#include "easy/0303.Range_Sum_Query_Immutable.cpp"
-using namespace Solution303;
+#include "Hard/0174.Dungeon_Game.cpp"
+using namespace Solution174;
 
 int main()
 {
-	vector<int> teemp = { -2, 0, 3, -5, 2, -1};
-	Solution303::NumArray useClass(teemp);
-	auto get = useClass.sumRange(2, 5);
-	return 0;
+    Solution174::Dungeon_Game useClass;
+    Solution174::Dungeon_Game::Dungeon_Game_Model getTestModel = useClass.GetTestData001();
+    auto result1 = useClass.calculateMinimumHP(getTestModel.dungeon);
+
+    getTestModel = useClass.GetTestData002();
+    auto result2 = useClass.calculateMinimumHP(getTestModel.dungeon);
 }
