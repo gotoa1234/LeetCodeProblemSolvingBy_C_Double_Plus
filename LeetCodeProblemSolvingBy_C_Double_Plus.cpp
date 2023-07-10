@@ -1,16 +1,15 @@
-﻿#include <unordered_map>
-#include "Hard/0149.Max_Points_on_a_Line.cpp"
-using namespace Solution149;
+﻿#include "Easy/0228.Summary_Ranges.cpp"
+using namespace Solution228;
+using namespace std;
 
 int main()
 {
-    Solution149::Max_Points_on_a_Line useClass;
-    Solution149::Max_Points_on_a_Line::Max_Points_on_a_Line_Model getTestModel = useClass.GetTestData001();
-    auto result1 = useClass.maxPoints(getTestModel.points);
+	Solution228::Summary_Ranges useClass;
+	Solution228::Summary_Ranges::Summary_Ranges_Model getTestModel = useClass.GetTestData001();
+	auto result1 = useClass.summaryRanges(getTestModel.nums);
 
-    getTestModel = useClass.GetTestData002();
-    auto result2 = useClass.maxPoints(getTestModel.points);
-
-    getTestModel = useClass.GetTestData003();
-    auto result3 = useClass.maxPoints(getTestModel.points);
+	getTestModel = useClass.GetTestData002();
+	auto result2 = useClass.summaryRanges(getTestModel.nums);
 }
+
+

@@ -140,6 +140,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Easy\0228.Summary_Ranges.cpp" />
     <ClCompile Include="Easy\0303.Range_Sum_Query_Immutable.cpp" />
     <ClCompile Include="Hard\0149.Max_Points_on_a_Line.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
