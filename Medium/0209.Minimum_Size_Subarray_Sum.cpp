@@ -45,26 +45,29 @@ namespace Solution209
 
 #pragma region Main
     public:
-        ///         思路 :         
-        ///      Runtime:  
-        /// Memory Usage :         
+        ///         思路 : 此解法為O(n) 的解法，subArray需為連續性，因此用兩個索引，第一個索引(右索引)不斷前進，直到當大於等於目標時
+        ///                左索引前進，並解去索引值，計算出當前長度。直到遍歷到底
+        ///     題目要求 : 給出O(n) 與 O(nlog) 的解法
+        ///      Runtime:     31ms Beats 97.74 %
+        /// Memory Usage : 28.29mb Beats 23.78 %
         int minSubArrayLen(int target, vector<int>& nums) 
         {
             int leftIndex = 0;
             int rightIndex = 0;
-            int resultCount = INT_MAX;
-            int reminder = 0;
-            while (rightIndex < nums.size()) 
+            int total = 0;
+            int result = INT_MAX;
+            while (rightIndex < nums.size())
             {
-                reminder += nums[rightIndex];
-                while (reminder >= target) {
-                    reminder -= nums[leftIndex];
-                    resultCount = min(rightIndex - leftIndex + 1, resultCount);
+                total += nums[rightIndex];
+                while (total >= target)
+                {
+                    total -= nums[leftIndex];
+                    result = min(rightIndex - leftIndex + 1, result);
                     leftIndex++;
                 }
                 rightIndex++;
             }
-			return resultCount == INT_MAX ? 0 : resultCount;
+            return result == INT_MAX ? 0 : result;
         }
 
 
