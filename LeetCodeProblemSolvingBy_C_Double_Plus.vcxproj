@@ -140,11 +140,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Easy\0217.Contains_Duplicate.cpp" />
+    <ClCompile Include="Easy\0219.Contains_Duplicate_II.cpp" />
     <ClCompile Include="Easy\0228.Summary_Ranges.cpp" />
     <ClCompile Include="Easy\0303.Range_Sum_Query_Immutable.cpp" />
     <ClCompile Include="Hard\0149.Max_Points_on_a_Line.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
     <ClCompile Include="Medium\0173.Binary_Search_Tree_Iterator.cpp" />
+    <ClCompile Include="Medium\0204.Count_Primes.cpp" />
+    <ClCompile Include="Medium\0209.Minimum_Size_Subarray_Sum.cpp" />
+    <ClCompile Include="Medium\0210.Course_Schedule_II.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Easy\0338.Counting_Bits.cpp" />

@@ -30,6 +30,21 @@
     <ClCompile Include="Easy\0228.Summary_Ranges.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="Medium\0204.Count_Primes.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Easy\0217.Contains_Duplicate.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Medium\0209.Minimum_Size_Subarray_Sum.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Easy\0219.Contains_Duplicate_II.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Medium\0210.Course_Schedule_II.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Mysql\0596.Classes_More_Than_5_Students.sql" />

@@ -1,15 +1,15 @@
-﻿#include "Easy/0228.Summary_Ranges.cpp"
-using namespace Solution228;
-using namespace std;
+﻿#include <unordered_map>
+#include "Medium/0210.Course_Schedule_II.cpp"
+using namespace Solution210;
 
 int main()
 {
-	Solution228::Summary_Ranges useClass;
-	Solution228::Summary_Ranges::Summary_Ranges_Model getTestModel = useClass.GetTestData001();
-	auto result1 = useClass.summaryRanges(getTestModel.nums);
+    Solution210::Course_Schedule_II useClass;
+    Solution210::Course_Schedule_II::Course_Schedule_II_Model getTestModel = useClass.GetTestData001();
+    auto result1 = useClass.findOrder(getTestModel.numCourses, getTestModel.prerequisites);
 
-	getTestModel = useClass.GetTestData002();
-	auto result2 = useClass.summaryRanges(getTestModel.nums);
+    getTestModel = useClass.GetTestData002();
+    auto result2 = useClass.findOrder(getTestModel.numCourses, getTestModel.prerequisites);
+
+    return 0;
 }
-
-
