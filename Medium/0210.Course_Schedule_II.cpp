@@ -48,9 +48,9 @@ namespace Solution210
         ///               prerequisites 先決條件 {1,0} 表示要修1 但必須先修 0
         ///               以範例 test 01來說，就會是 [0 , 1] 
         ///               ※我優先修0 然後在修1，最後達成 0,1 課程都修完
-        ///         思路：
-        ///      Runtime：
-        /// Memory Usage：
+        ///         思路：可參考下方解釋
+        ///      Runtime：   11ms Beats 99.83 % of users with C++
+        /// Memory Usage：13.32mb Beats 80.35 % of users with C++
         /// </summary>
         /// <returns></returns>
     public:
@@ -71,12 +71,16 @@ namespace Solution210
                 if (mainCourse[index] == 0)
                     queueTemp.push(index);
             }
+
+            //2-1. 逐一取出可以自由上課的課程
             while (!queueTemp.empty()) {
                 int node = queueTemp.front();
                 queueTemp.pop();
                 result.push_back(node);
+                //2-2. 自由上課的課程，若為其他課程的必修
                 for (auto child : graph[node]) 
                 {
+                    //2-3. 該對應課程的，必修數-1，若為0時表示該課可上(所有前置必修已上完)
                     if (mainCourse[child]) 
                     {
                         mainCourse[child]--;
@@ -87,9 +91,12 @@ namespace Solution210
                     }
                 }
             }
+
+            //3-1. 必修課與找出的結果相同，可以回傳答案
             if (result.size() == numCourses) {
                 return result;
             }
+            //3-2. 否則表示不可能全修完，回傳空
             return {};
         }
 
