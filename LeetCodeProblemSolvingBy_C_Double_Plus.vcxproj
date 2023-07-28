@@ -146,14 +146,11 @@
     <ClCompile Include="Easy\0303.Range_Sum_Query_Immutable.cpp" />
     <ClCompile Include="Hard\0149.Max_Points_on_a_Line.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
-    <ClCompile Include="Medium\0173.Binary_Search_Tree_Iterator.cpp" />
-    <ClCompile Include="Medium\0204.Count_Primes.cpp" />
-    <ClCompile Include="Medium\0209.Minimum_Size_Subarray_Sum.cpp" />
-    <ClCompile Include="Medium\0210.Course_Schedule_II.cpp" />
+    <ClCompile Include="Medium\0208.Implement_Trie_Prefix_Tree.cpp" />
+    <ClCompile Include="Medium\0211.Design_Add_and_Search_Words_Data_Structure.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Easy\0338.Counting_Bits.cpp" />
-    <None Include="Medium\0201.Bitwise_AND_of_Numbers_Range.cpp" />
     <None Include="Mysql\0596.Classes_More_Than_5_Students.sql" />
     <None Include="Mysql\0601.Human_Traffic_of_Stadium.sql" />
     <None Include="Mysql\0607.Sales_Person.sql" />
