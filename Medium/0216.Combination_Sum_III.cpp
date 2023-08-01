@@ -2,6 +2,7 @@
 #include <unordered_map>
 #include <algorithm>
 #include <vector>
+#include <numeric>
 
 using namespace std;
 
@@ -46,21 +47,40 @@ namespace Solution219
 #pragma region Main
 	public:
 		/// <summary>
-		///     thinking：
-		///       Runtime：
-		/// Memory Usage ：
+		///     thinking：題目給的k是1~9 不重複，因此使用貪婪演算法也部會時間複雜度超時
+		///               利用遞迴，每次將一個數值放入，如果累計到K 並且計算到指定的n數值即可加入到結果中
+		///       Runtime：  0 ms Beats 100 %
+		/// Memory Usage ：6.3 MB Beats	86.55 %
 		/// </summary>
 		vector<vector<int>> _result{};
 		vector<vector<int>> combinationSum3(int k, int n) {
 			vector<int> compose{};
-			
-
-			return {};
+			FindCompose(1, k, n, compose);
+			return _result;
 		}
 
-		void FindCompose(int index, int& k, int& n)
+		void FindCompose(int currentIndex, int composeSize, int maxValue, vector<int>& compose)
 		{
-		
+			//1. 被減去後當前若小於0跳出
+			if (maxValue < 0)
+				return;
+			//2. 組成數量達到k 
+			if (compose.size() == composeSize)
+			{			
+				//3. 並且達到n 就加入
+				if (0 == maxValue)
+				{
+					_result.push_back(compose);
+				}
+				return;
+			}
+
+			for (int index = currentIndex; index <= 9; index++)
+			{
+				compose.push_back(index);
+				FindCompose(index + 1, composeSize, maxValue - index, compose);
+				compose.pop_back();
+			}
 		}
 
 		
