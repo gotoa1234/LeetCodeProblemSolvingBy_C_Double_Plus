@@ -1,10 +1,18 @@
-﻿#include <vector>
-#include "Medium\\0208.Implement_Trie_Prefix_Tree.cpp"
-using namespace Solution208;
+﻿#include "Medium\0221.Maximal_Square.cpp"
+using namespace Solution221;
+using namespace std;
 
 int main()
 {
-    Solution208::Implement_Trie_Prefix_Tree useClass;
-    useClass.WordDictionaryExecute();    
-    return 0;
+	vector<vector<int>> result = {};
+	Solution221::Maximal_Square useClass;
+	Solution221::Maximal_Square::Maximal_Square_Model getTestModel = useClass.GetTestData001();
+	auto result1 = useClass.maximalSquare(getTestModel.matrix);
+
+	getTestModel = useClass.GetTestData002();
+	auto result2 = useClass.maximalSquare(getTestModel.matrix);
+
+	getTestModel = useClass.GetTestData003();
+	auto result3 = useClass.maximalSquare(getTestModel.matrix);
+	return 0;
 }

@@ -39,6 +39,12 @@
     <ClCompile Include="Medium\0208.Implement_Trie_Prefix_Tree.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="Medium\0215.Kth_Largest_Element_in_an_Array.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Medium\0216.Combination_Sum_III.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Mysql\0596.Classes_More_Than_5_Students.sql" />
