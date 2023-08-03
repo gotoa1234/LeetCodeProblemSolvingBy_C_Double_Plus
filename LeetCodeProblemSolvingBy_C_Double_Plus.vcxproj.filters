@@ -45,6 +45,9 @@
     <ClCompile Include="Medium\0216.Combination_Sum_III.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="Medium\0221.Maximal_Square.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Mysql\0596.Classes_More_Than_5_Students.sql" />
@@ -55,7 +58,7 @@
     <None Include="Mysql\0626.Exchange_Seats.sql" />
     <None Include="Mysql\0627.Swap_Salary.sql" />
     <None Include="Mysql\1050.Actors_and_Directors_Who_Cooperated_At_Least_Three_Times.sql" />
-    <None Include="packages.config" />
     <None Include="Easy\0338.Counting_Bits.cpp" />
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>
