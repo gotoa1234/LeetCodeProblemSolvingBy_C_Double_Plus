@@ -15,10 +15,10 @@ namespace Solution345
 	{
 		Solution345::Reverse_Vowels_of_a_String useClass;
 		Solution345::Reverse_Vowels_of_a_String::Reverse_Vowels_of_a_String_Model getTestModel = useClass.GetTestData001();
-		int result = useClass.decodeString(getTestModel.s);
+		int result = useClass.reverseVowels(getTestModel.s);
 
 		getTestModel = useClass.GetTestData002();
-		result = useClass.decodeString(getTestModel.s);
+		result = useClass.reverseVowels(getTestModel.s);
 		return 0;
 	}
 	*/
@@ -41,9 +41,10 @@ namespace Solution345
 #pragma region Main
 	public:
 		/// <summary>
-		///           Think：
-		///        Runtime : 
-		///   Memory Usage : 		
+		///           Think：利用兩個索引，第一個由左至右，第二個由右至左，若遇到彼此遇到元音就交換
+		///                  直到相互碰到結束		
+		///        Runtime :  3 ms Beats 96.29 %
+		///   Memory Usage :7.7 MB Beats 84.9 %
 		/// <returns></returns>
 		string reverseVowels(string s) {
 			int leftIndex = 0;
@@ -61,7 +62,7 @@ namespace Solution345
 					     s[leftIndex] == 'o' ||
 					     s[leftIndex] == 'U' ||
 					     s[leftIndex] == 'u'
-					  ))
+					  ) && leftIndex < rightIndex)
 				{
 					leftIndex++;					
 				}
@@ -76,7 +77,7 @@ namespace Solution345
 					s[rightIndex] == 'o' ||
 					s[rightIndex] == 'U' ||
 					s[rightIndex] == 'u'
-					))
+					) && rightIndex > leftIndex)
 				{
 					rightIndex--;
 				}
@@ -86,6 +87,8 @@ namespace Solution345
 					auto temp = s[leftIndex];
 					s[leftIndex] = s[rightIndex];
 					s[rightIndex] = temp;
+					leftIndex++;
+					rightIndex--;
 				}
 			}
 			return s;
@@ -113,6 +116,16 @@ namespace Solution345
 		{
 			Reverse_Vowels_of_a_String_Model result;
 			result.s = "leetcode";
+			return result;//expect:"leotcede"
+		};
+
+		/// <summary>
+		/// test 3
+		/// </summary>   
+		Reverse_Vowels_of_a_String_Model GetTestData003(void)
+		{
+			Reverse_Vowels_of_a_String_Model result;
+			result.s = ".,";
 			return result;//expect:"leotcede"
 		};
 
