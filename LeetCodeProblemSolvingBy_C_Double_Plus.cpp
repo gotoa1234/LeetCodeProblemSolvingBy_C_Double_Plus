@@ -1,17 +1,20 @@
 ﻿#include <vector>
-#include "Easy\0387.First_Unique_Character_in_a_String.cpp"
-using namespace Solution387;
+#include "Easy\0374.Guess_Number_Higher_or_Lower.cpp"
+using namespace Solution374;
 
 int main()
 {
-	Solution387::First_Unique_Character_in_a_String useClass;
-	Solution387::First_Unique_Character_in_a_String::First_Unique_Character_in_a_String_Model getTestModel = useClass.GetTestData001();
-	auto result = useClass.firstUniqChar(getTestModel.s);
+	Solution374::Guess_Number_Higher_or_Lower useClass;
+	Solution374::Guess_Number_Higher_or_Lower::Guess_Number_Higher_or_Lower_Model getTestModel = useClass.GetTestData001();
+	useClass.SetPick(getTestModel.pick);
+	auto result1 = useClass.guessNumber(getTestModel.n);
 
 	getTestModel = useClass.GetTestData002();
-	auto result2 = useClass.firstUniqChar(getTestModel.s);
+	useClass.SetPick(getTestModel.pick);
+	auto result2 = useClass.guessNumber(getTestModel.n);
 
 	getTestModel = useClass.GetTestData003();
-	auto result3 = useClass.firstUniqChar(getTestModel.s);
+	useClass.SetPick(getTestModel.pick);
+	auto result3 = useClass.guessNumber(getTestModel.n);
 	return 0;
 }

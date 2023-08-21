@@ -24,25 +24,22 @@
     <ClCompile Include="Medium\0221.Maximal_Square.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="Easy\0345.Reverse_Vowels_of_a_String.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
     <ClCompile Include="Medium\0304.Range_Sum_Query_2D_Immutable.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
     <ClCompile Include="Medium\0306.Additive_Number.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="Easy\0367.Valid_Perfect_Square.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
     <ClCompile Include="Easy\0389.Find_the_Difference.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="Easy\0383.Ransom_Note.cpp">
+    <ClCompile Include="Easy\0387.First_Unique_Character_in_a_String.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="Easy\0387.First_Unique_Character_in_a_String.cpp">
+    <ClCompile Include="Easy\0374.Guess_Number_Higher_or_Lower.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Easy\0404.Sum_of_Left_Leaves.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
   </ItemGroup>

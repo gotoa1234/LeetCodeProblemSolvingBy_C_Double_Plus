@@ -8,24 +8,30 @@ namespace Solution374
 #pragma region Paste to execute 
 	/*
 	#include <vector>
-	#include "Easy\0374.Guess_Number_Higher_or_Lower_Model.cpp"
+	#include "Easy\0374.Guess_Number_Higher_or_Lower.cpp"
 	using namespace Solution374;
 
 	int main()
 	{
 		Solution374::Guess_Number_Higher_or_Lower useClass;
 		Solution374::Guess_Number_Higher_or_Lower::Guess_Number_Higher_or_Lower_Model getTestModel = useClass.GetTestData001();
-		int result = useClass.isPerfectSquare(getTestModel.num);
+		useClass.SetPick(getTestModel.pick);
+		auto result1 = useClass.guessNumber(getTestModel.n);
 
 		getTestModel = useClass.GetTestData002();
-		result = useClass.isPerfectSquare(getTestModel.num);
+		useClass.SetPick(getTestModel.pick);
+		auto result2 = useClass.guessNumber(getTestModel.n);
+
+		getTestModel = useClass.GetTestData003();
+		useClass.SetPick(getTestModel.pick);
+		auto result3 = useClass.guessNumber(getTestModel.n);
 		return 0;
 	}
 	*/
 #pragma endregion Paste to execute
 
 	/// <summary>
-	/// 
+	/// 猜測數字更高還是更低
 	/// </summary>
 	class Guess_Number_Higher_or_Lower
 	{
@@ -42,12 +48,44 @@ namespace Solution374
 #pragma region Main
 	public:
 		/// <summary>
-		///          Think : 				
-		///        Runtime : 
-		///   Memory Usage : 
+		///          Think : 利用二分搜尋法找出答案			
+		///        Runtime : 0 ms Beats 100 %
+		///   Memory Usage : 6 MB Beats 45.23 %
 		/// <returns></returns>
+		
 		int guessNumber(int n) {
-			return {};
+			int left = 0;
+			int right = INT_MAX;			
+			while (guess(n) != 0)
+			{
+				if (guess(n) == -1)
+				{
+					right = n;
+				}
+				else
+				{
+					left = n;
+				}	
+				n = left + (right - left) / 2;
+			}			
+			return n;
+		}
+
+		//以下代碼是隱藏在LeetCode內部的，我們只要負責呼叫guess(int n) 方法
+		int _pick = 0;
+		void SetPick(int pick)
+		{
+			_pick = pick;
+		}
+
+		int guess(int n)
+		{
+			if (n == _pick)
+				return 0;
+			else if (n > _pick)
+				return -1;
+			else
+				return 1;
 		}
 
 #pragma endregion Main
@@ -60,7 +98,7 @@ namespace Solution374
 		Guess_Number_Higher_or_Lower_Model GetTestData001(void)
 		{
 			Guess_Number_Higher_or_Lower_Model result;
-			result.n = 1;
+			result.n = 10;
 			result.pick = 6;
 			return result;//expect:6
 		};

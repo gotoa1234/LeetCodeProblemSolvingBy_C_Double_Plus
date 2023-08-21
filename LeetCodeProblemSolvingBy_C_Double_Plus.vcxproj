@@ -140,14 +140,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Easy\0367.Valid_Perfect_Square.cpp" />
+    <ClCompile Include="Easy\0374.Guess_Number_Higher_or_Lower.cpp" />
     <ClCompile Include="Easy\0387.First_Unique_Character_in_a_String.cpp" />
     <ClCompile Include="Easy\0389.Find_the_Difference.cpp" />
-    <ClCompile Include="Easy\0383.Ransom_Note.cpp" />
+    <ClCompile Include="Easy\0404.Sum_of_Left_Leaves.cpp" />
     <ClCompile Include="Hard\0149.Max_Points_on_a_Line.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
     <ClCompile Include="Medium\0221.Maximal_Square.cpp" />
-    <ClCompile Include="Easy\0345.Reverse_Vowels_of_a_String.cpp" />
     <ClCompile Include="Medium\0304.Range_Sum_Query_2D_Immutable.cpp" />
     <ClCompile Include="Medium\0306.Additive_Number.cpp" />
   </ItemGroup>
