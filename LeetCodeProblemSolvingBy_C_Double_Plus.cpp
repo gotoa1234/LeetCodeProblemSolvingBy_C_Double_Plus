@@ -1,20 +1,16 @@
-﻿#include <vector>
-#include "Easy\0374.Guess_Number_Higher_or_Lower.cpp"
-using namespace Solution374;
+﻿#include "Medium\0223.Rectangle_Area.cpp"
+using namespace Solution223;
+using namespace std;
 
 int main()
 {
-	Solution374::Guess_Number_Higher_or_Lower useClass;
-	Solution374::Guess_Number_Higher_or_Lower::Guess_Number_Higher_or_Lower_Model getTestModel = useClass.GetTestData001();
-	useClass.SetPick(getTestModel.pick);
-	auto result1 = useClass.guessNumber(getTestModel.n);
+	vector<vector<int>> result = {};
+	Solution223::Rectangle_Area useClass;
+	Solution223::Rectangle_Area::Rectangle_Area_Model getTestModel = useClass.GetTestData001();
+	auto result1 = useClass.computeArea(getTestModel.ax1, getTestModel.ay1, getTestModel.ax2, getTestModel.ay2, getTestModel.bx1, getTestModel.by1, getTestModel.bx2, getTestModel.by2);
 
-	getTestModel = useClass.GetTestData002();
-	useClass.SetPick(getTestModel.pick);
-	auto result2 = useClass.guessNumber(getTestModel.n);
+	/*getTestModel = useClass.GetTestData002();
+	auto result2 = useClass.computeArea(getTestModel.ax1, getTestModel.ay1, getTestModel.ax2, getTestModel.ay2, getTestModel.bx1, getTestModel.by1, getTestModel.bx2, getTestModel.by2);*/
 
-	getTestModel = useClass.GetTestData003();
-	useClass.SetPick(getTestModel.pick);
-	auto result3 = useClass.guessNumber(getTestModel.n);
 	return 0;
 }

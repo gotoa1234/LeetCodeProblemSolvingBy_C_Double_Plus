@@ -147,6 +147,7 @@
     <ClCompile Include="Hard\0149.Max_Points_on_a_Line.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
     <ClCompile Include="Medium\0221.Maximal_Square.cpp" />
+    <ClCompile Include="Medium\0223.Rectangle_Area.cpp" />
     <ClCompile Include="Medium\0304.Range_Sum_Query_2D_Immutable.cpp" />
     <ClCompile Include="Medium\0306.Additive_Number.cpp" />
   </ItemGroup>
