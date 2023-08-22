@@ -54,51 +54,36 @@ namespace Solution223
 #pragma region Main
 	public:
 		/// <summary>
-		///     thinking：		
-		///       Runtime：
-		/// Memory Usage ：
+		///     thinking：將兩個矩形相加後，再減去重疊的地方，關鍵在如何找出重疊的方法
+		///       Runtime：0 ms Beats 100.0 %
+		/// Memory Usage ：6 MB Beats 14.83 %
 		/// </summary>
 		int computeArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
-			
+
 			auto aArea = CaculationArea(ax1, ay1, ax2, ay2);
 			auto bArea = CaculationArea(bx1, by1, bx2, by2);
-			auto overlapArea = aArea >= bArea ? FindOverlapArea(ax1, ay1, ax2, ay2, bx1, by1, bx2, by2)
-				                              : FindOverlapArea(bx1, by1, bx2, by2, ax1, ay1, ax2, ay2);
-			auto result =  aArea + bArea - overlapArea;
+			auto overlapArea = FindOverlapArea(ax1, ay1, ax2, ay2, bx1, by1, bx2, by2);
+			auto result = aArea + bArea - overlapArea;
 			return result;
 		}
 
 		int FindOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2)
 		{
 			int result = 0;
-			int aXAxisLeft = ax1 < ax2 ? ax1 : ax2;
-			int aXAxisRight = ax1 < ax2 ? ax2 : ax1;
-			int aYAxisTop = ay1 < ay2 ? ay1 : ay2;
-			int aYAxisDown = ay1 < ay2 ? ay2 : ay1;
-
-			int bXAxisLeft = bx1 < bx2 ? bx1 : bx2;
-			int bXAxisRight = bx1 < bx2 ? bx2 : bx1;
-			int bYAxisTop = by1 < by2 ? by1 : by2;
-			int bYAxisDown = by1 < by2 ? by2 : by1;
-		
-			bool isXOverLap = (aXAxisLeft <= bXAxisLeft && bXAxisLeft <= aXAxisRight) || (aXAxisLeft <= bXAxisRight && bXAxisRight <= aXAxisRight);
-			bool isYOverLap = (aYAxisTop <= bYAxisTop && bYAxisTop <= aYAxisDown) || (aYAxisTop <= bYAxisDown && bYAxisDown <= aYAxisDown);
-			
-			if (isXOverLap && isYOverLap)
-			{
-				int aXLeft = aXAxisLeft < bXAxisLeft ? bXAxisLeft : aXAxisLeft;
-				int bYTop = bYAxisTop < aYAxisTop? aYAxisTop : bYAxisTop;
-				int aXRight = bXAxisRight < aXAxisRight ? bXAxisRight : aXAxisRight;
-				int bYDown = aYAxisDown < bYAxisDown ? bYAxisDown : aYAxisDown;
-				result = CaculationArea(aXLeft, bYTop, aXRight, bYDown);
-			}
+			int aXLeft = max(ax1, bx1);
+			int aXRight = min(ax2, bx2);
+			int bYTop = min(ay2, by2);
+			int bYDown = max(ay1, by1);
+			//這邊是判斷重疊，如果左邊的x,y 有其中大於右邊的x,y 必定不重疊，回傳0
+			result = aXLeft > aXRight || bYDown > bYTop ? 0
+			                                            : CaculationArea(aXLeft, bYDown, aXRight, bYTop);
 			return result;
 		}
 
 		int CaculationArea(int x1, int y1, int x2, int y2)
 		{
-			int height = abs(y1 - y2);
-			int wedth = abs(x1 - x2);
+			int height = y2 - y1;
+			int wedth = x2 - x1;
 			return height * wedth;
 		}
 
@@ -123,7 +108,22 @@ namespace Solution223
 			return result;//except: 4
 		};
 
-
+		/// <summary>
+		/// test data 2
+		/// </summary>        
+		Rectangle_Area_Model GetTestData002(void)
+		{
+			Rectangle_Area_Model result;
+			result.ax1 = -2;
+			result.ay1 = -2; 
+			result.ax2 = 2; 
+			result.ay2 = 2; 
+			result.bx1 = 3; 
+			result.by1 = 3;
+			result.bx2 = 4;
+			result.by2 = 4;
+			return result;//except: 24
+		};
 #pragma endregion TestData
 
 	};
