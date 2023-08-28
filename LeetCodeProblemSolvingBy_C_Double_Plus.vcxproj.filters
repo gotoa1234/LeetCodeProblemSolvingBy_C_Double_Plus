@@ -30,31 +30,18 @@
     <ClCompile Include="Medium\0306.Additive_Number.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="Easy\0389.Find_the_Difference.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="Easy\0387.First_Unique_Character_in_a_String.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
     <ClCompile Include="Easy\0374.Guess_Number_Higher_or_Lower.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="Easy\0404.Sum_of_Left_Leaves.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
     <ClCompile Include="Medium\0223.Rectangle_Area.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="Easy\0415.Add_Strings.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Mysql\0596.Classes_More_Than_5_Students.sql" />
-    <None Include="Mysql\0601.Human_Traffic_of_Stadium.sql" />
-    <None Include="Mysql\0607.Sales_Person.sql" />
-    <None Include="Mysql\0608.Tree_Node.sql" />
-    <None Include="Mysql\0620.Not_Boring_Movies.sql" />
-    <None Include="Mysql\0626.Exchange_Seats.sql" />
-    <None Include="Mysql\0627.Swap_Salary.sql" />
-    <None Include="Mysql\1050.Actors_and_Directors_Who_Cooperated_At_Least_Three_Times.sql" />
     <None Include="packages.config" />
+    <None Include="Mysql\1581.Customer_Who_Visited_but_Did_Not_Make_Any_Transactions.sql" />
   </ItemGroup>
 </Project>
