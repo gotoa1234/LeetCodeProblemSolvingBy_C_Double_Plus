@@ -150,7 +150,11 @@
     <ClCompile Include="Medium\0306.Additive_Number.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Mysql\1581.Customer_Who_Visited_but_Did_Not_Make_Any_Transactions.sql" />
+    <None Include="Mysql\0570.Managers_with_at_Least_5_Direct_Reports.sql" />
+    <None Include="Mysql\0577.Employee_Bonus.sql" />
+    <None Include="Mysql\1280.Students_and_Examinations.sql" />
+    <None Include="Mysql\1661.Average_Time_of_Process_per_Machine.sql" />
+    <None Include="Mysql\1934.Confirmation_Rate.sql" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
