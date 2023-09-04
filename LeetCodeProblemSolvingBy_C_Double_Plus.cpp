@@ -1,17 +1,15 @@
-﻿#include "Easy\0415.Add_Strings.cpp"
-using namespace Solution415;
+﻿#include "Easy\0448.Find_All_Numbers_Disappeared_in_an_Array.cpp"
+using namespace Solution448;
 
 int main()
 {
-
-	Solution415::Add_Strings useClass;
-	Solution415::Add_Strings::Add_Strings_Model getTestModel = useClass.GetTestData001();
-	string result = useClass.addStrings(getTestModel.num1, getTestModel.num2);
+	Solution448::Find_All_Numbers_Disappeared_in_an_Array useClass;
+	Solution448::Find_All_Numbers_Disappeared_in_an_Array::Find_All_Numbers_Disappeared_in_an_Array_Model getTestModel = useClass.GetTestData001();
+	auto result = useClass.findDisappearedNumbers(getTestModel.nums);
 
 	getTestModel = useClass.GetTestData002();
-	result = useClass.addStrings(getTestModel.num1, getTestModel.num2);
+	auto result2 = useClass.findDisappearedNumbers(getTestModel.nums);
 
 	getTestModel = useClass.GetTestData003();
-	result = useClass.addStrings(getTestModel.num1, getTestModel.num2);
-
+	auto result3 = useClass.findDisappearedNumbers(getTestModel.nums);
 }

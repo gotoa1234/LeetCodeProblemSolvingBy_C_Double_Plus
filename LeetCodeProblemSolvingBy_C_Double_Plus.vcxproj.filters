@@ -39,11 +39,13 @@
     <ClCompile Include="Easy\0415.Add_Strings.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="Easy\0448.Find_All_Numbers_Disappeared_in_an_Array.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Mysql\1661.Average_Time_of_Process_per_Machine.sql" />
-    <None Include="Mysql\0570.Managers_with_at_Least_5_Direct_Reports.sql" />
     <None Include="Mysql\1280.Students_and_Examinations.sql" />
     <None Include="Mysql\1934.Confirmation_Rate.sql" />
   </ItemGroup>
