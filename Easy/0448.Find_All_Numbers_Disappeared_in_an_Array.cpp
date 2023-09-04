@@ -40,27 +40,24 @@ namespace Solution448
 #pragma region Main
 	public:
 		/// <summary>
-		///          思路 :
-		///       Runtime :
-		///  Memory Usage :
+		///          思路 : 題目要求不可以用額外的O(n) 空間，因此必須用標記原陣列負數的方式，最後剩下為正數的必為缺失數
+		///                 ※利用nums 題目輸入為正數的特性，因此可以用負數
+		///       Runtime :  31 ms Beats 98.25 %
+		///  Memory Usage :33.8 MB Beats 61.46 %
 		/// </summary>
 		vector<int> findDisappearedNumbers(vector<int>& nums) {
 			vector<int> result{};
-			sort(nums.begin(), nums.end());
-			
+			//1. 將原本的陣列有的值標記為負數
 			for (int index = 0; index < nums.size(); index++)
 			{
-				while (
-					nums[index] < nums.size() &&
-					nums[index] != index && 
-					nums[index] != nums[nums[index] - 1])
-				{
-					swap(nums[index], nums[nums[index] - 1]);
-				}
+				int positiveVal = abs(nums[index]);
+				if (nums[positiveVal - 1] > 0)
+					nums[positiveVal - 1] = -nums[positiveVal - 1];
 			}
+			//2. 剩下大於0的必定是缺漏的數
 			for (int index = 0; index < nums.size(); index++)
 			{
-				if (nums[index] != index + 1)
+				if (nums[index] > 0)
 					result.push_back(index + 1);
 			}
 			return result;
