@@ -145,10 +145,8 @@
     <ClCompile Include="Easy\0448.Find_All_Numbers_Disappeared_in_an_Array.cpp" />
     <ClCompile Include="Hard\0149.Max_Points_on_a_Line.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
-    <ClCompile Include="Medium\0221.Maximal_Square.cpp" />
-    <ClCompile Include="Medium\0223.Rectangle_Area.cpp" />
-    <ClCompile Include="Medium\0304.Range_Sum_Query_2D_Immutable.cpp" />
     <ClCompile Include="Medium\0306.Additive_Number.cpp" />
+    <ClCompile Include="Medium\0436.Find_Right_Interval.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Mysql\1280.Students_and_Examinations.sql" />

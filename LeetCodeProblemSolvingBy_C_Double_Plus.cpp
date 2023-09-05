@@ -1,15 +1,17 @@
-﻿#include "Easy\0448.Find_All_Numbers_Disappeared_in_an_Array.cpp"
-using namespace Solution448;
+﻿#include <unordered_map>
+#include "Medium/0436.Find_Right_Interval.cpp"
+using namespace Solution436;
 
 int main()
 {
-	Solution448::Find_All_Numbers_Disappeared_in_an_Array useClass;
-	Solution448::Find_All_Numbers_Disappeared_in_an_Array::Find_All_Numbers_Disappeared_in_an_Array_Model getTestModel = useClass.GetTestData001();
-	auto result = useClass.findDisappearedNumbers(getTestModel.nums);
+    Solution436::Find_Right_Interval useClass;
+    Solution436::Find_Right_Interval::Find_Right_Interval_Model getTestModel = useClass.GetTestData001();
+    auto result1 = useClass.findRightInterval(getTestModel.intervals);
 
-	getTestModel = useClass.GetTestData002();
-	auto result2 = useClass.findDisappearedNumbers(getTestModel.nums);
+    getTestModel = useClass.GetTestData002();
+    auto result2 = useClass.findRightInterval(getTestModel.intervals);
 
-	getTestModel = useClass.GetTestData003();
-	auto result3 = useClass.findDisappearedNumbers(getTestModel.nums);
+    getTestModel = useClass.GetTestData003();
+    auto result3 = useClass.findRightInterval(getTestModel.intervals);
+    return 0;
 }

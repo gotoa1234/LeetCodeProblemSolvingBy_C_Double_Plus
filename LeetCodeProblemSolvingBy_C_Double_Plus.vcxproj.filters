@@ -21,25 +21,19 @@
     <ClCompile Include="Hard\0149.Max_Points_on_a_Line.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="Medium\0221.Maximal_Square.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="Medium\0304.Range_Sum_Query_2D_Immutable.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
     <ClCompile Include="Medium\0306.Additive_Number.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
     <ClCompile Include="Easy\0374.Guess_Number_Higher_or_Lower.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="Medium\0223.Rectangle_Area.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
     <ClCompile Include="Easy\0415.Add_Strings.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
     <ClCompile Include="Easy\0448.Find_All_Numbers_Disappeared_in_an_Array.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Medium\0436.Find_Right_Interval.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
   </ItemGroup>
