@@ -45,13 +45,33 @@ namespace Solution140
 #pragma region Main
     public:
         /// <summary>
-        ///         «ä¸ô ¡G
+        ///         «ä¸ô :
         ///      Runtime : 
         /// Memory Usage : 
         /// </summary>
         /// <returns></returns>        
+        unordered_map<string, vector<string>> _hashTable;
         vector<string> wordBreak(string s, vector<string>& wordDict) {
-            return {};
+            return helper(s, wordDict);
+        }
+
+        vector<string> helper(string s, vector<string>& wordDict) {
+            if (_hashTable.count(s)) 
+                return _hashTable[s];
+
+			if (s.empty())
+				return { "" };
+            vector<string> result;
+            for (string word : wordDict) 
+            {
+                if (s.substr(0, word.size()) != word) 
+                    continue;
+                vector<string> rem = helper(s.substr(word.size()), wordDict);
+                for (string str : rem) {
+                    result.push_back(word + (str.empty() ? "" : " ") + str);
+                }
+            }
+            return _hashTable[s] = result;
         }
     public:
 #pragma endregion Main
