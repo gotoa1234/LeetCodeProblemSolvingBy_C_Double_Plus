@@ -20,7 +20,7 @@ namespace Solution140
         getTestModel = useClass.GetTestData002();
         auto result2 = useClass.wordBreak(getTestModel.s, getTestModel.wordDict);
 
-        getTestModel = useClass.GetTestData002();
+        getTestModel = useClass.GetTestData003();
         auto result3 = useClass.wordBreak(getTestModel.s, getTestModel.wordDict);
         return 0;
     }
@@ -45,34 +45,45 @@ namespace Solution140
 #pragma region Main
     public:
         /// <summary>
-        ///         思路 :
-        ///      Runtime : 
-        /// Memory Usage : 
+        ///         思路 : 需要利用遞迴，找出所有可能的組合，困難點是遞迴的規則
+        ///                每次要找出符合的單詞(在wordDict)中，然後將剩下的字串放入遞迴中，直到遍歷完畢
+        ///                並且需要用一個HashTable紀錄已找到的字串，避免重複運算
+        ///      Runtime :   0 ms Beats   100 %
+        /// Memory Usage : 8.2 MB Beats 14.19 %
         /// </summary>
-        /// <returns></returns>        
-        unordered_map<string, vector<string>> _hashTable;
+        /// <returns></returns>  
+        unordered_map<string, vector<string>> _hash{};
         vector<string> wordBreak(string s, vector<string>& wordDict) {
-            return helper(s, wordDict);
+            return Find(s, wordDict);
         }
 
-        vector<string> helper(string s, vector<string>& wordDict) {
-            if (_hashTable.count(s)) 
-                return _hashTable[s];
-
-			if (s.empty())
+        vector<string> Find(string s, vector<string>& wordDict) {
+            //1. 每次都先觀察hashTable是否已有資料，有的話不重複查詢
+            if (_hash.find(s) != _hash.end())
+                return _hash[s];
+            //2. 如果字串已遍歷到底，放一個結束""字符，因為題目需求每個字詞用 ' '分隔，但最後一個不用
+            if (s.empty())
 				return { "" };
-            vector<string> result;
-            for (string word : wordDict) 
+
+            vector<string> result{};
+            //3. 從字典表開始找出每個單詞符合的組成
+            for (auto& word : wordDict)
             {
-                if (s.substr(0, word.size()) != word) 
+                //4-1. 不符合跳下一個word
+                if (s.substr(0, word.size()) != word)
                     continue;
-                vector<string> rem = helper(s.substr(word.size()), wordDict);
-                for (string str : rem) {
-                    result.push_back(word + (str.empty() ? "" : " ") + str);
+                //4-2. s走到底後，temp才會取得到值
+                vector<string> temp = Find(s.substr(word.size()), wordDict);
+                for (auto& item : temp)
+                {
+					result.push_back(word + (item.empty() ? "" : " ") + item);
                 }
             }
-            return _hashTable[s] = result;
+            //5. 將結果記錄在 _hash 中
+            _hash[s] = result;
+            return _hash[s];
         }
+
     public:
 #pragma endregion Main
 
