@@ -1,17 +1,12 @@
-﻿#include <unordered_map>
-#include "Hard/0140.Word_Break_II.cpp"
-using namespace Solution140;
+﻿#include "Easy\0455.Assign_Cookies.cpp"
+using namespace Solution455;
 
 int main()
 {
-    Solution140::Word_Break_II useClass;
-    Solution140::Word_Break_II::Word_Break_II_Model getTestModel = useClass.GetTestData001();
-    auto result1 = useClass.wordBreak(getTestModel.s, getTestModel.wordDict);
+	Solution455::Assign_Cookies useClass;
+	Solution455::Assign_Cookies::Assign_Cookies_Model getTestModel = useClass.GetTestData001();
+	auto result = useClass.findContentChildren(getTestModel.g, getTestModel.s);
 
-    getTestModel = useClass.GetTestData002();
-    auto result2 = useClass.wordBreak(getTestModel.s, getTestModel.wordDict);
-
-    getTestModel = useClass.GetTestData003();
-    auto result3 = useClass.wordBreak(getTestModel.s, getTestModel.wordDict);
-    return 0;
+	getTestModel = useClass.GetTestData002();
+	auto result2 = useClass.findContentChildren(getTestModel.g, getTestModel.s);
 }

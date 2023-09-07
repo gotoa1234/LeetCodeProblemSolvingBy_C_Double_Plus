@@ -18,29 +18,12 @@
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="Hard\0149.Max_Points_on_a_Line.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="Medium\0306.Additive_Number.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="Easy\0374.Guess_Number_Higher_or_Lower.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="Easy\0415.Add_Strings.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="Easy\0448.Find_All_Numbers_Disappeared_in_an_Array.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="Medium\0436.Find_Right_Interval.cpp">
+    <ClCompile Include="Easy\0455.Assign_Cookies.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Mysql\1661.Average_Time_of_Process_per_Machine.sql" />
-    <None Include="Mysql\1280.Students_and_Examinations.sql" />
-    <None Include="Mysql\1934.Confirmation_Rate.sql" />
+    <None Include="Mysql\1148.Article_Views_I.sql" />
   </ItemGroup>
 </Project>
