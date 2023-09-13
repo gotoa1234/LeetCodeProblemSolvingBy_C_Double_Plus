@@ -145,6 +145,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Mysql\1148.Article_Views_I.sql" />
+    <None Include="Mysql\2356.Number_of_Unique_Subjects_Taught_by_Each_Teacher.sql" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -25,5 +25,6 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Mysql\1148.Article_Views_I.sql" />
+    <None Include="Mysql\2356.Number_of_Unique_Subjects_Taught_by_Each_Teacher.sql" />
   </ItemGroup>
 </Project>
