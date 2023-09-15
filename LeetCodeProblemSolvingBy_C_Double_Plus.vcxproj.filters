@@ -26,5 +26,7 @@
     <None Include="packages.config" />
     <None Include="Mysql\1148.Article_Views_I.sql" />
     <None Include="Mysql\2356.Number_of_Unique_Subjects_Taught_by_Each_Teacher.sql" />
+    <None Include="Mysql\1327.List_the_Products_Ordered_in_a_Period.sql" />
+    <None Include="Mysql\0585.Investments_in_2016.sql" />
   </ItemGroup>
 </Project>
