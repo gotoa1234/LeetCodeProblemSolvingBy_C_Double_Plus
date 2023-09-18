@@ -21,6 +21,9 @@
     <ClCompile Include="Easy\0455.Assign_Cookies.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="Medium\0309.Best_Time_to_Buy_and_Sell_Stock_with_Cooldown.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
