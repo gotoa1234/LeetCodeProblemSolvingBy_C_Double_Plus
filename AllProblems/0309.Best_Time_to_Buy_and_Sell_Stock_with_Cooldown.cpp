@@ -44,20 +44,30 @@ namespace Solution309
     public:
         /// <summary>
         ///        think :
-        ///      Runtime :
-        /// Memory Usage :
+        ///      Runtime :   0 ms Beats   100 %
+        /// Memory Usage :11.4 MB Beats 74.63 %
         /// </summary>
         /// <returns></returns>   
 
         int maxProfit(vector<int>& prices) {
-            int buy = INT_MIN, pre_buy = 0, sell = 0, pre_sell = 0;
-            for (int price : prices) {
-                pre_buy = buy;
-                buy = max(pre_sell - price, pre_buy);
-                pre_sell = sell;
-                sell = max(pre_buy + price, pre_sell);
+            int profit = 0;
+            vector<int> dp(prices.size(), 0);
+            int maxDiff = INT_MIN;
+            for (int index = 0; index < prices.size(); index++) 
+            {
+                if (index <= 1) {
+                    dp[index] = index == 0 ? 0
+                                           : max(0, prices[index] - prices[index - 1]);
+                    maxDiff = max(maxDiff, -prices[index]);
+                }
+                else {
+                    dp[index] = max(dp[index - 1], 
+                                    prices[index] + maxDiff);
+                    maxDiff = max(maxDiff, 
+                                  dp[index - 2] - prices[index]);
+                }
             }
-            return sell;
+            return dp[prices.size() - 1];
         }
 
 
