@@ -140,6 +140,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Easy\0344.Reverse_String.cpp" />
     <ClCompile Include="Easy\0350.Intersection_of_Two_Arrays_II.cpp" />
     <ClCompile Include="Easy\0455.Assign_Cookies.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />

@@ -27,6 +27,9 @@
     <ClCompile Include="Easy\0350.Intersection_of_Two_Arrays_II.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="Easy\0344.Reverse_String.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
