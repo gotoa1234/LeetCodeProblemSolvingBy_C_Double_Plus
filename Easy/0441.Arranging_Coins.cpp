@@ -15,16 +15,16 @@ namespace Solution441
 	{
 		Solution441::Arranging_Coins useClass;
 		Solution441::Arranging_Coins::Arranging_Coins_Model getTestModel = useClass.GetTestData001();
-		auto result = useClass.findContentChildren(getTestModel.g, getTestModel.s);
+		auto result = useClass.arrangeCoins(getTestModel.n);
 
 		getTestModel = useClass.GetTestData002();
-		auto result2 = useClass.findContentChildren(getTestModel.g, getTestModel.s);
+		auto result2 = useClass.arrangeCoins(getTestModel.n);
 	}
 	*/
 #pragma endregion Paste to execute
 
 	/// <summary>
-	/// 分配餅乾
+	/// 硬幣區間
 	/// </summary>
 	class Arranging_Coins
 	{
@@ -33,20 +33,47 @@ namespace Solution441
 		class Arranging_Coins_Model
 		{
 		public:
-			vector<int> g;
-			vector<int> s;
+			int n;			
 		};
 #pragma endregion Model
 
 #pragma region Main
 	public:
 		/// <summary>
-		///          思路 : 
-		///       Runtime : 
-		///  Memory Usage :
+		///          思路 : 利用二分搜尋法，找出 0 ~ n 之間對應的區間
+		///       Runtime :    0 ms Beats 100.0 %
+		///  Memory Usage :	6.28 MB Beats 29.98 %
 		/// </summary>
-		int findContentChildren(vector<int>& g, vector<int>& s) {
+		int arrangeCoins(int n) {			
+			long leftValue = 0;
+		    long rightValue = n;
+			long midValue = 0;
+			long total = 0;
+			while (leftValue <= rightValue)
+			{
+				midValue = leftValue + (rightValue - leftValue) / 2;
+				total = midValue * (midValue + 1) / 2;
+				if (total == n) 
+					return midValue;
 
+				if (total > n)
+				{
+					rightValue = midValue - 1;
+				}
+				else
+				{
+					leftValue = midValue + 1;
+				}
+			}
+			return leftValue - 1;
+			/*
+		    0  1
+			1  2  3
+			2  4  5  6
+			3  7  8  9 10
+			4 11 12 13 14 15
+			5 16 17 18 19 20 21
+			*/
 		}
 #pragma endregion Main
 
@@ -58,9 +85,8 @@ namespace Solution441
 		Arranging_Coins_Model GetTestData001(void)
 		{
 			Arranging_Coins_Model result;
-			result.g = { 1, 2, 3 };
-			result.s = { 1, 1 };
-			return result;//expect : 1
+			result.n = 8;			
+			return result;//expect : 3
 		};
 		/// <summary>
 		/// test 2
@@ -68,8 +94,7 @@ namespace Solution441
 		Arranging_Coins_Model GetTestData002(void)
 		{
 			Arranging_Coins_Model result;
-			result.g = { 1, 2 };
-			result.s = { 1, 2, 3 };
+			result.n = 5;
 			return result;//expect : 2
 		};
 

@@ -1,14 +1,12 @@
-﻿#include <vector>
-#include "Easy\0344.Reverse_String.cpp"
-using namespace Solution344;
+﻿#include "Easy\0441.Arranging_Coins.cpp"
+using namespace Solution441;
 
 int main()
 {
-	Solution344::Reverse_String useClass;
-	Solution344::Reverse_String::Reverse_String_Model getTestModel = useClass.GetTestData001();
-	useClass.reverseString(getTestModel.s);
+	Solution441::Arranging_Coins useClass;
+	Solution441::Arranging_Coins::Arranging_Coins_Model getTestModel = useClass.GetTestData001();
+	auto result = useClass.arrangeCoins(getTestModel.n);
 
 	getTestModel = useClass.GetTestData002();
-	useClass.reverseString(getTestModel.s);
-	return 0;
+	auto result2 = useClass.arrangeCoins(getTestModel.n);
 }
