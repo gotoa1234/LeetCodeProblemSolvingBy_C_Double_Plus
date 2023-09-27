@@ -1,12 +1,12 @@
-﻿#include "Easy\0441.Arranging_Coins.cpp"
-using namespace Solution441;
+﻿#include "Easy\0504.Base_7.cpp"
+using namespace Solution504;
 
 int main()
 {
-	Solution441::Arranging_Coins useClass;
-	Solution441::Arranging_Coins::Arranging_Coins_Model getTestModel = useClass.GetTestData001();
-	auto result = useClass.arrangeCoins(getTestModel.n);
+	Solution504::Base_7 useClass;
+	Solution504::Base_7::Base_7_Model getTestModel = useClass.GetTestData001();
+	auto result = useClass.convertToBase7(getTestModel.num);
 
 	getTestModel = useClass.GetTestData002();
-	auto result2 = useClass.arrangeCoins(getTestModel.n);
+	auto result2 = useClass.convertToBase7(getTestModel.num);
 }
