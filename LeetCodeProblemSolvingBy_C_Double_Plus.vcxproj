@@ -141,6 +141,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Easy\0504.Base_7.cpp" />
+    <ClCompile Include="Easy\0507.Perfect_Number.cpp" />
     <ClCompile Include="Easy\0520.Detect_Capital.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
     <ClCompile Include="Medium\0309.Best_Time_to_Buy_and_Sell_Stock_with_Cooldown.cpp" />
