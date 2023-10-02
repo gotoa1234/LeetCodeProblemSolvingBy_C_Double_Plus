@@ -8,7 +8,7 @@ namespace Solution509
 #pragma region Paste to execute 
     /*
     #include <unordered_map>
-    #include "0509.Fibonacci_Number.cpp"
+    #include "Easy\0509.Fibonacci_Number.cpp"
     using namespace Solution509;
 
     int main()
@@ -69,6 +69,31 @@ namespace Solution509
                 return Funct(x-1) + Funct(x - 2);
         }
 
+    public:
+        /// <summary>
+        /// 遞迴 + HashTable 找出費式數列
+        ///         思路： 利用一個HashTable紀錄下已找過的n ，避免重複的運算
+        ///      Runtime : 0 ms, faster than 100.00% of C++ online submissions for Fibonacci Number.
+        /// Memory Usage : 6.6 MB, less than   7.34% of C++ online submissions for Fibonacci Number.
+        /// </summary>
+        unordered_map<int, int> _hashTable{};
+        int fib_ResolveHash(int n) {            
+            _hashTable[0] = 0;
+            _hashTable[1] = 1;
+            _hashTable[2] = 1;
+            if (_hashTable.find(n) != _hashTable.end())
+                return _hashTable[n];
+            return FindFib(n);
+        }
+
+        int FindFib(int current)
+        {
+            if (_hashTable[current])
+                return _hashTable[current];
+            auto getResult = FindFib(current - 1) + FindFib(current - 2);
+            _hashTable[current] = getResult;
+            return getResult;
+        }
 #pragma endregion Main
 
 #pragma region TestData
