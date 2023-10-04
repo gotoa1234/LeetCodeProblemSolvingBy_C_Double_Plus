@@ -21,13 +21,13 @@
     <ClCompile Include="Medium\0309.Best_Time_to_Buy_and_Sell_Stock_with_Cooldown.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="Easy\0504.Base_7.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
     <ClCompile Include="Easy\0520.Detect_Capital.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="Easy\0507.Perfect_Number.cpp">
+    <ClCompile Include="Easy\0521.Longest_Uncommon_Subsequence_I.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Easy\0541.Reverse_String_II.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
   </ItemGroup>

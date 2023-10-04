@@ -1,12 +1,15 @@
-﻿#include "Easy\0507.Perfect_Number.cpp"
-using namespace Solution507;
+﻿#include "Easy\0541.Reverse_String_II.cpp"
+using namespace Solution541;
 
 int main()
 {
-	Solution507::Perfect_Number useClass;
-	Solution507::Perfect_Number::Perfect_Number_Model getTestModel = useClass.GetTestData001();
-	auto result = useClass.checkPerfectNumber(getTestModel.num);
+	Solution541::Reverse_String_II useClass;
+	Solution541::Reverse_String_II::Reverse_String_II_Model getTestModel = useClass.GetTestData001();
+	auto result = useClass.reverseStr(getTestModel.s, getTestModel.k);
 
 	getTestModel = useClass.GetTestData002();
-	auto result2 = useClass.checkPerfectNumber(getTestModel.num);
+	auto result2 = useClass.reverseStr(getTestModel.s, getTestModel.k);
+
+	getTestModel = useClass.GetTestData003();
+	auto result3 = useClass.reverseStr(getTestModel.s, getTestModel.k);
 }
