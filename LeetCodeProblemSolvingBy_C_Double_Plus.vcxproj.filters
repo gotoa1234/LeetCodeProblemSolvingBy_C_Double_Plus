@@ -30,6 +30,9 @@
     <ClCompile Include="Easy\0541.Reverse_String_II.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="Easy\0551.Student_Attendance_Record_I.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -143,6 +143,7 @@
     <ClCompile Include="Easy\0520.Detect_Capital.cpp" />
     <ClCompile Include="Easy\0521.Longest_Uncommon_Subsequence_I.cpp" />
     <ClCompile Include="Easy\0541.Reverse_String_II.cpp" />
+    <ClCompile Include="Easy\0551.Student_Attendance_Record_I.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
     <ClCompile Include="Medium\0309.Best_Time_to_Buy_and_Sell_Stock_with_Cooldown.cpp" />
   </ItemGroup>
