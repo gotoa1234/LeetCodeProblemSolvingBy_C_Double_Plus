@@ -1,12 +1,12 @@
-﻿#include "Easy\0551.Student_Attendance_Record_I.cpp"
-using namespace Solution551;
+﻿#include "Easy\0566.Reshape_the_Matrix.cpp"
+using namespace Solution566;
 
 int main()
 {
-	Solution551::Student_Attendance_Record_I useClass;
-	Solution551::Student_Attendance_Record_I::Student_Attendance_Record_I_Model getTestModel = useClass.GetTestData001();
-	auto result = useClass.checkRecord(getTestModel.s);
+	Solution566::Reshape_the_Matrix useClass;
+	Solution566::Reshape_the_Matrix::Reshape_the_Matrix_Model getTestModel = useClass.GetTestData001();
+	auto result = useClass.matrixReshape(getTestModel.mat, getTestModel.r, getTestModel.c);
 
 	getTestModel = useClass.GetTestData002();
-	auto result2 = useClass.checkRecord(getTestModel.s);
+	auto result2 = useClass.matrixReshape(getTestModel.mat, getTestModel.r, getTestModel.c);
 }

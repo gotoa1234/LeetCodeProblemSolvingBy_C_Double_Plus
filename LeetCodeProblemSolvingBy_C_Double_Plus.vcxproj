@@ -140,14 +140,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Easy\0520.Detect_Capital.cpp" />
-    <ClCompile Include="Easy\0521.Longest_Uncommon_Subsequence_I.cpp" />
-    <ClCompile Include="Easy\0541.Reverse_String_II.cpp" />
-    <ClCompile Include="Easy\0551.Student_Attendance_Record_I.cpp" />
+    <ClCompile Include="Easy\0561.Array_Partition.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
     <ClCompile Include="Medium\0309.Best_Time_to_Buy_and_Sell_Stock_with_Cooldown.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Easy\0566.Reshape_the_Matrix.cpp" />
     <None Include="Mysql\0585.Investments_in_2016.sql" />
     <None Include="Mysql\1148.Article_Views_I.sql" />
     <None Include="Mysql\1327.List_the_Products_Ordered_in_a_Period.sql" />
