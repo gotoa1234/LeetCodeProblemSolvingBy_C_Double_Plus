@@ -1,12 +1,12 @@
-﻿#include "Easy\0566.Reshape_the_Matrix.cpp"
-using namespace Solution566;
+﻿#include "Easy\0605.Can_Place_Flowers.cpp"
+using namespace Solution605;
 
 int main()
 {
-	Solution566::Reshape_the_Matrix useClass;
-	Solution566::Reshape_the_Matrix::Reshape_the_Matrix_Model getTestModel = useClass.GetTestData001();
-	auto result = useClass.matrixReshape(getTestModel.mat, getTestModel.r, getTestModel.c);
+	Solution605::Can_Place_Flowers useClass;
+	Solution605::Can_Place_Flowers::Can_Place_Flowers_Model getTestModel = useClass.GetTestData001();
+	auto result = useClass.canPlaceFlowers(getTestModel.flowerbed, getTestModel.n);
 
 	getTestModel = useClass.GetTestData002();
-	auto result2 = useClass.matrixReshape(getTestModel.mat, getTestModel.r, getTestModel.c);
+	auto result2 = useClass.canPlaceFlowers(getTestModel.flowerbed, getTestModel.n);
 }

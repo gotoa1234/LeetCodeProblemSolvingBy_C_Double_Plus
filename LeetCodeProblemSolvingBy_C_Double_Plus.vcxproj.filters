@@ -24,6 +24,9 @@
     <ClCompile Include="Easy\0561.Array_Partition.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="Easy\0605.Can_Place_Flowers.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
