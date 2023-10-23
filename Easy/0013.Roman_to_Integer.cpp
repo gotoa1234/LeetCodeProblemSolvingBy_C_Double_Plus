@@ -9,24 +9,24 @@ namespace Solution13
 {
 #pragma region Paste to execute 
 	/*
-	#include "Easy\0013.Roman_to_Integer.cpp"
-	using namespace Solution13;
-	using namespace std;
+#include "Easy\0013.Roman_to_Integer.cpp"
+using namespace Solution13;
+using namespace std;
 
-	int main()
-	{
-		Solution13::Roman_to_Integer useClass;
-		Solution13::Roman_to_Integer::Roman_to_Integer_Model getTestModel = useClass.GetTestData001();
-		auto result = useClass.romanToInt(getTestModel.num);
+int main()
+{
+	Solution13::Roman_to_Integer useClass;
+	Solution13::Roman_to_Integer::Roman_to_Integer_Model getTestModel = useClass.GetTestData001();
+	auto result = useClass.romanToInt(getTestModel.s);
 
-		getTestModel = useClass.GetTestData002();
-		result = useClass.romanToInt(getTestModel.num);
+	getTestModel = useClass.GetTestData002();
+	result = useClass.romanToInt(getTestModel.s);
 
-		getTestModel = useClass.GetTestData003();
-		result = useClass.romanToInt(getTestModel.num);
+	getTestModel = useClass.GetTestData003();
+	result = useClass.romanToInt(getTestModel.s);
 
-		return 0;
-	}
+	return 0;
+}
 	*/
 #pragma endregion Paste to execute
 
@@ -52,19 +52,16 @@ namespace Solution13
 		/// Memory Usage : 6.1 MB Beats 69.33 %
 		/// </summary>
 		int romanToInt(string s) {
-			
-			int result = returnValue(s[0]);
-			int lastValue = result;
-			int currentValue = 0;
+			int result = 0;
+			int current = 0;
+			int lastValue = returnValue(s[0]);
 
-			for (int index = 1; index < s.size(); index++)
+			for (auto item : s)
 			{
-				currentValue = returnValue(s[index]);
-				if (currentValue <= lastValue)
-					result += currentValue;
-				else
-					result += currentValue - 2 * lastValue;
-				lastValue = currentValue;
+				current = returnValue(item);
+				result += lastValue >= current ? current
+					: current - (lastValue * 2);
+				lastValue = current;
 			}
 			return result;
 		}

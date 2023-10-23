@@ -7,16 +7,16 @@ namespace Solution1
 {
 #pragma region Paste to execute 
     /*
-    #include <vector>
-    #include "0001_two_sum.cpp"
-    using namespace Solution1;
-    int main()
-    {
-        Solution1::Two_Sum useClass;
-        Solution1::Two_Sum::Two_Sum_Model getTestModel = useClass.GetTestData001();
-        vector<int> result = useClass.twoSum(getTestModel.nums, getTestModel.target);
-        return 0;
-    }
+#include "Easy\0001_two_sum.cpp"
+using namespace Solution1;
+
+int main()
+{
+    Solution1::Two_Sum useClass;
+    Solution1::Two_Sum::Two_Sum_Model getTestModel = useClass.GetTestData001();
+    vector<int> result = useClass.twoSum(getTestModel.nums, getTestModel.target);
+    return 0;
+}
     */
 #pragma endregion Paste to execute
 
@@ -40,8 +40,8 @@ namespace Solution1
     public:
         vector<int> twoSum(vector<int>& nums, int target)
         {
-            vector<int> result;
-            unordered_map<int, int> hashMap;
+            vector<int> result{};
+            unordered_map<int, int> hashMap{};
             for (int index = 0; index < nums.size(); index++)
             {
                 if (hashMap.find(target - nums[index]) != hashMap.end())
@@ -52,6 +52,7 @@ namespace Solution1
                 }
                 hashMap[nums[index]] = index;
             }
+            return result;
         };
 #pragma endregion Main
 

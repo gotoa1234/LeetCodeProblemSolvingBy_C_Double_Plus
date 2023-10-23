@@ -5,17 +5,13 @@ namespace Solution9
 {
 #pragma region Paste to execute 
     /*
-#include "Easy\0009.Palindrome_Number.cpp"
-using namespace Solution9;
-using namespace std;
+    #include "0009.Palindrome_Number.cpp"
+    using namespace Solution9;
+    using namespace std;
 
-int main()
-{
     Solution9::Palindrome_Number useClass;
     Solution9::Palindrome_Number::Palindrome_Number_Model getTestModel = useClass.GetTestData001();
     bool result = useClass.myAtoi(getTestModel.x);
-}
-
     */
 #pragma endregion Paste to execute
 
@@ -42,19 +38,16 @@ int main()
         /// Memory Usage : 5.8 MB,   less than 91.05 % of C++ online submissions for Palindrome Number.
         /// </summary>
         bool myAtoi(int x) {
-            //1. 負數為false
-            if (x < 0 || x % 10 == 0)
-                return false;    
-            //2. 個位數為回文
-            if (x >= 0 && x <= 9)
-                return true;
+            if (x < 0)
+                return false;
+            if (x != 0 && x % 10 == 0)
+                return false;
 
             int tmep = x;
             int result = 0;
             int remainder = 0;
-            while (tmep > 0)
+            while (tmep)
             {
-                //3. 確保result的int值不會溢位
                 remainder = tmep % 10;
                 if (result > (INT_MAX - (remainder)) / 10)
                 {
@@ -63,7 +56,7 @@ int main()
                 result = result * 10 + remainder;
                 tmep = tmep / 10;
             }
-            return result == x;
+            return result == x ? true : false;
         };
 #pragma endregion Main
 
@@ -75,8 +68,8 @@ int main()
         Palindrome_Number_Model GetTestData001(void)
         {
             Palindrome_Number_Model result;
-            result.x = 1234567899;//
-            return result;//expect: true
+            result.x = 121;//
+            return result;
         };
 
         /// <summary>
@@ -86,7 +79,7 @@ int main()
         {
             Palindrome_Number_Model result;
             result.x = -121;
-            return result;//expect: false
+            return result;
         };
 
         /// <summary>
@@ -96,7 +89,7 @@ int main()
         {
             Palindrome_Number_Model result;
             result.x = 10;
-            return result;//expect: false
+            return result;
         };
 #pragma endregion TestData
     };
