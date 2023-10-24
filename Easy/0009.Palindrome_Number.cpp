@@ -5,13 +5,29 @@ namespace Solution9
 {
 #pragma region Paste to execute 
     /*
-    #include "0009.Palindrome_Number.cpp"
-    using namespace Solution9;
-    using namespace std;
+#include "Easy\0009.Palindrome_Number.cpp"
+using namespace Solution9;
+using namespace std;
 
+int main()
+{
     Solution9::Palindrome_Number useClass;
     Solution9::Palindrome_Number::Palindrome_Number_Model getTestModel = useClass.GetTestData001();
     bool result = useClass.myAtoi(getTestModel.x);
+
+    getTestModel = useClass.GetTestData002();
+    auto result2 = useClass.myAtoi(getTestModel.x);
+
+    getTestModel = useClass.GetTestData003();
+    auto result3 = useClass.myAtoi(getTestModel.x);
+
+    getTestModel = useClass.GetTestData004();
+    auto result4 = useClass.myAtoi(getTestModel.x);
+
+    getTestModel = useClass.GetTestData005();
+    auto result5 = useClass.myAtoi(getTestModel.x);
+    return 0;
+}
     */
 #pragma endregion Paste to execute
 
@@ -91,6 +107,27 @@ namespace Solution9
             result.x = 10;
             return result;
         };
+
+        /// <summary>
+        /// 測試資料4
+        /// </summary>   
+        Palindrome_Number_Model GetTestData004(void)
+        {
+            Palindrome_Number_Model result;
+            result.x = 123;
+            return result;
+        };
+
+        /// <summary>
+        /// 測試資料5
+        /// </summary>   
+        Palindrome_Number_Model GetTestData005(void)
+        {
+            Palindrome_Number_Model result;
+            result.x = 1234567899;
+            return result;
+        };
+        
 #pragma endregion TestData
     };
 }
