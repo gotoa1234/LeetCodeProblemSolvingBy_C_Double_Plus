@@ -52,15 +52,14 @@ int main()
 		/// Memory Usage : 6.1 MB Beats 69.33 %
 		/// </summary>
 		int romanToInt(string s) {
-			int result = 0;
+			int result = 0; 
 			int current = 0;
-			int lastValue = returnValue(s[0]);
-
-			for (auto item : s)
+			int lastValue = 0;
+			for (auto& item : s)
 			{
 				current = returnValue(item);
-				result += lastValue >= current ? current
-					: current - (lastValue * 2);
+				result += lastValue >= current ? current 
+					                           : current - lastValue * 2;
 				lastValue = current;
 			}
 			return result;
