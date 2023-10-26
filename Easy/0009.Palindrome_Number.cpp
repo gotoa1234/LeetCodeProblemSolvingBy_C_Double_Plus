@@ -54,25 +54,22 @@ int main()
         /// Memory Usage : 5.8 MB,   less than 91.05 % of C++ online submissions for Palindrome Number.
         /// </summary>
         bool myAtoi(int x) {
-            if (x < 0)
+            if (x >= 0 && x <= 9)
+                return true;
+            if (x < 0 || x % 10 == 0)
                 return false;
-            if (x != 0 && x % 10 == 0)
-                return false;
-
-            int tmep = x;
             int result = 0;
+            int temp = x;
             int remainder = 0;
-            while (tmep)
+            while (temp > 0)
             {
-                remainder = tmep % 10;
-                if (result > (INT_MAX - (remainder)) / 10)
-                {
+                remainder = temp % 10;
+                if (result > (INT_MAX - remainder) / 10)
                     return false;
-                }
+                temp = temp / 10;
                 result = result * 10 + remainder;
-                tmep = tmep / 10;
             }
-            return result == x ? true : false;
+            return result == x;
         };
 #pragma endregion Main
 

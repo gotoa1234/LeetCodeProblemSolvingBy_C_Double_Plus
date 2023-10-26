@@ -6,7 +6,7 @@ namespace Solution26
 {
 #pragma region Paste to execute 
 	/*
-	#include "0026.Remove_Duplicates_from_Sorted_Array.cpp"
+	#include "Easy\0026.Remove_Duplicates_from_Sorted_Array.cpp"
 	using namespace Solution26;
 	using namespace std;
 
@@ -17,10 +17,8 @@ namespace Solution26
 		int result = useClass.removeDuplicates(getTestModel.nums);
 
 		getTestModel = useClass.GetTestData002();
-		result = useClass.removeDuplicates(getTestModel.nums);
+		auto result2 = useClass.removeDuplicates(getTestModel.nums);
 
-		getTestModel = useClass.GetTestData003();
-		result = useClass.removeDuplicates(getTestModel.nums);
 		return 0;
 	}
 	*/
@@ -49,16 +47,13 @@ namespace Solution26
 		///Memory Usage : 18.3 MB,   less than 92.92% of C++ online submissions for Remove Duplicates from Sorted Array.
 		/// </summary>
 		int removeDuplicates(vector<int>& nums) {
-			int recordIndex = 1;
+			int total = 1;
 			for (int index = 1; index < nums.size(); index++)
 			{
 				if (nums[index] != nums[index - 1])
-				{
-					nums[recordIndex] = nums[index];
-					recordIndex++;
-				}
+					nums[total] = nums[index], total++;
 			}
-			return recordIndex;
+			return total;
 		}
 #pragma endregion Main
 

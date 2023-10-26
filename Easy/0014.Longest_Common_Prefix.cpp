@@ -47,17 +47,15 @@ namespace Solution14
 		/// Memory Usage : 9.2 MB,   less than 83.20% of C++ online submissions for Longest Common Prefix.
 		/// </summary>
 		string longestCommonPrefix(vector<string>& strs) {
-			string result = "";
-			short index = 0;
+			string result{};
 			sort(strs.begin(), strs.end());
-			short minLength = strs[0].size();
-			for (index = 0; index < strs[0].size(); index++)
+			for (int index = 0; index < strs[0].size(); index++)
 			{
 				if (strs[0][index] != strs[strs.size() - 1][index])
 				{
 					break;
 				}
-				result.push_back(strs[strs.size() - 1][index]);
+				result.push_back(strs[0][index]);
 			}
 			return result;
 		}

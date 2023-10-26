@@ -6,7 +6,7 @@ namespace Solution27
 {
 #pragma region Paste to execute 
 	/*
-    #include "0027.Remove_Element.cpp"
+    #include "Easy\0027.Remove_Element.cpp"
     using namespace Solution27;
     using namespace std;
     
@@ -14,10 +14,10 @@ namespace Solution27
     {
     	Solution27::Remove_Element useClass;
     	Solution27::Remove_Element::Remove_Element_Model getTestModel = useClass.GetTestData001();
-    	int result = useClass.removeElement(getTestModel.nums, getTestModel.val);
+    	auto result = useClass.removeElement(getTestModel.nums, getTestModel.val);
     
     	getTestModel = useClass.GetTestData002();
-    	result = useClass.removeElement(getTestModel.nums, getTestModel.val);
+    	auto result2 = useClass.removeElement(getTestModel.nums, getTestModel.val);
     
     	return 0;
     }
@@ -47,15 +47,16 @@ namespace Solution27
 		/// Memory Usage : 8.6 MB,   less than  99.70% of C++ online submissions for Remove Element.
 		/// </summary>
 		int removeElement(vector<int>& nums, int val) {
-			int moveIndex = 0;
+			int recordIndex = 0;
 			for (int index = 0; index < nums.size(); index++)
 			{
-				if (val == nums[index])
-					moveIndex++;
-				else
-					nums[index - moveIndex] = nums[index];
+				if (nums[index] != val)
+				{
+					nums[recordIndex] = nums[index];
+					recordIndex++;
+				}
 			}
-			return nums.size() - moveIndex;
+			return recordIndex;
 		}
 #pragma endregion Main
 
@@ -67,8 +68,8 @@ namespace Solution27
 		Remove_Element_Model GetTestData001(void)
 		{
 			Remove_Element_Model result;
-			result.nums = { 1 };
-			result.val =1;
+			result.nums = { 3,2,2,3 };
+			result.val = 3;
 			return result;//except: 2  nums = [2,2,_,_]
 		};
 

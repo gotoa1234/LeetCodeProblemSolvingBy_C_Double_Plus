@@ -6,13 +6,24 @@ namespace Solution21
 {
 #pragma region Paste to execute 
     /*
-    #include "021.Merge_Two_Sorted_Lists.cpp"
-    using namespace Solution21;
-    using namespace std;
+#include "Easy\0021.Merge_Two_Sorted_Lists.cpp"
+using namespace Solution21;
+using namespace std;
 
+int main()
+{
     Solution21::Merge_Two_Sorted_Lists useClass;
     Solution21::Merge_Two_Sorted_Lists::Merge_Two_Sorted_Lists_Model getTestModel = useClass.GetTestData001();
     Solution21::Merge_Two_Sorted_Lists::ListNode* result = useClass.mergeTwoLists(getTestModel.list1, getTestModel.list2);
+
+    getTestModel = useClass.GetTestData002();
+    auto result2 = useClass.mergeTwoLists(getTestModel.list1, getTestModel.list2);
+
+    getTestModel = useClass.GetTestData003();
+    auto result3= useClass.mergeTwoLists(getTestModel.list1, getTestModel.list2);
+    return 0;
+}
+
 
     */
 #pragma endregion Paste to execute
@@ -49,27 +60,20 @@ namespace Solution21
         /// Memory Usage : 14.7 MB,   less than 97.86% of C++ online submissions for Merge Two Sorted Lists.
 
         ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
-            //預處理
-            if (list1 == NULL)
-            {
+            if (list1 == nullptr)
                 return list2;
-            }
-            if (list2 == NULL)
-            {
+            if (list2 == nullptr)
                 return list1;
-            }
-            
-            ListNode* resultHead;
-            ListNode* moveNode = new ListNode;
-            resultHead = moveNode;
-            //將2個NodeList組成1個
+            ListNode* head = nullptr;
+            ListNode* moveNode = new ListNode();
+            head = moveNode;
             while (list1 && list2)
             {
-                if (list1->val <= list2->val)
+                if (list1->val < list2->val)
                 {
-					moveNode->next = list1;
+                    moveNode->next = list1;
                     moveNode = moveNode->next;
-					list1 = list1->next;
+                    list1 = list1->next;
                 }
                 else
                 {
@@ -78,9 +82,11 @@ namespace Solution21
                     list2 = list2->next;
                 }
             }
-
-            moveNode->next = list1 == NULL ? list2 : list1;
-            return resultHead->next;
+            if (list1 == nullptr)
+                moveNode->next = list2;
+            else if(list2 == nullptr)
+                moveNode->next = list1;
+            return head->next;
         }
 #pragma endregion Main
 
@@ -96,7 +102,7 @@ namespace Solution21
             vector<int> l2Vectors = { 1, 3, 4 };
             result.list1 = ConstructNodes(l1Vectors);
             result.list2 = ConstructNodes(l2Vectors);
-            return result;
+            return result;//expect :[1,1,2,3,4,4]
         };
 
         /// <summary>
@@ -109,7 +115,7 @@ namespace Solution21
             vector<int> l2Vectors = { 0 };
             result.list1 = ConstructNodes(l1Vectors);
             result.list2 = ConstructNodes(l2Vectors);
-            return result;
+            return result;//Expect : [0]
         };
 
         /// <summary>
@@ -122,7 +128,20 @@ namespace Solution21
             vector<int> l2Vectors{ };
             result.list1 = ConstructNodes(l1Vectors);
             result.list2 = ConstructNodes(l2Vectors);
-            return result;
+            return result;//Expect : []
+        };
+
+        /// <summary>
+        /// 測試資料4
+        /// </summary>   
+        Merge_Two_Sorted_Lists_Model GetTestData004(void)
+        {
+            Merge_Two_Sorted_Lists_Model result;
+            vector<int> l1Vectors{ 5 };
+            vector<int> l2Vectors{ 1, 2, 4};
+            result.list1 = ConstructNodes(l1Vectors);
+            result.list2 = ConstructNodes(l2Vectors);
+            return result;//Expect : [1, 2, 4, 5]
         };
     private:
         ListNode* ConstructNodes(vector<int>& inputDatas)
