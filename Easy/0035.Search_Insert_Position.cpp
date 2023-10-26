@@ -6,7 +6,7 @@ namespace Solution35
 {
 #pragma region Paste to execute 
 	/*
-	#include "0035.Search_Insert_Position.cpp"
+	#include "Easy\0035.Search_Insert_Position.cpp"
 	using namespace Solution35;
 	using namespace std;
 
@@ -52,20 +52,22 @@ namespace Solution35
 		int searchInsert(vector<int>& nums, int target) {
 			int leftIndex = 0;
 			int rightIndex = nums.size() - 1;
-			int middleIndex = 0;
+			int middle = 0;
 			while (leftIndex <= rightIndex)
 			{
-				middleIndex = (rightIndex + leftIndex) / 2;
-				if (nums[middleIndex] == target)
-					return middleIndex;
-
-				if (target < nums[middleIndex])
-					rightIndex = middleIndex - 1;
+				middle = (leftIndex + rightIndex) / 2;
+				if (nums[middle] == target)
+					return middle;
+				if (target > nums[middle])
+				{
+					leftIndex = middle + 1;
+				}
 				else
-					leftIndex = middleIndex + 1;
+				{
+					rightIndex = middle - 1;
+				}
 			}
 			return leftIndex;
-			
 		}
 #pragma endregion Main
 
