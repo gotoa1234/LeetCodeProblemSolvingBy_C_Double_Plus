@@ -18,6 +18,10 @@ namespace Solution28
 
 		getTestModel = useClass.GetTestData002();
 		auto result2 = useClass.strStr(getTestModel.haystack, getTestModel.needle);
+
+
+		getTestModel = useClass.GetTestData003();
+		auto result3 = useClass.strStr(getTestModel.haystack, getTestModel.needle);		
 		return 0;
 	}
 	*/
@@ -41,11 +45,40 @@ namespace Solution28
 #pragma region Main
 	public:
 		/// <summary>
-		///         思路：		
-		///      Runtime:   0 ms Beats 100 %
-		///Memory Usage : 6.8 MB Beats 17.35 %
+		///         思路：先找出PMT(Partial Match Table)，然後利用KMP演算法找出子字串 
+		///               時間複雜度 O(m + n)
+		///      Runtime:
+		///Memory Usage :
 		/// </summary>
 		int strStr(string haystack, string needle) {
+			//Inner Method ： PMT
+			auto GetPartialMatchTable = [](string pattern) {
+				vector<int> pmtResult(pattern.size(), 0);
+				int findIndex = 0;
+				for (int index = 1; index < pattern.size(); index++)
+				{
+					while (findIndex > 0 && pattern[index] != pattern[findIndex])
+						findIndex = pmtResult[findIndex - 1];
+					if (pattern[index] == pattern[findIndex])
+						findIndex++;
+					pmtResult[index] = findIndex;
+				}
+				return 
+
+			};
+			//Main Method ： KMP
+			auto pmt = GetPartialMatchTable(needle);
+
+
+			return {};
+		}
+
+		/// <summary>
+		/// 暴力搜尋法 O((m-n+1) * n)
+		/// </summary>		
+		///      Runtime:   0 ms Beats 100 %
+		///Memory Usage : 6.8 MB Beats 17.35 %
+		int strStr_ForceSovle(string haystack, string needle) {
 			if (needle.size() == 0)
 				return -1;
 
@@ -69,6 +102,7 @@ namespace Solution28
 			}
 			return result;
 		}
+
 #pragma endregion Main
 
 #pragma region TestData
@@ -93,6 +127,17 @@ namespace Solution28
 			result.haystack = "leetcode";
 			result.needle = "leeto";
 			return result;//expect:-1  did not occur in "leetcode", so we return -1.
+		};
+
+		/// <summary>
+		/// 測試資料3
+		/// </summary>   
+		Find_the_Index_of_the_First_Occurrence_in_a_String_Model GetTestData003(void)
+		{
+			Find_the_Index_of_the_First_Occurrence_in_a_String_Model result;
+			result.haystack = "ABABDABACDABABCABAB";
+			result.needle = "ABABCABAB";
+			return result;//expect:10
 		};
 #pragma endregion TestData
 
