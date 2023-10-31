@@ -57,20 +57,40 @@ namespace Solution28
 				int findIndex = 0;
 				for (int index = 1; index < pattern.size(); index++)
 				{
-					while (findIndex > 0 && pattern[index] != pattern[findIndex])
+					while (findIndex > 0 && pattern[index] != pmtResult[findIndex])
+					{
 						findIndex = pmtResult[findIndex - 1];
-					if (pattern[index] == pattern[findIndex])
+					}
+					if (pattern[index] == pmtResult[findIndex])
+					{
 						findIndex++;
+					}
 					pmtResult[index] = findIndex;
 				}
-				return 
-
+				return pmtResult;
 			};
 			//Main Method ¡G KMP
 			auto pmt = GetPartialMatchTable(needle);
-
-
-			return {};
+			int matchCount = 0;
+			for(int index = 0 ; index < haystack.size();)
+			{
+				if (needle[matchCount] == haystack[index])
+				{
+					index++, matchCount++;
+					if (needle.size() == matchCount)
+						return index - matchCount;
+				}
+				else
+				{
+					if (matchCount > 0)
+					{
+						matchCount = pmt[matchCount];
+					}
+					else
+						index++;
+				}
+			}
+			return -1;
 		}
 
 		/// <summary>
