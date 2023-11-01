@@ -14,5 +14,11 @@ int main()
 
 	getTestModel = useClass.GetTestData003();
 	auto result3 = useClass.strStr(getTestModel.haystack, getTestModel.needle);
+
+	getTestModel = useClass.GetTestData004();
+	auto result4 = useClass.strStr(getTestModel.haystack, getTestModel.needle);
+
+	getTestModel = useClass.GetTestData005();
+	auto result5 = useClass.strStr(getTestModel.haystack, getTestModel.needle);
 	return 0;
 }
