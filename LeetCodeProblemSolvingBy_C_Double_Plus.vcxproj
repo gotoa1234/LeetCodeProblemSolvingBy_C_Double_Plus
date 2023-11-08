@@ -143,6 +143,7 @@
     <ClCompile Include="Easy\0028.Find_the_Index_of_the_First_Occurrence_in_a_String.cpp" />
     <ClCompile Include="Easy\0561.Array_Partition.cpp" />
     <ClCompile Include="Easy\0605.Can_Place_Flowers.cpp" />
+    <ClCompile Include="Easy\0696.Count_Binary_Substrings.cpp" />
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp" />
     <ClCompile Include="Medium\0309.Best_Time_to_Buy_and_Sell_Stock_with_Cooldown.cpp" />
   </ItemGroup>

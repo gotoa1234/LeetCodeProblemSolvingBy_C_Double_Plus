@@ -1,24 +1,15 @@
-﻿#include "Easy\0028.Find_the_Index_of_the_First_Occurrence_in_a_String.cpp"
-using namespace Solution28;
+﻿#include "Easy\0696.Count_Binary_Substrings.cpp"
+using namespace Solution696;
 using namespace std;
 
 int main()
 {
-	Solution28::Find_the_Index_of_the_First_Occurrence_in_a_String useClass;
-	Solution28::Find_the_Index_of_the_First_Occurrence_in_a_String::Find_the_Index_of_the_First_Occurrence_in_a_String_Model getTestModel = useClass.GetTestData001();
-	int result = useClass.strStr(getTestModel.haystack, getTestModel.needle);
+	Solution696::Count_Binary_Substrings useClass;
+	Solution696::Count_Binary_Substrings::Count_Binary_Substrings_Model getTestModel = useClass.GetTestData001();
+	int result = useClass.countBinarySubstrings(getTestModel.s);
 
 	getTestModel = useClass.GetTestData002();
-	auto result2 = useClass.strStr(getTestModel.haystack, getTestModel.needle);
+	auto result2 = useClass.countBinarySubstrings(getTestModel.s);
 
-
-	getTestModel = useClass.GetTestData003();
-	auto result3 = useClass.strStr(getTestModel.haystack, getTestModel.needle);
-
-	getTestModel = useClass.GetTestData004();
-	auto result4 = useClass.strStr(getTestModel.haystack, getTestModel.needle);
-
-	getTestModel = useClass.GetTestData005();
-	auto result5 = useClass.strStr(getTestModel.haystack, getTestModel.needle);
 	return 0;
 }
