@@ -11,5 +11,8 @@ int main()
 	getTestModel = useClass.GetTestData002();
 	auto result2 = useClass.countBinarySubstrings(getTestModel.s);
 
+	getTestModel = useClass.GetTestData003();
+	auto result3 = useClass.countBinarySubstrings(getTestModel.s);
+
 	return 0;
 }
