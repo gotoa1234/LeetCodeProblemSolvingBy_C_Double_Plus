@@ -21,6 +21,9 @@ int main()
 
     getTestModel = useClass.GetTestData003();
     auto result3= useClass.mergeTwoLists(getTestModel.list1, getTestModel.list2);
+
+    getTestModel = useClass.GetTestData004();
+    auto result4 = useClass.mergeTwoLists(getTestModel.list1, getTestModel.list2);
     return 0;
 }
 

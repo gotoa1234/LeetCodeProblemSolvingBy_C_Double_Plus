@@ -18,16 +18,16 @@
     <ClCompile Include="LeetCodeProblemSolvingBy_C_Double_Plus.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="Medium\0309.Best_Time_to_Buy_and_Sell_Stock_with_Cooldown.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
     <ClCompile Include="Easy\0561.Array_Partition.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
     <ClCompile Include="Easy\0605.Can_Place_Flowers.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="Easy\0028.Find_the_Index_of_the_First_Occurrence_in_a_String.cpp">
+    <ClCompile Include="Easy\0696.Count_Binary_Substrings.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Easy\0026.Remove_Duplicates_from_Sorted_Array.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
   </ItemGroup>
