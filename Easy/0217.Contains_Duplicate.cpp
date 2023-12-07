@@ -7,7 +7,7 @@ namespace Solution217
 {
 #pragma region Paste to execute 
 	/*
-	#include "0217.Contains_Duplicate.cpp"
+	#include "Easy\0217.Contains_Duplicate.cpp"
 	using namespace Solution217;
 	using namespace std;
 

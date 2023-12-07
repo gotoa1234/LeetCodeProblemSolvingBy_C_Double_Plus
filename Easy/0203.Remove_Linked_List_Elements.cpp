@@ -6,7 +6,7 @@ namespace Solution203
 {
 #pragma region Paste to execute 
     /*
-    #include "0203.Remove_Linked_List_Elements.cpp"
+    #include "Easy\0203.Remove_Linked_List_Elements.cpp"
     using namespace Solution203;
     using namespace std;
 

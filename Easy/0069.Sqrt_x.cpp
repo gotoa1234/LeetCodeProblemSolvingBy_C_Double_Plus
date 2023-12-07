@@ -8,7 +8,7 @@ namespace Solution69
 #pragma region Paste to execute 
     /*
     #include <unordered_map>
-    #include "0069.Sqrt_x.cpp"
+    #include "Easy\0069.Sqrt_x.cpp"
     using namespace Solution69;
 
     int main()

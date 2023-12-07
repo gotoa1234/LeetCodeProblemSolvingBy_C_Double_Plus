@@ -7,7 +7,7 @@ namespace Solution14
 {
 #pragma region Paste to execute 
 	/*
-	#include "0014.Longest_Common_Prefix.cpp"
+	#include "Easy\0014.Longest_Common_Prefix.cpp"
     using namespace Solution14;
     using namespace std;
     

@@ -6,7 +6,7 @@ namespace Solution278
 {
 #pragma region Paste to execute 
 	/*
-	#include "0278.First_Bad_Version.cpp"
+	#include "Easy\0278.First_Bad_Version.cpp"
 	using namespace Solution278;
 	using namespace std;
 

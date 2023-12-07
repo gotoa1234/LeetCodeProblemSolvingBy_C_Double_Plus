@@ -5,7 +5,7 @@ namespace Solution392
 {
 #pragma region Paste to execute 
 	/*
-	#include "392.Is_Subsequence.cpp"
+	#include "Easy\392.Is_Subsequence.cpp"
 	using namespace Solution392;
 	using namespace std;
 

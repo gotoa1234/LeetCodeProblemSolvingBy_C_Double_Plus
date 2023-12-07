@@ -9,7 +9,7 @@ namespace Solution20
 {
 #pragma region Paste to execute 
 	/*
-	#include "0020.Valid_Parentheses.cpp"
+	#include "Easy\0020.Valid_Parentheses.cpp"
 	using namespace Solution20;
 	using namespace std;
 

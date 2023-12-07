@@ -8,7 +8,7 @@ namespace Solution66
 #pragma region Paste to execute 
     /*
     #include <unordered_map>
-    #include "0066.Plus_One.cpp"
+    #include "Easy\0066.Plus_One.cpp"       
     using namespace Solution66;
 
     int main()

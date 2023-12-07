@@ -6,7 +6,7 @@ namespace Solution205
 {
 #pragma region Paste to execute 
 	/*
-	#include "0205.Isomorphic_Strings.cpp"
+	#include "Easy\0205.Isomorphic_Strings.cpp"
     using namespace Solution205;
     using namespace std;
 

@@ -6,7 +6,7 @@ namespace Solution704
 {
 #pragma region Paste to execute 
 	/*
-    #include "0704.Binary_Search.cpp"
+    #include "Easy\0704.Binary_Search.cpp"
     using namespace Solution704;
     using namespace std;
 

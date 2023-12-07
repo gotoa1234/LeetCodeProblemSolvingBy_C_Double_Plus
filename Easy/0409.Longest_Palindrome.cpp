@@ -6,7 +6,7 @@ namespace Solution409
 {
 #pragma region Paste to execute 
 	/*
-	#include "0409.Longest_Palindrome.cpp"
+	#include "Easy\0409.Longest_Palindrome.cpp"
 	using namespace Solution409;
 	using namespace std;
 

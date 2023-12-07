@@ -7,7 +7,7 @@ namespace Solution589
 {
 #pragma region Paste to execute 
     /*
-    #include "0589.N_aryTree_Preorder_Traversal.cpp"
+    #include "Easy\0589.N_aryTree_Preorder_Traversal.cpp"
     using namespace Solution589;
     using namespace std;
 

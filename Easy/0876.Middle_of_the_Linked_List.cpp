@@ -6,7 +6,7 @@ namespace Solution876
 {
 #pragma region Paste to execute 
 	/*
-	#include "0876.Middle_of_the_Linked_List.cpp"
+	#include "Easy\0876.Middle_of_the_Linked_List.cpp"
 	using namespace Solution876;
 	using namespace std;
 

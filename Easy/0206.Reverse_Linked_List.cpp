@@ -6,7 +6,7 @@ namespace Solution206
 {
 #pragma region Paste to execute 
     /*
-    #include "0206.Reverse_Linked_List.cpp"
+    #include "Easy\0206.Reverse_Linked_List.cpp"
     using namespace Solution206;
     using namespace std;
 

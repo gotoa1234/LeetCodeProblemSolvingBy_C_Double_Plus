@@ -6,7 +6,7 @@ namespace Solution141
 {
 #pragma region Paste to execute 
     /*
-    #include "0141.Linked_List_Cycle.cpp"
+    #include "Easy\0141.Linked_List_Cycle.cpp"
     using namespace Solution141;
     using namespace std;
 

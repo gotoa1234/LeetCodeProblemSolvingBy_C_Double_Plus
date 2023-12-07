@@ -8,7 +8,7 @@ namespace Solution1046
     /*
     #include <vector>
     #include <algorithm>
-    #include "1046.Last_Stone_Weight.cpp"
+    #include "Easy\1046.Last_Stone_Weight.cpp"
     using namespace Solution1046;
 
     int main()

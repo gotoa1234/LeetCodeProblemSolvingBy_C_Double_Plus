@@ -7,7 +7,7 @@ namespace Solution70
 #pragma region Paste to execute 
     /*
     #include <vector>
-    #include "0070.Climbing_Stairs.cpp"
+    #include "Easy\0070.Climbing_Stairs.cpp"
     using namespace Solution70;
 
     int main()

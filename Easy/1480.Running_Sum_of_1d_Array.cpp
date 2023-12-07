@@ -6,7 +6,7 @@ namespace Solution1480
 {
 #pragma region Paste to execute 
 	/*
-	#include "1480.Palindrome_Number.cpp"
+	#include "Easy\1480.Palindrome_Number.cpp"
 	using namespace Solution1480;
 	using namespace std;
 

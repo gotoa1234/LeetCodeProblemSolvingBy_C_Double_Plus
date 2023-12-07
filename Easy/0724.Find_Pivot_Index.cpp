@@ -6,7 +6,7 @@ namespace Solution724
 {
 #pragma region Paste to execute 
 	/*
-	#include "724.Find_Pivot_Index.cpp"
+	#include "Easy\0724.Find_Pivot_Index.cpp"
 	using namespace Solution724;
 	using namespace std;
 

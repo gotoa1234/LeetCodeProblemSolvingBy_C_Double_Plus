@@ -6,7 +6,7 @@ namespace Solution121
 {
 #pragma region Paste to execute 
 	/*
-	#include "0121.Best_Time_to_Buy_and_Sell_Stock.cpp"
+	#include "Easy\0121.Best_Time_to_Buy_and_Sell_Stock.cpp"
 	using namespace Solution121;
 	using namespace std;
 

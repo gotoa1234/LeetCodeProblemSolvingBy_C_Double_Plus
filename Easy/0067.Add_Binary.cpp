@@ -8,7 +8,7 @@ namespace Solution67
 #pragma region Paste to execute 
     /*
     #include <unordered_map>
-    #include "0067.Add_Binary.cpp"
+    #include "Easy\0067.Add_Binary.cpp"
     using namespace Solution67;
 
     int main()

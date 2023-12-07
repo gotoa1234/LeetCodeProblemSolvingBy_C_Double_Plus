@@ -7,7 +7,7 @@ namespace Solution58
 {
 #pragma region Paste to execute 
 	/*
-	#include "0058.Length_of_Last_Word.cpp"
+	#include "Easy\0058.Length_of_Last_Word.cpp"
 	using namespace Solution58;
 	using namespace std;
 

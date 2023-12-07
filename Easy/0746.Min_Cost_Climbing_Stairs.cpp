@@ -8,7 +8,7 @@ namespace Solution746
 #pragma region Paste to execute 
     /*
     #include <unordered_map>
-    #include "0746.Min_Cost_Climbing_Stairs.cpp"
+    #include "Easy\0746.Min_Cost_Climbing_Stairs.cpp"
     using namespace Solution746;
     
     int main()
