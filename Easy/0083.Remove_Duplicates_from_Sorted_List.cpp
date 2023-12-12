@@ -58,29 +58,21 @@ namespace Solution83
         /// <returns></returns>
     public:
         ListNode* deleteDuplicates(ListNode* head) {
-            
             if (head == nullptr || head->next == nullptr)
                 return head;
-            ListNode* resultNode = new ListNode(0);
-            resultNode->next = head;
-            ListNode* preNode = head;
-            head = head->next;
-            while (head != nullptr)
+            ListNode* tempHead = head;
+            ListNode* moveNode = head ->next;
+            while (moveNode != nullptr)
             {
-                if (head->val == preNode->val)
+                while (moveNode != nullptr &&
+                       head->val == moveNode->val)
                 {
-                    while (head != nullptr &&
-                        head->val == preNode->val
-                        )
-                    {
-                        head = head->next;
-                    }
-                    preNode->next = head;
+                    moveNode = moveNode->next;
                 }
-                preNode = head;
-                head = head == nullptr ? nullptr : head->next;
+                head->next = moveNode;
+                head = head->next;                
             }
-            return resultNode->next;
+            return tempHead;
         }
 
     public:
