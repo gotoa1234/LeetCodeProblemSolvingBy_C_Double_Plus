@@ -1,6 +1,7 @@
 #include <iostream>
 #include <unordered_map>
 #include <string>
+#include <algorithm>
 using namespace std;
 
 namespace Solution88
@@ -47,47 +48,43 @@ namespace Solution88
 #pragma region Main
     public:
         /// <summary>
-        ///         思路 ：結果是以nums1做為存放，因此先複製出nums1[m] 以前的元素，然後進行合併到nums1中
+        ///         思路 ：題目要求 時間複雜度 m + n，已知 nums1 是所有Merge後的長度，因此可以從nums1[m-1] 與 nums[n-1] 開始找出由大而小的
+        ///                值一一放進去
         ///      Runtime : 0 ms Beats  100 %
         /// Memory Usage : 9 MB Beats 91.5 %
         /// </summary>
         /// <returns></returns>
         void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
-            int nums1Index = 0;
-            int nums2Index = 0;
-            //1. clone nums1[m]以前的元素
-            vector<int> clonenums1(m);
-            for (int index = 0; index < m; index++)
-                clonenums1[index] = nums1[index];
-
-            //2. Merge to nums1
-            while (nums1Index != m && nums2Index != n)
+            int index1 = m - 1;
+            int index2 = n - 1;
+            int totalIndex = m + n - 1;
+            while (totalIndex >= 0)
             {
-                if (clonenums1[nums1Index] < nums2[nums2Index])
+                if (index1 < 0)
                 {
-                    nums1[nums1Index + nums2Index] = clonenums1[nums1Index];
-                    nums1Index++;
+                    nums1[totalIndex] = nums2[index2];
+                    index2--;
                 }
-                else
+                else if (index2 < 0)
                 {
-                    nums1[nums1Index + nums2Index] = nums2[nums2Index];
-                    nums2Index++;
+                    nums1[totalIndex] = nums1[index1];
+                    index1--;
                 }
+                else {
+                    if (nums1[index1] < nums2[index2])
+                    {
+                        nums1[totalIndex] = nums2[index2];
+                        index2--;
+                    }
+                    else
+                    {
+                        nums1[totalIndex] = nums1[index1];
+                        index1--;
+                    }
+                }
+                totalIndex--;
             }
 
-            //3. pedding nums1
-            while (nums1Index != m)
-            {
-                nums1[nums1Index + nums2Index] = clonenums1[nums1Index];
-                nums1Index++;
-            }
-
-            //4. pedding nums2
-            while (nums2Index != n)
-            {
-                nums1[nums1Index + nums2Index] = nums2[nums2Index];
-                nums2Index++;
-            }
         }
 
     public:
