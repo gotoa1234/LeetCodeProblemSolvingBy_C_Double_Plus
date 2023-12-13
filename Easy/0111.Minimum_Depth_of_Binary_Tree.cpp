@@ -55,16 +55,14 @@ namespace Solution111
 		///  Memory Usage :144.7 MB Beats 80.97 %
 		/// </summary>
 		int minDepth(TreeNode* root) {
-			if (root == nullptr) 
+			if (root == nullptr)
 				return 0;
-			//1. 左null 但 右存在，則右節點探索
-			if(root->left == nullptr && root->right)
-				return minDepth(root->right) + 1;
-			//2. 右null 但 左存在，則左節點探索
-			if (root->right == nullptr && root->left)
+			else if (root->left && root->right == nullptr)
 				return minDepth(root->left) + 1;
-			//3. 上面1,2,不成立，則視為兩個節點都存在同時深入探索
-			return min(minDepth(root->left), minDepth(root->right)) + 1;
+			else if (root->right && root->left == nullptr)
+				return minDepth(root->right) + 1;
+			else
+				return min(minDepth(root->left) , minDepth(root->right)) + 1;
 		}
 
 #pragma endregion Main
